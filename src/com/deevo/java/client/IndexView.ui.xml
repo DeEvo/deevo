@@ -6,5 +6,24 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel/>
+	<g:HTMLPanel>
+		<g:DockPanel width="450px" height="299px">
+			<g:Dock direction="NORTH">
+				<g:AbsolutePanel height="47px" width="450px"/>
+			</g:Dock>
+			<g:Dock direction="CENTER">
+				<g:TabPanel width="234px">
+					<g:Tab text="New tab">
+						<g:TextBox width="5cm" height="3cm" text="HOLA"/>
+					</g:Tab>
+				</g:TabPanel>
+			</g:Dock>
+			<g:Dock direction="WEST">
+				<g:StackPanel height="121px">
+					<g:VerticalPanel width="100%" height="100%" g:StackPanel-text="New widget"/>
+				</g:StackPanel>
+			</g:Dock>
+		</g:DockPanel>
+	
+	</g:HTMLPanel>
 </ui:UiBinder>

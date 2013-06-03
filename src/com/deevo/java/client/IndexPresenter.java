@@ -3,7 +3,9 @@ package com.deevo.java.client;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.proxy.Proxy;
+import com.gwtplatform.mvp.client.annotations.NameToken;
+import com.deevo.java.client.place.NameTokens;
+import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
@@ -15,7 +17,8 @@ public class IndexPresenter extends
 	}
 
 	@ProxyCodeSplit
-	public interface MyProxy extends Proxy<IndexPresenter> {
+	@NameToken(NameTokens.index)
+	public interface MyProxy extends ProxyPlace<IndexPresenter> {
 	}
 
 	@Inject
@@ -32,5 +35,10 @@ public class IndexPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
+	}
+
+	@Override
+	protected void onReset() {
+		super.onReset();
 	}
 }
