@@ -39,7 +39,7 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenter(PanelPresenter.class, PanelPresenter.MyView.class,
 				PanelView.class, PanelPresenter.MyProxy.class);
 
-		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.panel);
+		//bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.panel);
 
 		bindPresenterWidget(BodyPresenter.class, BodyPresenter.MyView.class,
 				BodyView.class);

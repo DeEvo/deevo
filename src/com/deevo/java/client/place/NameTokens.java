@@ -9,7 +9,6 @@ public class NameTokens {
 	public static String getIndex() {
 		return index;
 	}
-
 	public static String getPanel() {
 		return panel;
 	}
