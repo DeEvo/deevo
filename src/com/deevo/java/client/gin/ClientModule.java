@@ -33,12 +33,6 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenter(IndexPresenter.class, IndexPresenter.MyView.class,
 				IndexView.class, IndexPresenter.MyProxy.class);
 
-		bindPresenter(HeaderPresenter.class, HeaderPresenter.MyView.class,
-				HeaderView.class, HeaderPresenter.MyProxy.class);
-
-		bindPresenter(FooterPresenter.class, FooterPresenter.MyView.class,
-				FooterView.class, FooterPresenter.MyProxy.class);
-
 		bindPresenterWidget(LoginPresenter.class, LoginPresenter.MyView.class,
 				LoginView.class);
 
@@ -55,6 +49,12 @@ public class ClientModule extends AbstractPresenterModule {
 
 		bindPresenterWidget(EstudiantesPresenter.class,
 				EstudiantesPresenter.MyView.class, EstudiantesView.class);
+
+		bindPresenter(HeaderPresenter.class, HeaderPresenter.MyView.class,
+				HeaderView.class, HeaderPresenter.MyProxy.class);
+
+		bindPresenter(FooterPresenter.class, FooterPresenter.MyView.class,
+				FooterView.class, FooterPresenter.MyProxy.class);
 
 	}
 }
