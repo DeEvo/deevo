@@ -10,19 +10,19 @@ import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
-public class IndexPresenter extends
-		Presenter<IndexPresenter.MyView, IndexPresenter.MyProxy> {
+public class PanelPresenter extends
+		Presenter<PanelPresenter.MyView, PanelPresenter.MyProxy> {
 
 	public interface MyView extends View {
 	}
 
 	@ProxyCodeSplit
-	@NameToken(NameTokens.index)
-	public interface MyProxy extends ProxyPlace<IndexPresenter> {
+	@NameToken(NameTokens.panel)
+	public interface MyProxy extends ProxyPlace<PanelPresenter> {
 	}
 
 	@Inject
-	public IndexPresenter(final EventBus eventBus, final MyView view,
+	public PanelPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}
