@@ -15,7 +15,7 @@
 		filters and servlets have to be configured in your
 		ServletModule#configureServlets() by calling
 		serve(String).with(Class<? extends HttpServlet>) and
-		filter(String).through(Class<? extends Filter)
+		filter(String).through(Class<? extends Filter )
 	-->
 	<listener>
 		<listener-class>com.deevo.java.server.guice.GuiceServletConfig</listener-class>
