@@ -1,7 +1,6 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-
+	
 	<application>deevosoftware</application>
 	<threadsafe>true</threadsafe>
 	<version>4</version>
@@ -19,6 +18,7 @@
 
 	<!-- Configure java.util.logging -->
 	<system-properties>
-		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
 	</system-properties>
 </appengine-web-app>
+

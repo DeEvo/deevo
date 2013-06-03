@@ -33,8 +33,6 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenter(IndexPresenter.class, IndexPresenter.MyView.class,
 				IndexView.class, IndexPresenter.MyProxy.class);
 
-		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.index);
-
 		bindPresenter(HeaderPresenter.class, HeaderPresenter.MyView.class,
 				HeaderView.class, HeaderPresenter.MyProxy.class);
 
@@ -57,5 +55,6 @@ public class ClientModule extends AbstractPresenterModule {
 
 		bindPresenterWidget(EstudiantesPresenter.class,
 				EstudiantesPresenter.MyView.class, EstudiantesView.class);
+
 	}
 }

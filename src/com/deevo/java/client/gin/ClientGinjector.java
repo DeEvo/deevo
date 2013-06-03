@@ -12,7 +12,6 @@ import com.deevo.java.client.HeaderPresenter;
 import com.deevo.java.client.FooterPresenter;
 import com.deevo.java.client.PanelPresenter;
 
-
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
 
