@@ -7,6 +7,8 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel>
-		<h1>Hola Q ase</h1>
+		<h1>Deevo Software</h1>
+		<hr/>
+		<h2>Prueba</h2>
 	</g:HTMLPanel>
 </ui:UiBinder>
