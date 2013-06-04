@@ -6,7 +6,9 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel ui:field="contentPanel">
-	    <h1>Header</h1>
+	<g:HTMLPanel>
+	    <g:Image url="deevo/image/logo.jpg" width="585px" height="185px"/>
+	    <hr/>
+	    <g:HTMLPanel ui:field="contentPanel"/>
 	</g:HTMLPanel>
 </ui:UiBinder>

@@ -8,7 +8,6 @@
 
 	<g:HTMLPanel>
 		<h1>Deevo Software</h1>
-		<hr/>
 		<h2>Prueba</h2>
 	</g:HTMLPanel>
 </ui:UiBinder>

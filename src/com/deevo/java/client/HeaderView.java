@@ -26,14 +26,16 @@ public class HeaderView extends ViewImpl implements HeaderPresenter.MyView {
 		return widget;
 	}
 	
-	public void setInSlot(Object slot, Widget Content){
+	@Override
+	public void setInSlot(Object slot, Widget content) {
 		if(slot == HeaderPresenter.SLOT_content){
 			contentPanel.clear();
-			if(Content!= null){
-			contentPanel.add(Content);
+			if(content!= null){
+			contentPanel.add(content);
 			}
 		}else{
-			super.setInSlot(slot,Content);
+			super.setInSlot(slot,content);
 		}
 	}
+	
 }
