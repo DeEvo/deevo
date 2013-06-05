@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="deevo" transaction-type="RESOURCE_LOCAL">
+		<class>model.Alerta</class>
+		<class>model.AlertaParque</class>
+		<class>model.AlertaPrivilegio</class>
+		<class>model.AlertaPrivilegioPK</class>
+		<class>model.Alumno</class>
+		<class>model.AlumnoAula</class>
+		<class>model.AlumnoAulaPK</class>
+		<class>model.Aula</class>
+		<class>model.Colegio</class>
+		<class>model.ColegioProfesor</class>
+		<class>model.ColegioProfesorPK</class>
+		<class>model.Curso</class>
+		<class>model.CursoHabilitado</class>
+		<class>model.CursoProfesor</class>
+		<class>model.CursoProfesorPK</class>
+		<class>model.Estado</class>
+		<class>model.EstadoPK</class>
+		<class>model.EstadoTipo</class>
+		<class>model.Grado</class>
+		<class>model.GradoSeccion</class>
+		<class>model.GradoSeccionPK</class>
+		<class>model.MetodoCalificacion</class>
+		<class>model.PadreFamilia</class>
+		<class>model.PeriodoAcademico</class>
+		<class>model.Persona</class>
+		<class>model.Pregunta</class>
+		<class>model.Privilegio</class>
+		<class>model.Profesor</class>
+		<class>model.Psicologo</class>
+		<class>model.Registro</class>
+		<class>model.Respuesta</class>
+		<class>model.RespuestaPK</class>
+		<class>model.Seccion</class>
+		<class>model.Sesion</class>
+		<class>model.Test</class>
+		<class>model.TestPrivilegio</class>
+		<class>model.TestPrivilegioPK</class>
+		<class>model.TestTipo</class>
+		<class>model.Usuario</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.google.appengine.api.rdbms.AppEngineDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:google:rdbms://deevosoftware2013:database00/DEVO"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+		</properties>
+	</persistence-unit>
+</persistence>
