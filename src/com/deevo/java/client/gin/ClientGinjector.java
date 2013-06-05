@@ -11,6 +11,7 @@ import com.deevo.java.client.IndexPresenter;
 import com.deevo.java.client.PanelPresenter;
 import com.deevo.java.client.HeaderPresenter;
 import com.deevo.java.client.FooterPresenter;
+import com.deevo.java.client.RootPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -26,5 +27,7 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<HeaderPresenter> getHeaderPresenter();
 
 	AsyncProvider<FooterPresenter> getFooterPresenter();
+
+	AsyncProvider<RootPresenter> getRootPresenter();
 
 }

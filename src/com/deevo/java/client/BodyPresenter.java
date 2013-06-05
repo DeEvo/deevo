@@ -14,7 +14,7 @@ public class BodyPresenter extends PresenterWidget<BodyPresenter.MyView> {
 	public BodyPresenter(final EventBus eventBus, final MyView view) {
 		super(eventBus, view);
 	}
-
+	
 	@Override
 	protected void onBind() {
 		super.onBind();
