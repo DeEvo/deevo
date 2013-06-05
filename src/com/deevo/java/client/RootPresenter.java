@@ -23,9 +23,9 @@ public class RootPresenter extends
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetSideContent = new Type<RevealContentHandler<?>>();
 	
-	FooterPresenter sideMenuPresenter;
-	HeaderPresenter topMenuPresenter;
-	
+	//HeaderPresenter topMenuPresenter;
+	//FooterPresenter sideMenuPresenter;
+		
 	public interface MyView extends View {
 	}
 
@@ -44,10 +44,10 @@ public class RootPresenter extends
 		super.onReveal();
 
 		// Load the top menu bar
-		setInSlot(SLOT_SetTopContent, topMenuPresenter);
+		//setInSlot(SLOT_SetTopContent, topMenuPresenter);
  
 		// Load the profile side view
-		setInSlot(SLOT_SetSideContent, sideMenuPresenter);
+		//setInSlot(SLOT_SetSideContent, sideMenuPresenter);
 	}
 	
 	@Override
