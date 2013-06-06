@@ -11,20 +11,24 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
-public class LayoutPresenter extends
-		Presenter<LayoutPresenter.MyView, LayoutPresenter.MyProxy> {
+public class LayoutPanelPresenter extends
+		Presenter<LayoutPanelPresenter.MyView, LayoutPanelPresenter.MyProxy> {
 
+	@ContentSlot
+	public static final Type<RevealContentHandler<?>> SLOT_SetLoginContent = new Type<RevealContentHandler<?>>();
+	
+	@ContentSlot
+	public static final Type<RevealContentHandler<?>> SLOT_SetHeadContent = new Type<RevealContentHandler<?>>();
+	
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<RevealContentHandler<?>>();
 		
 	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_SetHeadContent = new Type<RevealContentHandler<?>>();
+	public static final Type<RevealContentHandler<?>> SLOT_SetMenuContent = new Type<RevealContentHandler<?>>();
 
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetFootContent = new Type<RevealContentHandler<?>>();
 	
-	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_SetLoginContent = new Type<RevealContentHandler<?>>();
 
 	@Inject
 	LoginPresenter loginPresenter;
@@ -34,26 +38,30 @@ public class LayoutPresenter extends
 	
 	@Inject
 	FooterPresenter footPresenter;
+	
+	@Inject
+	PerfilPresenter menuPresenter;
 		
 	public interface MyView extends View {
 	}
 
 	@ProxyCodeSplit
-	public interface MyProxy extends Proxy<LayoutPresenter> {
+	public interface MyProxy extends Proxy<LayoutPanelPresenter> {
 	}
 
 	@Inject
-	public LayoutPresenter(final EventBus eventBus, final MyView view,
+	public LayoutPanelPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}
-	
+
 	@Override
 	protected void onReveal() {
 		super.onReveal();
 
-		setInSlot(SLOT_SetHeadContent, headPresenter);
 		setInSlot(SLOT_SetLoginContent, loginPresenter);
+		setInSlot(SLOT_SetHeadContent, headPresenter);
+		setInSlot(SLOT_SetMenuContent, menuPresenter);
 		setInSlot(SLOT_SetFootContent, footPresenter);
 	}
 	

@@ -23,6 +23,8 @@ import com.deevo.java.client.HeaderPresenter;
 import com.deevo.java.client.HeaderView;
 import com.deevo.java.client.FooterPresenter;
 import com.deevo.java.client.FooterView;
+import com.deevo.java.client.LayoutPanelPresenter;
+import com.deevo.java.client.LayoutPanelView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -58,6 +60,10 @@ public class ClientModule extends AbstractPresenterModule {
 
 		bindPresenterWidget(FooterPresenter.class,
 				FooterPresenter.MyView.class, FooterView.class);
+
+		bindPresenter(LayoutPanelPresenter.class,
+				LayoutPanelPresenter.MyView.class, LayoutPanelView.class,
+				LayoutPanelPresenter.MyProxy.class);
 	
 	}
 }

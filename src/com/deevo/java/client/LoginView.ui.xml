@@ -7,6 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel>
-	<h2>Logeate para DeEvear</h2>
+	Logeate para DeEvear 
+	<g:Button text="Iniciar Sesión" ui:field="loginButton"/>
 	</g:HTMLPanel>
 </ui:UiBinder>
