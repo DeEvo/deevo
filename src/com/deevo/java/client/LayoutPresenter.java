@@ -11,8 +11,8 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
-public class RootPresenter extends
-		Presenter<RootPresenter.MyView, RootPresenter.MyProxy> {
+public class LayoutPresenter extends
+		Presenter<LayoutPresenter.MyView, LayoutPresenter.MyProxy> {
 
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetTopContent = new Type<RevealContentHandler<?>>();
@@ -30,11 +30,11 @@ public class RootPresenter extends
 	}
 
 	@ProxyCodeSplit
-	public interface MyProxy extends Proxy<RootPresenter> {
+	public interface MyProxy extends Proxy<LayoutPresenter> {
 	}
 
 	@Inject
-	public RootPresenter(final EventBus eventBus, final MyView view,
+	public LayoutPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}

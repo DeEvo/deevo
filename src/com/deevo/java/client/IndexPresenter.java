@@ -30,7 +30,7 @@ public class IndexPresenter extends
 
 	@Override
 	protected void revealInParent() {
-		RevealContentEvent.fire(this, RootPresenter.SLOT_SetTopContent, this);
+		RevealContentEvent.fire(this, LayoutPresenter.SLOT_SetMainContent, this);
 		//RevealRootContentEvent.fire(this,this);
 	}
 
