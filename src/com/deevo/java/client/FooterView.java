@@ -21,5 +21,4 @@ public class FooterView extends ViewImpl implements FooterPresenter.MyView {
 	public Widget asWidget() {
 		return widget;
 	}
-	
 }

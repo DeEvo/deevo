@@ -12,8 +12,9 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 	private final Widget widget;
 	
 	@UiField HTMLPanel mainContentPanel;
-	@UiField HTMLPanel sideContentPanel;
-	@UiField HTMLPanel topContentPanel;
+	@UiField HTMLPanel headContentPanel;
+	@UiField HTMLPanel leftContentPanel;
+	@UiField HTMLPanel footContentPanel;
 
 	public interface Binder extends UiBinder<Widget, LayoutView> {
 	}
@@ -34,13 +35,17 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 		{			
 			setMainContent(content);
 		}
- 		else if (slot == LayoutPresenter.SLOT_SetSideContent)
+ 		else if (slot == LayoutPresenter.SLOT_SetLeftContent)
 		{
-			setSideContent(content);
+			setLeftContent(content);
 		}
- 		else if (slot == LayoutPresenter.SLOT_SetTopContent)
+ 		else if (slot == LayoutPresenter.SLOT_SetHeadContent)
 		{
-			setTopContent(content);
+			setHeadContent(content);
+		}
+ 		else if (slot == LayoutPresenter.SLOT_SetFootContent)
+		{
+			setFootContent(content);
 		}
  		else
 		{
@@ -57,21 +62,30 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 	    }
 	}
  
-	private void setSideContent(Widget content)
+	private void setLeftContent(Widget content)
 	{
-		sideContentPanel.clear();
+		leftContentPanel.clear();
 		if (content != null)
 		{
-			sideContentPanel.add(content);
+			leftContentPanel.add(content);
 		}		
 	}
  
-	private void setTopContent(Widget content)
+	private void setHeadContent(Widget content)
 	{
-		topContentPanel.clear();
+		headContentPanel.clear();
 		if (content != null)
 		{
-			topContentPanel.add(content);
+			headContentPanel.add(content);
+		}		
+	}
+
+	private void setFootContent(Widget content)
+	{
+		footContentPanel.clear();
+		if (content != null)
+		{
+			footContentPanel.add(content);
 		}		
 	}
 	

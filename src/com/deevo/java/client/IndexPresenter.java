@@ -7,13 +7,12 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
-import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
 
 public class IndexPresenter extends
 		Presenter<IndexPresenter.MyView, IndexPresenter.MyProxy> {
-
+	
 	public interface MyView extends View {
 	}
 
@@ -31,7 +30,6 @@ public class IndexPresenter extends
 	@Override
 	protected void revealInParent() {
 		RevealContentEvent.fire(this, LayoutPresenter.SLOT_SetMainContent, this);
-		//RevealRootContentEvent.fire(this,this);
 	}
 
 	@Override

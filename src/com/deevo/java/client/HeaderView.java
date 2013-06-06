@@ -8,9 +8,7 @@ import com.google.inject.Inject;
 public class HeaderView extends ViewImpl implements HeaderPresenter.MyView {
 
 	private final Widget widget;
-	
-	//@UiField HTMLPanel contentPanel;
-	
+
 	public interface Binder extends UiBinder<Widget, HeaderView> {
 	}
 
@@ -23,5 +21,4 @@ public class HeaderView extends ViewImpl implements HeaderPresenter.MyView {
 	public Widget asWidget() {
 		return widget;
 	}
-	
 }

@@ -15,16 +15,25 @@ public class LayoutPresenter extends
 		Presenter<LayoutPresenter.MyView, LayoutPresenter.MyProxy> {
 
 	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_SetTopContent = new Type<RevealContentHandler<?>>();
-	 
-	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<RevealContentHandler<?>>();
- 
+		
 	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_SetSideContent = new Type<RevealContentHandler<?>>();
+	public static final Type<RevealContentHandler<?>> SLOT_SetHeadContent = new Type<RevealContentHandler<?>>();
+
+	@ContentSlot
+	public static final Type<RevealContentHandler<?>> SLOT_SetLeftContent = new Type<RevealContentHandler<?>>();
 	
-	//HeaderPresenter topMenuPresenter;
-	//FooterPresenter sideMenuPresenter;
+	@ContentSlot
+	public static final Type<RevealContentHandler<?>> SLOT_SetFootContent = new Type<RevealContentHandler<?>>();
+
+	@Inject
+	HeaderPresenter headPresenter;
+	
+	@Inject
+	LoginPresenter leftPresenter;
+	
+	@Inject
+	FooterPresenter footPresenter;
 		
 	public interface MyView extends View {
 	}
@@ -43,11 +52,9 @@ public class LayoutPresenter extends
 	protected void onReveal() {
 		super.onReveal();
 
-		// Load the top menu bar
-		//setInSlot(SLOT_SetTopContent, topMenuPresenter);
- 
-		// Load the profile side view
-		//setInSlot(SLOT_SetSideContent, sideMenuPresenter);
+		setInSlot(SLOT_SetHeadContent, headPresenter);
+ 		setInSlot(SLOT_SetLeftContent, leftPresenter);
+		setInSlot(SLOT_SetFootContent, footPresenter);
 	}
 	
 	@Override

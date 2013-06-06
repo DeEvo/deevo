@@ -9,8 +9,6 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.google.gwt.inject.client.AsyncProvider;
 import com.deevo.java.client.IndexPresenter;
 import com.deevo.java.client.PanelPresenter;
-import com.deevo.java.client.HeaderPresenter;
-import com.deevo.java.client.FooterPresenter;
 import com.deevo.java.client.LayoutPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
@@ -23,10 +21,6 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<IndexPresenter> getIndexPresenter();
 
 	AsyncProvider<PanelPresenter> getPanelPresenter();
-
-	AsyncProvider<HeaderPresenter> getHeaderPresenter();
-
-	AsyncProvider<FooterPresenter> getFooterPresenter();
 
 	AsyncProvider<LayoutPresenter> getRootPresenter();
 

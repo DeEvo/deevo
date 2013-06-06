@@ -1,32 +1,18 @@
 package com.deevo.java.client;
 
-import com.gwtplatform.mvp.client.Presenter;
+import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
-import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
-import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
-public class HeaderPresenter extends
-		Presenter<HeaderPresenter.MyView, HeaderPresenter.MyProxy> {
+public class HeaderPresenter extends PresenterWidget<HeaderPresenter.MyView> {
 
 	public interface MyView extends View {
 	}
 
-	@ProxyCodeSplit
-	public interface MyProxy extends Proxy<HeaderPresenter> {
-	}
-
 	@Inject
-	public HeaderPresenter(final EventBus eventBus, final MyView view,
-			final MyProxy proxy) {
-		super(eventBus, view, proxy);
-	}
-
-	@Override
-	protected void revealInParent() {
-		RevealRootContentEvent.fire(this, this);
+	public HeaderPresenter(final EventBus eventBus, final MyView view) {
+		super(eventBus, view);
 	}
 
 	@Override

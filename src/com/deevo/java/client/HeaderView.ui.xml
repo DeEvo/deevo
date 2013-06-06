@@ -7,6 +7,6 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel>
-	<h1>Ola Q ase</h1>
+	<h1>Ola Q ase DeEveando</h1>
 	</g:HTMLPanel>
 </ui:UiBinder>
