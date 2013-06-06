@@ -7,7 +7,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class RootView extends ViewImpl implements RootPresenter.MyView {
+public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 
 	private final Widget widget;
 	
@@ -15,11 +15,11 @@ public class RootView extends ViewImpl implements RootPresenter.MyView {
 	@UiField HTMLPanel sideContentPanel;
 	@UiField HTMLPanel topContentPanel;
 
-	public interface Binder extends UiBinder<Widget, RootView> {
+	public interface Binder extends UiBinder<Widget, LayoutView> {
 	}
 
 	@Inject
-	public RootView(final Binder binder) {
+	public LayoutView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 
@@ -30,15 +30,15 @@ public class RootView extends ViewImpl implements RootPresenter.MyView {
 	
 	@Override
 	public void setInSlot(Object slot, Widget content) {
-		if (slot == RootPresenter.SLOT_SetMainContent)
+		if (slot == LayoutPresenter.SLOT_SetMainContent)
 		{			
 			setMainContent(content);
 		}
- 		else if (slot == RootPresenter.SLOT_SetSideContent)
+ 		else if (slot == LayoutPresenter.SLOT_SetSideContent)
 		{
 			setSideContent(content);
 		}
- 		else if (slot == RootPresenter.SLOT_SetTopContent)
+ 		else if (slot == LayoutPresenter.SLOT_SetTopContent)
 		{
 			setTopContent(content);
 		}

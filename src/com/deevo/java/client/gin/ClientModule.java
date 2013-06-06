@@ -21,8 +21,8 @@ import com.deevo.java.client.PerfilPresenter;
 import com.deevo.java.client.PerfilView;
 import com.deevo.java.client.EstudiantesPresenter;
 import com.deevo.java.client.EstudiantesView;
-import com.deevo.java.client.RootPresenter;
-import com.deevo.java.client.RootView;
+import com.deevo.java.client.LayoutPresenter;
+import com.deevo.java.client.LayoutView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -56,8 +56,8 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(LoginPresenter.class, LoginPresenter.MyView.class,
 				LoginView.class);
 
-		bindPresenter(RootPresenter.class, RootPresenter.MyView.class,
-				RootView.class, RootPresenter.MyProxy.class);
+		bindPresenter(LayoutPresenter.class, LayoutPresenter.MyView.class,
+				LayoutView.class, LayoutPresenter.MyProxy.class);
 	
 	}
 }
