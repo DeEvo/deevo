@@ -6,8 +6,42 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel>
-	Logeate para DeEvear 
-	<g:Button text="Iniciar Sesión" ui:field="loginButton"/>
+	<g:HTMLPanel width="600px" height="100px">
+		<g:Grid width="500px" height="80px" styleName="fondoInicioSesion">
+			<g:row>
+				<g:customCell>
+					<g:Grid width="439px" height="42px" cellPadding="1" cellSpacing="1" styleName="cuadroInicioSesion">
+				<g:row>
+					<g:customCell>
+						<g:Label text="Usuario" width="163px" styleName="labelLogin"/>
+					</g:customCell>
+					<g:customCell>
+						<g:Label text="Contraseña" styleName="labelLogin"/>
+					</g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell>
+						<g:TextBox width="175px" styleName="textBoxLogin"/>
+					</g:customCell>
+					<g:customCell>
+						<g:TextBox width="175px" styleName="textBoxLogin"/>
+					</g:customCell>
+					<g:customCell>
+						<g:Button text="Entrar" ui:field="loginButton" styleName="botonInicio"/>
+					</g:customCell>
+				</g:row>
+				<g:row>
+					<g:customCell>
+						<g:Label text="Recuperar contraseña" styleName="labelEnlace"/>
+					</g:customCell>
+					<g:customCell>
+						<g:Label text="Usuario Nuevo" styleName="labelEnlace"/>
+					</g:customCell>
+				</g:row>
+			</g:Grid>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
+	
 	</g:HTMLPanel>
 </ui:UiBinder>

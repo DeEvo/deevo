@@ -1,5 +1,36 @@
 .layout {
 	margin: auto;
 }
+.labelEnlace {
+	color: whitesmoke;
+	font-size: 12px;
+	text-align: left;
+	text-decoration: underline;
+}
+.labelLogin {
+	color: White;
+	font-size: 14px;
+	font-style: normal;
+	font-family: Arial Black;
+}
+.textBoxLogin {
+	border-right: ridge Silver;
+	border-left: ridge Silver;
+}
+.cuadroInicioSesion {
+	margin-right: 7px;
+	margin-left: 7px;
+	background-color: salmon;
+}
+.fondoInicioSesion {
+	background-color: salmon;
+}
+.botonInicio {
+	color: white;
+	border: 1px outset silver;
+	font-size: 12px;
+	font-family: Arial Black;
+	background-color: salmon;
+}
 /* Add css rules here for your application. */
 
