@@ -37,7 +37,7 @@ public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView> {
 		getView().getLoginButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				PlaceRequest request = new PlaceRequest(NameTokens.panel);				
+				PlaceRequest request = new PlaceRequest(NameTokens.main);				
 				placeManager.revealPlace(request);
 			}
 		});

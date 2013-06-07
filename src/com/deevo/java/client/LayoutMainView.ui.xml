@@ -20,16 +20,16 @@
 					</g:Cell>
 				</g:VerticalPanel>
 			</g:Dock>
+			<g:Dock direction="SOUTH">
+				<g:HTMLPanel ui:field="footContentPanel" height="30px">
+				</g:HTMLPanel>
+			</g:Dock>
 			<g:Dock direction="WEST">  
-				<g:HTMLPanel ui:field="menuContentPanel"  height="30px">
+				<g:HTMLPanel ui:field="menuContentPanel"  height="25px">
 				</g:HTMLPanel>
 			</g:Dock>
 			<g:Dock direction="CENTER">  
 				<g:HTMLPanel ui:field="mainContentPanel"  height="450px">
-				</g:HTMLPanel>
-			</g:Dock>
-			<g:Dock direction="SOUTH">
-				<g:HTMLPanel ui:field="footContentPanel" height="30px">
 				</g:HTMLPanel>
 			</g:Dock>			
 		</g:DockPanel>

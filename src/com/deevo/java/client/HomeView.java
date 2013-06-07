@@ -5,15 +5,15 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class IndexView extends ViewImpl implements IndexPresenter.MyView {
+public class HomeView extends ViewImpl implements HomePresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, IndexView> {
+	public interface Binder extends UiBinder<Widget, HomeView> {
 	}
 
 	@Inject
-	public IndexView(final Binder binder) {
+	public HomeView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 

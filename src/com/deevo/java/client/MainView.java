@@ -7,17 +7,17 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class PanelView extends ViewImpl implements PanelPresenter.MyView {
+public class MainView extends ViewImpl implements MainPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, PanelView> {
+	public interface Binder extends UiBinder<Widget, MainView> {
 	}
 
 	@UiField Button homeButton;
 	
 	@Inject
-	public PanelView(final Binder binder) {
+	public MainView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 

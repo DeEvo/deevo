@@ -2,15 +2,15 @@ package com.deevo.java.client.place;
 
 public class NameTokens {
 
-	public static final String index = "index";
+	public static final String home = "home";
 
-	public static final String panel = "panel";
+	public static final String main = "main";
 
-	public static String getIndex() {
-		return index;
+	public static String getHome() {
+		return home;
 	}
-	public static String getPanel() {
-		return panel;
+	public static String getMain() {
+		return main;
 	}
 
 }

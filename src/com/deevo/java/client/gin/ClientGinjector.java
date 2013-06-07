@@ -7,10 +7,10 @@ import com.google.gwt.inject.client.Ginjector;
 import com.google.gwt.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.google.gwt.inject.client.AsyncProvider;
-import com.deevo.java.client.IndexPresenter;
-import com.deevo.java.client.PanelPresenter;
+import com.deevo.java.client.HomePresenter;
+import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.LayoutPresenter;
-import com.deevo.java.client.LayoutPanelPresenter;
+import com.deevo.java.client.LayoutMainPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -19,12 +19,12 @@ public interface ClientGinjector extends Ginjector {
 
 	PlaceManager getPlaceManager();
 
-	AsyncProvider<IndexPresenter> getIndexPresenter();
+	AsyncProvider<HomePresenter> getHomePresenter();
 
-	AsyncProvider<PanelPresenter> getPanelPresenter();
+	AsyncProvider<MainPresenter> getMainPresenter();
 
 	AsyncProvider<LayoutPresenter> getRootPresenter();
 
-	AsyncProvider<LayoutPanelPresenter> getLayoutPanelPresenter();
+	AsyncProvider<LayoutMainPresenter> getLayoutMainPresenter();
 
 }

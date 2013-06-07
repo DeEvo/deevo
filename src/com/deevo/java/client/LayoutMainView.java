@@ -7,8 +7,8 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class LayoutPanelView extends ViewImpl implements
-		LayoutPanelPresenter.MyView {
+public class LayoutMainView extends ViewImpl implements
+		LayoutMainPresenter.MyView {
 
 	
 	@UiField HTMLPanel mainContentPanel;
@@ -19,11 +19,11 @@ public class LayoutPanelView extends ViewImpl implements
 	
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, LayoutPanelView> {
+	public interface Binder extends UiBinder<Widget, LayoutMainView> {
 	}
 
 	@Inject
-	public LayoutPanelView(final Binder binder) {
+	public LayoutMainView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 
@@ -34,23 +34,23 @@ public class LayoutPanelView extends ViewImpl implements
 	
 	@Override
 	public void setInSlot(Object slot, Widget content) {
-		if (slot == LayoutPanelPresenter.SLOT_SetMainContent)
+		if (slot == LayoutMainPresenter.SLOT_SetMainContent)
 		{			
 			setMainContent(content);
 		}
- 		else if (slot == LayoutPanelPresenter.SLOT_SetLoginContent)
+ 		else if (slot == LayoutMainPresenter.SLOT_SetLoginContent)
 		{
 			setLoginContent(content);
 		}
- 		else if (slot == LayoutPanelPresenter.SLOT_SetHeadContent)
+ 		else if (slot == LayoutMainPresenter.SLOT_SetHeadContent)
 		{
 			setHeadContent(content);
 		}
- 		else if (slot == LayoutPanelPresenter.SLOT_SetMenuContent)
+ 		else if (slot == LayoutMainPresenter.SLOT_SetMenuContent)
 		{
 			setMenuContent(content);
 		}
- 		else if (slot == LayoutPanelPresenter.SLOT_SetFootContent)
+ 		else if (slot == LayoutMainPresenter.SLOT_SetFootContent)
 		{
 			setFootContent(content);
 		}

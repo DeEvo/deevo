@@ -15,27 +15,27 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.Button;
 
-public class PanelPresenter extends
-		Presenter<PanelPresenter.MyView, PanelPresenter.MyProxy> {
+public class MainPresenter extends
+		Presenter<MainPresenter.MyView, MainPresenter.MyProxy> {
 
 	public interface MyView extends View {
 		public Button getHomeButton();
 	}
 	
 	@ProxyCodeSplit
-	@NameToken(NameTokens.panel)
-	public interface MyProxy extends ProxyPlace<PanelPresenter> {
+	@NameToken(NameTokens.main)
+	public interface MyProxy extends ProxyPlace<MainPresenter> {
 	}
 
 	@Inject
-	public PanelPresenter(final EventBus eventBus, final MyView view,
+	public MainPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}
 
 	@Override
 	protected void revealInParent() {
-		RevealContentEvent.fire(this, LayoutPanelPresenter.SLOT_SetMainContent, this);
+		RevealContentEvent.fire(this, LayoutMainPresenter.SLOT_SetMainContent, this);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class PanelPresenter extends
 		getView().getHomeButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				PlaceRequest request = new PlaceRequest(NameTokens.index);				
+				PlaceRequest request = new PlaceRequest(NameTokens.home);				
 				placeManager.revealPlace(request);
 			}
 		});

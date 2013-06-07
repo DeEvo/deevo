@@ -6,7 +6,5 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel>
-	<h1>MENU!! a 5!</h1>
-	</g:HTMLPanel>
+	<g:HTMLPanel/>
 </ui:UiBinder>
