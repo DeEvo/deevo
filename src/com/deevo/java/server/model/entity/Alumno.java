@@ -33,10 +33,6 @@ public class Alumno implements Serializable {
 	@OneToMany(mappedBy="alumno1")
 	private List<AlumnoAula> alumnoAulas1;
 
-	//bi-directional many-to-one association to AlumnoAula
-	@OneToMany(mappedBy="alumno2")
-	private List<AlumnoAula> alumnoAulas2;
-
 	//bi-directional many-to-one association to Estado
 	@OneToMany(mappedBy="alumno")
 	private List<Estado> estados;
@@ -82,14 +78,6 @@ public class Alumno implements Serializable {
 
 	public void setAlumnoAulas1(List<AlumnoAula> alumnoAulas1) {
 		this.alumnoAulas1 = alumnoAulas1;
-	}
-
-	public List<AlumnoAula> getAlumnoAulas2() {
-		return this.alumnoAulas2;
-	}
-
-	public void setAlumnoAulas2(List<AlumnoAula> alumnoAulas2) {
-		this.alumnoAulas2 = alumnoAulas2;
 	}
 
 	public List<Estado> getEstados() {
