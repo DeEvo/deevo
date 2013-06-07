@@ -33,14 +33,6 @@ public class PeriodoAcademico implements Serializable {
 	@OneToMany(mappedBy="periodoAcademico1")
 	private List<Aula> aulas1;
 
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="periodoAcademico2")
-	private List<Aula> aulas2;
-
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="periodoAcademico3")
-	private List<Aula> aulas3;
-
 	public PeriodoAcademico() {
 	}
 
@@ -82,22 +74,6 @@ public class PeriodoAcademico implements Serializable {
 
 	public void setAulas1(List<Aula> aulas1) {
 		this.aulas1 = aulas1;
-	}
-
-	public List<Aula> getAulas2() {
-		return this.aulas2;
-	}
-
-	public void setAulas2(List<Aula> aulas2) {
-		this.aulas2 = aulas2;
-	}
-
-	public List<Aula> getAulas3() {
-		return this.aulas3;
-	}
-
-	public void setAulas3(List<Aula> aulas3) {
-		this.aulas3 = aulas3;
 	}
 
 }

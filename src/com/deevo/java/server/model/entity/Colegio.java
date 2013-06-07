@@ -1,8 +1,12 @@
 package com.deevo.java.server.model.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 /**
@@ -39,17 +43,9 @@ public class Colegio implements Serializable {
 	@OneToMany(mappedBy="colegio1")
 	private List<Aula> aulas1;
 
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="colegio2")
-	private List<Aula> aulas2;
-
 	//bi-directional many-to-one association to ColegioProfesor
 	@OneToMany(mappedBy="colegio1")
 	private List<ColegioProfesor> colegioProfesors1;
-
-	//bi-directional many-to-one association to ColegioProfesor
-	@OneToMany(mappedBy="colegio2")
-	private List<ColegioProfesor> colegioProfesors2;
 
 	//bi-directional many-to-one association to Sesion
 	@OneToMany(mappedBy="colegio")
@@ -122,28 +118,12 @@ public class Colegio implements Serializable {
 		this.aulas1 = aulas1;
 	}
 
-	public List<Aula> getAulas2() {
-		return this.aulas2;
-	}
-
-	public void setAulas2(List<Aula> aulas2) {
-		this.aulas2 = aulas2;
-	}
-
 	public List<ColegioProfesor> getColegioProfesors1() {
 		return this.colegioProfesors1;
 	}
 
 	public void setColegioProfesors1(List<ColegioProfesor> colegioProfesors1) {
 		this.colegioProfesors1 = colegioProfesors1;
-	}
-
-	public List<ColegioProfesor> getColegioProfesors2() {
-		return this.colegioProfesors2;
-	}
-
-	public void setColegioProfesors2(List<ColegioProfesor> colegioProfesors2) {
-		this.colegioProfesors2 = colegioProfesors2;
 	}
 
 	public List<Sesion> getSesions() {

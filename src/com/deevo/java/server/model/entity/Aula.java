@@ -1,8 +1,16 @@
 package com.deevo.java.server.model.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 /**
@@ -26,11 +34,6 @@ public class Aula implements Serializable {
 	@JoinColumn(name="cod_col")
 	private Colegio colegio1;
 
-	//bi-directional many-to-one association to Colegio
-	@ManyToOne
-	@JoinColumn(name="cod_col")
-	private Colegio colegio2;
-
 	//bi-directional many-to-one association to GradoSeccion
 	@ManyToOne
 	@JoinColumns({
@@ -43,16 +46,6 @@ public class Aula implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="cod_per")
 	private PeriodoAcademico periodoAcademico1;
-
-	//bi-directional many-to-one association to PeriodoAcademico
-	@ManyToOne
-	@JoinColumn(name="cod_per")
-	private PeriodoAcademico periodoAcademico2;
-
-	//bi-directional many-to-one association to PeriodoAcademico
-	@ManyToOne
-	@JoinColumn(name="cod_per")
-	private PeriodoAcademico periodoAcademico3;
 
 	//bi-directional many-to-one association to Profesor
 	@ManyToOne
@@ -95,14 +88,6 @@ public class Aula implements Serializable {
 		this.colegio1 = colegio1;
 	}
 
-	public Colegio getColegio2() {
-		return this.colegio2;
-	}
-
-	public void setColegio2(Colegio colegio2) {
-		this.colegio2 = colegio2;
-	}
-
 	public GradoSeccion getGradoSeccion() {
 		return this.gradoSeccion;
 	}
@@ -117,23 +102,7 @@ public class Aula implements Serializable {
 
 	public void setPeriodoAcademico1(PeriodoAcademico periodoAcademico1) {
 		this.periodoAcademico1 = periodoAcademico1;
-	}
-
-	public PeriodoAcademico getPeriodoAcademico2() {
-		return this.periodoAcademico2;
-	}
-
-	public void setPeriodoAcademico2(PeriodoAcademico periodoAcademico2) {
-		this.periodoAcademico2 = periodoAcademico2;
-	}
-
-	public PeriodoAcademico getPeriodoAcademico3() {
-		return this.periodoAcademico3;
-	}
-
-	public void setPeriodoAcademico3(PeriodoAcademico periodoAcademico3) {
-		this.periodoAcademico3 = periodoAcademico3;
-	}
+}
 
 	public Profesor getProfesor() {
 		return this.profesor;

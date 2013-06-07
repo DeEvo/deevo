@@ -26,11 +26,6 @@ public class TestPrivilegio implements Serializable {
 	@JoinColumn(name="test_cod")
 	private Test test1;
 
-	//bi-directional many-to-one association to Test
-	@ManyToOne
-	@JoinColumn(name="test_cod")
-	private Test test2;
-
 	public TestPrivilegio() {
 	}
 
@@ -56,14 +51,6 @@ public class TestPrivilegio implements Serializable {
 
 	public void setTest1(Test test1) {
 		this.test1 = test1;
-	}
-
-	public Test getTest2() {
-		return this.test2;
-	}
-
-	public void setTest2(Test test2) {
-		this.test2 = test2;
 	}
 
 }

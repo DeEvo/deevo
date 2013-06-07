@@ -58,10 +58,6 @@ public class Test implements Serializable {
 	@OneToMany(mappedBy="test1")
 	private List<TestPrivilegio> testPrivilegios1;
 
-	//bi-directional many-to-one association to TestPrivilegio
-	@OneToMany(mappedBy="test2")
-	private List<TestPrivilegio> testPrivilegios2;
-
 	public Test() {
 	}
 
@@ -135,14 +131,6 @@ public class Test implements Serializable {
 
 	public void setTestPrivilegios1(List<TestPrivilegio> testPrivilegios1) {
 		this.testPrivilegios1 = testPrivilegios1;
-	}
-
-	public List<TestPrivilegio> getTestPrivilegios2() {
-		return this.testPrivilegios2;
-	}
-
-	public void setTestPrivilegios2(List<TestPrivilegio> testPrivilegios2) {
-		this.testPrivilegios2 = testPrivilegios2;
 	}
 
 }
