@@ -6,7 +6,6 @@ import java.util.List;
 
 
 
-
 /**
  * The persistent class for the ALUMNO database table.
  * 

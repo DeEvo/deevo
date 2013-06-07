@@ -102,7 +102,7 @@ public class Aula implements Serializable {
 
 	public void setPeriodoAcademico1(PeriodoAcademico periodoAcademico1) {
 		this.periodoAcademico1 = periodoAcademico1;
-	}
+}
 
 	public Profesor getProfesor() {
 		return this.profesor;

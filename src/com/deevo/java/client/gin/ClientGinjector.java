@@ -10,6 +10,7 @@ import com.google.gwt.inject.client.AsyncProvider;
 import com.deevo.java.client.IndexPresenter;
 import com.deevo.java.client.PanelPresenter;
 import com.deevo.java.client.LayoutPresenter;
+import com.deevo.java.client.LayoutPanelPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -23,5 +24,7 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<PanelPresenter> getPanelPresenter();
 
 	AsyncProvider<LayoutPresenter> getRootPresenter();
+
+	AsyncProvider<LayoutPanelPresenter> getLayoutPanelPresenter();
 
 }

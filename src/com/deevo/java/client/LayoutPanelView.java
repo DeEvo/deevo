@@ -7,20 +7,23 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
+public class LayoutPanelView extends ViewImpl implements
+		LayoutPanelPresenter.MyView {
 
-	private final Widget widget;
 	
 	@UiField HTMLPanel mainContentPanel;
 	@UiField HTMLPanel headContentPanel;
 	@UiField HTMLPanel footContentPanel;
 	@UiField HTMLPanel loginContentPanel;
+	@UiField HTMLPanel menuContentPanel;
+	
+	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, LayoutView> {
+	public interface Binder extends UiBinder<Widget, LayoutPanelView> {
 	}
 
 	@Inject
-	public LayoutView(final Binder binder) {
+	public LayoutPanelView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 
@@ -31,19 +34,23 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 	
 	@Override
 	public void setInSlot(Object slot, Widget content) {
-		if (slot == LayoutPresenter.SLOT_SetMainContent)
+		if (slot == LayoutPanelPresenter.SLOT_SetMainContent)
 		{			
 			setMainContent(content);
 		}
- 		else if (slot == LayoutPresenter.SLOT_SetLoginContent)
+ 		else if (slot == LayoutPanelPresenter.SLOT_SetLoginContent)
 		{
 			setLoginContent(content);
 		}
- 		else if (slot == LayoutPresenter.SLOT_SetHeadContent)
+ 		else if (slot == LayoutPanelPresenter.SLOT_SetHeadContent)
 		{
 			setHeadContent(content);
 		}
- 		else if (slot == LayoutPresenter.SLOT_SetFootContent)
+ 		else if (slot == LayoutPanelPresenter.SLOT_SetMenuContent)
+		{
+			setMenuContent(content);
+		}
+ 		else if (slot == LayoutPanelPresenter.SLOT_SetFootContent)
 		{
 			setFootContent(content);
 		}
@@ -79,7 +86,16 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 			headContentPanel.add(content);
 		}		
 	}
-
+	
+	private void setMenuContent(Widget content)
+	{
+		menuContentPanel.clear();
+		if (content != null)
+		{
+			menuContentPanel.add(content);
+		}		
+	}
+	
 	private void setFootContent(Widget content)
 	{
 		footContentPanel.clear();

@@ -6,5 +6,8 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel/>
+	<g:HTMLPanel>
+	<h1>Bienvenidos al panel del usuario....</h1>
+	<g:Button text="Volver al Home" ui:field="homeButton"/>
+	</g:HTMLPanel>
 </ui:UiBinder>
