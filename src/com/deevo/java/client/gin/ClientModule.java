@@ -27,6 +27,8 @@ import com.deevo.java.client.LayoutMainPresenter;
 import com.deevo.java.client.LayoutMainView;
 import com.deevo.java.client.MenuAdminPresenter;
 import com.deevo.java.client.MenuAdminView;
+import com.deevo.java.client.SesionPresenter;
+import com.deevo.java.client.SesionView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -70,5 +72,8 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(MenuAdminPresenter.class,
 				MenuAdminPresenter.MyView.class, MenuAdminView.class);
 	
+
+		bindPresenterWidget(SesionPresenter.class,
+				SesionPresenter.MyView.class, SesionView.class);
 	}
 }

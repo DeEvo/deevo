@@ -14,7 +14,7 @@ public class LayoutMainView extends ViewImpl implements
 	@UiField HTMLPanel mainContentPanel;
 	@UiField HTMLPanel headContentPanel;
 	@UiField HTMLPanel footContentPanel;
-	@UiField HTMLPanel loginContentPanel;
+	@UiField HTMLPanel sesionContentPanel;
 	@UiField HTMLPanel menuContentPanel;
 	
 	private final Widget widget;
@@ -38,9 +38,9 @@ public class LayoutMainView extends ViewImpl implements
 		{			
 			setMainContent(content);
 		}
- 		else if (slot == LayoutMainPresenter.SLOT_SetLoginContent)
+ 		else if (slot == LayoutMainPresenter.SLOT_SetSesionContent)
 		{
-			setLoginContent(content);
+			setSesionContent(content);
 		}
  		else if (slot == LayoutMainPresenter.SLOT_SetHeadContent)
 		{
@@ -69,12 +69,12 @@ public class LayoutMainView extends ViewImpl implements
 	    }
 	}
 
-	private void setLoginContent(Widget content)
+	private void setSesionContent(Widget content)
 	{
-		loginContentPanel.clear();
+		sesionContentPanel.clear();
 		if (content != null)
 		{
-			loginContentPanel.add(content);
+			sesionContentPanel.add(content);
 		}		
 	}
 	
