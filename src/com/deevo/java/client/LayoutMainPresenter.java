@@ -15,7 +15,7 @@ public class LayoutMainPresenter extends
 		Presenter<LayoutMainPresenter.MyView, LayoutMainPresenter.MyProxy> {
 
 	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_SetLoginContent = new Type<RevealContentHandler<?>>();
+	public static final Type<RevealContentHandler<?>> SLOT_SetSesionContent = new Type<RevealContentHandler<?>>();
 	
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetHeadContent = new Type<RevealContentHandler<?>>();
@@ -31,7 +31,7 @@ public class LayoutMainPresenter extends
 	
 
 	@Inject
-	LoginPresenter loginPresenter;
+	SesionPresenter sesionPresenter;
 	
 	@Inject
 	HeaderPresenter headPresenter;
@@ -59,7 +59,7 @@ public class LayoutMainPresenter extends
 	protected void onReveal() {
 		super.onReveal();
 
-		setInSlot(SLOT_SetLoginContent, loginPresenter);
+		setInSlot(SLOT_SetSesionContent, sesionPresenter);
 		setInSlot(SLOT_SetHeadContent, headPresenter);
 		setInSlot(SLOT_SetMenuContent, menuPresenter);
 		setInSlot(SLOT_SetFootContent, footPresenter);

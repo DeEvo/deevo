@@ -3,15 +3,16 @@
 }
 .labelEnlace {
 	color: whitesmoke;
-	font-size: 12px;
+	font-size: 11px;
+	vertical-align: top;
 	text-align: left;
 	text-decoration: underline;
 }
 .labelLogin {
 	color: White;
-	font-size: 14px;
+	font-size: 13px;
 	font-style: normal;
-	font-family: Arial Black;
+	font-family: Swiss921 BT;
 }
 .textBoxLogin {
 	border-right: ridge Silver;
@@ -28,9 +29,37 @@
 .botonInicio {
 	color: white;
 	border: 1px outset silver;
-	font-size: 12px;
-	font-family: Arial Black;
+	font-size: 14px;
+	font-family: Swiss921 BT;
 	background-color: salmon;
+}
+.labelBienvenido {
+	color: #99ccff;
+	font-size: 20px;
+	font-family: GrilledCheese BTN Wide Blk;
+	text-align: center;
+}
+.labelFooter {
+	color: White;
+	border-left: 1px outset #ff9999;
+	font-size: 14px;
+	font-family: Swiss921 BT;
+	text-align: center;
+}
+.labelSesion {
+	color: White;
+	border-right: 1px inset #ff9999;
+	font-size: 16px;
+	font-style: normal;
+	font-family: Swiss921 BT;
+	vertical-align: middle;
+	text-align: center;
+	background-color: salmon;
+}
+.layoutarriba {
+	margin-top: 1px;
+	table-layout: auto;
+
 }
 /* Add css rules here for your application. */
 

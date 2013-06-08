@@ -6,7 +6,25 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel>
-	<h3>Esto es todo amigos - DeEvo Software - 2013 - Pal' Mundo</h3>
+	<g:HTMLPanel styleName="fondoInicioSesion" width="980px">
+	<g:Grid width="980px" height="30px" styleName="fondoInicioSesion">
+		<g:row>
+			<g:customCell>
+				<g:Label text="DeEvo Software" styleName="labelLogin" width="677px"/>
+			</g:customCell>
+			<g:customCell>
+				<g:Label text="Acerca" styleName="labelFooter" width="70px"/>
+			</g:customCell>
+			<g:customCell>
+				<g:Label text="Contacto" width="70px" styleName="labelFooter"/>
+			</g:customCell>
+			<g:customCell>
+				<g:Label text="Ayuda" styleName="labelFooter" width="70px"/>
+			</g:customCell>
+			<g:customCell>
+				<g:Label text="FAQ" width="70px" styleName="labelFooter"/>
+			</g:customCell>
+		</g:row>
+	</g:Grid>
 	</g:HTMLPanel>
 </ui:UiBinder>
