@@ -59,7 +59,20 @@
 .layoutarriba {
 	margin-top: 1px;
 	table-layout: auto;
-
+	text-align: center;
+}
+.labelFormulario {
+	color: lightseagreen;
+	font-size: 13px;
+	font-family: verdana;
+	text-align: right;
+}
+.tituloFormulario {
+	color: Black;
+	margin-left: 5px;
+	font-size: 24px;
+	font-style: normal;
+	font-family: Swiss921 BT;
 }
 /* Add css rules here for your application. */
 
