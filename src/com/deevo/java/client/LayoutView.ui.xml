@@ -11,7 +11,7 @@
 			<g:Dock direction="NORTH" horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
 				<g:VerticalPanel width="100%" styleName="layout">
 					<g:Cell horizontalAlignment="ALIGN_RIGHT">
-						<g:HTMLPanel ui:field="loginContentPanel" height="70px">
+						<g:HTMLPanel ui:field="loginContentPanel">
 						</g:HTMLPanel>
 					</g:Cell>
 					<g:Cell horizontalAlignment="ALIGN_CENTER">

@@ -7,7 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel width="100%" height="70px">
-		<g:Grid width="980px" height="" styleName="fondoInicioSesion" cellSpacing="1">
+		<g:Grid width="980px" styleName="fondoInicioSesion" cellSpacing="1">
 			<g:row>
 				<g:customCell>
 					<g:Image width="353px" height="60px"/>

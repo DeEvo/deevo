@@ -13,6 +13,8 @@ import com.deevo.java.client.LoginPresenter;
 import com.deevo.java.client.LoginView;
 import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.MainView;
+import com.deevo.java.client.NuevoAlumnoPresenter;
+import com.deevo.java.client.NuevoAlumnoView;
 import com.deevo.java.client.PerfilPresenter;
 import com.deevo.java.client.PerfilView;
 import com.deevo.java.client.EstudiantesPresenter;
@@ -75,5 +77,10 @@ public class ClientModule extends AbstractPresenterModule {
 
 		bindPresenterWidget(SesionPresenter.class,
 				SesionPresenter.MyView.class, SesionView.class);
+
+		bindPresenter(NuevoAlumnoPresenter.class,
+				NuevoAlumnoPresenter.MyView.class, NuevoAlumnoView.class,
+				NuevoAlumnoPresenter.MyProxy.class);
+
 	}
 }
