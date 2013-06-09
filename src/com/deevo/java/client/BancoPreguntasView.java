@@ -5,15 +5,16 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class BodyView extends ViewImpl implements BodyPresenter.MyView {
+public class BancoPreguntasView extends ViewImpl implements
+		BancoPreguntasPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, BodyView> {
+	public interface Binder extends UiBinder<Widget, BancoPreguntasView> {
 	}
 
 	@Inject
-	public BodyView(final Binder binder) {
+	public BancoPreguntasView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 
