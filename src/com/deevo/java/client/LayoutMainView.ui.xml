@@ -7,7 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel width="980px" height="100%" styleName="layout">
-		<g:DockPanel width="100%" height="100%" horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_TOP">
+		<g:DockPanel width="100%" height="100%" horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_TOP" borderWidth="1">
 			<g:Dock direction="NORTH" horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
 				<g:VerticalPanel width="100%" styleName="layout">
 					<g:Cell horizontalAlignment="ALIGN_RIGHT">
@@ -25,12 +25,10 @@
 				</g:HTMLPanel>
 			</g:Dock>
 			<g:Dock direction="WEST">  
-				<g:HTMLPanel ui:field="menuContentPanel"  height="25px">
-				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="menuContentPanel" height="450px" width="110px"/>
 			</g:Dock>
 			<g:Dock direction="CENTER">  
-				<g:HTMLPanel ui:field="mainContentPanel"  height="450px">
-				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="mainContentPanel"  height="450px"/>
 			</g:Dock>			
 		</g:DockPanel>
 	</g:HTMLPanel> 

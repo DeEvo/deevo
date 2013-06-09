@@ -31,6 +31,8 @@ import com.deevo.java.client.MenuAdminPresenter;
 import com.deevo.java.client.MenuAdminView;
 import com.deevo.java.client.SesionPresenter;
 import com.deevo.java.client.SesionView;
+import com.deevo.java.client.MenuPsicologoPresenter;
+import com.deevo.java.client.MenuPsicologoView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -82,5 +84,8 @@ public class ClientModule extends AbstractPresenterModule {
 				NuevoAlumnoPresenter.MyView.class, NuevoAlumnoView.class,
 				NuevoAlumnoPresenter.MyProxy.class);
 
+
+		bindPresenterWidget(MenuPsicologoPresenter.class,
+				MenuPsicologoPresenter.MyView.class, MenuPsicologoView.class);
 	}
 }

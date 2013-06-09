@@ -7,7 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel>
-	    <g:Grid width="100%" height="375px">
+	    <g:Grid width="100%">
 	    	<g:row>
 	    		<g:customCell>
 	    			<g:Label text="Nuevo Alumno" styleName="tituloFormulario"/>
@@ -20,7 +20,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%">
+	    			<g:Grid width="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
 	    			<g:Label text="DNI" styleName="labelFormulario"/>
@@ -90,13 +90,13 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layoutarriba">
+	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="8">
 	    				<g:row>
 	    					<g:customCell>
 	    						<g:Button width="90px" text="Limpiar" styleName="layout"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="100px" text="Aceptar" styleName="layout"/>
+	    						<g:Button width="100px" text="Ingresar" styleName="layout"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>

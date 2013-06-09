@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
+	ui:generateLocales='default'>
+
+	<g:HTMLPanel width="200px" height="100%">
+		<g:StackLayoutPanel width="200px" unit="CM" height="100%">
+			<g:stack>
+				<g:header size="1">Perfil</g:header>
+				<g:Tree>
+						<g:Label text="Ver Perfil"/>
+						<g:Label text="Actulizar datos"/>
+					</g:Tree>
+			</g:stack>
+			<g:stack>
+				<g:header size="1">Alumnos</g:header>
+				<g:Tree>
+						<g:Label text="Nuevo Alumno" ui:field="nuevoAlumno"/>
+						<g:Label text="Buscar Alumno"/>
+					</g:Tree>
+			</g:stack>
+			<g:stack>
+				<g:header size="1">Profesores</g:header>
+				<g:Tree>
+						<g:Label text="Nuevo Profesor"/>
+						<g:Label text="Busqueda Profesor"/>
+					</g:Tree>
+			</g:stack>
+			<g:stack>
+				<g:header size="1">DeEvo</g:header>
+				<g:Tree>
+						<g:Label text="Inicio"/>
+					</g:Tree>
+			</g:stack>
+		</g:StackLayoutPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>
