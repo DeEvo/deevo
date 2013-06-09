@@ -34,9 +34,9 @@ public class MenuPsicologoView extends ViewImpl implements
 
 	@Inject
 	PlaceManager placeManager;
-	
+
 	@UiHandler("nuevoAlumno")
-	void onLabelClick(ClickEvent event) {
+	void onNuevoAlumnoClick(ClickEvent event) {
 		PlaceRequest request = new PlaceRequest(NameTokens.nuevoalumno);				
 		placeManager.revealPlace(request);
 	}

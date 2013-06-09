@@ -8,6 +8,8 @@ public class NameTokens {
 
 	public static final String nuevoalumno = "nuevoalumno";
 
+	public static final String busquedaalumno = "busquedaalumno";
+
 	public static String getHome() {
 		return home;
 	}
@@ -16,6 +18,9 @@ public class NameTokens {
 	}
 	public static String getNuevoalumno() {
 		return nuevoalumno;
+	}
+	public static String getBusquedaalumno() {
+		return busquedaalumno;
 	}
 
 }

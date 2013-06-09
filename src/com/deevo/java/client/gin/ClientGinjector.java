@@ -12,6 +12,7 @@ import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutMainPresenter;
 import com.deevo.java.client.NuevoAlumnoPresenter;
+import com.deevo.java.client.BusquedaAlumnoPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -29,5 +30,7 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<LayoutMainPresenter> getLayoutMainPresenter();
 
 	AsyncProvider<NuevoAlumnoPresenter> getNuevoAlumnoPresenter();
+
+	AsyncProvider<BusquedaAlumnoPresenter> getBusquedaAlumnoPresenter();
 
 }
