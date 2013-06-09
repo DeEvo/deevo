@@ -28,10 +28,13 @@
 }
 .botonInicio {
 	color: white;
-	border: 1px outset silver;
+	border: 1px outset cadetblue;
 	font-size: 14px;
 	font-family: Swiss921 BT;
-	background-color: salmon;
+	vertical-align: middle;
+	text-align: center;
+	background-color: cadetblue;
+	table-layout: auto;
 }
 .labelBienvenido {
 	color: #99ccff;
@@ -47,10 +50,10 @@
 	text-align: center;
 }
 .labelSesion {
-	color: White;
-	border-right: 1px inset #ff9999;
-	font-size: 16px;
-	font-style: normal;
+	color: white;
+	border-right: 1px outset antiquewhite;
+	border-left: 1px inset antiquewhite;
+	font-size: 14px;
 	font-family: Swiss921 BT;
 	vertical-align: middle;
 	text-align: center;
@@ -74,11 +77,12 @@
 	font-style: normal;
 	font-family: Swiss921 BT;
 }
+.labelsubformulario {
+	color: black;
+	margin: auto 5px;
+	font-size: 14px;
+	font-family: verdana;
+
+}
 /* Add css rules here for your application. */
-
-/* Del ejm de layou*/
-
-
-
-/*fin Del ejm de layou*/
 

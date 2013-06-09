@@ -22,13 +22,13 @@
 						<g:Image width="73px" height="100%"/>
 					</g:customCell>
 					<g:customCell>
-						<g:Label text="Usuario" width="80px" styleName="labelSesion" height="25px"/>
+						<g:Label text="Usuario" width="80px" styleName="botonInicio" height="25px"/>
 					</g:customCell>
 					<g:customCell>
-						<g:Label text="Perfil" styleName="labelSesion" width="80px" height="25px"/>
+						<g:Label text="Perfil" styleName="botonInicio" width="80px" height="25px"/>
 					</g:customCell>
 					<g:customCell>
-						<g:Button text="Cerrar Sesión" styleName="labelSesion" width="120px" height="25px" ui:field="cerrarButton"/>
+						<g:Button text="Cerrar Sesión" styleName="botonInicio" width="120px" height="25px" ui:field="cerrarButton"/>
 					</g:customCell>
 				</g:row>
 			</g:Grid>

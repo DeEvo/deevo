@@ -16,7 +16,6 @@ public class LoginView extends ViewImpl implements LoginPresenter.MyView {
 
 	@UiField Button loginButton;
 	
-	
 	@Inject
 	public LoginView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
