@@ -101,7 +101,7 @@ public class NuevaPersonaPresenter extends
 		@Override
 		public void onFailure(Throwable caught) {
 			// TODO Auto-generated method stub
-			Window.alert("Error Fatal");
+			Window.alert("Error: "+ caught.getMessage());
 			
 		}
 	};

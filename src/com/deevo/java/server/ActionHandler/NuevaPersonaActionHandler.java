@@ -39,9 +39,9 @@ public class NuevaPersonaActionHandler implements
 			try{
 			perdao.createPersona(persona);
 			}catch(EntityExistsException a){
-				throw new ActionException("La Persona ya existe");
+				throw new ActionException("La Persona ya existe "+a.getMessage());
 			}catch(Throwable a){
-				throw new ActionException("ERROR. Solicitar ayuda al administrador");
+				throw new ActionException("Solicitar ayuda al administrador");
 			}
 			
 		return new NuevaPersonaResult("Exito");
