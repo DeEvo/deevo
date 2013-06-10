@@ -77,7 +77,7 @@ public class NuevaPersonaPresenter extends
 						getView().getNombresTexbox().getText(),
 						getView().getAppaternTexbox().getText(),
 						getView().getApmaternTexbox().getText(),
-						null,
+						getView().getFnacTexbox().getValue(),
 						Integer.parseInt(getView().getTelfTexbox().getText()),
 						Integer.parseInt(getView().getCelTexbox().getText()),
 						getView().getDirTexbox().getText(),

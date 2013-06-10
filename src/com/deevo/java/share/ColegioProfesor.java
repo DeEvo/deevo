@@ -20,7 +20,7 @@ public class ColegioProfesor implements Serializable {
 
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
-	@JoinColumn(name="cod_col")
+	@JoinColumn(name="cod_col",insertable=false, updatable=false)
 	private Colegio colegio1;
 
 	public ColegioProfesor() {

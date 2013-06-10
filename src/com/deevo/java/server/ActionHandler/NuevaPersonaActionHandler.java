@@ -22,8 +22,8 @@ public class NuevaPersonaActionHandler implements
 	public NuevaPersonaResult execute(NuevaPersona action, ExecutionContext context)
 			throws ActionException {
 			Persona persona = new Persona();
-			persona.setPerDni("12378456");
-			/*persona.setPerDni(String.valueOf(action.getDni()));
+			//persona.setPerDni("12378456");
+			persona.setPerDni(String.valueOf(action.getDni()));
 			persona.setPerNom(action.getNombre());
 			persona.setPerAppatern(action.getAppatern());
 			persona.setPerAppmatern(action.getApmatern());
@@ -33,7 +33,7 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerTelf(action.getTelefono());
 			persona.setPerNac(action.getFechanac());
 			persona.setPerEmail(action.getEmail());
-			persona.setPerEstc(action.getEstc());*/
+			persona.setPerEstc(action.getEstc());
 			
 			Personadao perdao = new Personadao();
 			try{
