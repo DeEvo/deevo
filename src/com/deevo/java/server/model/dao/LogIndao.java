@@ -10,12 +10,12 @@ import javax.persistence.RollbackException;
 
 
 import com.deevo.java.server.EMF;
-import com.deevo.java.share.LogIn;
+import com.deevo.java.share.Login;
 
 public class LogIndao {
 
 	
-	public void createLogIn(LogIn logIn) throws EntityExistsException , Throwable {
+	public void createLogin(Login logIn) throws EntityExistsException , Throwable {
 		
 		EntityManager em = EMF.get().createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -38,13 +38,13 @@ public class LogIndao {
 		}
 		  }
 
-		  public LogIn retrieveLogIn(String per_dni) {
+		  public Login retrieveLogin(String per_dni) {
 
 			EntityManager em = EMF.get().createEntityManager();
 
-		    LogIn logIn= null;
+		    Login logIn= null;
 		    try {
-		      logIn = em.find(LogIn.class, per_dni);
+		      logIn = em.find(Login.class, per_dni);
 		    }
 		    finally {
 		      em.close();
@@ -54,10 +54,10 @@ public class LogIndao {
 		  
 		  
 		  @SuppressWarnings("unchecked")
-		public List<LogIn> retrieveAccounts() {
+		public List<Login> retrieveAccounts() {
 			  
 		    EntityManager em = EMF.get().createEntityManager();
-		    List<LogIn> list = null;
+		    List<Login> list = null;
 		    
 		    try {
 		    	String qery = "SELECT x FROM PadreFamilia x ";
@@ -70,11 +70,11 @@ public class LogIndao {
 		    return list;
 		  }
 		   
-		  public LogIn updateLogIn(LogIn logIn) {
+		  public Login updateLogin(Login logIn) {
 			  
 			EntityManager em = EMF.get().createEntityManager();
 		    EntityTransaction tx = em.getTransaction();
-		    LogIn logIn2 = null;
+		    Login logIn2 = null;
 		    try {
 		      tx.begin();
 		      logIn2 = em.merge(logIn);
@@ -91,7 +91,7 @@ public class LogIndao {
 		  }
 		  
 		  
-		  public void deleteAccount(LogIn logIn) {
+		  public void deleteAccount(Login logIn) {
 			  
 		  EntityManager em = EMF.get().createEntityManager();
 		  EntityTransaction tx = em.getTransaction();
