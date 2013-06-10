@@ -184,4 +184,22 @@ public class Persona implements Serializable {
 		this.usuarios = usuarios;
 	}
 
+	public String getPerAppatern() {
+		return perAppatern;
+	}
+
+	public void setPerAppatern(String perAppatern) {
+		this.perAppatern = perAppatern;
+	}
+
+	public String getPerAppmatern() {
+		return perAppmatern;
+	}
+
+	public void setPerAppmatern(String perAppmatern) {
+		this.perAppmatern = perAppmatern;
+	}
+	
+	
+
 }

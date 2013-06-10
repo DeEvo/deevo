@@ -17,6 +17,9 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 	private Integer celular;
 	private String direccion;
 	private String email;
+	private String apmatern;
+	private String appatern;
+	private String estc;
 
 	@SuppressWarnings("unused")
 	private NuevaPersona() {
@@ -25,7 +28,7 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
 	public NuevaPersona(Integer dni, String nombre, String apaterno,
 			String amaterno, Date fechanac, Integer telefono, Integer celular,
-			String direccion, String email) {
+			String direccion, String email, String apmatern, String appatern, String estc) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apaterno = apaterno;
@@ -35,6 +38,9 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		this.celular = celular;
 		this.direccion = direccion;
 		this.email = email;
+		this.appatern = appatern;
+		this.apmatern = apmatern;
+		this.estc = estc;
 	}
 
 	public Integer getDni() {
@@ -72,4 +78,18 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 	public String getEmail() {
 		return email;
 	}
+
+	public String getApmatern() {
+		return apmatern;
+	}
+
+	public String getAppatern() {
+		return appatern;
+	}
+
+	public String getEstc() {
+		return estc;
+	}
+
+	
 }
