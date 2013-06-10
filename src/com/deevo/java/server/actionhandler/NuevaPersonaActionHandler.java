@@ -1,4 +1,4 @@
-package com.deevo.java.server.ActionHandler;
+package com.deevo.java.server.actionhandler;
 
 import javax.persistence.EntityExistsException;
 
