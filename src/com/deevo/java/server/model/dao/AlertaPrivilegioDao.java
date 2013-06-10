@@ -2,20 +2,24 @@ package com.deevo.java.server.model.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.RollbackException;
+
 import com.deevo.java.server.EMF;
 import com.deevo.java.share.AlertaPrivilegio;
+
 
 public class AlertaPrivilegioDao {
 
 	
-	public boolean existeAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
+public boolean existeAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
 		
 		EntityManager em = EMF.get().createEntityManager();
 		AlertaPrivilegio alertaprivilegio2= null;
 	    try {
-	      alertaprivilegio2 = em.find(AlertaPrivilegio.class, alertaprivilegio.getId());
+	      alertaprivilegio2 = em.find(AlertaPrivilegio.class, alertaprivilegio);
 	    }
 	    finally {
 	      em.close();
@@ -23,11 +27,11 @@ public class AlertaPrivilegioDao {
 	    if(alertaprivilegio2 == null) return false;
 	    
 	    return true;
-			  }
+		}
 		
 
 
-		public void createAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
+		public void createAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -36,24 +40,29 @@ public class AlertaPrivilegioDao {
 				       tx.begin();
 				       em.persist(alertaprivilegio);
 				       tx.commit();
+				     }catch ( EntityExistsException | RollbackException e){
+						 throw new EntityExistsException();
 				     }
 				     catch (Throwable t) {
 				       t.printStackTrace();
 				       tx.rollback();
+				       throw t;
 				     }
 				     finally {
 				       em.close();
 				     }
 			  }
 
-			  public AlertaPrivilegio retrieveAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
+			  public AlertaPrivilegio retrieveAlertaPrivilegio(AlertaPrivilegio alertaprivilegio)  throws Throwable{
 
 				EntityManager em = EMF.get().createEntityManager();
 
 			    AlertaPrivilegio alertaprivilegio2= null;
 			    try {
 			      alertaprivilegio2 = em.find(AlertaPrivilegio.class, alertaprivilegio.getId());
-			    }
+			    }catch (Throwable t) {
+				       throw t;
+				     }
 			    finally {
 			      em.close();
 			    }
@@ -62,7 +71,7 @@ public class AlertaPrivilegioDao {
 			  
 			  
 			  @SuppressWarnings("unchecked")
-			public List<AlertaPrivilegio> retrieveAlertaPrivilegios() {
+			public List<AlertaPrivilegio> retrieveAlertaPrivilegios() throws Throwable{
 				  
 			    EntityManager em = EMF.get().createEntityManager();	
 			    List<AlertaPrivilegio> list = null;
@@ -73,13 +82,14 @@ public class AlertaPrivilegioDao {
 		          //  list = q.getResultList();
 			    }catch(Throwable t){
 			    	t.printStackTrace();
+			        throw t;
 		        } finally {
 		            em.close();
 		        }
 		        return list;
 			  }
 			   
-			  public AlertaPrivilegio updateAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
+			  public AlertaPrivilegio updateAlertaPrivilegio(AlertaPrivilegio alertaprivilegio)  throws Throwable {
 				  
 				EntityManager em = EMF.get().createEntityManager();
 			    EntityTransaction tx = em.getTransaction();
@@ -92,6 +102,7 @@ public class AlertaPrivilegioDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();
@@ -100,7 +111,7 @@ public class AlertaPrivilegioDao {
 			  }
 			  
 			  
-			  public void deleteAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
+			  public void deleteAlertaPrivilegio(AlertaPrivilegio alertaprivilegio)  throws Throwable  {
 				  
 			  EntityManager em = EMF.get().createEntityManager();
 			  EntityTransaction tx = em.getTransaction();
@@ -113,6 +124,7 @@ public class AlertaPrivilegioDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();
