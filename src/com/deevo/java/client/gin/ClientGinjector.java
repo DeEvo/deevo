@@ -28,6 +28,7 @@ import com.deevo.java.client.SubirRespuestasPresenter;
 import com.deevo.java.client.NuevaAlertaPresenter;
 import com.deevo.java.client.BandejaAlertaPresenter;
 import com.deevo.java.client.ElaborarPruebasPresenter;
+import com.deevo.java.client.NuevoUsuarioPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -77,5 +78,7 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<BandejaAlertaPresenter> getBandejaAlertaPresenter();
 
 	AsyncProvider<ElaborarPruebasPresenter> getElaborarPruebasPresenter();
+
+	AsyncProvider<NuevoUsuarioPresenter> getNuevoUsuarioPresenter();
 
 }

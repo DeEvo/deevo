@@ -59,6 +59,8 @@ import com.deevo.java.client.BandejaAlertaPresenter;
 import com.deevo.java.client.BandejaAlertaView;
 import com.deevo.java.client.ElaborarPruebasPresenter;
 import com.deevo.java.client.ElaborarPruebasView;
+import com.deevo.java.client.NuevoUsuarioPresenter;
+import com.deevo.java.client.NuevoUsuarioView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -170,5 +172,9 @@ public class ClientModule extends AbstractPresenterModule {
 				ElaborarPruebasPresenter.MyView.class,
 				ElaborarPruebasView.class,
 				ElaborarPruebasPresenter.MyProxy.class);
+
+		bindPresenter(NuevoUsuarioPresenter.class,
+				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
+				NuevoUsuarioPresenter.MyProxy.class);
 	}
 }
