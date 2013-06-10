@@ -6,7 +6,7 @@ public class NameTokens {
 
 	public static final String main = "main";
 
-	public static final String nuevoalumno = "nuevoalumno";
+	public static final String nuevapesona = "nuevapesona";
 
 	public static final String busquedaalumno = "busquedaalumno";
 
@@ -46,8 +46,8 @@ public class NameTokens {
 	public static String getMain() {
 		return main;
 	}
-	public static String getNuevoalumno() {
-		return nuevoalumno;
+	public static String getNuevaPesona() {
+		return nuevapesona;
 	}
 	public static String getBusquedaalumno() {
 		return busquedaalumno;

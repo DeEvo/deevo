@@ -22,23 +22,24 @@ public class NuevaPersonaActionHandler implements
 	public NuevaPersonaResult execute(NuevaPersona action, ExecutionContext context)
 			throws ActionException {
 			Persona persona = new Persona();
-			persona.setPerDni(String.valueOf(action.getDni()));
+			persona.setPerDni("12378456");
+			/*persona.setPerDni(String.valueOf(action.getDni()));
 			persona.setPerNom(action.getNombre());
+			persona.setPerAppatern(action.getAppatern());
+			persona.setPerAppmatern(action.getApmatern());
 			persona.setPerDir(action.getDireccion());
 			persona.setPerCan(0);
-			persona.setPerAppatern(action.getApaterno());
-			persona.setPerAppmatern(action.getAmaterno());
 			persona.setPerCel(action.getCelular());
 			persona.setPerTelf(action.getTelefono());
 			persona.setPerNac(action.getFechanac());
 			persona.setPerEmail(action.getEmail());
-			persona.setPerEstc(action.getEstc());
+			persona.setPerEstc(action.getEstc());*/
 			
 			Personadao perdao = new Personadao();
 			try{
 			perdao.createPersona(persona);
 			}catch(EntityExistsException a){
-				throw new ActionException("La persona ya existe");
+				throw new ActionException("La Persona ya existe");
 			}catch(Throwable a){
 				throw new ActionException("ERROR. Solicitar ayuda al administrador");
 			}

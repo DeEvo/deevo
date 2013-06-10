@@ -11,7 +11,7 @@ import com.deevo.java.client.HomePresenter;
 import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutMainPresenter;
-import com.deevo.java.client.NuevoAlumnoPresenter;
+import com.deevo.java.client.NuevaPersonaPresenter;
 import com.deevo.java.client.BusquedaAlumnoPresenter;
 import com.deevo.java.client.PerfilPresenter;
 import com.deevo.java.client.EPsicomotrizPresenter;
@@ -44,7 +44,7 @@ public interface ClientGinjector extends Ginjector {
 
 	AsyncProvider<LayoutMainPresenter> getLayoutMainPresenter();
 
-	AsyncProvider<NuevoAlumnoPresenter> getNuevoAlumnoPresenter();
+	AsyncProvider<NuevaPersonaPresenter> getNuevaPersonaPresenter();
 
 	AsyncProvider<BusquedaAlumnoPresenter> getBusquedaAlumnoPresenter();
 

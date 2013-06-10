@@ -11,8 +11,8 @@ import com.deevo.java.client.LoginPresenter;
 import com.deevo.java.client.LoginView;
 import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.MainView;
-import com.deevo.java.client.NuevoAlumnoPresenter;
-import com.deevo.java.client.NuevoAlumnoView;
+import com.deevo.java.client.NuevaPersonaPresenter;
+import com.deevo.java.client.NuevaPersonaView;
 import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutView;
 import com.deevo.java.client.HeaderPresenter;
@@ -97,9 +97,9 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(SesionPresenter.class,
 				SesionPresenter.MyView.class, SesionView.class);
 
-		bindPresenter(NuevoAlumnoPresenter.class,
-				NuevoAlumnoPresenter.MyView.class, NuevoAlumnoView.class,
-				NuevoAlumnoPresenter.MyProxy.class);
+		bindPresenter(NuevaPersonaPresenter.class,
+				NuevaPersonaPresenter.MyView.class, NuevaPersonaView.class,
+				NuevaPersonaPresenter.MyProxy.class);
 
 
 		bindPresenterWidget(MenuPsicologoPresenter.class,

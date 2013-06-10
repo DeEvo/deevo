@@ -10,36 +10,37 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
 	private Integer dni;
 	private String nombre;
-	private String apaterno;
-	private String amaterno;
+	private String apmatern;
+	private String appatern;
 	private Date fechanac;
 	private Integer telefono;
 	private Integer celular;
 	private String direccion;
 	private String email;
-	private String apmatern;
-	private String appatern;
 	private String estc;
 
+	@Override
+	public boolean isSecured() {
+		return false;
+	}
+	
 	@SuppressWarnings("unused")
 	private NuevaPersona() {
 		// For serialization only
 	}
 
-	public NuevaPersona(Integer dni, String nombre, String apaterno,
-			String amaterno, Date fechanac, Integer telefono, Integer celular,
-			String direccion, String email, String apmatern, String appatern, String estc) {
+	public NuevaPersona(Integer dni, String nombre, String appatern,
+			String apmatern, Date fechanac, Integer telefono, Integer celular,
+			String direccion, String email, String estc) {
 		this.dni = dni;
 		this.nombre = nombre;
-		this.apaterno = apaterno;
-		this.amaterno = amaterno;
+		this.appatern = appatern;
+		this.apmatern = apmatern;
 		this.fechanac = fechanac;
 		this.telefono = telefono;
 		this.celular = celular;
 		this.direccion = direccion;
 		this.email = email;
-		this.appatern = appatern;
-		this.apmatern = apmatern;
 		this.estc = estc;
 	}
 
@@ -51,12 +52,12 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		return nombre;
 	}
 
-	public String getApaterno() {
-		return apaterno;
+	public String getApmatern() {
+		return apmatern;
 	}
 
-	public String getAmaterno() {
-		return amaterno;
+	public String getAppatern() {
+		return appatern;
 	}
 
 	public Date getFechanac() {
@@ -77,14 +78,6 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
 	public String getEmail() {
 		return email;
-	}
-
-	public String getApmatern() {
-		return apmatern;
-	}
-
-	public String getAppatern() {
-		return appatern;
 	}
 
 	public String getEstc() {
