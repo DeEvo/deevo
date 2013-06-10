@@ -4,6 +4,10 @@ import com.gwtplatform.mvp.client.ViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.DoubleClickEvent;
 
 public class FooterView extends ViewImpl implements FooterPresenter.MyView {
 
@@ -21,4 +25,5 @@ public class FooterView extends ViewImpl implements FooterPresenter.MyView {
 	public Widget asWidget() {
 		return widget;
 	}
+	
 }

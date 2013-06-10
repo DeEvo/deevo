@@ -40,6 +40,8 @@ public class NameTokens {
 
 	public static final String elabpruebas = "elabpruebas";
 
+	public static final String nuevousuario = "nuevousuario";
+
 	public static String getHome() {
 		return home;
 	}
@@ -96,6 +98,9 @@ public class NameTokens {
 	}
 	public static String getElabpruebas() {
 		return elabpruebas;
+	}
+	public static String getNuevousuario() {
+		return nuevousuario;
 	}
 
 }
