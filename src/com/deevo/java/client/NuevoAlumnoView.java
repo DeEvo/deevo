@@ -22,4 +22,5 @@ public class NuevoAlumnoView extends ViewImpl implements
 	public Widget asWidget() {
 		return widget;
 	}
+
 }
