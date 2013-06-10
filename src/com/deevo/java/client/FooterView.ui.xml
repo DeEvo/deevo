@@ -16,7 +16,7 @@
 				<g:Label text="Acerca" styleName="labelFooter" width="70px"/>
 			</g:customCell>
 			<g:customCell>
-				<g:Label text="Contacto" width="70px" styleName="labelFooter"/>
+				<g:Label text="Contacto" width="70px" styleName="labelFooter" ui:field="label"/>
 			</g:customCell>
 			<g:customCell>
 				<g:Label text="Ayuda" styleName="labelFooter" width="70px"/>

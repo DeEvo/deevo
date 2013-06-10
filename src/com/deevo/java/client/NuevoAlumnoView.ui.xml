@@ -6,16 +6,16 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.datepicker.client">
 
-	<g:HTMLPanel>
+	<g:HTMLPanel width="100%">
 	    <g:Grid width="100%">
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Nuevo Alumno" styleName="tituloFormulario"/>
+	    			<g:Label text="Nueva Persona" styleName="tituloFormulario"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Complete el siguiente formulario para inscribir a un alumno en el sistema:" width="100%" styleName="labelsubformulario" height="37px"/>
+	    			<g:Label text="Complete el siguiente formulario para inscribir a una persona en el sistema:" width="100%" styleName="labelsubformulario" height="37px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -23,7 +23,7 @@
 	    			<g:Grid width="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    			<g:Label text="DNI" styleName="labelFormulario"/>
+	    			<g:Label text="DNI*" styleName="labelFormulario"/>
 	    		</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="120px"/>
@@ -31,7 +31,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Nombres" styleName="labelFormulario"/>
+	    						<g:Label text="Nombres*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px"/>
@@ -39,7 +39,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
+	    						<g:Label text="Apellido Paterno*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px"/>
@@ -47,15 +47,23 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Fecha de nac." width="100%" styleName="labelFormulario"/>
+	    						<g:Label text="Apellido Materno*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<p1:DateBox width="120px"/>
+	    						<g:TextBox width="200px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Telefono" styleName="labelFormulario"/>
+	    						<g:Label text="Fecha de nac.*" width="100%" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<p1:DateBox width="120px" fireNullValues="true"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Telefono*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="120px"/>
@@ -74,7 +82,7 @@
 	    						<g:Label text="Dirección" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="250px"/>
+	    						<g:TextBox width="200px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
@@ -82,7 +90,7 @@
 	    						<g:Label text="Email" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:IntegerBox width="200px"/>
+	    						<g:TextBox width="200px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
