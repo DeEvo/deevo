@@ -5,7 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import com.deevo.java.server.EMF;
-import com.deevo.java.server.model.entity.Alumno;
+import com.deevo.java.share.Alumno;
+import com.deevo.java.share.GradoSeccionPK;
 
 
 public class AlumnoDao {
@@ -119,5 +120,78 @@ public class AlumnoDao {
 			      em.close();
 			    }
 			  }
+			  
+			  @SuppressWarnings("unchecked")
+			public List<Alumno> retrieveAlumnosxperAppatern(String perAppatern) {
+				  
+				    EntityManager em = EMF.get().createEntityManager();	
+				    List<Alumno> list = null;
+				   
+				    try {
+				    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perAppatern LIKE '%?1%'";
+			            list= em.createQuery(qery).setParameter(1, perAppatern).getResultList();
+			          //  list = q.getResultList();
+				    }catch(Throwable t){
+				    	t.printStackTrace();
+			        } finally {
+			            em.close();
+			        }
+			        return list;
+				  }
+			  
+			  @SuppressWarnings("unchecked")
+				public List<Alumno> retrieveAlumnosxperAppmatern(String perAppmatern) {
+					  
+					    EntityManager em = EMF.get().createEntityManager();	
+					    List<Alumno> list = null;
+					   
+					    try {
+					    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perAppmatern LIKE '%?1%'";
+				            list= em.createQuery(qery).setParameter(1, perAppmatern).getResultList();
+				          //  list = q.getResultList();
+					    }catch(Throwable t){
+					    	t.printStackTrace();
+				        } finally {
+				            em.close();
+				        }
+				        return list;
+					  }
+			  
+			  @SuppressWarnings("unchecked")
+				public List<Alumno> retrieveAlumnosxperNom(String perNom) {
+					  
+					    EntityManager em = EMF.get().createEntityManager();	
+					    List<Alumno> list = null;
+					   
+					    try {
+					    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perNom LIKE '%?1%'";
+				            list= em.createQuery(qery).setParameter(1, perNom).getResultList();
+				          //  list = q.getResultList();
+					    }catch(Throwable t){
+					    	t.printStackTrace();
+				        } finally {
+				            em.close();
+				        }
+				        return list;
+					  }
+			  
+			  @SuppressWarnings("unchecked")
+				public List<Alumno> retrieveAlumnosxSeccionGrado(GradoSeccionPK id, int codPer, int psiCod) {
+					  
+					    EntityManager em = EMF.get().createEntityManager();	
+					    List<Alumno> list = null;
+					   
+					    try {
+					    	String qery = "SELECT x.alumno1 FROM AlumnoAula x WHERE x.aula.gradoSeccion.id = ?1 AND x.aula.periodoAcademico1.codPer = ?2 AND x.aula.psicologo.psiCod = ?3";
+				            list= em.createQuery(qery).setParameter(1, id).setParameter(2, codPer).setParameter(3, psiCod).getResultList();
+				          //  list = q.getResultList();
+					    }catch(Throwable t){
+					    	t.printStackTrace();
+				        } finally {
+				            em.close();
+				        }
+				        return list;
+					  }
+
 
 }

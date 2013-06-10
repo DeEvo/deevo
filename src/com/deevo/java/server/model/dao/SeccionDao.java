@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import com.deevo.java.server.EMF;
-import com.deevo.java.server.model.entity.Seccion;
+import com.deevo.java.share.Seccion;
 
 public class SeccionDao {
 

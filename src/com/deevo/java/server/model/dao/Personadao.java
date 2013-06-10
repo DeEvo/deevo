@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
+
 
 
 import com.deevo.java.server.EMF;
-import com.deevo.java.server.model.entity.Persona;
+import com.deevo.java.share.Persona;
 
 public class Personadao {
 
@@ -47,14 +47,16 @@ public class Personadao {
 		  }   
 		  
 		  
-		  public List<Persona> retrieveAccounts() {
+		  @SuppressWarnings("unchecked")
+		public List<Persona> retrieveAccounts() {
 			  
 		    EntityManager em = EMF.get().createEntityManager();
 		    List<Persona> list = null;
 		    
 		    try {
-		      TypedQuery<Persona> query = em.createQuery("select x from Persona x", Persona.class);
-		      list = query.getResultList();
+		    	String qery = "SELECT x FROM PadreFamilia x ";
+	            list= em.createQuery(qery).getResultList();
+	          //  list = q.getResultList();
 		    }
 		    finally {
 		      em.close();
