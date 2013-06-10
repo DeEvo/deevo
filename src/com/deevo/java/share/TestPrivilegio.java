@@ -18,12 +18,12 @@ public class TestPrivilegio implements Serializable {
 
 	//bi-directional many-to-one association to Privilegio
 	@ManyToOne
-	@JoinColumn(name="pri_cod")
+	@JoinColumn(name="pri_cod",insertable=false, updatable=false)
 	private Privilegio privilegio;
 
 	//bi-directional many-to-one association to Test
 	@ManyToOne
-	@JoinColumn(name="test_cod")
+	@JoinColumn(name="test_cod",insertable=false, updatable=false)
 	private Test test1;
 
 	public TestPrivilegio() {

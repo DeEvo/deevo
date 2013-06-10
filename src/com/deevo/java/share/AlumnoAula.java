@@ -18,12 +18,12 @@ public class AlumnoAula implements Serializable {
 
 	//bi-directional many-to-one association to Alumno
 	@ManyToOne
-	@JoinColumn(name="alu_cod")
+	@JoinColumn(name="alu_cod",insertable=false, updatable=false)
 	private Alumno alumno1;
 
 	//bi-directional many-to-one association to Aula
 	@ManyToOne
-	@JoinColumn(name="cod_aula")
+	@JoinColumn(name="cod_aula",insertable=false, updatable=false)
 	private Aula aula;
 
 	public AlumnoAula() {

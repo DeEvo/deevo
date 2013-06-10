@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.RollbackException;
 
 
 
@@ -24,8 +25,8 @@ public class Personadao {
 			       em.persist(persona);
 			       tx.commit();
 			     }
-		 catch (EntityExistsException e){
-			 throw e;
+		 catch (RollbackException | EntityExistsException e){
+			 throw new EntityExistsException("=P");
 		 }
 		 catch (Throwable t) {
 			       t.printStackTrace();
