@@ -124,6 +124,7 @@
 }
 .fondoBienvenida {
 	background-color: ivory;
+	table-layout: auto;
 }
 .textBienvenido {
 	color: #000099;
@@ -139,6 +140,15 @@
 	margin-right: 15px;
 	margin-left: 15px;
 	font-size: 18px;
+	font-style: normal;
+	font-family: Swiss921 BT;
+	text-align: justify;
+}
+.textmenu {
+	color: Teal;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-size: 16px;
 	font-style: normal;
 	font-family: Swiss921 BT;
 	text-align: justify;
