@@ -6,8 +6,55 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel width="200px" height="100%">
-		<g:Label text="Decorar Aqui" styleName="tituloFormulario"/>
+	<g:HTMLPanel width="100%" height="100%">
+		<g:Grid width="100%" height="100%" styleName="fondoBienvenida" cellPadding="3">
+			<g:row>
+				<g:customCell>
+					<g:Label text="BIENVENIDO A DEEVO SOFTWARE" height="36px" styleName="tituloHome" width="100%"/>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="100%" styleName="cuadroBienvenida" cellPadding="2">
+						<g:row>
+							<g:customCell>
+								<g:Label text="¿Que es Deevo?" styleName="textsubBienvenido"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Es un proyecto que comprende la implementación de un software y herramientas que permitan el control, registro unificado y la explotación de información de la evolución de los estudiantes. El sistema envuelve el desarrollo psicomotriz, fisico y academico, permitiendo tener una visión del correcto crecimiento de los infantes." styleName="textBienvenido"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label styleName="textsubBienvenido" text="¿A quien esta dirigido?"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label styleName="textBienvenido" text="Nuestro producto esta enfocado en las intituciones educativas que deseen mejorar el seguimiento de infantes sobre todo en etapas tempranas."/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label styleName="textsubBienvenido" text="¿Por que usar Deevo?"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label styleName="textBienvenido" text="Nuestro producto permite hacer un seguimiento de las diferentes estapas del crecimiento, de esta manera alerta al usuario al identificar un desvio dentro de los estandares de crecimiento para que se tome las medidas correctivas o de reforzamiento necesario."/>
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:VerticalPanel width="100%" height="15px"/>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
 	</g:HTMLPanel>
 </ui:UiBinder>
 

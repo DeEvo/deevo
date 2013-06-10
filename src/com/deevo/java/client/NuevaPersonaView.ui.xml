@@ -23,7 +23,7 @@
 	    			<g:Grid width="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    			<g:Label text="DNI" styleName="labelFormulario"/>
+	    			<g:Label text="DNI*" styleName="labelFormulario"/>
 	    		</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="120px" ui:field="dniTexbox"/>
@@ -31,7 +31,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Nombres" styleName="labelFormulario"/>
+	    						<g:Label text="Nombres*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="nombresTexbox"/>
@@ -39,7 +39,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Apellido Paterno" styleName="labelFormulario"/>
+	    						<g:Label text="Apellido Paterno*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="appaternTexbox"/>
@@ -47,7 +47,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Apellido Materno" styleName="labelFormulario"/>
+	    						<g:Label text="Apellido Materno*" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="apmaternTexbox"/>
@@ -63,7 +63,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Fecha de nac." width="100%" styleName="labelFormulario"/>
+	    						<g:Label text="Fecha de nac.*" width="100%" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<p1:DateBox width="120px" ui:field="fnacTexbox"/>

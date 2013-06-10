@@ -111,5 +111,37 @@
   border-right: 1px solid #EDEDED;
   border-bottom: 1px solid #EDEDED;
 }
+.tituloHome {
+	color: #009999;
+	margin-left: 5px;
+	font-size: 24px;
+	font-style: normal;
+	font-family: Swiss921 BT;
+	text-align: center;
+}
+.cuadroBienvenida {
+	border: 5px dashed #996600;
+}
+.fondoBienvenida {
+	background-color: ivory;
+}
+.textBienvenido {
+	color: #000099;
+	margin-right: 15px;
+	margin-left: 15px;
+	font-size: 16px;
+	font-style: normal;
+	font-family: Swiss921 BT;
+	text-align: justify;
+}
+.textsubBienvenido {
+	color: Teal;
+	margin-right: 15px;
+	margin-left: 15px;
+	font-size: 18px;
+	font-style: normal;
+	font-family: Swiss921 BT;
+	text-align: justify;
+}
 /* Add css rules here for your application. */
 
