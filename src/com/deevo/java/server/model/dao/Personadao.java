@@ -11,9 +11,26 @@ import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
 import com.deevo.java.share.Persona;
+import com.deevo.java.share.Persona;
 
 public class Personadao {
 
+	
+	
+	public boolean existeAula(Persona persona) {
+			
+			EntityManager em = EMF.get().createEntityManager();
+			Persona persona2= null;
+		    try {
+		      persona2 = em.find(Persona.class, persona.getPerDir());
+		    }
+		    finally {
+		      em.close();
+		    }
+		    if(persona2 == null) return false;
+		    
+		    return true;
+				  }
 	
 	public void createPersona(Persona persona) throws EntityExistsException , Throwable {
 		
@@ -25,26 +42,30 @@ public class Personadao {
 			       em.persist(persona);
 			       tx.commit();
 			     }
-		 catch (RollbackException | EntityExistsException e){
-			 throw new EntityExistsException("=P");
+		 catch ( EntityExistsException e){
+			 throw new EntityExistsException();
+		 }catch(RollbackException e1){
+			 throw new RollbackException();
 		 }
 		 catch (Throwable t) {
 			       t.printStackTrace();
 			       tx.rollback();
 			       throw t;
-			     }
+		}
 		finally {
 			       em.close();
 		}
 		  }
 
-		  public Persona retrievePersona(String per_dni) {
+		  public Persona retrievePersona(String per_dni) throws  Throwable{
 
 			EntityManager em = EMF.get().createEntityManager();
 
 		    Persona persona= null;
 		    try {
 		      persona = em.find(Persona.class, per_dni);
+		    } catch (Throwable t) {
+			       throw t;
 		    }
 		    finally {
 		      em.close();
@@ -54,7 +75,7 @@ public class Personadao {
 		  
 		  
 		  @SuppressWarnings("unchecked")
-		public List<Persona> retrieveAccounts() {
+		public List<Persona> retrieveAccounts() throws  Throwable{
 			  
 		    EntityManager em = EMF.get().createEntityManager();
 		    List<Persona> list = null;
@@ -63,6 +84,8 @@ public class Personadao {
 		    	String qery = "SELECT x FROM PadreFamilia x ";
 	            list= em.createQuery(qery).getResultList();
 	          //  list = q.getResultList();
+		    }  catch (Throwable t) {
+			       throw t;
 		    }
 		    finally {
 		      em.close();
@@ -70,7 +93,7 @@ public class Personadao {
 		    return list;
 		  }
 		   
-		  public Persona updatePersona(Persona persona) {
+		  public Persona updatePersona(Persona persona) throws  Throwable {
 			  
 			EntityManager em = EMF.get().createEntityManager();
 		    EntityTransaction tx = em.getTransaction();
@@ -83,6 +106,7 @@ public class Personadao {
 		    catch (Throwable t) {
 		      t.printStackTrace();
 		      tx.rollback();
+		      throw t;
 		    }
 		    finally {
 		      em.close();
@@ -91,7 +115,7 @@ public class Personadao {
 		  }
 		  
 		  
-		  public void deleteAccount(Persona persona) {
+		  public void deleteAccount(Persona persona) throws  Throwable {
 			  
 		  EntityManager em = EMF.get().createEntityManager();
 		  EntityTransaction tx = em.getTransaction();
@@ -104,6 +128,7 @@ public class Personadao {
 		    catch (Throwable t) {
 		      t.printStackTrace();
 		      tx.rollback();
+		      throw t;
 		    }
 		    finally {
 		      em.close();

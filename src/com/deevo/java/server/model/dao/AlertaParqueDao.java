@@ -2,15 +2,19 @@ package com.deevo.java.server.model.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.RollbackException;
+
 import com.deevo.java.server.EMF;
 import com.deevo.java.share.AlertaParque;
+
 
 public class AlertaParqueDao {
 
 	
-	public boolean existeAlertaParque(AlertaParque alertaparque) {
+public boolean existeAlertaParque(AlertaParque alertaparque) {
 		
 		EntityManager em = EMF.get().createEntityManager();
 		AlertaParque alertaparque2= null;
@@ -27,7 +31,7 @@ public class AlertaParqueDao {
 		
 
 
-		public void createAlertaParque(AlertaParque alertaparque) {
+		public void createAlertaParque(AlertaParque alertaparque) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -36,33 +40,38 @@ public class AlertaParqueDao {
 				       tx.begin();
 				       em.persist(alertaparque);
 				       tx.commit();
+				     }catch ( EntityExistsException | RollbackException e){
+						 throw new EntityExistsException();
 				     }
 				     catch (Throwable t) {
 				       t.printStackTrace();
 				       tx.rollback();
+				       throw t;
 				     }
 				     finally {
 				       em.close();
 				     }
 			  }
 
-			  public AlertaParque retrieveAlertaParque(AlertaParque alerparque) {
+			  public AlertaParque retrieveAlertaParque(AlertaParque alertaparque)  throws Throwable{
 
 				EntityManager em = EMF.get().createEntityManager();
 
-			    AlertaParque alertaparque= null;
+			    AlertaParque alertaparque2= null;
 			    try {
-			      alertaparque = em.find(AlertaParque.class, alerparque.getAleCod());
-			    }
+			      alertaparque2 = em.find(AlertaParque.class, alertaparque.getAleCod());
+			    }catch (Throwable t) {
+				       throw t;
+				     }
 			    finally {
 			      em.close();
 			    }
-			    return alertaparque;
+			    return alertaparque2;
 			  }   
 			  
 			  
 			  @SuppressWarnings("unchecked")
-			public List<AlertaParque> retrieveAlertaParques() {
+			public List<AlertaParque> retrieveAlertaParques() throws Throwable{
 				  
 			    EntityManager em = EMF.get().createEntityManager();	
 			    List<AlertaParque> list = null;
@@ -73,13 +82,14 @@ public class AlertaParqueDao {
 		          //  list = q.getResultList();
 			    }catch(Throwable t){
 			    	t.printStackTrace();
+			        throw t;
 		        } finally {
 		            em.close();
 		        }
 		        return list;
 			  }
 			   
-			  public AlertaParque updateAlertaParque(AlertaParque alertaparque) {
+			  public AlertaParque updateAlertaParque(AlertaParque alertaparque)  throws Throwable {
 				  
 				EntityManager em = EMF.get().createEntityManager();
 			    EntityTransaction tx = em.getTransaction();
@@ -92,6 +102,7 @@ public class AlertaParqueDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();
@@ -100,7 +111,7 @@ public class AlertaParqueDao {
 			  }
 			  
 			  
-			  public void deleteAlertaParque(AlertaParque alertaparque) {
+			  public void deleteAlertaParque(AlertaParque alertaparque)  throws Throwable  {
 				  
 			  EntityManager em = EMF.get().createEntityManager();
 			  EntityTransaction tx = em.getTransaction();
@@ -113,6 +124,7 @@ public class AlertaParqueDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();

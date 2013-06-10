@@ -1,20 +1,20 @@
 package com.deevo.java.client.action;
 
 import com.gwtplatform.dispatch.shared.ActionImpl;
-import com.deevo.java.client.action.LoginResult;
+import com.deevo.java.client.action.NuevoLoginResult;
 import java.lang.String;
 
-public class Login extends ActionImpl<LoginResult> {
+public class NuevoLogin extends ActionImpl<NuevoLoginResult> {
 
 	private String user;
 	private String pass;
 
 	@SuppressWarnings("unused")
-	public Login() {
+	public NuevoLogin() {
 		// For serialization only
 	}
 
-	public Login(String user, String pass) {
+	public NuevoLogin(String user, String pass) {
 		this.user = user;
 		this.pass = pass;
 	}

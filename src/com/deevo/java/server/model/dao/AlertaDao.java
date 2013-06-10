@@ -2,8 +2,11 @@ package com.deevo.java.server.model.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.RollbackException;
+
 import com.deevo.java.server.EMF;
 import com.deevo.java.share.Alerta;
 
@@ -27,7 +30,7 @@ public class AlertaDao {
 		
 
 
-		public void createAlerta(Alerta alerta) {
+		public void createAlerta(Alerta alerta) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -36,24 +39,29 @@ public class AlertaDao {
 				       tx.begin();
 				       em.persist(alerta);
 				       tx.commit();
+				     }catch ( EntityExistsException | RollbackException e){
+						 throw new EntityExistsException();
 				     }
 				     catch (Throwable t) {
 				       t.printStackTrace();
 				       tx.rollback();
+				       throw t;
 				     }
 				     finally {
 				       em.close();
 				     }
 			  }
 
-			  public Alerta retrieveAlerta(Alerta alerta) {
+			  public Alerta retrieveAlerta(Alerta alerta)  throws Throwable{
 
 				EntityManager em = EMF.get().createEntityManager();
 
 			    Alerta alerta2= null;
 			    try {
 			      alerta2 = em.find(Alerta.class, alerta.getAleCod());
-			    }
+			    }catch (Throwable t) {
+				       throw t;
+				     }
 			    finally {
 			      em.close();
 			    }
@@ -62,7 +70,7 @@ public class AlertaDao {
 			  
 			  
 			  @SuppressWarnings("unchecked")
-			public List<Alerta> retrieveAlertas() {
+			public List<Alerta> retrieveAlertas() throws Throwable{
 				  
 			    EntityManager em = EMF.get().createEntityManager();	
 			    List<Alerta> list = null;
@@ -73,13 +81,14 @@ public class AlertaDao {
 		          //  list = q.getResultList();
 			    }catch(Throwable t){
 			    	t.printStackTrace();
+			        throw t;
 		        } finally {
 		            em.close();
 		        }
 		        return list;
 			  }
 			   
-			  public Alerta updateAlerta(Alerta alerta) {
+			  public Alerta updateAlerta(Alerta alerta)  throws Throwable {
 				  
 				EntityManager em = EMF.get().createEntityManager();
 			    EntityTransaction tx = em.getTransaction();
@@ -92,6 +101,7 @@ public class AlertaDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();
@@ -100,7 +110,7 @@ public class AlertaDao {
 			  }
 			  
 			  
-			  public void deleteAlerta(Alerta alerta) {
+			  public void deleteAlerta(Alerta alerta)  throws Throwable  {
 				  
 			  EntityManager em = EMF.get().createEntityManager();
 			  EntityTransaction tx = em.getTransaction();
@@ -113,6 +123,7 @@ public class AlertaDao {
 			    catch (Throwable t) {
 			      t.printStackTrace();
 			      tx.rollback();
+			      throw t;
 			    }
 			    finally {
 			      em.close();

@@ -24,6 +24,7 @@
 		<class>com.deevo.java.share.Grado</class>
 		<class>com.deevo.java.share.GradoSeccion</class>
 		<class>com.deevo.java.share.GradoSeccionPK</class>
+		<class>com.deevo.java.share.Login</class>
 		<class>com.deevo.java.share.MetodoCalificacion</class>
 		<class>com.deevo.java.share.PadreFamilia</class>
 		<class>com.deevo.java.share.PeriodoAcademico</class>
@@ -42,7 +43,7 @@
 		<class>com.deevo.java.share.TestPrivilegioPK</class>
 		<class>com.deevo.java.share.TestTipo</class>
 		<class>com.deevo.java.share.Usuario</class>
-		<class>com.deevo.java.share.LogIn</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.google.appengine.api.rdbms.AppEngineDriver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:google:rdbms://deevosoftware2013:database00/DEVO"/>
