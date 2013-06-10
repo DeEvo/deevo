@@ -40,7 +40,7 @@ public class LayoutMainPresenter extends
 	FooterPresenter footPresenter;
 	
 	@Inject
-	MenuPsicologoPresenter menuPresenter;
+	MenuAdminPresenter menuPresenter;
 		
 	public interface MyView extends View {
 	}

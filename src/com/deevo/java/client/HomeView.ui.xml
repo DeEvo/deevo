@@ -7,37 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel width="200px" height="100%">
-		<g:Label text="MENU" styleName="tituloFormulario"/>
-		<g:StackLayoutPanel width="200px" unit="CM" height="100%">
-			<g:stack>
-				<g:header size="1">Inicio</g:header>
-				<g:Tree styleName="layout">
-						<g:Label text="Pagina de Inicio"/>
-						<g:Label text="Iniciar Sesión"/>
-					</g:Tree>
-			</g:stack>
-			<g:stack>
-				<g:header size="1">Acerca de Deevo</g:header>
-				<g:Tree>
-						<g:Label text="Quienes somos"/>
-						<g:Label text="Misión / Visión"/>
-						<g:Label text="Deeevo Software"/>
-					</g:Tree>
-			</g:stack>
-			<g:stack>
-				<g:header size="1">I.E. Asociada</g:header>
-				<g:Tree>
-						<g:Label text="Nuestro Cliente"/>
-					</g:Tree>
-			</g:stack>
-			<g:stack>
-				<g:header size="1">Contáctenos</g:header>
-				<g:Tree>
-						<g:Label text="Adquirir Deevo software"/>
-						<g:Label text="Consultas"/>
-					</g:Tree>
-			</g:stack>
-		</g:StackLayoutPanel>
+		<g:Label text="Decorar Aqui" styleName="tituloFormulario"/>
 	</g:HTMLPanel>
 </ui:UiBinder>
 

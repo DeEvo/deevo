@@ -21,6 +21,9 @@ public class LayoutPresenter extends
 	public static final Type<RevealContentHandler<?>> SLOT_SetHeadContent = new Type<RevealContentHandler<?>>();
 
 	@ContentSlot
+	public static final Type<RevealContentHandler<?>> SLOT_SetMenuContent = new Type<RevealContentHandler<?>>();
+	
+	@ContentSlot
 	public static final Type<RevealContentHandler<?>> SLOT_SetFootContent = new Type<RevealContentHandler<?>>();
 	
 	@ContentSlot
@@ -34,6 +37,9 @@ public class LayoutPresenter extends
 	
 	@Inject
 	FooterPresenter footPresenter;
+	
+	@Inject
+	MenuHomePresenter menuPresenter;
 		
 	public interface MyView extends View {
 	}
@@ -52,8 +58,9 @@ public class LayoutPresenter extends
 	protected void onReveal() {
 		super.onReveal();
 
-		setInSlot(SLOT_SetHeadContent, headPresenter);
 		setInSlot(SLOT_SetLoginContent, loginPresenter);
+		setInSlot(SLOT_SetHeadContent, headPresenter);
+		setInSlot(SLOT_SetMenuContent, menuPresenter);
 		setInSlot(SLOT_SetFootContent, footPresenter);
 	}
 	

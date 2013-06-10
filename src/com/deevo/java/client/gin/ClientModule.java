@@ -61,6 +61,8 @@ import com.deevo.java.client.ElaborarPruebasPresenter;
 import com.deevo.java.client.ElaborarPruebasView;
 import com.deevo.java.client.NuevoUsuarioPresenter;
 import com.deevo.java.client.NuevoUsuarioView;
+import com.deevo.java.client.MenuHomePresenter;
+import com.deevo.java.client.MenuHomeView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -176,5 +178,8 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenter(NuevoUsuarioPresenter.class,
 				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
 				NuevoUsuarioPresenter.MyProxy.class);
+
+		bindPresenterWidget(MenuHomePresenter.class,
+				MenuHomePresenter.MyView.class, MenuHomeView.class);
 	}
 }

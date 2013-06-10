@@ -9,37 +9,31 @@
 	<g:HTMLPanel width="200px" height="500px">
 		<g:StackLayoutPanel width="100%" unit="PX" height="100%">
 			<g:stack>
-				<g:header size="36">Perfil</g:header>
-				<g:Tree>
-						<g:Label text="Ver Perfil"/>
-						<g:Label text="Actulizar datos"/>
+				<g:header size="36">Inicio</g:header>
+				<g:Tree styleName="layout">
+						<g:Label text="Pagina de Inicio"/>
+						<g:Label text="Iniciar Sesión"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="36">Usuarios</g:header>
+				<g:header size="36">Acerca de Deevo</g:header>
 				<g:Tree>
-					<g:Label text="Nueva Persona"/>
-					<g:Label text="Nuevo Usuario"/>
-				</g:Tree>
-			</g:stack>
-			<g:stack>
-				<g:header size="36">Alumnos</g:header>
-				<g:Tree>
-						<g:Label text="Nuevo Alumno" ui:field="nuevoAlumno"/>
-						<g:Label text="Buscar Alumno"/>
+						<g:Label text="Quienes somos"/>
+						<g:Label text="Misión / Visión"/>
+						<g:Label text="Deeevo Software"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="36">Profesores</g:header>
+				<g:header size="36">I.E. Asociada</g:header>
 				<g:Tree>
-						<g:Label text="Nuevo Profesor"/>
-						<g:Label text="Busqueda Profesor"/>
+						<g:Label text="Nuestro Cliente"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="36">DeEvo</g:header>
+				<g:header size="36">Contáctenos</g:header>
 				<g:Tree>
-						<g:Label text="Inicio"/>
+						<g:Label text="Adquirir Deevo software"/>
+						<g:Label text="Consultas"/>
 					</g:Tree>
 			</g:stack>
 		</g:StackLayoutPanel>

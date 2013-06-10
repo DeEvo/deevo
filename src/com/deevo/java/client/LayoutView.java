@@ -13,8 +13,10 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 	
 	@UiField HTMLPanel mainContentPanel;
 	@UiField HTMLPanel headContentPanel;
+	@UiField HTMLPanel menuContentPanel;
 	@UiField HTMLPanel footContentPanel;
 	@UiField HTMLPanel loginContentPanel;
+
 
 	public interface Binder extends UiBinder<Widget, LayoutView> {
 	}
@@ -42,6 +44,10 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
  		else if (slot == LayoutPresenter.SLOT_SetHeadContent)
 		{
 			setHeadContent(content);
+		}
+ 		else if (slot == LayoutPresenter.SLOT_SetMenuContent)
+		{
+			setMenuContent(content);
 		}
  		else if (slot == LayoutPresenter.SLOT_SetFootContent)
 		{
@@ -80,6 +86,15 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 		}		
 	}
 
+	private void setMenuContent(Widget content)
+	{
+		menuContentPanel.clear();
+		if (content != null)
+		{
+			menuContentPanel.add(content);
+		}		
+	}
+	
 	private void setFootContent(Widget content)
 	{
 		footContentPanel.clear();
@@ -88,5 +103,5 @@ public class LayoutView extends ViewImpl implements LayoutPresenter.MyView {
 			footContentPanel.add(content);
 		}		
 	}
-	
+
 }

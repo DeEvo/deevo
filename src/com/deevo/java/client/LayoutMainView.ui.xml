@@ -11,7 +11,7 @@
 			<g:Dock direction="NORTH" horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
 				<g:VerticalPanel width="100%" styleName="layout">
 					<g:Cell horizontalAlignment="ALIGN_RIGHT">
-						<g:HTMLPanel ui:field="sesionContentPanel" height="70px">
+						<g:HTMLPanel ui:field="sesionContentPanel">
 						</g:HTMLPanel>
 					</g:Cell>
 					<g:Cell horizontalAlignment="ALIGN_CENTER">
@@ -24,11 +24,11 @@
 				<g:HTMLPanel ui:field="footContentPanel" height="30px">
 				</g:HTMLPanel>
 			</g:Dock>
-			<g:Dock direction="WEST">  
-				<g:HTMLPanel ui:field="menuContentPanel" height="700px" width="140px"/>
+			<g:Dock direction="WEST" width="200px" height="100%">  
+				<g:HTMLPanel ui:field="menuContentPanel"/>
 			</g:Dock>
 			<g:Dock direction="CENTER">  
-				<g:HTMLPanel ui:field="mainContentPanel"  height="700px"/>
+				<g:HTMLPanel ui:field="mainContentPanel" height="500px"/>
 			</g:Dock>			
 		</g:DockPanel>
 	</g:HTMLPanel> 
