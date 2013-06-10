@@ -11,8 +11,8 @@ import com.deevo.java.client.LoginPresenter;
 import com.deevo.java.client.LoginView;
 import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.MainView;
-import com.deevo.java.client.NuevoAlumnoPresenter;
-import com.deevo.java.client.NuevoAlumnoView;
+import com.deevo.java.client.NuevaPersonaPresenter;
+import com.deevo.java.client.NuevaPersonaView;
 import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutView;
 import com.deevo.java.client.HeaderPresenter;
@@ -59,6 +59,8 @@ import com.deevo.java.client.BandejaAlertaPresenter;
 import com.deevo.java.client.BandejaAlertaView;
 import com.deevo.java.client.ElaborarPruebasPresenter;
 import com.deevo.java.client.ElaborarPruebasView;
+import com.deevo.java.client.NuevoUsuarioPresenter;
+import com.deevo.java.client.NuevoUsuarioView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -97,9 +99,9 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(SesionPresenter.class,
 				SesionPresenter.MyView.class, SesionView.class);
 
-		bindPresenter(NuevoAlumnoPresenter.class,
-				NuevoAlumnoPresenter.MyView.class, NuevoAlumnoView.class,
-				NuevoAlumnoPresenter.MyProxy.class);
+		bindPresenter(NuevaPersonaPresenter.class,
+				NuevaPersonaPresenter.MyView.class, NuevaPersonaView.class,
+				NuevaPersonaPresenter.MyProxy.class);
 
 
 		bindPresenterWidget(MenuPsicologoPresenter.class,
@@ -170,5 +172,9 @@ public class ClientModule extends AbstractPresenterModule {
 				ElaborarPruebasPresenter.MyView.class,
 				ElaborarPruebasView.class,
 				ElaborarPruebasPresenter.MyProxy.class);
+
+		bindPresenter(NuevoUsuarioPresenter.class,
+				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
+				NuevoUsuarioPresenter.MyProxy.class);
 	}
 }

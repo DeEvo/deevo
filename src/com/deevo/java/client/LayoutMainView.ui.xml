@@ -25,10 +25,10 @@
 				</g:HTMLPanel>
 			</g:Dock>
 			<g:Dock direction="WEST">  
-				<g:HTMLPanel ui:field="menuContentPanel" height="450px" width="110px"/>
+				<g:HTMLPanel ui:field="menuContentPanel" height="700px" width="140px"/>
 			</g:Dock>
 			<g:Dock direction="CENTER">  
-				<g:HTMLPanel ui:field="mainContentPanel"  height="450px"/>
+				<g:HTMLPanel ui:field="mainContentPanel"  height="700px"/>
 			</g:Dock>			
 		</g:DockPanel>
 	</g:HTMLPanel> 

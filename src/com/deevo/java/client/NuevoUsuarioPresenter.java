@@ -6,39 +6,34 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
-import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
+import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
-public class NuevoAlumnoPresenter extends
-		Presenter<NuevoAlumnoPresenter.MyView, NuevoAlumnoPresenter.MyProxy> {
+public class NuevoUsuarioPresenter extends
+		Presenter<NuevoUsuarioPresenter.MyView, NuevoUsuarioPresenter.MyProxy> {
 
 	public interface MyView extends View {
 	}
 
 	@ProxyCodeSplit
-	@NameToken(NameTokens.nuevoalumno)
-	public interface MyProxy extends ProxyPlace<NuevoAlumnoPresenter> {
+	@NameToken(NameTokens.nuevousuario)
+	public interface MyProxy extends ProxyPlace<NuevoUsuarioPresenter> {
 	}
 
 	@Inject
-	public NuevoAlumnoPresenter(final EventBus eventBus, final MyView view,
+	public NuevoUsuarioPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}
 
 	@Override
 	protected void revealInParent() {
-		RevealContentEvent.fire(this, LayoutMainPresenter.SLOT_SetMainContent, this);
+		RevealRootContentEvent.fire(this, this);
 	}
 
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-
-	@Override
-	protected void onReset() {
-		super.onReset();
 	}
 }

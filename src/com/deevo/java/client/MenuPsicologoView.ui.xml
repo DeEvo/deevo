@@ -7,30 +7,30 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel width="200px" height="100%">
-		<g:StackLayoutPanel width="200px" unit="CM" height="100%">
+		<g:StackLayoutPanel width="200px" unit="PX" height="100%">
 			<g:stack>
-				<g:header size="1">Perfil</g:header>
+				<g:header size="36">Perfil</g:header>
 				<g:Tree>
 						<g:Label text="Ver Perfil"/>
 						<g:Label text="Actulizar datos"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="1">Alumnos</g:header>
+				<g:header size="36">Alumnos</g:header>
 				<g:Tree>
 						<g:Label text="Nuevo Alumno" ui:field="nuevoAlumno"/>
 						<g:Label text="Buscar Alumno"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="1">Profesores</g:header>
+				<g:header size="36">Profesores</g:header>
 				<g:Tree>
 						<g:Label text="Nuevo Profesor"/>
 						<g:Label text="Busqueda Profesor"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
-				<g:header size="1">DeEvo</g:header>
+				<g:header size="36">DeEvo</g:header>
 				<g:Tree>
 						<g:Label text="Inicio"/>
 					</g:Tree>

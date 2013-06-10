@@ -2,8 +2,10 @@ package com.deevo.java.server.model.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.RollbackException;
 
 
 
@@ -13,7 +15,7 @@ import com.deevo.java.share.Persona;
 public class Personadao {
 
 	
-	public void createPersona(Persona persona) {
+	public void createPersona(Persona persona) throws EntityExistsException , Throwable {
 		
 		EntityManager em = EMF.get().createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -23,13 +25,17 @@ public class Personadao {
 			       em.persist(persona);
 			       tx.commit();
 			     }
-			     catch (Throwable t) {
+		 catch (RollbackException | EntityExistsException e){
+			 throw new EntityExistsException("=P");
+		 }
+		 catch (Throwable t) {
 			       t.printStackTrace();
 			       tx.rollback();
+			       throw t;
 			     }
-			     finally {
+		finally {
 			       em.close();
-			     }
+		}
 		  }
 
 		  public Persona retrievePersona(String per_dni) {
