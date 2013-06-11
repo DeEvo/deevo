@@ -9,7 +9,7 @@ public class NuevoLogin extends ActionImpl<NuevoLoginResult> {
 	private String user;
 	private String pass;
 
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	public NuevoLogin() {
 		// For serialization only
 	}
