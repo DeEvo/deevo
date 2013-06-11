@@ -11,7 +11,6 @@ import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
 import com.deevo.java.share.Persona;
-import com.deevo.java.share.Persona;
 
 public class Personadao {
 
