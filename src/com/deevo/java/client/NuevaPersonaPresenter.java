@@ -40,7 +40,7 @@ public class NuevaPersonaPresenter extends
 	}
 
 	@ProxyCodeSplit
-	@NameToken(NameTokens.nuevapesona)
+	@NameToken(NameTokens.nuevapersona)
 	public interface MyProxy extends ProxyPlace<NuevaPersonaPresenter> {
 	}
 

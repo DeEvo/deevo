@@ -3,6 +3,7 @@ package com.deevo.java.share;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 /**
  * The persistent class for the ALERTAS database table.
