@@ -40,14 +40,6 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerIng(new Date());
 			persona.setSexo(action.getSexo());
 
-			Personadao perdao = new Personadao();
-			try{
-			perdao.createPersona(persona);
-			}catch(EntityExistsException a){
-				throw new ActionException("La Persona ya existe "+a.getMessage());
-			}catch(Throwable a){
-				throw new ActionException("Solicitar ayuda al administrador");
-			}
 			
 			Personadao perdao = new Personadao();
 			try{
@@ -75,7 +67,7 @@ public class NuevaPersonaActionHandler implements
 				} catch (Throwable e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					throw new ActionException("La Persona ya existe "+e.getMessage());
+					throw new ActionException("La Persona ya existe ");
 				}
 				return new NuevaPersonaResult("Exito", user.getUsurCod() , user.getPerPass());
 			}			
