@@ -20,7 +20,7 @@ public boolean existeMetodoCalificacion(MetodoCalificacion metodocalificacion) {
 		EntityManager em = EMF.get().createEntityManager();
 		MetodoCalificacion metodocalificacion2= null;
 	    try {
-	      metodocalificacion2 = em.find(MetodoCalificacion.class, metodocalificacion);
+	      metodocalificacion2 = em.find(MetodoCalificacion.class, metodocalificacion.getMetCod());
 	    }
 	    finally {
 	      em.close();

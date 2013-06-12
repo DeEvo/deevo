@@ -19,7 +19,7 @@ public boolean existePsicologo(Psicologo psicologo) {
 		EntityManager em = EMF.get().createEntityManager();
 		Psicologo psicologo2= null;
 	    try {
-	      psicologo2 = em.find(Psicologo.class, psicologo);
+	      psicologo2 = em.find(Psicologo.class, psicologo.getPsiCod());
 	    }
 	    finally {
 	      em.close();

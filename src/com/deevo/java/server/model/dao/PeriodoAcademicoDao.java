@@ -20,7 +20,7 @@ public boolean existePeriodoAcademico(PeriodoAcademico periodoacademico) {
 		EntityManager em = EMF.get().createEntityManager();
 		PeriodoAcademico periodoacademico2= null;
 	    try {
-	      periodoacademico2 = em.find(PeriodoAcademico.class, periodoacademico);
+	      periodoacademico2 = em.find(PeriodoAcademico.class, periodoacademico.getCodPer());
 	    }
 	    finally {
 	      em.close();

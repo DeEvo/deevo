@@ -27,7 +27,7 @@ public class NuevaPersonaActionHandler implements
 	public NuevaPersonaResult execute(NuevaPersona action, ExecutionContext context)
 			throws ActionException {
 			Persona persona = new Persona();
-			persona.setPerDni(String.valueOf(action.getDni()));
+			persona.setPerDni(action.getDni());
 			persona.setPerNom(action.getNombre());
 			persona.setPerPat(action.getAppatern());
 			persona.setPerMat(action.getApmatern());
@@ -39,6 +39,15 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerEstc(action.getEstc());
 			persona.setPerIng(new Date());
 			persona.setSexo(action.getSexo());
+
+			Personadao perdao = new Personadao();
+			try{
+			perdao.createPersona(persona);
+			}catch(EntityExistsException a){
+				throw new ActionException("La Persona ya existe "+a.getMessage());
+			}catch(Throwable a){
+				throw new ActionException("Solicitar ayuda al administrador");
+			}
 			
 			Personadao perdao = new Personadao();
 			try{
@@ -53,7 +62,7 @@ public class NuevaPersonaActionHandler implements
 				Usuario user = new Usuario();
 				
 				user.setUsurCod(action.getNombre().substring(0, 2).toLowerCase() + action.getAppatern().toLowerCase() + action.getApmatern().substring(0, 2).toLowerCase());
-				user.setPerPass(action.getPerPass());
+				user.setPerPass(action.getDni());
 				user.setPersona(persona);
 								
 				UsuarioDao userdao = new UsuarioDao();
@@ -69,10 +78,7 @@ public class NuevaPersonaActionHandler implements
 					throw new ActionException("La Persona ya existe "+e.getMessage());
 				}
 				return new NuevaPersonaResult("Exito", user.getUsurCod() , user.getPerPass());
-			}
-	
-
-			
+			}			
 		return new NuevaPersonaResult("Exito", null , null);
 	}
 

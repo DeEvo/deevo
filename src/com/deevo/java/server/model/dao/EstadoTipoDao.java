@@ -20,7 +20,7 @@ public boolean existeEstadoTipo(EstadoTipo estadotipo) {
 		EntityManager em = EMF.get().createEntityManager();
 		EstadoTipo estadotipo2= null;
 	    try {
-	      estadotipo2 = em.find(EstadoTipo.class, estadotipo);
+	      estadotipo2 = em.find(EstadoTipo.class, estadotipo.getCodEstTipo());
 	    }
 	    finally {
 	      em.close();

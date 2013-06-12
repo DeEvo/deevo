@@ -19,7 +19,7 @@ public boolean existePregunta(Pregunta pregunta) {
 		EntityManager em = EMF.get().createEntityManager();
 		Pregunta pregunta2= null;
 	    try {
-	      pregunta2 = em.find(Pregunta.class, pregunta);
+	      pregunta2 = em.find(Pregunta.class, pregunta.getPregCod());
 	    }
 	    finally {
 	      em.close();

@@ -19,7 +19,7 @@ public class TestTipoDao {
 				EntityManager em = EMF.get().createEntityManager();
 				TestTipo testtipo2= null;
 			    try {
-			      testtipo2 = em.find(TestTipo.class, testtipo);
+			      testtipo2 = em.find(TestTipo.class, testtipo.getTestTipoCod());
 			    }
 			    finally {
 			      em.close();

@@ -18,7 +18,7 @@ public boolean existeSesion(Sesion sesion) {
 		EntityManager em = EMF.get().createEntityManager();
 		Sesion sesion2= null;
 	    try {
-	      sesion2 = em.find(Sesion.class, sesion);
+	      sesion2 = em.find(Sesion.class, sesion.getIdSes());
 	    }
 	    finally {
 	      em.close();

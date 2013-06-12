@@ -19,7 +19,7 @@ public class GradoSeccionDao {
 		EntityManager em = EMF.get().createEntityManager();
 		GradoSeccion gradoseccion2= null;
 	    try {
-	      gradoseccion2 = em.find(GradoSeccion.class, gradoseccion);
+	      gradoseccion2 = em.find(GradoSeccion.class, gradoseccion.getId());
 	    }
 	    finally {
 	      em.close();

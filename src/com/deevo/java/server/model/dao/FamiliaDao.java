@@ -17,7 +17,7 @@ public boolean existeFamilia(Familia familia) {
 		EntityManager em = EMF.get().createEntityManager();
 		Familia familia2= null;
 	    try {
-	      familia2 = em.find(Familia.class, familia);
+	      familia2 = em.find(Familia.class, familia.getId());
 	    }
 	    finally {
 	      em.close();

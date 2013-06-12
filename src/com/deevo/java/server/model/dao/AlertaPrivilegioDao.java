@@ -19,7 +19,7 @@ public boolean existeAlertaPrivilegio(AlertaPrivilegio alertaprivilegio) {
 		EntityManager em = EMF.get().createEntityManager();
 		AlertaPrivilegio alertaprivilegio2= null;
 	    try {
-	      alertaprivilegio2 = em.find(AlertaPrivilegio.class, alertaprivilegio);
+	      alertaprivilegio2 = em.find(AlertaPrivilegio.class, alertaprivilegio.getId());
 	    }
 	    finally {
 	      em.close();

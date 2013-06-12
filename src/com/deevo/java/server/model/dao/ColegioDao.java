@@ -20,7 +20,7 @@ public class ColegioDao {
 		EntityManager em = EMF.get().createEntityManager();
 		Colegio colegio2= null;
 	    try {
-	      colegio2 = em.find(Colegio.class, colegio);
+	      colegio2 = em.find(Colegio.class, colegio.getCodCol());
 	    }
 	    finally {
 	      em.close();

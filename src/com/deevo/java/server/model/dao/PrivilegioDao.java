@@ -18,7 +18,7 @@ public boolean existePrivilegio(Privilegio privilegio) {
 		EntityManager em = EMF.get().createEntityManager();
 		Privilegio privilegio2= null;
 	    try {
-	      privilegio2 = em.find(Privilegio.class, privilegio);
+	      privilegio2 = em.find(Privilegio.class, privilegio.getPriCod());
 	    }
 	    finally {
 	      em.close();

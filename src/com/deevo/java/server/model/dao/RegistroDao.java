@@ -19,7 +19,7 @@ public boolean existeRegistro(Registro registro) {
 		EntityManager em = EMF.get().createEntityManager();
 		Registro registro2= null;
 	    try {
-	      registro2 = em.find(Registro.class, registro);
+	      registro2 = em.find(Registro.class, registro.getIdReg());
 	    }
 	    finally {
 	      em.close();

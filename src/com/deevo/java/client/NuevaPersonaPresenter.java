@@ -86,6 +86,7 @@ public class NuevaPersonaPresenter extends
 								getView().getEstcivListbox().getSelectedIndex()),
 						null, null,true, "Masculino");
 
+
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
 		});
@@ -99,7 +100,7 @@ public class NuevaPersonaPresenter extends
 			// TODO Auto-generated method stub
 			if(true){
 			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
-			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getPerPass());
+			nuevoUsuarioPopPresenter.getView().getContrasennia().setText(result.getPerPass());
 			addToPopupSlot(nuevoUsuarioPopPresenter);
 			}else{
 				Window.alert("Exitos pero no tienes usuario =(!");

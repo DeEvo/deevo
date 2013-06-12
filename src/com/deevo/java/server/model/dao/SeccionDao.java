@@ -19,7 +19,7 @@ public boolean existeSeccion(Seccion seccion) {
 		EntityManager em = EMF.get().createEntityManager();
 		Seccion seccion2= null;
 	    try {
-	      seccion2 = em.find(Seccion.class, seccion);
+	      seccion2 = em.find(Seccion.class, seccion.getCodSeccion());
 	    }
 	    finally {
 	      em.close();

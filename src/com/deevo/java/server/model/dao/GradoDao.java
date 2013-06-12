@@ -20,7 +20,7 @@ public boolean existeGrado(Grado grado) {
 		EntityManager em = EMF.get().createEntityManager();
 		Grado grado2= null;
 	    try {
-	      grado2 = em.find(Grado.class, grado);
+	      grado2 = em.find(Grado.class, grado.getCodGrado());
 	    }
 	    finally {
 	      em.close();

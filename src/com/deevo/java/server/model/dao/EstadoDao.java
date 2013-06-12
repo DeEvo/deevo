@@ -21,7 +21,7 @@ public boolean existeEstado(Estado estado) {
 		EntityManager em = EMF.get().createEntityManager();
 		Estado estado2= null;
 	    try {
-	      estado2 = em.find(Estado.class, estado);
+	      estado2 = em.find(Estado.class, estado.getId());
 	    }
 	    finally {
 	      em.close();

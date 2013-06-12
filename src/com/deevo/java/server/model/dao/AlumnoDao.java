@@ -20,7 +20,7 @@ public class AlumnoDao {
 				EntityManager em = EMF.get().createEntityManager();
 				Alumno alumno2= null;
 			    try {
-			      alumno2 = em.find(Alumno.class, alumno);
+			      alumno2 = em.find(Alumno.class, alumno.getAluCod());
 			    }
 			    finally {
 			      em.close();
