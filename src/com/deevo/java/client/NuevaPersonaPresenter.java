@@ -18,6 +18,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
 
@@ -30,12 +31,12 @@ public class NuevaPersonaPresenter extends
 		public TextBox getNombresTexbox();
 		public TextBox getAppaternTexbox();
 		public TextBox getApmaternTexbox();
-		public TextBox getEstcivListbox();
+		public ListBox getEstcivListbox();
 		public DateBox getFnacTexbox();
 		public IntegerBox getTelfTexbox();
 		public IntegerBox getCelTexbox();
 		public TextBox getDirTexbox();
-		public IntegerBox getEmailTexbox();
+		public TextBox getEmailTexbox();
 	}
 
 	@ProxyCodeSplit
@@ -81,7 +82,7 @@ public class NuevaPersonaPresenter extends
 						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getText(),null, null,true, null);
+						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getItemCount()),null, null,true, null);
 
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
@@ -94,8 +95,14 @@ public class NuevaPersonaPresenter extends
 		@Override
 		public void onSuccess(NuevaPersonaResult result) {
 			// TODO Auto-generated method stub
+			if(true){
+			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
+			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getPerPass());
 			addToPopupSlot(nuevoUsuarioPopPresenter);
-		
+			}else{
+				Window.alert("Exitos pero no tienes usuario =(!");
+			}
+			
 		}
 		
 		@Override

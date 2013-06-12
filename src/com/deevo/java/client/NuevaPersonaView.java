@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
 
@@ -23,12 +24,12 @@ public class NuevaPersonaView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox appaternTexbox;
 	@UiField TextBox apmaternTexbox;
-	@UiField TextBox estcivListbox;
+	@UiField ListBox estcivListbox;
 	@UiField DateBox fnacTexbox;
 	@UiField IntegerBox telfTexbox;
 	@UiField IntegerBox celTexbox;
 	@UiField TextBox dirTexbox;
-	@UiField IntegerBox emailTexbox;
+	@UiField TextBox emailTexbox;
 	
 	@Inject
 	public NuevaPersonaView(final Binder binder) {
@@ -55,12 +56,12 @@ public class NuevaPersonaView extends ViewImpl implements
 	public TextBox getAppaternTexbox() {
 		return appaternTexbox;
 	}
-	
+
 	public TextBox getApmaternTexbox() {
 		return apmaternTexbox;
 	}
 
-	public TextBox getEstcivListbox() {
+	public ListBox getEstcivListbox() {
 		return estcivListbox;
 	}
 
@@ -80,8 +81,10 @@ public class NuevaPersonaView extends ViewImpl implements
 		return dirTexbox;
 	}
 
-	public IntegerBox getEmailTexbox() {
+	public TextBox getEmailTexbox() {
 		return emailTexbox;
 	}
+
+	
 
 }

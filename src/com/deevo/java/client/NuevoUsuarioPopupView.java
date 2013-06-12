@@ -29,4 +29,17 @@ public class NuevoUsuarioPopupView extends PopupViewImpl implements
 	@UiField Label mensaje;
 	@UiField Label usuario;
 	@UiField Label contrasennia;
+
+	public Label getMensaje() {
+		return mensaje;
+	}
+
+	public Label getUsuario() {
+		return usuario;
+	}
+
+	public Label getContrasennia() {
+		return contrasennia;
+	}
+	
 }
