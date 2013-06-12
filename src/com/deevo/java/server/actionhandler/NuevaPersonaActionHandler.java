@@ -40,13 +40,22 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerIng(new Date());
 			persona.setSexo(action.getSexo());
 			
+			Personadao perdao = new Personadao();
+			try{
+			perdao.createPersona(persona);
+			}catch(EntityExistsException a){
+				throw new ActionException("La Persona ya existe "+a.getMessage());
+			}catch(Throwable a){
+				throw new ActionException("Solicitar ayuda al administrador");
+			}
+			
 			if(action.getFlag_usuario()){
 				Usuario user = new Usuario();
 				
 				user.setUsurCod(action.getNombre().substring(0, 2).toLowerCase() + action.getAppatern().toLowerCase() + action.getApmatern().substring(0, 2).toLowerCase());
 				user.setPerPass(action.getPerPass());
 				user.setPersona(persona);
-				
+								
 				UsuarioDao userdao = new UsuarioDao();
 				while(userdao.existeUsuario(user)){
 					Random r = new Random();
@@ -62,14 +71,7 @@ public class NuevaPersonaActionHandler implements
 				return new NuevaPersonaResult("Exito", user.getUsurCod() , user.getPerPass());
 			}
 	
-			Personadao perdao = new Personadao();
-			try{
-			perdao.createPersona(persona);
-			}catch(EntityExistsException a){
-				throw new ActionException("La Persona ya existe "+a.getMessage());
-			}catch(Throwable a){
-				throw new ActionException("Solicitar ayuda al administrador");
-			}
+
 			
 		return new NuevaPersonaResult("Exito", null , null);
 	}

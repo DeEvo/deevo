@@ -19,13 +19,13 @@ public class UsuarioDao {
 				EntityManager em = EMF.get().createEntityManager();
 				Usuario usuario2= null;
 			    try {
-			      usuario2 = em.find(Usuario.class, usuario);
+			      usuario2 = em.find(Usuario.class, usuario.getUsurCod());
 			    }
 			    finally {
 			      em.close();
 			    }
 			    if(usuario2 == null) return false;
-			    
+			    else
 			    return true;
 				}
 		

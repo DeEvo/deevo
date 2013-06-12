@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
-	private Integer dni;
+	private String dni;
 	private String nombre;
 	private String apmatern;
 	private String appatern;
@@ -34,7 +34,7 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		// For serialization only
 	}
 
-	public NuevaPersona(Integer dni, String nombre, String appatern,
+	public NuevaPersona(String dni, String nombre, String appatern,
 			String apmatern, Date fechanac, Integer telefono, Integer celular,
 			String direccion, String email, String estc, String usurCod, String perPass, Boolean flag_usuario, String sexo) {
 		this.dni = dni;
@@ -54,7 +54,7 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		
 	}
 
-	public Integer getDni() {
+	public String getDni() {
 		return dni;
 	}
 

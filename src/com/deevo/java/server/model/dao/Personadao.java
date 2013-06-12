@@ -21,13 +21,13 @@ public class Personadao {
 			EntityManager em = EMF.get().createEntityManager();
 			Persona persona2= null;
 		    try {
-		      persona2 = em.find(Persona.class, persona.getPerDir());
+		      persona2 = em.find(Persona.class, persona.getPerDni());
 		    }
 		    finally {
 		      em.close();
 		    }
 		    if(persona2 == null) return false;
-		    
+		    else
 		    return true;
 				  }
 	

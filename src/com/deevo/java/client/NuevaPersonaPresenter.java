@@ -73,7 +73,7 @@ public class NuevaPersonaPresenter extends
 			@Override
 			public void onClick(ClickEvent event) {
 				NuevaPersona action = new NuevaPersona(
-						Integer.parseInt(getView().getDniTexbox().getText()), 
+						getView().getDniTexbox().getText(), 
 						getView().getNombresTexbox().getText(),
 						getView().getAppaternTexbox().getText(),
 						getView().getApmaternTexbox().getText(),
@@ -82,7 +82,9 @@ public class NuevaPersonaPresenter extends
 						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getItemCount()),null, null,true, null);
+						getView().getEstcivListbox().getItemText(
+								getView().getEstcivListbox().getSelectedIndex()),
+						null, null,true, "Masculino");
 
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
