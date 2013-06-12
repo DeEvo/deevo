@@ -20,7 +20,7 @@ public boolean existeCursoHabilitado(CursoHabilitado cursohabilitado) {
 		EntityManager em = EMF.get().createEntityManager();
 		CursoHabilitado cursohabilitado2= null;
 	    try {
-	      cursohabilitado2 = em.find(CursoHabilitado.class, cursohabilitado);
+	      cursohabilitado2 = em.find(CursoHabilitado.class, cursohabilitado.getCurHabCod());
 	    }
 	    finally {
 	      em.close();

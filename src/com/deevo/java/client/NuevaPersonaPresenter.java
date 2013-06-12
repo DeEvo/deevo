@@ -73,7 +73,7 @@ public class NuevaPersonaPresenter extends
 			@Override
 			public void onClick(ClickEvent event) {
 				NuevaPersona action = new NuevaPersona(
-						Integer.parseInt(getView().getDniTexbox().getText()), 
+						String.valueOf(getView().getDniTexbox().getText()), 
 						getView().getNombresTexbox().getText(),
 						getView().getAppaternTexbox().getText(),
 						getView().getApmaternTexbox().getText(),
@@ -82,7 +82,7 @@ public class NuevaPersonaPresenter extends
 						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getItemCount()),null, null,true, null);
+						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getSelectedIndex()),null, null,true, "masculino");
 
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
@@ -97,7 +97,7 @@ public class NuevaPersonaPresenter extends
 			// TODO Auto-generated method stub
 			if(true){
 			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
-			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getPerPass());
+			nuevoUsuarioPopPresenter.getView().getContrasennia().setText(result.getPerPass());
 			addToPopupSlot(nuevoUsuarioPopPresenter);
 			}else{
 				Window.alert("Exitos pero no tienes usuario =(!");

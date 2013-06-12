@@ -20,7 +20,7 @@ public class ColegioProfesorDao {
 		EntityManager em = EMF.get().createEntityManager();
 		ColegioProfesor colegioprofesor2= null;
 	    try {
-	      colegioprofesor2 = em.find(ColegioProfesor.class, colegioprofesor);
+	      colegioprofesor2 = em.find(ColegioProfesor.class, colegioprofesor.getId());
 	    }
 	    finally {
 	      em.close();

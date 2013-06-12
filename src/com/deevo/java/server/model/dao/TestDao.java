@@ -19,7 +19,7 @@ public boolean existeTest(Test test) {
 		EntityManager em = EMF.get().createEntityManager();
 		Test test2= null;
 	    try {
-	      test2 = em.find(Test.class, test);
+	      test2 = em.find(Test.class, test.getTestCod());
 	    }
 	    finally {
 	      em.close();

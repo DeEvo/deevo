@@ -19,7 +19,7 @@ public boolean existeProfesor(Profesor profesor) {
 		EntityManager em = EMF.get().createEntityManager();
 		Profesor profesor2= null;
 	    try {
-	      profesor2 = em.find(Profesor.class, profesor);
+	      profesor2 = em.find(Profesor.class, profesor.getProCod());
 	    }
 	    finally {
 	      em.close();

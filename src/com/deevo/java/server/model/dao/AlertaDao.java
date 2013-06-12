@@ -18,7 +18,7 @@ public class AlertaDao {
 		EntityManager em = EMF.get().createEntityManager();
 		Alerta alerta2= null;
 	    try {
-	      alerta2 = em.find(Alerta.class, alerta);
+	      alerta2 = em.find(Alerta.class, alerta.getAleCod());
 	    }
 	    finally {
 	      em.close();

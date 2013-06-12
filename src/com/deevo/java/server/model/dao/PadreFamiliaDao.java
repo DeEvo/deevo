@@ -20,7 +20,7 @@ public boolean existePadreFamilia(PadreFamilia padrefamilia) {
 		EntityManager em = EMF.get().createEntityManager();
 		PadreFamilia padrefamilia2= null;
 	    try {
-	      padrefamilia2 = em.find(PadreFamilia.class, padrefamilia);
+	      padrefamilia2 = em.find(PadreFamilia.class, padrefamilia.getPadCod());
 	    }
 	    finally {
 	      em.close();
