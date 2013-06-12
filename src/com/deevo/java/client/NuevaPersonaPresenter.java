@@ -82,7 +82,7 @@ public class NuevaPersonaPresenter extends
 						Integer.parseInt(getView().getCelTexbox().getText()),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivTexbox().getText());
+						getView().getEstcivTexbox().getText(), null, null,false, null);
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
 		});
