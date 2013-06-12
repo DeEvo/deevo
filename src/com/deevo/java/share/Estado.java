@@ -32,7 +32,7 @@ public class Estado implements Serializable {
 
 	//bi-directional many-to-one association to Alumno
 	@ManyToOne
-	@JoinColumn(name="alu_cod")
+	@JoinColumn(name="alu_cod", insertable=false, updatable=false)
 	private Alumno alumno;
 
 	//bi-directional many-to-one association to EstadoTipo
@@ -43,7 +43,7 @@ public class Estado implements Serializable {
 	//bi-directional many-to-one association to Respuesta
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod"),
+		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod", insertable=false, updatable=false),
 		@JoinColumn(name="preg_cod", referencedColumnName="preg_cod"),
 		@JoinColumn(name="test_cod", referencedColumnName="test_cod")
 		})

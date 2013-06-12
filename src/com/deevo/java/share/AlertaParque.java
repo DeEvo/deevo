@@ -14,7 +14,7 @@ public class AlertaParque implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="ale_cod")
+	@Column(name="ale_cod", insertable=false, updatable=false)
 	private int aleCod;
 
 	@Column(name="id_aler")

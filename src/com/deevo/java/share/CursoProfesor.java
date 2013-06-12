@@ -25,7 +25,7 @@ public class CursoProfesor implements Serializable {
 
 	//bi-directional many-to-one association to Curso
 	@ManyToOne
-	@JoinColumn(name="cod_cur")
+	@JoinColumn(name="cod_cur", insertable=false, updatable=false)
 	private Curso curso;
 
 	//bi-directional many-to-many association to Aula
