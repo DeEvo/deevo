@@ -50,6 +50,9 @@ public class Persona implements Serializable {
 
 	@Column(name="per_telf")
 	private int perTelf;
+	
+	@Column(name="sexo")
+	private String sexo;
 
 	//bi-directional many-to-one association to Alumno
 	@OneToMany(mappedBy="persona")
@@ -168,6 +171,14 @@ public class Persona implements Serializable {
 
 	public void setPerTelf(int perTelf) {
 		this.perTelf = perTelf;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
 	public List<Alumno> getAlumnos() {

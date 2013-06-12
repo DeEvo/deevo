@@ -81,7 +81,8 @@ public class NuevaPersonaPresenter extends
 						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getText());
+						getView().getEstcivListbox().getText(),null, null,true, null);
+
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
 		});

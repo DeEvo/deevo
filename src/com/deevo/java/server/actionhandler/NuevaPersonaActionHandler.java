@@ -1,6 +1,7 @@
 package com.deevo.java.server.actionhandler;
 
 import java.util.Date;
+import java.util.Random;
 
 import javax.persistence.EntityExistsException;
 
@@ -8,7 +9,9 @@ import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.NuevaPersona;
 import com.deevo.java.client.action.NuevaPersonaResult;
 import com.deevo.java.server.model.dao.Personadao;
+import com.deevo.java.server.model.dao.UsuarioDao;
 import com.deevo.java.share.Persona;
+import com.deevo.java.share.Usuario;
 import com.google.inject.Inject;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.shared.ActionException;
@@ -35,6 +38,29 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerEmail(action.getEmail());
 			persona.setPerEstc(action.getEstc());
 			persona.setPerIng(new Date());
+			persona.setSexo(action.getSexo());
+			
+			if(action.getFlag_usuario()){
+				Usuario user = new Usuario();
+				
+				user.setUsurCod(action.getNombre().substring(0, 2).toLowerCase() + action.getAppatern().toLowerCase() + action.getApmatern().substring(0, 2).toLowerCase());
+				user.setPerPass(action.getPerPass());
+				user.setPersona(persona);
+				
+				UsuarioDao userdao = new UsuarioDao();
+				while(userdao.existeUsuario(user)){
+					Random r = new Random();
+					user.setUsurCod( action.getNombre().substring(0, 2).toLowerCase() + action.getAppatern().toLowerCase() + action.getApmatern().substring(0, 2).toLowerCase() +  (char)(r.nextInt(26)+97));
+				}
+				try {
+					userdao.createUsuario(user);
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					throw new ActionException("La Persona ya existe "+e.getMessage());
+				}
+				return new NuevaPersonaResult("Exito", user.getUsurCod() , user.getPerPass());
+			}
 	
 			Personadao perdao = new Personadao();
 			try{
@@ -45,7 +71,7 @@ public class NuevaPersonaActionHandler implements
 				throw new ActionException("Solicitar ayuda al administrador");
 			}
 			
-		return new NuevaPersonaResult("Exito");
+		return new NuevaPersonaResult("Exito", null , null);
 	}
 
 	@Override

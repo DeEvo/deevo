@@ -18,6 +18,11 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 	private String direccion;
 	private String email;
 	private String estc;
+	private String usurCod;
+	private String perPass;
+	private Boolean flag_usuario;
+	private String sexo;
+	
 
 	@Override
 	public boolean isSecured() {
@@ -31,7 +36,7 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
 	public NuevaPersona(Integer dni, String nombre, String appatern,
 			String apmatern, Date fechanac, Integer telefono, Integer celular,
-			String direccion, String email, String estc) {
+			String direccion, String email, String estc, String usurCod, String perPass, Boolean flag_usuario, String sexo) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.appatern = appatern;
@@ -42,6 +47,11 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		this.direccion = direccion;
 		this.email = email;
 		this.estc = estc;
+		this.sexo = sexo;
+		this.usurCod = usurCod;
+		this.perPass = perPass;
+		this.flag_usuario = flag_usuario;
+		
 	}
 
 	public Integer getDni() {
@@ -83,6 +93,24 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 	public String getEstc() {
 		return estc;
 	}
+
+	public String getSexo() {
+		return sexo;
+	}
+	
+	public String getUsurCod() {
+		return usurCod;
+	}
+
+	public String getPerPass() {
+		return perPass;
+	}
+
+	public Boolean getFlag_usuario() {
+		return flag_usuario;
+	}
+	
+	
 
 	
 }
