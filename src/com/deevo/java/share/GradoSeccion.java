@@ -21,10 +21,6 @@ public class GradoSeccion implements Serializable {
 	@OneToMany(mappedBy="gradoSeccion")
 	private List<Aula> aulas;
 
-	//bi-directional many-to-one association to CursoHabilitado
-	@OneToMany(mappedBy="gradoSeccion1")
-	private List<CursoHabilitado> cursoHabilitados1;
-
 	public GradoSeccion() {
 	}
 
@@ -44,12 +40,18 @@ public class GradoSeccion implements Serializable {
 		this.aulas = aulas;
 	}
 
-	public List<CursoHabilitado> getCursoHabilitados1() {
-		return this.cursoHabilitados1;
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setGradoSeccion(this);
+
+		return aula;
 	}
 
-	public void setCursoHabilitados1(List<CursoHabilitado> cursoHabilitados1) {
-		this.cursoHabilitados1 = cursoHabilitados1;
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setGradoSeccion(null);
+
+		return aula;
 	}
 
 }

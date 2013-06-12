@@ -23,11 +23,8 @@ public class Estado implements Serializable {
 	@Column(name="est_grav")
 	private String estGrav;
 
-	@Column(name="set_nom")
-	private String setNom;
-
-	@Column(name="set_psi")
-	private int setPsi;
+	@Column(name="est_nom")
+	private String estNom;
 
 	//bi-directional many-to-one association to AlertaParque
 	@OneToMany(mappedBy="estado")
@@ -35,7 +32,7 @@ public class Estado implements Serializable {
 
 	//bi-directional many-to-one association to Alumno
 	@ManyToOne
-	@JoinColumn(name="alu_cod",insertable=false, updatable=false)
+	@JoinColumn(name="alu_cod")
 	private Alumno alumno;
 
 	//bi-directional many-to-one association to EstadoTipo
@@ -46,7 +43,7 @@ public class Estado implements Serializable {
 	//bi-directional many-to-one association to Respuesta
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod",insertable=false, updatable=false),
+		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod"),
 		@JoinColumn(name="preg_cod", referencedColumnName="preg_cod"),
 		@JoinColumn(name="test_cod", referencedColumnName="test_cod")
 		})
@@ -79,20 +76,12 @@ public class Estado implements Serializable {
 		this.estGrav = estGrav;
 	}
 
-	public String getSetNom() {
-		return this.setNom;
+	public String getEstNom() {
+		return this.estNom;
 	}
 
-	public void setSetNom(String setNom) {
-		this.setNom = setNom;
-	}
-
-	public int getSetPsi() {
-		return this.setPsi;
-	}
-
-	public void setSetPsi(int setPsi) {
-		this.setPsi = setPsi;
+	public void setEstNom(String estNom) {
+		this.estNom = estNom;
 	}
 
 	public List<AlertaParque> getAlertaParques() {
@@ -101,6 +90,20 @@ public class Estado implements Serializable {
 
 	public void setAlertaParques(List<AlertaParque> alertaParques) {
 		this.alertaParques = alertaParques;
+	}
+
+	public AlertaParque addAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().add(alertaParque);
+		alertaParque.setEstado(this);
+
+		return alertaParque;
+	}
+
+	public AlertaParque removeAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().remove(alertaParque);
+		alertaParque.setEstado(null);
+
+		return alertaParque;
 	}
 
 	public Alumno getAlumno() {

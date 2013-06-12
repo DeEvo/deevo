@@ -1,5 +1,7 @@
 package com.deevo.java.server.actionhandler;
 
+import java.util.Date;
+
 import javax.persistence.EntityExistsException;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
@@ -22,19 +24,18 @@ public class NuevaPersonaActionHandler implements
 	public NuevaPersonaResult execute(NuevaPersona action, ExecutionContext context)
 			throws ActionException {
 			Persona persona = new Persona();
-			//persona.setPerDni("12378456");
 			persona.setPerDni(String.valueOf(action.getDni()));
 			persona.setPerNom(action.getNombre());
-			persona.setPerAppatern(action.getAppatern());
-			persona.setPerAppmatern(action.getApmatern());
+			persona.setPerPat(action.getAppatern());
+			persona.setPerMat(action.getApmatern());
 			persona.setPerDir(action.getDireccion());
-			persona.setPerCan(0);
 			persona.setPerCel(action.getCelular());
 			persona.setPerTelf(action.getTelefono());
 			persona.setPerNac(action.getFechanac());
 			persona.setPerEmail(action.getEmail());
 			persona.setPerEstc(action.getEstc());
-			
+			persona.setPerIng(new Date());
+	
 			Personadao perdao = new Personadao();
 			try{
 			perdao.createPersona(persona);

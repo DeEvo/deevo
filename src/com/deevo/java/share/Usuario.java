@@ -10,12 +10,13 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="USUARIO")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="usur_cod")
-	private int usurCod;
+	private String usurCod;
 
 	@Column(name="per_pass")
 	private String perPass;
@@ -49,11 +50,11 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	public int getUsurCod() {
+	public String getUsurCod() {
 		return this.usurCod;
 	}
 
-	public void setUsurCod(int usurCod) {
+	public void setUsurCod(String usurCod) {
 		this.usurCod = usurCod;
 	}
 
@@ -73,12 +74,40 @@ public class Usuario implements Serializable {
 		this.alertaParques = alertaParques;
 	}
 
+	public AlertaParque addAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().add(alertaParque);
+		alertaParque.setUsuario(this);
+
+		return alertaParque;
+	}
+
+	public AlertaParque removeAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().remove(alertaParque);
+		alertaParque.setUsuario(null);
+
+		return alertaParque;
+	}
+
 	public List<Sesion> getSesions() {
 		return this.sesions;
 	}
 
 	public void setSesions(List<Sesion> sesions) {
 		this.sesions = sesions;
+	}
+
+	public Sesion addSesion(Sesion sesion) {
+		getSesions().add(sesion);
+		sesion.setUsuario(this);
+
+		return sesion;
+	}
+
+	public Sesion removeSesion(Sesion sesion) {
+		getSesions().remove(sesion);
+		sesion.setUsuario(null);
+
+		return sesion;
 	}
 
 	public Persona getPersona() {

@@ -17,7 +17,7 @@ public class CursoProfesor implements Serializable {
 	@EmbeddedId
 	private CursoProfesorPK id;
 
-	private String estado;
+	private byte estado;
 
 	//bi-directional many-to-one association to CursoHabilitado
 	@OneToMany(mappedBy="cursoProfesor")
@@ -25,7 +25,7 @@ public class CursoProfesor implements Serializable {
 
 	//bi-directional many-to-one association to Curso
 	@ManyToOne
-	@JoinColumn(name="cod_cur",insertable=false, updatable=false)
+	@JoinColumn(name="cod_cur")
 	private Curso curso;
 
 	//bi-directional many-to-many association to Aula
@@ -53,11 +53,11 @@ public class CursoProfesor implements Serializable {
 		this.id = id;
 	}
 
-	public String getEstado() {
+	public byte getEstado() {
 		return this.estado;
 	}
 
-	public void setEstado(String estado) {
+	public void setEstado(byte estado) {
 		this.estado = estado;
 	}
 
@@ -67,6 +67,20 @@ public class CursoProfesor implements Serializable {
 
 	public void setCursoHabilitados(List<CursoHabilitado> cursoHabilitados) {
 		this.cursoHabilitados = cursoHabilitados;
+	}
+
+	public CursoHabilitado addCursoHabilitado(CursoHabilitado cursoHabilitado) {
+		getCursoHabilitados().add(cursoHabilitado);
+		cursoHabilitado.setCursoProfesor(this);
+
+		return cursoHabilitado;
+	}
+
+	public CursoHabilitado removeCursoHabilitado(CursoHabilitado cursoHabilitado) {
+		getCursoHabilitados().remove(cursoHabilitado);
+		cursoHabilitado.setCursoProfesor(null);
+
+		return cursoHabilitado;
 	}
 
 	public Curso getCurso() {

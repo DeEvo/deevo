@@ -11,6 +11,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="SESION")
 public class Sesion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -73,6 +74,20 @@ public class Sesion implements Serializable {
 
 	public void setRegistros(List<Registro> registros) {
 		this.registros = registros;
+	}
+
+	public Registro addRegistro(Registro registro) {
+		getRegistros().add(registro);
+		registro.setSesion(this);
+
+		return registro;
+	}
+
+	public Registro removeRegistro(Registro registro) {
+		getRegistros().remove(registro);
+		registro.setSesion(null);
+
+		return registro;
 	}
 
 	public Colegio getColegio() {

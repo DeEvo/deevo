@@ -74,4 +74,18 @@ public class MetodoCalificacion implements Serializable {
 		this.tests = tests;
 	}
 
+	public Test addTest(Test test) {
+		getTests().add(test);
+		test.setMetodoCalificacion(this);
+
+		return test;
+	}
+
+	public Test removeTest(Test test) {
+		getTests().remove(test);
+		test.setMetodoCalificacion(null);
+
+		return test;
+	}
+
 }

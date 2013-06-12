@@ -27,9 +27,9 @@ public class Privilegio implements Serializable {
 	@Column(name="pri_nom")
 	private String priNom;
 
-	//bi-directional many-to-one association to TestPrivilegio
-	@OneToMany(mappedBy="privilegio")
-	private List<TestPrivilegio> testPrivilegios;
+	//bi-directional many-to-many association to Test
+	@ManyToMany(mappedBy="privilegios")
+	private List<Test> tests;
 
 	//bi-directional many-to-many association to Usuario
 	@ManyToMany(mappedBy="privilegios")
@@ -70,12 +70,12 @@ public class Privilegio implements Serializable {
 		this.priNom = priNom;
 	}
 
-	public List<TestPrivilegio> getTestPrivilegios() {
-		return this.testPrivilegios;
+	public List<Test> getTests() {
+		return this.tests;
 	}
 
-	public void setTestPrivilegios(List<TestPrivilegio> testPrivilegios) {
-		this.testPrivilegios = testPrivilegios;
+	public void setTests(List<Test> tests) {
+		this.tests = tests;
 	}
 
 	public List<Usuario> getUsuarios() {

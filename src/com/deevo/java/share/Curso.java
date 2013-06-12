@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="CURSO")
 public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -71,6 +72,20 @@ public class Curso implements Serializable {
 
 	public void setCursoProfesors(List<CursoProfesor> cursoProfesors) {
 		this.cursoProfesors = cursoProfesors;
+	}
+
+	public CursoProfesor addCursoProfesor(CursoProfesor cursoProfesor) {
+		getCursoProfesors().add(cursoProfesor);
+		cursoProfesor.setCurso(this);
+
+		return cursoProfesor;
+	}
+
+	public CursoProfesor removeCursoProfesor(CursoProfesor cursoProfesor) {
+		getCursoProfesors().remove(cursoProfesor);
+		cursoProfesor.setCurso(null);
+
+		return cursoProfesor;
 	}
 
 }

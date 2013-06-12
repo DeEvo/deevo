@@ -18,7 +18,7 @@ public class AlertaPrivilegio implements Serializable {
 
 	//bi-directional many-to-one association to Alerta
 	@ManyToOne
-	@JoinColumn(name="ale_cod",insertable=false, updatable=false)
+	@JoinColumn(name="ale_cod")
 	private Alerta alerta;
 
 	public AlertaPrivilegio() {

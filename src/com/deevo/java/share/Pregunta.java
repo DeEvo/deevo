@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PREGUNTA")
 public class Pregunta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -17,20 +18,20 @@ public class Pregunta implements Serializable {
 	@Column(name="preg_cod")
 	private int pregCod;
 
-	@Column(name="ban_des")
-	private String banDes;
+	@Column(name="pre_mas")
+	private int preMas;
 
-	@Column(name="ban_mat")
-	private String banMat;
+	@Column(name="pre_mat")
+	private String preMat;
 
-	@Column(name="ban_pre")
-	private String banPre;
+	@Column(name="pre_menos")
+	private int preMenos;
 
-	@Column(name="ban_punt")
-	private int banPunt;
+	@Column(name="pre_resp")
+	private String preResp;
 
-	@Column(name="ban_resp")
-	private String banResp;
+	@Column(name="pre_txt")
+	private String preTxt;
 
 	//bi-directional many-to-one association to Test
 	@ManyToOne
@@ -52,44 +53,44 @@ public class Pregunta implements Serializable {
 		this.pregCod = pregCod;
 	}
 
-	public String getBanDes() {
-		return this.banDes;
+	public int getPreMas() {
+		return this.preMas;
 	}
 
-	public void setBanDes(String banDes) {
-		this.banDes = banDes;
+	public void setPreMas(int preMas) {
+		this.preMas = preMas;
 	}
 
-	public String getBanMat() {
-		return this.banMat;
+	public String getPreMat() {
+		return this.preMat;
 	}
 
-	public void setBanMat(String banMat) {
-		this.banMat = banMat;
+	public void setPreMat(String preMat) {
+		this.preMat = preMat;
 	}
 
-	public String getBanPre() {
-		return this.banPre;
+	public int getPreMenos() {
+		return this.preMenos;
 	}
 
-	public void setBanPre(String banPre) {
-		this.banPre = banPre;
+	public void setPreMenos(int preMenos) {
+		this.preMenos = preMenos;
 	}
 
-	public int getBanPunt() {
-		return this.banPunt;
+	public String getPreResp() {
+		return this.preResp;
 	}
 
-	public void setBanPunt(int banPunt) {
-		this.banPunt = banPunt;
+	public void setPreResp(String preResp) {
+		this.preResp = preResp;
 	}
 
-	public String getBanResp() {
-		return this.banResp;
+	public String getPreTxt() {
+		return this.preTxt;
 	}
 
-	public void setBanResp(String banResp) {
-		this.banResp = banResp;
+	public void setPreTxt(String preTxt) {
+		this.preTxt = preTxt;
 	}
 
 	public Test getTest() {
@@ -106,6 +107,20 @@ public class Pregunta implements Serializable {
 
 	public void setRespuestas(List<Respuesta> respuestas) {
 		this.respuestas = respuestas;
+	}
+
+	public Respuesta addRespuesta(Respuesta respuesta) {
+		getRespuestas().add(respuesta);
+		respuesta.setPregunta(this);
+
+		return respuesta;
+	}
+
+	public Respuesta removeRespuesta(Respuesta respuesta) {
+		getRespuestas().remove(respuesta);
+		respuesta.setPregunta(null);
+
+		return respuesta;
 	}
 
 }

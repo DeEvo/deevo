@@ -73,4 +73,18 @@ public class EstadoTipo implements Serializable {
 		this.estados = estados;
 	}
 
+	public Estado addEstado(Estado estado) {
+		getEstados().add(estado);
+		estado.setEstadoTipo(this);
+
+		return estado;
+	}
+
+	public Estado removeEstado(Estado estado) {
+		getEstados().remove(estado);
+		estado.setEstadoTipo(null);
+
+		return estado;
+	}
+
 }

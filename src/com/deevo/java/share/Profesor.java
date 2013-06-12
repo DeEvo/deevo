@@ -2,7 +2,6 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 
@@ -11,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PROFESOR")
 public class Profesor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -20,10 +20,6 @@ public class Profesor implements Serializable {
 
 	@Column(name="pro_des")
 	private String proDes;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="pro_ing")
-	private Date proIng;
 
 	//bi-directional many-to-one association to Aula
 	@OneToMany(mappedBy="profesor")
@@ -53,20 +49,26 @@ public class Profesor implements Serializable {
 		this.proDes = proDes;
 	}
 
-	public Date getProIng() {
-		return this.proIng;
-	}
-
-	public void setProIng(Date proIng) {
-		this.proIng = proIng;
-	}
-
 	public List<Aula> getAulas() {
 		return this.aulas;
 	}
 
 	public void setAulas(List<Aula> aulas) {
 		this.aulas = aulas;
+	}
+
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setProfesor(this);
+
+		return aula;
+	}
+
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setProfesor(null);
+
+		return aula;
 	}
 
 	public Persona getPersona() {

@@ -1,12 +1,8 @@
 package com.deevo.java.share;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 
 /**
@@ -14,6 +10,7 @@ import javax.persistence.OneToMany;
  * 
  */
 @Entity
+@Table(name="COLEGIO")
 public class Colegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -37,15 +34,15 @@ public class Colegio implements Serializable {
 	private int colTelf;
 
 	@Column(name="col_ugel")
-	private int colUgel;
+	private String colUgel;
 
 	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="colegio1")
-	private List<Aula> aulas1;
+	@OneToMany(mappedBy="colegio")
+	private List<Aula> aulas;
 
 	//bi-directional many-to-one association to ColegioProfesor
-	@OneToMany(mappedBy="colegio1")
-	private List<ColegioProfesor> colegioProfesors1;
+	@OneToMany(mappedBy="colegio")
+	private List<ColegioProfesor> colegioProfesors;
 
 	//bi-directional many-to-one association to Sesion
 	@OneToMany(mappedBy="colegio")
@@ -102,28 +99,56 @@ public class Colegio implements Serializable {
 		this.colTelf = colTelf;
 	}
 
-	public int getColUgel() {
+	public String getColUgel() {
 		return this.colUgel;
 	}
 
-	public void setColUgel(int colUgel) {
+	public void setColUgel(String colUgel) {
 		this.colUgel = colUgel;
 	}
 
-	public List<Aula> getAulas1() {
-		return this.aulas1;
+	public List<Aula> getAulas() {
+		return this.aulas;
 	}
 
-	public void setAulas1(List<Aula> aulas1) {
-		this.aulas1 = aulas1;
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
 	}
 
-	public List<ColegioProfesor> getColegioProfesors1() {
-		return this.colegioProfesors1;
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setColegio(this);
+
+		return aula;
 	}
 
-	public void setColegioProfesors1(List<ColegioProfesor> colegioProfesors1) {
-		this.colegioProfesors1 = colegioProfesors1;
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setColegio(null);
+
+		return aula;
+	}
+
+	public List<ColegioProfesor> getColegioProfesors() {
+		return this.colegioProfesors;
+	}
+
+	public void setColegioProfesors(List<ColegioProfesor> colegioProfesors) {
+		this.colegioProfesors = colegioProfesors;
+	}
+
+	public ColegioProfesor addColegioProfesor(ColegioProfesor colegioProfesor) {
+		getColegioProfesors().add(colegioProfesor);
+		colegioProfesor.setColegio(this);
+
+		return colegioProfesor;
+	}
+
+	public ColegioProfesor removeColegioProfesor(ColegioProfesor colegioProfesor) {
+		getColegioProfesors().remove(colegioProfesor);
+		colegioProfesor.setColegio(null);
+
+		return colegioProfesor;
 	}
 
 	public List<Sesion> getSesions() {
@@ -132,6 +157,20 @@ public class Colegio implements Serializable {
 
 	public void setSesions(List<Sesion> sesions) {
 		this.sesions = sesions;
+	}
+
+	public Sesion addSesion(Sesion sesion) {
+		getSesions().add(sesion);
+		sesion.setColegio(this);
+
+		return sesion;
+	}
+
+	public Sesion removeSesion(Sesion sesion) {
+		getSesions().remove(sesion);
+		sesion.setColegio(null);
+
+		return sesion;
 	}
 
 }

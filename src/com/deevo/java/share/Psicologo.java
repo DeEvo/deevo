@@ -2,7 +2,6 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 
@@ -11,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PSICOLOGO")
 public class Psicologo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,12 +18,8 @@ public class Psicologo implements Serializable {
 	@Column(name="psi_cod")
 	private int psiCod;
 
-	@Column(name="psi_dlab")
-	private String psiDlab;
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="psi_ing")
-	private Date psiIng;
+	@Column(name="psi_des")
+	private String psiDes;
 
 	//bi-directional many-to-one association to Aula
 	@OneToMany(mappedBy="psicologo")
@@ -45,20 +41,12 @@ public class Psicologo implements Serializable {
 		this.psiCod = psiCod;
 	}
 
-	public String getPsiDlab() {
-		return this.psiDlab;
+	public String getPsiDes() {
+		return this.psiDes;
 	}
 
-	public void setPsiDlab(String psiDlab) {
-		this.psiDlab = psiDlab;
-	}
-
-	public Date getPsiIng() {
-		return this.psiIng;
-	}
-
-	public void setPsiIng(Date psiIng) {
-		this.psiIng = psiIng;
+	public void setPsiDes(String psiDes) {
+		this.psiDes = psiDes;
 	}
 
 	public List<Aula> getAulas() {
@@ -67,6 +55,20 @@ public class Psicologo implements Serializable {
 
 	public void setAulas(List<Aula> aulas) {
 		this.aulas = aulas;
+	}
+
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setPsicologo(this);
+
+		return aula;
+	}
+
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setPsicologo(null);
+
+		return aula;
 	}
 
 	public Persona getPersona() {

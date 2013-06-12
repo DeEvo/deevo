@@ -1,16 +1,8 @@
 package com.deevo.java.share;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 
 /**
@@ -18,6 +10,7 @@ import javax.persistence.OneToMany;
  * 
  */
 @Entity
+@Table(name="AULA")
 public class Aula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,14 +18,14 @@ public class Aula implements Serializable {
 	@Column(name="cod_aula")
 	private int codAula;
 
-	//bi-directional many-to-one association to AlumnoAula
-	@OneToMany(mappedBy="aula")
-	private List<AlumnoAula> alumnoAulas;
+	//bi-directional many-to-many association to Alumno
+	@ManyToMany(mappedBy="aulas")
+	private List<Alumno> alumnos;
 
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
 	@JoinColumn(name="cod_col")
-	private Colegio colegio1;
+	private Colegio colegio;
 
 	//bi-directional many-to-one association to GradoSeccion
 	@ManyToOne
@@ -45,7 +38,7 @@ public class Aula implements Serializable {
 	//bi-directional many-to-one association to PeriodoAcademico
 	@ManyToOne
 	@JoinColumn(name="cod_per")
-	private PeriodoAcademico periodoAcademico1;
+	private PeriodoAcademico periodoAcademico;
 
 	//bi-directional many-to-one association to Profesor
 	@ManyToOne
@@ -72,20 +65,20 @@ public class Aula implements Serializable {
 		this.codAula = codAula;
 	}
 
-	public List<AlumnoAula> getAlumnoAulas() {
-		return this.alumnoAulas;
+	public List<Alumno> getAlumnos() {
+		return this.alumnos;
 	}
 
-	public void setAlumnoAulas(List<AlumnoAula> alumnoAulas) {
-		this.alumnoAulas = alumnoAulas;
+	public void setAlumnos(List<Alumno> alumnos) {
+		this.alumnos = alumnos;
 	}
 
-	public Colegio getColegio1() {
-		return this.colegio1;
+	public Colegio getColegio() {
+		return this.colegio;
 	}
 
-	public void setColegio1(Colegio colegio1) {
-		this.colegio1 = colegio1;
+	public void setColegio(Colegio colegio) {
+		this.colegio = colegio;
 	}
 
 	public GradoSeccion getGradoSeccion() {
@@ -96,13 +89,13 @@ public class Aula implements Serializable {
 		this.gradoSeccion = gradoSeccion;
 	}
 
-	public PeriodoAcademico getPeriodoAcademico1() {
-		return this.periodoAcademico1;
+	public PeriodoAcademico getPeriodoAcademico() {
+		return this.periodoAcademico;
 	}
 
-	public void setPeriodoAcademico1(PeriodoAcademico periodoAcademico1) {
-		this.periodoAcademico1 = periodoAcademico1;
-}
+	public void setPeriodoAcademico(PeriodoAcademico periodoAcademico) {
+		this.periodoAcademico = periodoAcademico;
+	}
 
 	public Profesor getProfesor() {
 		return this.profesor;

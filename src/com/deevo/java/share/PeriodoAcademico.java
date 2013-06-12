@@ -19,19 +19,20 @@ public class PeriodoAcademico implements Serializable {
 	@Column(name="cod_per")
 	private int codPer;
 
-	private int annio;
+	@Column(name="per_des")
+	private String perDes;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="per_fin")
 	private Date perFin;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="per_inicio")
 	private Date perInicio;
 
 	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="periodoAcademico1")
-	private List<Aula> aulas1;
+	@OneToMany(mappedBy="periodoAcademico")
+	private List<Aula> aulas;
 
 	public PeriodoAcademico() {
 	}
@@ -44,12 +45,12 @@ public class PeriodoAcademico implements Serializable {
 		this.codPer = codPer;
 	}
 
-	public int getAnnio() {
-		return this.annio;
+	public String getPerDes() {
+		return this.perDes;
 	}
 
-	public void setAnnio(int annio) {
-		this.annio = annio;
+	public void setPerDes(String perDes) {
+		this.perDes = perDes;
 	}
 
 	public Date getPerFin() {
@@ -68,12 +69,26 @@ public class PeriodoAcademico implements Serializable {
 		this.perInicio = perInicio;
 	}
 
-	public List<Aula> getAulas1() {
-		return this.aulas1;
+	public List<Aula> getAulas() {
+		return this.aulas;
 	}
 
-	public void setAulas1(List<Aula> aulas1) {
-		this.aulas1 = aulas1;
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setPeriodoAcademico(this);
+
+		return aula;
+	}
+
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setPeriodoAcademico(null);
+
+		return aula;
 	}
 
 }

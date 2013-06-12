@@ -20,8 +20,8 @@ public class ColegioProfesor implements Serializable {
 
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
-	@JoinColumn(name="cod_col",insertable=false, updatable=false)
-	private Colegio colegio1;
+	@JoinColumn(name="cod_col")
+	private Colegio colegio;
 
 	public ColegioProfesor() {
 	}
@@ -42,12 +42,12 @@ public class ColegioProfesor implements Serializable {
 		this.estado = estado;
 	}
 
-	public Colegio getColegio1() {
-		return this.colegio1;
+	public Colegio getColegio() {
+		return this.colegio;
 	}
 
-	public void setColegio1(Colegio colegio1) {
-		this.colegio1 = colegio1;
+	public void setColegio(Colegio colegio) {
+		this.colegio = colegio;
 	}
 
 }

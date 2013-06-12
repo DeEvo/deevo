@@ -5,8 +5,8 @@ import javax.persistence.EntityExistsException;
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 
 import com.deevo.java.client.action.NuevoLogin;
-import com.deevo.java.server.model.dao.LoginDao;
-import com.deevo.java.share.Login;
+import com.deevo.java.server.model.dao.UsuarioDao;
+import com.deevo.java.share.Usuario;
 import com.google.inject.Inject;
 import com.deevo.java.client.action.NuevoLoginResult;
 import com.gwtplatform.dispatch.server.ExecutionContext;
@@ -21,12 +21,12 @@ public class NuevoLoginActionHandler implements ActionHandler<NuevoLogin, NuevoL
 	@Override
 	public NuevoLoginResult execute(NuevoLogin action, ExecutionContext context)
 			throws ActionException {
-		Login logIn = new Login();
-		logIn.setUser(action.getUser());
-		logIn.setUserPass(action.getPass());
-		LoginDao logIndao = new LoginDao();
+		Usuario user = new Usuario();
+		user.setUsurCod(action.getUser());
+		user.setPerPass(action.getPass());
+		UsuarioDao userdao = new  UsuarioDao();
 		try{
-		if(logIn.equals(logIndao.retrieveLogin(logIn)))	
+		if(user.equals(userdao.retrieveUsuario(user)))	
 			throw new ActionException("Usuario o Contraseña incorrectos");
 		}catch(Throwable a){
 			throw new ActionException("Solicitar ayuda al administrador");

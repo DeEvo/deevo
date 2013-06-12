@@ -3,7 +3,7 @@ package com.deevo.java.share;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
-import static javax.persistence.GenerationType.SEQUENCE;
+
 
 /**
  * The persistent class for the ALERTAS database table.
@@ -84,6 +84,20 @@ public class Alerta implements Serializable {
 
 	public void setAlertaPrivilegios(List<AlertaPrivilegio> alertaPrivilegios) {
 		this.alertaPrivilegios = alertaPrivilegios;
+	}
+
+	public AlertaPrivilegio addAlertaPrivilegio(AlertaPrivilegio alertaPrivilegio) {
+		getAlertaPrivilegios().add(alertaPrivilegio);
+		alertaPrivilegio.setAlerta(this);
+
+		return alertaPrivilegio;
+	}
+
+	public AlertaPrivilegio removeAlertaPrivilegio(AlertaPrivilegio alertaPrivilegio) {
+		getAlertaPrivilegios().remove(alertaPrivilegio);
+		alertaPrivilegio.setAlerta(null);
+
+		return alertaPrivilegio;
 	}
 
 }

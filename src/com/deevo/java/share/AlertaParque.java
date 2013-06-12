@@ -22,7 +22,7 @@ public class AlertaParque implements Serializable {
 
 	//bi-directional one-to-one association to Alerta
 	@OneToOne
-	@JoinColumn(name="ale_cod",insertable=false, updatable=false)
+	@JoinColumn(name="ale_cod")
 	private Alerta alerta;
 
 	//bi-directional many-to-one association to Estado

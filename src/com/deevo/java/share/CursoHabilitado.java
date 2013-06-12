@@ -18,6 +18,12 @@ public class CursoHabilitado implements Serializable {
 	@Column(name="cur_hab_cod")
 	private int curHabCod;
 
+	@Column(name="cod_grado")
+	private int codGrado;
+
+	@Column(name="cod_seccion")
+	private int codSeccion;
+
 	//bi-directional many-to-one association to CursoProfesor
 	@ManyToOne
 	@JoinColumns({
@@ -25,14 +31,6 @@ public class CursoHabilitado implements Serializable {
 		@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
 		})
 	private CursoProfesor cursoProfesor;
-
-	//bi-directional many-to-one association to GradoSeccion
-	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name="cod_grado", referencedColumnName="cod_grado"),
-		@JoinColumn(name="cod_seccion", referencedColumnName="cod_seccion")
-		})
-	private GradoSeccion gradoSeccion1;
 
 	//bi-directional many-to-many association to Test
 	@ManyToMany(mappedBy="cursoHabilitados")
@@ -49,20 +47,28 @@ public class CursoHabilitado implements Serializable {
 		this.curHabCod = curHabCod;
 	}
 
+	public int getCodGrado() {
+		return this.codGrado;
+	}
+
+	public void setCodGrado(int codGrado) {
+		this.codGrado = codGrado;
+	}
+
+	public int getCodSeccion() {
+		return this.codSeccion;
+	}
+
+	public void setCodSeccion(int codSeccion) {
+		this.codSeccion = codSeccion;
+	}
+
 	public CursoProfesor getCursoProfesor() {
 		return this.cursoProfesor;
 	}
 
 	public void setCursoProfesor(CursoProfesor cursoProfesor) {
 		this.cursoProfesor = cursoProfesor;
-	}
-
-	public GradoSeccion getGradoSeccion1() {
-		return this.gradoSeccion1;
-	}
-
-	public void setGradoSeccion1(GradoSeccion gradoSeccion1) {
-		this.gradoSeccion1 = gradoSeccion1;
 	}
 
 	public List<Test> getTests() {

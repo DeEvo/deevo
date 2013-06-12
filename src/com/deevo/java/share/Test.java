@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="TEST")
 public class Test implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -20,8 +21,8 @@ public class Test implements Serializable {
 	@Column(name="test_des")
 	private String testDes;
 
-	@Column(name="test_ela")
-	private String testEla;
+	@Column(name="test_nom")
+	private String testNom;
 
 	//bi-directional many-to-one association to Pregunta
 	@OneToMany(mappedBy="test")
@@ -54,9 +55,18 @@ public class Test implements Serializable {
 		)
 	private List<CursoHabilitado> cursoHabilitados;
 
-	//bi-directional many-to-one association to TestPrivilegio
-	@OneToMany(mappedBy="test1")
-	private List<TestPrivilegio> testPrivilegios1;
+	//bi-directional many-to-many association to Privilegio
+	@ManyToMany
+	@JoinTable(
+		name="TEST_PRIVILEGIO"
+		, joinColumns={
+			@JoinColumn(name="test_cod")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="pri_cod")
+			}
+		)
+	private List<Privilegio> privilegios;
 
 	public Test() {
 	}
@@ -77,12 +87,12 @@ public class Test implements Serializable {
 		this.testDes = testDes;
 	}
 
-	public String getTestEla() {
-		return this.testEla;
+	public String getTestNom() {
+		return this.testNom;
 	}
 
-	public void setTestEla(String testEla) {
-		this.testEla = testEla;
+	public void setTestNom(String testNom) {
+		this.testNom = testNom;
 	}
 
 	public List<Pregunta> getPreguntas() {
@@ -93,12 +103,40 @@ public class Test implements Serializable {
 		this.preguntas = preguntas;
 	}
 
+	public Pregunta addPregunta(Pregunta pregunta) {
+		getPreguntas().add(pregunta);
+		pregunta.setTest(this);
+
+		return pregunta;
+	}
+
+	public Pregunta removePregunta(Pregunta pregunta) {
+		getPreguntas().remove(pregunta);
+		pregunta.setTest(null);
+
+		return pregunta;
+	}
+
 	public List<Respuesta> getRespuestas() {
 		return this.respuestas;
 	}
 
 	public void setRespuestas(List<Respuesta> respuestas) {
 		this.respuestas = respuestas;
+	}
+
+	public Respuesta addRespuesta(Respuesta respuesta) {
+		getRespuestas().add(respuesta);
+		respuesta.setTest(this);
+
+		return respuesta;
+	}
+
+	public Respuesta removeRespuesta(Respuesta respuesta) {
+		getRespuestas().remove(respuesta);
+		respuesta.setTest(null);
+
+		return respuesta;
 	}
 
 	public MetodoCalificacion getMetodoCalificacion() {
@@ -125,12 +163,12 @@ public class Test implements Serializable {
 		this.cursoHabilitados = cursoHabilitados;
 	}
 
-	public List<TestPrivilegio> getTestPrivilegios1() {
-		return this.testPrivilegios1;
+	public List<Privilegio> getPrivilegios() {
+		return this.privilegios;
 	}
 
-	public void setTestPrivilegios1(List<TestPrivilegio> testPrivilegios1) {
-		this.testPrivilegios1 = testPrivilegios1;
+	public void setPrivilegios(List<Privilegio> privilegios) {
+		this.privilegios = privilegios;
 	}
 
 }

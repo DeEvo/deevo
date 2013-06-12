@@ -2,7 +2,6 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -18,18 +17,11 @@ public class PadreFamilia implements Serializable {
 	@Column(name="pad_cod")
 	private int padCod;
 
+	@Column(name="pad_bio")
+	private byte padBio;
+
 	@Column(name="pad_cant")
 	private int padCant;
-
-	@Column(name="pad_fam")
-	private int padFam;
-
-	@Column(name="pad_pin")
-	private int padPin;
-
-	//bi-directional many-to-one association to Alumno
-	@OneToMany(mappedBy="padreFamilia")
-	private List<Alumno> alumnos;
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
@@ -47,36 +39,20 @@ public class PadreFamilia implements Serializable {
 		this.padCod = padCod;
 	}
 
+	public byte getPadBio() {
+		return this.padBio;
+	}
+
+	public void setPadBio(byte padBio) {
+		this.padBio = padBio;
+	}
+
 	public int getPadCant() {
 		return this.padCant;
 	}
 
 	public void setPadCant(int padCant) {
 		this.padCant = padCant;
-	}
-
-	public int getPadFam() {
-		return this.padFam;
-	}
-
-	public void setPadFam(int padFam) {
-		this.padFam = padFam;
-	}
-
-	public int getPadPin() {
-		return this.padPin;
-	}
-
-	public void setPadPin(int padPin) {
-		this.padPin = padPin;
-	}
-
-	public List<Alumno> getAlumnos() {
-		return this.alumnos;
-	}
-
-	public void setAlumnos(List<Alumno> alumnos) {
-		this.alumnos = alumnos;
 	}
 
 	public Persona getPersona() {

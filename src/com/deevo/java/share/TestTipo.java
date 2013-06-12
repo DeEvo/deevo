@@ -24,11 +24,8 @@ public class TestTipo implements Serializable {
 	@Column(name="test_fis_ubc")
 	private String testFisUbc;
 
-	@Column(name="test_per_acad")
-	private String testPerAcad;
-
-	@Column(name="test_psi_nivel")
-	private String testPsiNivel;
+	@Column(name="test_periodo")
+	private int testPeriodo;
 
 	//bi-directional many-to-one association to Test
 	@OneToMany(mappedBy="testTipo")
@@ -61,20 +58,12 @@ public class TestTipo implements Serializable {
 		this.testFisUbc = testFisUbc;
 	}
 
-	public String getTestPerAcad() {
-		return this.testPerAcad;
+	public int getTestPeriodo() {
+		return this.testPeriodo;
 	}
 
-	public void setTestPerAcad(String testPerAcad) {
-		this.testPerAcad = testPerAcad;
-	}
-
-	public String getTestPsiNivel() {
-		return this.testPsiNivel;
-	}
-
-	public void setTestPsiNivel(String testPsiNivel) {
-		this.testPsiNivel = testPsiNivel;
+	public void setTestPeriodo(int testPeriodo) {
+		this.testPeriodo = testPeriodo;
 	}
 
 	public List<Test> getTests() {
@@ -83,6 +72,20 @@ public class TestTipo implements Serializable {
 
 	public void setTests(List<Test> tests) {
 		this.tests = tests;
+	}
+
+	public Test addTest(Test test) {
+		getTests().add(test);
+		test.setTestTipo(this);
+
+		return test;
+	}
+
+	public Test removeTest(Test test) {
+		getTests().remove(test);
+		test.setTestTipo(null);
+
+		return test;
 	}
 
 }
