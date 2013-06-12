@@ -20,7 +20,6 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
-import java.util.Date;
 
 public class NuevaPersonaPresenter extends
 		Presenter<NuevaPersonaPresenter.MyView, NuevaPersonaPresenter.MyProxy> {
@@ -31,7 +30,7 @@ public class NuevaPersonaPresenter extends
 		public TextBox getNombresTexbox();
 		public TextBox getAppaternTexbox();
 		public TextBox getApmaternTexbox();
-		public TextBox getEstcivTexbox();
+		public TextBox getEstcivListbox();
 		public DateBox getFnacTexbox();
 		public IntegerBox getTelfTexbox();
 		public IntegerBox getCelTexbox();
@@ -49,6 +48,8 @@ public class NuevaPersonaPresenter extends
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}
+	
+	@Inject NuevoUsuarioPopupPresenter	nuevoUsuarioPopPresenter;
 
 	@Override
 	protected void revealInParent() {
@@ -70,19 +71,17 @@ public class NuevaPersonaPresenter extends
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				Date fecha = getView().getFnacTexbox().getValue();
-				Window.alert(String.valueOf(fecha));
 				NuevaPersona action = new NuevaPersona(
 						Integer.parseInt(getView().getDniTexbox().getText()), 
 						getView().getNombresTexbox().getText(),
 						getView().getAppaternTexbox().getText(),
 						getView().getApmaternTexbox().getText(),
 						getView().getFnacTexbox().getValue(),
-						Integer.parseInt(getView().getTelfTexbox().getText()),
-						Integer.parseInt(getView().getCelTexbox().getText()),
+						getView().getTelfTexbox().getValue(),
+						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivTexbox().getText());
+						getView().getEstcivListbox().getText());
 				dispatchAsync.execute(action, nuevapersonaCallback);
 			}
 		});
@@ -94,7 +93,7 @@ public class NuevaPersonaPresenter extends
 		@Override
 		public void onSuccess(NuevaPersonaResult result) {
 			// TODO Auto-generated method stub
-			Window.alert("Se ha ingresado correctamente");
+			addToPopupSlot(nuevoUsuarioPopPresenter);
 		
 		}
 		

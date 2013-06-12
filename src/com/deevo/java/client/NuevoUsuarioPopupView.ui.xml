@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
+	ui:generateLocales='default'>
+
+	<g:PopupPanel width="300" height="200" glassEnabled="true" modal="true" animationEnabled="true">
+		<g:Grid width="100%" height="100%">
+			<g:row>
+				<g:customCell>
+					<g:Label text="Bienvenido al sistema DeEvo, se ha creado un USUARIO y su CONTRASEÑA es su DNI, tambien se le enviara esto a su respectivo e-mail. Gracias" ui:field="mensaje"/>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label text="USUARIO:"/>
+				</g:customCell>
+				<g:customCell>
+					<g:Label text="New Label" ui:field="usuario"/>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label text="Contraseña"/>
+				</g:customCell>
+				<g:customCell>
+					<g:Label text="New Label" ui:field="contrasennia"/>
+				</g:customCell>
+			</g:row>
+			<g:row align="center">
+				<g:customCell align="center">
+					<g:Button text="Imprimir" styleName="btnppimprimir"/>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
+	</g:PopupPanel>
+</ui:UiBinder>

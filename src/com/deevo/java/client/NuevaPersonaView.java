@@ -23,7 +23,7 @@ public class NuevaPersonaView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox appaternTexbox;
 	@UiField TextBox apmaternTexbox;
-	@UiField TextBox estcivTexbox;
+	@UiField TextBox estcivListbox;
 	@UiField DateBox fnacTexbox;
 	@UiField IntegerBox telfTexbox;
 	@UiField IntegerBox celTexbox;
@@ -60,8 +60,8 @@ public class NuevaPersonaView extends ViewImpl implements
 		return apmaternTexbox;
 	}
 
-	public TextBox getEstcivTexbox() {
-		return estcivTexbox;
+	public TextBox getEstcivListbox() {
+		return estcivListbox;
 	}
 
 	public DateBox getFnacTexbox() {
