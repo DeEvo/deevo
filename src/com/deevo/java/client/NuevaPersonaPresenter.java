@@ -32,13 +32,14 @@ public class NuevaPersonaPresenter extends
 		public TextBox getAppaternTexbox();
 		public TextBox getApmaternTexbox();
 		public ListBox getEstcivListbox();
+		public ListBox getSexoListbox(); 
 		public DateBox getFnacTexbox();
 		public IntegerBox getTelfTexbox();
 		public IntegerBox getCelTexbox();
 		public TextBox getDirTexbox();
 		public TextBox getEmailTexbox();
 	}
-
+	
 	@ProxyCodeSplit
 	@NameToken(NameTokens.nuevapersona)
 	public interface MyProxy extends ProxyPlace<NuevaPersonaPresenter> {
@@ -82,9 +83,9 @@ public class NuevaPersonaPresenter extends
 						getView().getCelTexbox().getValue(),
 						getView().getDirTexbox().getText(),
 						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getItemText(
-								getView().getEstcivListbox().getSelectedIndex()),
-						true, "Masculino");
+						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getSelectedIndex()),
+						true,
+						getView().getSexoListbox().getItemText(getView().getSexoListbox().getSelectedIndex()));
 
 				if(valida()){
 				dispatchAsync.execute(action, nuevapersonaCallback);

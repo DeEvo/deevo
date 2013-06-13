@@ -6,7 +6,7 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel width="200px" height="500px">
+	<g:HTMLPanel width="200px" height="450px">
 		<g:StackLayoutPanel width="100%" unit="PX" height="100%">
 			<g:stack>
 				<g:header size="36">Perfil</g:header>
