@@ -15,7 +15,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="37px"/>
+	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="20px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -51,7 +51,29 @@
 	    						<g:Label styleName="labelFormulario" width="" text="Usuario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
+	    						<g:TextBox width="200px" ui:field="usuarioTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="100%">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox text="DNI de padre registrado" width="151px" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Nuevo Padre en el sistema" width="197px" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button  width="100px" text="Crear" styleName="layout" ui:field="nuevopadreButton"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -67,10 +89,23 @@
 	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Num. de hijos inscritos" width="151px"/>
+	    						<g:CheckBox text="Num. de hijos inscritos" width="151px" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="200px"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox text="Asignar hijos:" width="151px" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="DNI HIJO 1" styleName="labelFormulario" width=""/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:IntegerBox/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -81,7 +116,7 @@
 	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox name="new name" text="Padre/Madre"/>
+	    						<g:CheckBox name="new name" text="Padre/Madre" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:ListBox width="120px" ui:field="bioListbox">
