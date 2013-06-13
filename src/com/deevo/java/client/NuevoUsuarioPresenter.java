@@ -8,6 +8,8 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.action.NuevaPersona;
 import com.deevo.java.client.action.NuevaPersonaResult;
 import com.deevo.java.client.place.NameTokens;
+import com.gwtplatform.mvp.client.proxy.PlaceManager;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.google.inject.Inject;
@@ -38,6 +40,7 @@ public class NuevoUsuarioPresenter extends
 		public IntegerBox getCelTexbox();
 		public TextBox getDirTexbox();
 		public TextBox getEmailTexbox();
+		public ListBox getRolListbox();
 	}
 	
 	@ProxyCodeSplit
@@ -51,7 +54,8 @@ public class NuevoUsuarioPresenter extends
 		super(eventBus, view, proxy);
 	}
 	
-	@Inject NuevoUsuarioPopupPresenter	nuevoUsuarioPopPresenter;
+	@Inject NuevoUsuarioPopupPresenter nuevoUsuarioPopPresenter;
+	@Inject	PlaceManager placeManager;
 
 	@Override
 	protected void revealInParent() {
@@ -73,24 +77,43 @@ public class NuevoUsuarioPresenter extends
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				NuevaPersona action = new NuevaPersona(
-						getView().getDniTexbox().getText(), 
-						getView().getNombresTexbox().getText(),
-						getView().getAppaternTexbox().getText(),
-						getView().getApmaternTexbox().getText(),
-						getView().getFnacTexbox().getValue(),
-						getView().getTelfTexbox().getValue(),
-						getView().getCelTexbox().getValue(),
-						getView().getDirTexbox().getText(),
-						getView().getEmailTexbox().getText(),
-						getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getSelectedIndex()),
-						true,
-						getView().getSexoListbox().getItemText(getView().getSexoListbox().getSelectedIndex()));
-
-				if(valida()){
-				dispatchAsync.execute(action, nuevapersonaCallback);
+				//MOVER ESTE CODIGO CUANDO SE HA VALIDADO
+				if(getView().getRolListbox().getSelectedIndex()==0){
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno);				
+					placeManager.revealPlace(request);
 				}
-			}
+				else if(getView().getRolListbox().getSelectedIndex()==1){
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre);				
+					placeManager.revealPlace(request);
+				}
+				else if(getView().getRolListbox().getSelectedIndex()==2){
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);				
+					placeManager.revealPlace(request);
+				}
+				else if(getView().getRolListbox().getSelectedIndex()==3){
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo);				
+					placeManager.revealPlace(request);
+				}
+				//HASTA ACA, DEBERIA IR EN EL ACTION ONSUCCESS
+				
+				NuevaPersona action = new NuevaPersona(
+					getView().getDniTexbox().getText(), 
+					getView().getNombresTexbox().getText(),
+					getView().getAppaternTexbox().getText(),
+					getView().getApmaternTexbox().getText(),
+					getView().getFnacTexbox().getValue(),
+					getView().getTelfTexbox().getValue(),
+					getView().getCelTexbox().getValue(),
+					getView().getDirTexbox().getText(),
+					getView().getEmailTexbox().getText(),
+					getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getSelectedIndex()),
+					true,
+					getView().getSexoListbox().getItemText(getView().getSexoListbox().getSelectedIndex()));
+
+					if(valida()){
+						dispatchAsync.execute(action, nuevapersonaCallback);
+					}
+				}
 		});
 		
 	}
@@ -104,6 +127,7 @@ public class NuevoUsuarioPresenter extends
 			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
 			nuevoUsuarioPopPresenter.getView().getContrasennia().setText(result.getPerPass());
 			addToPopupSlot(nuevoUsuarioPopPresenter);
+			
 			}else{
 				Window.alert("Exitos pero no tienes usuario =(!");
 			}
@@ -114,7 +138,6 @@ public class NuevoUsuarioPresenter extends
 		public void onFailure(Throwable caught) {
 			// TODO Auto-generated method stub
 			Window.alert("Error: "+ caught.getMessage());
-			
 		}
 	};
 	

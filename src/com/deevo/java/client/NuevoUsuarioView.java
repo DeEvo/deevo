@@ -37,6 +37,7 @@ public class NuevoUsuarioView extends ViewImpl implements
 	@UiField TextBox dirTexbox;
 	@UiField TextBox emailTexbox;
 	@UiField Label labelvalida;
+	@UiField ListBox rolListbox;
 	
 	@Inject
 	public NuevoUsuarioView(final Binder binder) {
@@ -100,6 +101,10 @@ public class NuevoUsuarioView extends ViewImpl implements
 		return sexoListbox;
 	}
 	
+	public ListBox getRolListbox() {
+		return rolListbox;
+	}
+
 	// VALIDACION DE TIPO DE DATOS
 	//NUEMRICOS
 	@UiHandler("dniTexbox")
