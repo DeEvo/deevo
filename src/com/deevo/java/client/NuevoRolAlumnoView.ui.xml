@@ -15,7 +15,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Complete el siguiente formulario para asignar un nuevo Rol Alumno:" width="100%" styleName="labelsubformulario" height="37px"/>
+	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="37px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -37,17 +37,10 @@
 	    						<g:TextBox width="200px" ui:field="nombresTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
+	    				
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Usuario" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="usuarioTexbox"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Contraseña" styleName="labelFormulario"/>
+	    						<g:Label styleName="labelFormulario" width="" text="Nuevo Rol Asignado"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
@@ -66,10 +59,29 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
+	    			<g:Label height="37px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
 	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:RadioButton name="new name" text="Asignar Aula"/>
+	    						<g:CheckBox text="Codigo de MINEDU" width="151px"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px"/>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="100%">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox name="new name" text="Asignar Aula"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
