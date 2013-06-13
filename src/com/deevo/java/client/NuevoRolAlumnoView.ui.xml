@@ -6,7 +6,143 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.datepicker.client">
 
-	<g:HTMLPanel styleName="fondoBienvenida">
-		
+	<g:HTMLPanel height="100%" width="100%" styleName="fondoBienvenida">
+	    <g:Grid width="100%" height="100%" styleName="cuadroBorde">
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Label text="Nuevo Rol Alumno" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER"/>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Label text="Complete el siguiente formulario para asignar un nuevo Rol Alumno:" width="100%" styleName="labelsubformulario" height="37px"/>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" cellPadding="6">
+	    				<g:row>
+	    					<g:customCell>
+	    			<g:Label text="DNI" styleName="labelFormulario"/>
+	    		</g:customCell>
+	    					<g:customCell>
+	    						<g:IntegerBox width="120px" ui:field="dniTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Nombres" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px" ui:field="nombresTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Usuario" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px" ui:field="usuarioTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Contraseña" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Colegio" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px" ui:field="colegioTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="100%">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:RadioButton name="new name" text="Asignar Aula"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Nivel" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:ListBox width="120px" ui:field="nivelListbox">
+									<g:item value='1'>
+										Inicial
+									</g:item>
+									<g:item value='2'>
+										Primaria
+									</g:item>
+								</g:ListBox>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Grado" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:ListBox width="120px" ui:field="gradoListbox">
+									<g:item value='1'>
+										--------
+									</g:item>
+								</g:ListBox>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Sección" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:ListBox width="120px" ui:field="seccionListbox">
+									<g:item value='1'>
+										--------
+									</g:item>
+								</g:ListBox>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Label/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label styleName="labelFormulario" text="Codigo de Aula"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="120px"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row/>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="10">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Button width="90px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button width="116px" text="Crear y asignar otro rol" styleName="layout" ui:field="asignarButton"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    </g:Grid>
 	</g:HTMLPanel>
 </ui:UiBinder>
