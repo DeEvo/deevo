@@ -45,9 +45,10 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button>Detalle de Usuario</g:Button>
+														<g:Button text="Detalle de Roles">Detalle de Usuario</g:Button>
 													</g:customCell>
 												</g:row>
+												<g:row/>
 											</g:Grid>
 										</g:customCell>
 										<g:customCell>
@@ -55,14 +56,6 @@
 												<g:row>
 													<g:customCell>
 														<g:Grid width="100%" height="70px">
-														<g:row>
-															<g:customCell>
-															<g:Label text="Rol" styleName="labelFormulario" width="138px" />
-															</g:customCell>
-															<g:customCell>
-																<g:TextBox width="120px" ui:field="rolTexbox" maxLength="40" />
-															</g:customCell>
-														</g:row>
 														<g:row>
 															<g:customCell>
 															<g:Label text="Usuario" styleName="labelFormulario" width="138px" />

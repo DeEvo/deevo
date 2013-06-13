@@ -78,60 +78,6 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox name="new name" text="Asignar Aula"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Nivel" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="nivelListbox">
-									<g:item value='1'>
-										Inicial
-									</g:item>
-									<g:item value='2'>
-										Primaria
-									</g:item>
-								</g:ListBox>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Grado" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="gradoListbox">
-									<g:item value='1'>
-										--------
-									</g:item>
-								</g:ListBox>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Sección" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="seccionListbox">
-									<g:item value='1'>
-										--------
-									</g:item>
-								</g:ListBox>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Label/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row/>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
 	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="10">
 	    				<g:row>
 	    					<g:customCell>

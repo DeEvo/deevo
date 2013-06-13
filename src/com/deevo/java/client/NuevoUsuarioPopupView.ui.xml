@@ -10,23 +10,34 @@
 		<g:Grid width="100%" height="100%">
 			<g:row>
 				<g:customCell>
-					<g:Label text="Bienvenido al sistema DeEvo, se ha creado un USUARIO y su CONTRASEÑA es su DNI, tambien se le enviara esto a su respectivo e-mail. Gracias" ui:field="mensaje"/>
+					<g:Label text="El nuevo USUARIO se ha crado con éxito" ui:field="mensaje"/>
 				</g:customCell>
 			</g:row>
 			<g:row>
 				<g:customCell>
-					<g:Label text="USUARIO:"/>
-				</g:customCell>
-				<g:customCell>
-					<g:Label text="New Label" ui:field="usuario"/>
+					<g:Label text="La ficha de inscripcion se enviara por correo" ui:field="mensaje2"/>
 				</g:customCell>
 			</g:row>
 			<g:row>
 				<g:customCell>
-					<g:Label text="Contraseña"/>
-				</g:customCell>
-				<g:customCell>
-					<g:Label text="New Label" ui:field="contrasennia"/>
+					<g:Grid width="100%" height="100%">
+						<g:row>
+							<g:customCell>
+								<g:Label text="USUARIO:" width="150px"/>
+							</g:customCell>
+							<g:customCell>
+								<g:Label text="New Label" ui:field="usuario" width="100px"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Contraseña" width="150px"/>
+							</g:customCell>
+							<g:customCell>
+								<g:Label text="New Label" ui:field="contrasennia" width="100px"/>
+							</g:customCell>
+						</g:row>
+					</g:Grid>
 				</g:customCell>
 			</g:row>
 			<g:row align="center">
