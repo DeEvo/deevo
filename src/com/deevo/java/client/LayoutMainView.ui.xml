@@ -28,7 +28,7 @@
 				<g:HTMLPanel ui:field="menuContentPanel"/>
 			</g:Dock>
 			<g:Dock direction="CENTER">  
-				<g:HTMLPanel ui:field="mainContentPanel" height="500px"/>
+				<g:HTMLPanel ui:field="mainContentPanel" height="700px"/>
 			</g:Dock>			
 		</g:DockPanel>
 	</g:HTMLPanel> 

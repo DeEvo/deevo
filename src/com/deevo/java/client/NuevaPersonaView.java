@@ -7,12 +7,14 @@ import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.ChangeEvent;
+
 
 public class NuevaPersonaView extends ViewImpl implements
 		NuevaPersonaPresenter.MyView {
@@ -28,12 +30,13 @@ public class NuevaPersonaView extends ViewImpl implements
 	@UiField TextBox appaternTexbox;
 	@UiField TextBox apmaternTexbox;
 	@UiField ListBox estcivListbox;
+	@UiField ListBox sexoListbox;
 	@UiField DateBox fnacTexbox;
 	@UiField IntegerBox telfTexbox;
 	@UiField IntegerBox celTexbox;
 	@UiField TextBox dirTexbox;
 	@UiField TextBox emailTexbox;
-	@UiField TextBox txtvalida;
+	@UiField Label labelvalida;
 	
 	@Inject
 	public NuevaPersonaView(final Binder binder) {
@@ -89,18 +92,38 @@ public class NuevaPersonaView extends ViewImpl implements
 		return emailTexbox;
 	}
 	
-// VALIDACION DE TIPO DE DATOS
+	public Label getLabelvalida() {
+		return labelvalida;
+	}
+	
+	public ListBox getSexoListbox() {
+		return sexoListbox;
+	}
+	
+	// VALIDACION DE TIPO DE DATOS
 	//NUEMRICOS
 	@UiHandler("dniTexbox")
 	void onDniTexboxKeyPress(KeyPressEvent event) {
 		char c = event.getCharCode();
-	    if (!(c >= 48 && c <= 57)) {
+		if (!(c >= 48 && c <= 57)) {
 	    	((IntegerBox)event.getSource()).cancelKey();
 	    }
 
 	}
 
-	
+	@UiHandler("dniTexbox")
+	void onDniTexboxChange(ChangeEvent event) {
+	    if(dniTexbox.getText().length() != 8){
+	    	//txtvalida.addStyleName();
+	    	labelvalida.setText("Incorrecto");
+	    }else{
+	    	labelvalida.setText("Correcto");
+	    }
+
+	}
+
+
+
 	@UiHandler("telfTexbox")
 	void onTelfTexboxKeyPress(KeyPressEvent event) {
 		char c = event.getCharCode();
@@ -141,16 +164,15 @@ public class NuevaPersonaView extends ViewImpl implements
 	    if (!((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || c == 45 || c == 32)) {
 	    	((TextBox)event.getSource()).cancelKey();
 	    }
-	}	      
-
+	}
 	
-	@UiHandler("txtvalida")
+	@UiHandler("labelvalida")
 	void onTxtvalidaChange(ChangeEvent event) {
 	    if(dniTexbox.getText().length() != 8){
 	    	//txtvalida.addStyleName();
-	    	txtvalida.setText("Incorrecto");
+	    	labelvalida.setText("Incorrecto");
 	    }else{
-	    	txtvalida.setText("Correcto");
+	    	labelvalida.setText("Correcto");
 	    }
 		
 	}

@@ -31,7 +31,7 @@
 								<g:IntegerBox width="120px" ui:field="dniTexbox" maxLength="8" visibleLength="8" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="90px" height="28" ui:field="txtvalida" styleName="labelFormularioAlerta"/>
+								<g:Label width="50px" height="28" ui:field="labelvalida"/>
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -56,6 +56,21 @@
 							</g:customCell>
 							<g:customCell>
 								<g:TextBox width="200px" ui:field="apmaternTexbox" maxLength="40" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Genero" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="sexoListbox">
+									<g:item value='1'>
+										Masculino
+									</g:item>
+									<g:item value='2'>
+										Femenino
+									</g:item>
+								</g:ListBox>
 							</g:customCell>
 						</g:row>
 						<g:row>

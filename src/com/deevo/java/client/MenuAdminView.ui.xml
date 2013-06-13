@@ -6,19 +6,19 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel width="200px" height="500px">
+	<g:HTMLPanel width="200px" height="450px">
 		<g:StackLayoutPanel width="100%" unit="PX" height="100%">
 			<g:stack>
 				<g:header size="36">Perfil</g:header>
 				<g:Tree>
-						<g:Label text="Ver Perfil"/>
+						<g:Label text="Ver Perfil" ui:field="perfil"/>
 						<g:Label text="Actulizar datos"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
 				<g:header size="36">Usuarios</g:header>
 				<g:Tree>
-					<g:Label text="Nueva Persona"/>
+					<g:Label text="Nueva Persona" ui:field="nuevapersona"/>
 					<g:Label text="Nuevo Usuario"/>
 				</g:Tree>
 			</g:stack>
