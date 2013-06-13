@@ -25,10 +25,10 @@
 						<g:RadioButton name="Nuevo Usuario" text="Psicologo" ui:field="psicologoOption"/>
 					</g:TreeItem>
 					<g:TreeItem text="Nuevo Rol" state="true">
-						<g:Label text="Alumno"/>
-						<g:Label text="Padre de Familia"/>
-						<g:Label text="Profesor"/>
-						<g:Label text="Psicologo"/>
+						<g:Label text="Alumno" ui:field="alumnoRol"/>
+						<g:Label text="Padre de Familia" ui:field="padreRol"/>
+						<g:Label text="Profesor" ui:field="profesorRol"/>
+						<g:Label text="Psicologo" ui:field="psicologoRol"/>
 					</g:TreeItem>
 				</g:Tree>
 			</g:stack>

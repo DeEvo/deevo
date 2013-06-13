@@ -21,6 +21,10 @@ public class MenuAdminView extends ViewImpl implements
 	@UiField RadioButton padreOption;
 	@UiField RadioButton profesorOption;
 	@UiField RadioButton psicologoOption;
+	@UiField Label alumnoRol;
+	@UiField Label padreRol;
+	@UiField Label profesorRol;
+	@UiField Label psicologoRol;
 	
 	public interface Binder extends UiBinder<Widget, MenuAdminView> {
 	}
@@ -67,6 +71,30 @@ public class MenuAdminView extends ViewImpl implements
 	@UiHandler("psicologoOption")
 	void onPsicologoOptionClick(ClickEvent event) {
 		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario);				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("alumnoRol")
+	void onAlumnoRolClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno);				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("padreRol")
+	void onPadreRolClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre);				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("profesorRol")
+	void onProfesorRolClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("psicologoRol")
+	void onPsicologoRolClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo);				
 		placeManager.revealPlace(request);
 	}
 }

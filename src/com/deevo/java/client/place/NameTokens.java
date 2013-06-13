@@ -42,7 +42,7 @@ public class NameTokens {
 
 	public static final String nuevorolpsicologo = "nuevorolpsicologo";
 
-	public static final String nuevorolalumno = "nuevoalumno";
+	public static final String nuevorolalumno = "nuevorolalumno";
 
 	public static final String nuevorolpadre = "nuevorolpadre";
 
