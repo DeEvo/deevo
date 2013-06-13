@@ -15,8 +15,11 @@
 							</g:customCell>
 						</g:row>
 						<g:row>
+						
+						</g:row>
+						<g:row>
 							<g:customCell>
-								<g:Grid width="100%" height="400px" borderWidth="1">
+								<g:Grid width="100%" height="400px">
 									<g:row>
 										<g:customCell>
 											<g:Grid width="152px" height="100%" styleName="fondoperfilfoto">
@@ -27,7 +30,7 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button width="125px" text="Editar Foto"/>
+														<g:Button width="125px" text="Cambiar Foto"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
@@ -37,12 +40,42 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="algo mas xD" width="125px"/>
+														<g:Button text="Cambiar contraseña" width="136px"/>
+													</g:customCell>
+												</g:row>
+												<g:row>
+													<g:customCell>
+														<g:Button>Detalle de Usuario</g:Button>
 													</g:customCell>
 												</g:row>
 											</g:Grid>
 										</g:customCell>
 										<g:customCell>
+											<g:Grid borderWidth="1">
+												<g:row>
+													<g:customCell>
+														<g:Grid width="100%" height="70px">
+														<g:row>
+															<g:customCell>
+															<g:Label text="Rol" styleName="labelFormulario" width="138px" />
+															</g:customCell>
+															<g:customCell>
+																<g:TextBox width="120px" ui:field="rolTexbox" maxLength="40" />
+															</g:customCell>
+														</g:row>
+														<g:row>
+															<g:customCell>
+															<g:Label text="Usuario" styleName="labelFormulario" width="138px" />
+															</g:customCell>
+															<g:customCell>
+																<g:TextBox width="200px" ui:field="usuarioTexbox" maxLength="40" />
+															</g:customCell>
+														</g:row>
+														</g:Grid>
+													</g:customCell>
+												</g:row>
+												<g:row>
+													<g:customCell>
 											<g:Grid width="361px" height="100%">
 											<g:row>
 							<g:customCell>
@@ -76,12 +109,21 @@
 								<g:TextBox width="200px" ui:field="apmaternTexbox" maxLength="40" />
 							</g:customCell>
 						</g:row>
+						
+							<g:row>
+							<g:customCell>
+								<g:Label text="Genero" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="120px" ui:field="sexoTextbox"/>
+							</g:customCell>
+						</g:row>
 						<g:row>
 							<g:customCell>
 								<g:Label text="Estado Civil" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="120px" ui:field="estcivListbox"/>
+								<g:TextBox width="120px" ui:field="estcivTextbox"/>
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -124,8 +166,10 @@
 								<g:TextBox width="200px" ui:field="emailTexbox" maxLength="30" />
 							</g:customCell>
 						</g:row>
-											
-											
+													
+											</g:Grid>
+													</g:customCell>
+												</g:row>
 											</g:Grid>
 										</g:customCell>
 									</g:row>
