@@ -40,18 +40,10 @@
 	    				
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label styleName="labelFormulario" width="" text="Nuevo Rol Asignado"/>
+	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Colegio" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="colegioTexbox"/>
+	    						<g:TextBox width="200px" ui:field="apellidosTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -144,9 +136,6 @@
 	    				<g:row>
 	    					<g:customCell>
 	    						<g:Button width="90px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button width="116px" text="Crear y asignar otro rol" styleName="layout" ui:field="asignarButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>

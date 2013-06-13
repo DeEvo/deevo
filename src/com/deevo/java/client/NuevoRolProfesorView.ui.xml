@@ -48,7 +48,7 @@
 	    				
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label styleName="labelFormulario" width="" text="Nuevo Rol Asignado"/>
+	    						<g:Label styleName="labelFormulario" width="" text="Usuario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
@@ -67,10 +67,10 @@
 	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Descripcion" width="151px"/>
+	    						<g:CheckBox text="Descripcion" width="95px"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px"/>
+	    						<g:TextArea width="200px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
