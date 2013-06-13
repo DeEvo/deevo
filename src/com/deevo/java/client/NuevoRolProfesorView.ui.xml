@@ -37,6 +37,14 @@
 	    						<g:TextBox width="200px" ui:field="nombresTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="200px" ui:field="apellidosTexbox"/>
+	    					</g:customCell>
+	    				</g:row>
 	    				
 	    				<g:row>
 	    					<g:customCell>
@@ -44,14 +52,6 @@
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="contraTexbox"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Colegio" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="colegioTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -124,14 +124,6 @@
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Label/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label styleName="labelFormulario" text="Codigo de Aula"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="120px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row/>
