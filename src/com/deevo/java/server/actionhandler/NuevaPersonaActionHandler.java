@@ -39,7 +39,6 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerEstc(action.getEstc());
 			persona.setPerIng(new Date());
 			persona.setSexo(action.getSexo());
-
 			Personadao perdao = new Personadao();
 			try{
 			perdao.createPersona(persona);
@@ -66,7 +65,7 @@ public class NuevaPersonaActionHandler implements
 				} catch (Throwable e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					throw new ActionException("La Persona ya existe "+e.getMessage());
+					throw new ActionException("La Persona ya existe ");
 				}
 				return new NuevaPersonaResult("Exito", user.getUsurCod() , user.getPerPass());
 			}			

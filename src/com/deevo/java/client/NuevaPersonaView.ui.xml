@@ -28,7 +28,10 @@
 								<g:Label text="DNI*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:IntegerBox width="120px" ui:field="dniTexbox" />
+								<g:IntegerBox width="120px" ui:field="dniTexbox" maxLength="8" visibleLength="8" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="60px" height="28" ui:field="txtvalida"/>
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -36,7 +39,7 @@
 								<g:Label text="Nombres*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="200px" ui:field="nombresTexbox" />
+								<g:TextBox width="200px" ui:field="nombresTexbox" maxLength="40" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -44,7 +47,7 @@
 								<g:Label text="Apellido Paterno*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="200px" ui:field="appaternTexbox" />
+								<g:TextBox width="200px" ui:field="appaternTexbox" maxLength="40" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -52,7 +55,7 @@
 								<g:Label text="Apellido Materno*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="200px" ui:field="apmaternTexbox" />
+								<g:TextBox width="200px" ui:field="apmaternTexbox" maxLength="40" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -89,7 +92,7 @@
 								<g:Label text="Telefono" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:IntegerBox width="120px" ui:field="telfTexbox" />
+								<g:IntegerBox width="120px" ui:field="telfTexbox" maxLength="7" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -97,7 +100,7 @@
 								<g:Label text="Celular" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:IntegerBox width="120px" ui:field="celTexbox" />
+								<g:IntegerBox width="120px" ui:field="celTexbox" maxLength="9" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -105,7 +108,7 @@
 								<g:Label text="Dirección" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="250px" ui:field="dirTexbox" />
+								<g:TextBox width="250px" ui:field="dirTexbox" maxLength="50" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -113,7 +116,7 @@
 								<g:Label text="Email" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="200px" ui:field="emailTexbox" />
+								<g:TextBox width="200px" ui:field="emailTexbox" maxLength="30" />
 							</g:customCell>
 						</g:row>
 					</g:Grid>

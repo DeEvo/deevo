@@ -84,10 +84,11 @@ public class NuevaPersonaPresenter extends
 						getView().getEmailTexbox().getText(),
 						getView().getEstcivListbox().getItemText(
 								getView().getEstcivListbox().getSelectedIndex()),
-						null, null,true, "Masculino");
+						true, "Masculino");
 
-
+				if(valida()){
 				dispatchAsync.execute(action, nuevapersonaCallback);
+				}
 			}
 		});
 		
@@ -115,5 +116,50 @@ public class NuevaPersonaPresenter extends
 			
 		}
 	};
+	
+	
+
+	public boolean valida(){
+		
+		
+		if(getView().getDniTexbox().getText().length() != 8){
+			Window.alert("El DNI debe tener 8 digitos");
+			getView().getDniTexbox().setFocus(true);
+			return false;
+		}
+		
+		if(getView().getDniTexbox().getText().isEmpty()){
+			Window.alert("Debe completar el DNI");
+			getView().getDniTexbox().setFocus(true);
+			return false;
+		}
+		
+		if(getView().getNombresTexbox().getText().isEmpty()){
+			Window.alert("Debe completar el Nombre");
+			getView().getNombresTexbox().setFocus(true);
+			return false;
+		}
+		
+		if(getView().getAppaternTexbox().getText().isEmpty()){
+			Window.alert("Debe completar el Apellido paterno");
+			getView().getAppaternTexbox().setFocus(true);
+			return false;
+		}
+		
+		if(getView().getAppaternTexbox().getText().isEmpty()){
+			Window.alert("Debe completar el Apellido materno");
+			getView().getAppaternTexbox().setFocus(true);
+			return false;
+		}
+		
+		if(getView().getFnacTexbox().getValue() == null){
+			Window.alert("Debe completar la fecha de nacimiento");
+			getView().getFnacTexbox().setFocus(true);
+			return false;
+		}
+		
+		return true;
+	}
+	
 	
 }

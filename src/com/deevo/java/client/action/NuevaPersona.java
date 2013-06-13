@@ -18,8 +18,6 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 	private String direccion;
 	private String email;
 	private String estc;
-	private String usurCod;
-	private String perPass;
 	private Boolean flag_usuario;
 	private String sexo;
 	
@@ -36,7 +34,7 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 
 	public NuevaPersona(String dni, String nombre, String appatern,
 			String apmatern, Date fechanac, Integer telefono, Integer celular,
-			String direccion, String email, String estc, String usurCod, String perPass, Boolean flag_usuario, String sexo) {
+			String direccion, String email, String estc, Boolean flag_usuario, String sexo) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.appatern = appatern;
@@ -48,8 +46,6 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		this.email = email;
 		this.estc = estc;
 		this.sexo = sexo;
-		this.usurCod = usurCod;
-		this.perPass = perPass;
 		this.flag_usuario = flag_usuario;
 		
 	}
@@ -98,13 +94,6 @@ public class NuevaPersona extends ActionImpl<NuevaPersonaResult> {
 		return sexo;
 	}
 	
-	public String getUsurCod() {
-		return usurCod;
-	}
-
-	public String getPerPass() {
-		return perPass;
-	}
 
 	public Boolean getFlag_usuario() {
 		return flag_usuario;

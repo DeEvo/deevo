@@ -10,6 +10,8 @@ import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.KeyPressEvent;
 
 public class NuevaPersonaView extends ViewImpl implements
 		NuevaPersonaPresenter.MyView {
@@ -30,6 +32,7 @@ public class NuevaPersonaView extends ViewImpl implements
 	@UiField IntegerBox celTexbox;
 	@UiField TextBox dirTexbox;
 	@UiField TextBox emailTexbox;
+	@UiField TextBox txtvalida;
 	
 	@Inject
 	public NuevaPersonaView(final Binder binder) {
@@ -84,7 +87,64 @@ public class NuevaPersonaView extends ViewImpl implements
 	public TextBox getEmailTexbox() {
 		return emailTexbox;
 	}
+	
+// VALIDACION DE TIPO DE DATOS
+	//NUEMRICOS
+	@UiHandler("dniTexbox")
+	void onDniTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!(c >= 48 && c <= 57)) {
+	    	((IntegerBox)event.getSource()).cancelKey();
+	    }
+	    if(dniTexbox.getText().length() != 8){
+	    	//txtvalida.addStyleName();
+	    	txtvalida.setText("Incorrecto");
+	    }else{
+	    	txtvalida.setText("Correcto");
+	    }
+	}
+	
+	@UiHandler("telfTexbox")
+	void onTelfTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!(c >= 48 && c <= 57)) {
+	    	((IntegerBox)event.getSource()).cancelKey();
+	    }
+	}
+	
+	@UiHandler("celTexbox")
+	void onCelTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!(c >= 48 && c <= 57)) {
+	    	((IntegerBox)event.getSource()).cancelKey();
+	    }
+	}
+	
+	//LETRAS, ESPACIOS EN BLANCO Y -
+	
+	@UiHandler("nombresTexbox")
+	void onNombresTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || c == 45 || c == 32)) {
+	    	((TextBox)event.getSource()).cancelKey();
+	    }
+	}
+	
+	@UiHandler("appaternTexbox")
+	void onAppaternTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || c == 45 || c == 32)) {
+	    	((TextBox)event.getSource()).cancelKey();
+	    }
+	}
+	
+	@UiHandler("apmaternTexbox")
+	void onApmaternTexboxKeyPress(KeyPressEvent event) {
+		char c = event.getCharCode();
+	    if (!((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || c == 45 || c == 32)) {
+	    	((TextBox)event.getSource()).cancelKey();
+	    }
+	}	      
 
 	
-
 }
