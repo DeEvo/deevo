@@ -6,5 +6,132 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel/>
+	<g:HTMLPanel width="100%" height="100%" styleName="fondoBienvenida">
+		<g:Grid width="100%" height="100%" styleName="cuadroBorde">
+						<g:row>
+							<g:customCell>
+								<g:Label text="Perfil de Usuario" styleName="tituloFormulario"
+						horizontalAlignment="ALIGN_CENTER" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Grid width="100%" height="400px" borderWidth="1">
+									<g:row>
+										<g:customCell>
+											<g:Grid width="152px" height="100%" styleName="fondoperfilfoto">
+												<g:row>
+													<g:customCell>
+														<g:Image width="100px" height="100px"/>
+													</g:customCell>
+												</g:row>
+												<g:row>
+													<g:customCell>
+														<g:Button width="125px" text="Editar Foto"/>
+													</g:customCell>
+												</g:row>
+												<g:row>
+													<g:customCell>
+														<g:Button text="Editar información" width="125px"/>
+													</g:customCell>
+												</g:row>
+												<g:row>
+													<g:customCell>
+														<g:Button text="algo mas xD" width="125px"/>
+													</g:customCell>
+												</g:row>
+											</g:Grid>
+										</g:customCell>
+										<g:customCell>
+											<g:Grid width="361px" height="100%">
+											<g:row>
+							<g:customCell>
+								<g:Label text="DNI" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:IntegerBox width="120px" ui:field="dniTexbox" maxLength="8" visibleLength="8" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Nombres" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="nombresTexbox" maxLength="40" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Apellido Paterno" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="appaternTexbox" maxLength="40" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Apellido Materno" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="apmaternTexbox" maxLength="40" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Estado Civil" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="120px" ui:field="estcivListbox"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Fecha de nacimiento" width="100%" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="120px" ui:field="fnacTexbox"/>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Telefono" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:IntegerBox width="120px" ui:field="telfTexbox" maxLength="7" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Celular" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:IntegerBox width="120px" ui:field="celTexbox" maxLength="9" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Dirección" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="dirTexbox" maxLength="50" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Email" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="emailTexbox" maxLength="30" />
+							</g:customCell>
+						</g:row>
+											
+											
+											</g:Grid>
+										</g:customCell>
+									</g:row>
+								</g:Grid>
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+		</g:HTMLPanel>
 </ui:UiBinder>

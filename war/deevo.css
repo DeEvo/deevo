@@ -36,12 +36,6 @@
 	background-color: cadetblue;
 	table-layout: auto;
 }
-.labelBienvenido {
-	color: #99ccff;
-	font-size: 20px;
-	font-family: GrilledCheese BTN Wide Blk;
-	text-align: center;
-}
 .labelFooter {
 	color: White;
 	border-left: 1px outset #ff9999;
@@ -65,13 +59,14 @@
 	text-align: center;
 }
 .labelFormulario {
-	color: lightseagreen;
+	color: Teal;
+	margin-right: 5px;
 	font-size: 13px;
 	font-family: verdana;
 	text-align: right;
 }
 .tituloFormulario {
-	color: Black;
+	color: #000099;
 	margin-left: 5px;
 	font-size: 24px;
 	font-style: normal;
@@ -79,7 +74,7 @@
 }
 .labelsubformulario {
 	color: black;
-	margin: auto 5px;
+	margin: auto 15px;
 	font-size: 14px;
 	font-family: verdana;
 
@@ -120,7 +115,7 @@
 	text-align: center;
 }
 .cuadroBienvenida {
-	border: 5px dashed #996600;
+	border: 3px dashed #996600;
 }
 .fondoBienvenida {
 	background-color: ivory;
@@ -136,7 +131,7 @@
 	text-align: justify;
 }
 .textsubBienvenido {
-	color: Teal;
+	color: #009999;
 	margin-right: 15px;
 	margin-left: 15px;
 	font-size: 18px;
@@ -155,6 +150,20 @@
 }
 .btnppimprimir {
 	text-align: center;
+}
+.labelFormularioAlerta {
+	color: red;
+	font-size: 14px;
+	font-family: verdana;
+	text-align: left;
+}
+.cuadroBorde {
+	border: 3px dashed #996600;
+}
+.fondoperfilfoto {
+	text-align: center;
+	background-color: #009999;
+	table-layout: auto;
 }
 /* Add css rules here for your application. */
 
