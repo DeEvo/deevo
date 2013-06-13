@@ -1,6 +1,5 @@
 package com.deevo.java.client;
 
-import java.util.Date;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
@@ -15,8 +14,7 @@ import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.i18n.shared.DateTimeFormat;
+
 
 
 public class NuevaPersonaView extends ViewImpl implements
@@ -165,8 +163,4 @@ public class NuevaPersonaView extends ViewImpl implements
 	    }
 	}
 	
-	@UiHandler("fnacTexbox")
-	void onFnacTexboxValueChange(ValueChangeEvent event) {
-		
-	}
 }

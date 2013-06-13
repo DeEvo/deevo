@@ -11,14 +11,14 @@
 			<g:stack>
 				<g:header size="36">Perfil</g:header>
 				<g:Tree>
-						<g:Label text="Ver Perfil"/>
+						<g:Label text="Ver Perfil" ui:field="perfil"/>
 						<g:Label text="Actulizar datos"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>
 				<g:header size="36">Usuarios</g:header>
 				<g:Tree>
-					<g:Label text="Nueva Persona"/>
+					<g:Label text="Nueva Persona" ui:field="nuevapersona"/>
 					<g:Label text="Nuevo Usuario"/>
 				</g:Tree>
 			</g:stack>

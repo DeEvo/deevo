@@ -5,11 +5,11 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.datepicker.client">
 
-	<g:HTMLPanel>
-		<g:Grid width="100%">
+	<g:HTMLPanel styleName="fondoBienvenida">
+		<g:Grid width="100%" styleName="cuadroBorde">
 			<g:row>
 				<g:customCell>
-					<g:Label text="Nuevo Persona" styleName="tituloFormulario"
+					<g:Label text="Nueva Persona" styleName="tituloFormulario"
 						horizontalAlignment="ALIGN_CENTER" />
 				</g:customCell>
 			</g:row>
@@ -22,7 +22,7 @@
 			</g:row>
 			<g:row>
 				<g:customCell>
-					<g:Grid width="100%" cellPadding="6">
+					<g:Grid width="100%" cellPadding="6" >
 						<g:row>
 							<g:customCell>
 								<g:Label text="DNI*" styleName="labelFormulario" />
@@ -78,7 +78,7 @@
 								<g:Label text="Estado Civil" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:ListBox width="200px" ui:field="estcivListbox">
+								<g:ListBox width="120px" ui:field="estcivListbox">
 									<g:item value='1'>
 										Soltero
 									</g:item>
@@ -96,7 +96,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:Label text="Fecha de nac.*" width="100%" styleName="labelFormulario" />
+								<g:Label text="Fecha de nacimiento*" width="100%" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<p1:DateBox width="120px" ui:field="fnacTexbox" />
@@ -123,7 +123,7 @@
 								<g:Label text="Dirección" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="250px" ui:field="dirTexbox" maxLength="50" />
+								<g:TextBox width="200px" ui:field="dirTexbox" maxLength="50" />
 							</g:customCell>
 						</g:row>
 						<g:row>
