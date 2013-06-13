@@ -59,28 +59,6 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox text="DNI de padre registrado" width="151px" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Nuevo Padre en el sistema" width="197px" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button  width="100px" text="Crear" styleName="layout" ui:field="nuevopadreButton"/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
 	    			<g:Label height="37px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
 	    		</g:customCell>
 	    	</g:row>
@@ -89,7 +67,7 @@
 	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Num. de hijos inscritos" width="151px" styleName="labelFormulario"/>
+	    						<g:CheckBox text="Num. de hijos a registrar" width="151px" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="200px"/>
