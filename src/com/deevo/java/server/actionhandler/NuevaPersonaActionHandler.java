@@ -48,16 +48,7 @@ public class NuevaPersonaActionHandler implements
 			}catch(Throwable a){
 				throw new ActionException("Solicitar ayuda al administrador");
 			}
-			
-			Personadao perdao = new Personadao();
-			try{
-			perdao.createPersona(persona);
-			}catch(EntityExistsException a){
-				throw new ActionException("La Persona ya existe "+a.getMessage());
-			}catch(Throwable a){
-				throw new ActionException("Solicitar ayuda al administrador");
-			}
-			
+				
 			if(action.getFlag_usuario()){
 				Usuario user = new Usuario();
 				
