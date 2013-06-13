@@ -27,13 +27,18 @@ public class Privilegio implements Serializable {
 	@Column(name="pri_nom")
 	private String priNom;
 
-	//bi-directional many-to-many association to Test
-	@ManyToMany(mappedBy="privilegios")
-	private List<Test> tests;
-
-	//bi-directional many-to-many association to Usuario
-	@ManyToMany(mappedBy="privilegios")
-	private List<Usuario> usuarios;
+	//bi-directional many-to-many association to Colegio
+	@ManyToMany
+	@JoinTable(
+		name="COLEGIO_PRIVILEGIO"
+		, joinColumns={
+			@JoinColumn(name="pri_cod")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="cod_col")
+			}
+		)
+	private List<Colegio> colegios;
 
 	public Privilegio() {
 	}
@@ -70,20 +75,12 @@ public class Privilegio implements Serializable {
 		this.priNom = priNom;
 	}
 
-	public List<Test> getTests() {
-		return this.tests;
+	public List<Colegio> getColegios() {
+		return this.colegios;
 	}
 
-	public void setTests(List<Test> tests) {
-		this.tests = tests;
-	}
-
-	public List<Usuario> getUsuarios() {
-		return this.usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
+	public void setColegios(List<Colegio> colegios) {
+		this.colegios = colegios;
 	}
 
 }

@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.KeyPressEvent;
+import com.google.gwt.event.dom.client.ChangeEvent;
 
 public class NuevaPersonaView extends ViewImpl implements
 		NuevaPersonaPresenter.MyView {
@@ -96,13 +97,9 @@ public class NuevaPersonaView extends ViewImpl implements
 	    if (!(c >= 48 && c <= 57)) {
 	    	((IntegerBox)event.getSource()).cancelKey();
 	    }
-	    if(dniTexbox.getText().length() != 8){
-	    	//txtvalida.addStyleName();
-	    	txtvalida.setText("Incorrecto");
-	    }else{
-	    	txtvalida.setText("Correcto");
-	    }
+
 	}
+
 	
 	@UiHandler("telfTexbox")
 	void onTelfTexboxKeyPress(KeyPressEvent event) {
@@ -147,4 +144,14 @@ public class NuevaPersonaView extends ViewImpl implements
 	}	      
 
 	
+	@UiHandler("txtvalida")
+	void onTxtvalidaChange(ChangeEvent event) {
+	    if(dniTexbox.getText().length() != 8){
+	    	//txtvalida.addStyleName();
+	    	txtvalida.setText("Incorrecto");
+	    }else{
+	    	txtvalida.setText("Correcto");
+	    }
+		
+	}
 }

@@ -9,7 +9,6 @@
 		<class>com.deevo.java.share.AlertaPrivilegioPK</class>
 		<class>com.deevo.java.share.Alumno</class>
 		<class>com.deevo.java.share.Aula</class>
-		<class>com.deevo.java.share.Colegio</class>
 		<class>com.deevo.java.share.ColegioProfesor</class>
 		<class>com.deevo.java.share.ColegioProfesorPK</class>
 		<class>com.deevo.java.share.Curso</class>
@@ -29,7 +28,6 @@
 		<class>com.deevo.java.share.PeriodoAcademico</class>
 		<class>com.deevo.java.share.Persona</class>
 		<class>com.deevo.java.share.Pregunta</class>
-		<class>com.deevo.java.share.Privilegio</class>
 		<class>com.deevo.java.share.Profesor</class>
 		<class>com.deevo.java.share.Psicologo</class>
 		<class>com.deevo.java.share.Registro</class>
@@ -40,6 +38,10 @@
 		<class>com.deevo.java.share.Test</class>
 		<class>com.deevo.java.share.TestTipo</class>
 		<class>com.deevo.java.share.Usuario</class>
+		<class>com.deevo.java.share.Colegio</class>
+		<class>com.deevo.java.share.ColegioPrivilegio</class>
+		<class>com.deevo.java.share.ColegioPrivilegioPK</class>
+		<class>com.deevo.java.share.Privilegio</class>
 
 
 		<properties>

@@ -38,6 +38,8 @@ public boolean existePrivilegio(Privilegio privilegio) {
 			 try {
 				       tx.begin();
 				       em.persist(privilegio);
+				       em.flush();
+				       em.refresh(privilegio);
 				       tx.commit();
 				     }catch ( EntityExistsException | RollbackException e){
 						 throw new EntityExistsException();

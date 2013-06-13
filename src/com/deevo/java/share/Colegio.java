@@ -10,7 +10,6 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="COLEGIO")
 public class Colegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -36,17 +35,13 @@ public class Colegio implements Serializable {
 	@Column(name="col_ugel")
 	private String colUgel;
 
-	//bi-directional many-to-one association to Aula
+	//bi-directional many-to-one association to ColegioPrivilegio
 	@OneToMany(mappedBy="colegio")
-	private List<Aula> aulas;
+	private List<ColegioPrivilegio> colegioPrivilegios;
 
-	//bi-directional many-to-one association to ColegioProfesor
-	@OneToMany(mappedBy="colegio")
-	private List<ColegioProfesor> colegioProfesors;
-
-	//bi-directional many-to-one association to Sesion
-	@OneToMany(mappedBy="colegio")
-	private List<Sesion> sesions;
+	//bi-directional many-to-many association to Privilegio
+	@ManyToMany(mappedBy="colegios")
+	private List<Privilegio> privilegios;
 
 	public Colegio() {
 	}
@@ -107,70 +102,34 @@ public class Colegio implements Serializable {
 		this.colUgel = colUgel;
 	}
 
-	public List<Aula> getAulas() {
-		return this.aulas;
+	public List<ColegioPrivilegio> getColegioPrivilegios() {
+		return this.colegioPrivilegios;
 	}
 
-	public void setAulas(List<Aula> aulas) {
-		this.aulas = aulas;
+	public void setColegioPrivilegios(List<ColegioPrivilegio> colegioPrivilegios) {
+		this.colegioPrivilegios = colegioPrivilegios;
 	}
 
-	public Aula addAula(Aula aula) {
-		getAulas().add(aula);
-		aula.setColegio(this);
+	public ColegioPrivilegio addColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
+		getColegioPrivilegios().add(colegioPrivilegio);
+		colegioPrivilegio.setColegio(this);
 
-		return aula;
+		return colegioPrivilegio;
 	}
 
-	public Aula removeAula(Aula aula) {
-		getAulas().remove(aula);
-		aula.setColegio(null);
+	public ColegioPrivilegio removeColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
+		getColegioPrivilegios().remove(colegioPrivilegio);
+		colegioPrivilegio.setColegio(null);
 
-		return aula;
+		return colegioPrivilegio;
 	}
 
-	public List<ColegioProfesor> getColegioProfesors() {
-		return this.colegioProfesors;
+	public List<Privilegio> getPrivilegios() {
+		return this.privilegios;
 	}
 
-	public void setColegioProfesors(List<ColegioProfesor> colegioProfesors) {
-		this.colegioProfesors = colegioProfesors;
-	}
-
-	public ColegioProfesor addColegioProfesor(ColegioProfesor colegioProfesor) {
-		getColegioProfesors().add(colegioProfesor);
-		colegioProfesor.setColegio(this);
-
-		return colegioProfesor;
-	}
-
-	public ColegioProfesor removeColegioProfesor(ColegioProfesor colegioProfesor) {
-		getColegioProfesors().remove(colegioProfesor);
-		colegioProfesor.setColegio(null);
-
-		return colegioProfesor;
-	}
-
-	public List<Sesion> getSesions() {
-		return this.sesions;
-	}
-
-	public void setSesions(List<Sesion> sesions) {
-		this.sesions = sesions;
-	}
-
-	public Sesion addSesion(Sesion sesion) {
-		getSesions().add(sesion);
-		sesion.setColegio(this);
-
-		return sesion;
-	}
-
-	public Sesion removeSesion(Sesion sesion) {
-		getSesions().remove(sesion);
-		sesion.setColegio(null);
-
-		return sesion;
+	public void setPrivilegios(List<Privilegio> privilegios) {
+		this.privilegios = privilegios;
 	}
 
 }

@@ -40,6 +40,8 @@ public class ColegioDao {
 			 try {
 				       tx.begin();
 				       em.persist(colegio);
+				       em.flush();
+				       em.refresh(colegio);
 				       tx.commit();
 				     }catch ( EntityExistsException | RollbackException e){
 						 throw new EntityExistsException();
