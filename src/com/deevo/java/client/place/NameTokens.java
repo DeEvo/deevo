@@ -6,7 +6,7 @@ public class NameTokens {
 
 	public static final String main = "main";
 
-	public static final String nuevapersona = "nuevapersona";
+	public static final String nuevousuario = "nuevousuario";
 
 	public static final String busquedaalumno = "busquedaalumno";
 
@@ -40,7 +40,13 @@ public class NameTokens {
 
 	public static final String elabpruebas = "elabpruebas";
 
-	public static final String nuevousuario = "nuevousuario";
+	public static final String nuevorolpsicologo = "nuevorolpsicologo";
+
+	public static final String nuevorolalumno = "nuevoalumno";
+
+	public static final String nuevorolpadre = "nuevorolpadre";
+
+	public static final String nuevorolprofesor = "nuevorolprofesor";
 
 	public static String getHome() {
 		return home;
@@ -48,8 +54,8 @@ public class NameTokens {
 	public static String getMain() {
 		return main;
 	}
-	public static String getNuevaPesona() {
-		return nuevapersona;
+	public static String getNuevousuario() {
+		return nuevousuario;
 	}
 	public static String getBusquedaalumno() {
 		return busquedaalumno;
@@ -99,8 +105,17 @@ public class NameTokens {
 	public static String getElabpruebas() {
 		return elabpruebas;
 	}
-	public static String getNuevousuario() {
-		return nuevousuario;
+	public static String getNuevorolpsicologo() {
+		return nuevorolpsicologo;
+	}
+	public static String getNuevorolalumno() {
+		return nuevorolalumno;
+	}
+	public static String getNuevorolpadre() {
+		return nuevorolpadre;
+	}
+	public static String getNuevorolprofesor() {
+		return nuevorolprofesor;
 	}
 
 }

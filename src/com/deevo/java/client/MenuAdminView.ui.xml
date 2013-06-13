@@ -18,8 +18,18 @@
 			<g:stack>
 				<g:header size="36">Usuarios</g:header>
 				<g:Tree>
-					<g:Label text="Nueva Persona" ui:field="nuevapersona"/>
-					<g:Label text="Nuevo Usuario"/>
+					<g:TreeItem text="Nuevo Usuario" state="true">
+						<g:RadioButton name="Nuevo Usuario" text="Alumno" ui:field="alumnoOption"/>
+						<g:RadioButton name="Nuevo Usuario" text="Padre de Familia" ui:field="padreOption"/>
+						<g:RadioButton name="Nuevo Usuario" text="Profesor" ui:field="profesorOption"/>
+						<g:RadioButton name="Nuevo Usuario" text="Psicologo" ui:field="psicologoOption"/>
+					</g:TreeItem>
+					<g:TreeItem text="Nuevo Rol" state="true">
+						<g:Label text="Alumno"/>
+						<g:Label text="Padre de Familia"/>
+						<g:Label text="Profesor"/>
+						<g:Label text="Psicologo"/>
+					</g:TreeItem>
 				</g:Tree>
 			</g:stack>
 			<g:stack>

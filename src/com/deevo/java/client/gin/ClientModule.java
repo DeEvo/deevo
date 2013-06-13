@@ -11,8 +11,8 @@ import com.deevo.java.client.LoginPresenter;
 import com.deevo.java.client.LoginView;
 import com.deevo.java.client.MainPresenter;
 import com.deevo.java.client.MainView;
-import com.deevo.java.client.NuevaPersonaPresenter;
-import com.deevo.java.client.NuevaPersonaView;
+import com.deevo.java.client.NuevoUsuarioPresenter;
+import com.deevo.java.client.NuevoUsuarioView;
 import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutView;
 import com.deevo.java.client.HeaderPresenter;
@@ -59,12 +59,18 @@ import com.deevo.java.client.BandejaAlertaPresenter;
 import com.deevo.java.client.BandejaAlertaView;
 import com.deevo.java.client.ElaborarPruebasPresenter;
 import com.deevo.java.client.ElaborarPruebasView;
-import com.deevo.java.client.NuevoUsuarioPresenter;
-import com.deevo.java.client.NuevoUsuarioView;
+import com.deevo.java.client.NuevoRolPsicologoPresenter;
+import com.deevo.java.client.NuevoRolPsicologoView;
 import com.deevo.java.client.MenuHomePresenter;
 import com.deevo.java.client.MenuHomeView;
 import com.deevo.java.client.NuevoUsuarioPopupPresenter;
 import com.deevo.java.client.NuevoUsuarioPopupView;
+import com.deevo.java.client.NuevoRolAlumnoPresenter;
+import com.deevo.java.client.NuevoRolAlumnoView;
+import com.deevo.java.client.NuevoRolPadrePresenter;
+import com.deevo.java.client.NuevoRolPadreView;
+import com.deevo.java.client.NuevoRolProfesorPresenter;
+import com.deevo.java.client.NuevoRolProfesorView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -103,9 +109,9 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(SesionPresenter.class,
 				SesionPresenter.MyView.class, SesionView.class);
 
-		bindPresenter(NuevaPersonaPresenter.class,
-				NuevaPersonaPresenter.MyView.class, NuevaPersonaView.class,
-				NuevaPersonaPresenter.MyProxy.class);
+		bindPresenter(NuevoUsuarioPresenter.class,
+				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
+				NuevoUsuarioPresenter.MyProxy.class);
 
 
 		bindPresenterWidget(MenuPsicologoPresenter.class,
@@ -177,12 +183,25 @@ public class ClientModule extends AbstractPresenterModule {
 				ElaborarPruebasView.class,
 				ElaborarPruebasPresenter.MyProxy.class);
 
-		bindPresenter(NuevoUsuarioPresenter.class,
-				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
-				NuevoUsuarioPresenter.MyProxy.class);
+		bindPresenter(NuevoRolPsicologoPresenter.class,
+				NuevoRolPsicologoPresenter.MyView.class, NuevoRolPsicologoView.class,
+				NuevoRolPsicologoPresenter.MyProxy.class);
 
 		bindPresenterWidget(MenuHomePresenter.class,
 				MenuHomePresenter.MyView.class, MenuHomeView.class);
+
+		bindPresenter(NuevoRolAlumnoPresenter.class,
+				NuevoRolAlumnoPresenter.MyView.class, NuevoRolAlumnoView.class,
+				NuevoRolAlumnoPresenter.MyProxy.class);
+
+		bindPresenter(NuevoRolPadrePresenter.class,
+				NuevoRolPadrePresenter.MyView.class, NuevoRolPadreView.class,
+				NuevoRolPadrePresenter.MyProxy.class);
+
+		bindPresenter(NuevoRolProfesorPresenter.class,
+				NuevoRolProfesorPresenter.MyView.class,
+				NuevoRolProfesorView.class,
+				NuevoRolProfesorPresenter.MyProxy.class);
 
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,

@@ -37,7 +37,7 @@ public class MenuPsicologoView extends ViewImpl implements
 
 	@UiHandler("nuevoAlumno")
 	void onNuevoAlumnoClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevapersona);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario);				
 		placeManager.revealPlace(request);
 	}
 	
