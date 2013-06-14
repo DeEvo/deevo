@@ -35,13 +35,9 @@ public class Colegio implements Serializable {
 	@Column(name="col_ugel")
 	private String colUgel;
 
-	//bi-directional many-to-one association to ColegioPrivilegio
-	@OneToMany(mappedBy="colegio")
-	private List<ColegioPrivilegio> colegioPrivilegios;
-
-	//bi-directional many-to-many association to Privilegio
+	//bi-directional many-to-many association to Psicologo
 	@ManyToMany(mappedBy="colegios")
-	private List<Privilegio> privilegios;
+	private List<Psicologo> psicologos;
 
 	public Colegio() {
 	}
@@ -102,34 +98,12 @@ public class Colegio implements Serializable {
 		this.colUgel = colUgel;
 	}
 
-	public List<ColegioPrivilegio> getColegioPrivilegios() {
-		return this.colegioPrivilegios;
+	public List<Psicologo> getPsicologos() {
+		return this.psicologos;
 	}
 
-	public void setColegioPrivilegios(List<ColegioPrivilegio> colegioPrivilegios) {
-		this.colegioPrivilegios = colegioPrivilegios;
-	}
-
-	public ColegioPrivilegio addColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
-		getColegioPrivilegios().add(colegioPrivilegio);
-		colegioPrivilegio.setColegio(this);
-
-		return colegioPrivilegio;
-	}
-
-	public ColegioPrivilegio removeColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
-		getColegioPrivilegios().remove(colegioPrivilegio);
-		colegioPrivilegio.setColegio(null);
-
-		return colegioPrivilegio;
-	}
-
-	public List<Privilegio> getPrivilegios() {
-		return this.privilegios;
-	}
-
-	public void setPrivilegios(List<Privilegio> privilegios) {
-		this.privilegios = privilegios;
+	public void setPsicologos(List<Psicologo> psicologos) {
+		this.psicologos = psicologos;
 	}
 
 }
