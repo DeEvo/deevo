@@ -79,19 +79,35 @@ public class NuevoUsuarioPresenter extends
 			public void onClick(ClickEvent event) {
 				//MOVER ESTE CODIGO CUANDO SE HA VALIDADO
 				if(getView().getRolListbox().getSelectedIndex()==0){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno);				
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with(
+							"dni", getView().getDniTexbox().getText()).with(
+							"nombres", getView().getNombresTexbox().getText()).with(
+							"apaterno", getView().getAppaternTexbox().getText()).with(
+							"amaterno", getView().getApmaternTexbox().getText());				
 					placeManager.revealPlace(request);
 				}
 				else if(getView().getRolListbox().getSelectedIndex()==1){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre);				
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with(
+							"dni", getView().getDniTexbox().getText()).with(
+							"nombres", getView().getNombresTexbox().getText()).with(
+							"apaterno", getView().getAppaternTexbox().getText()).with(
+							"amaterno", getView().getApmaternTexbox().getText());				
 					placeManager.revealPlace(request);
 				}
 				else if(getView().getRolListbox().getSelectedIndex()==2){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);				
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with(
+							"dni", getView().getDniTexbox().getText()).with(
+							"nombres", getView().getNombresTexbox().getText()).with(
+							"apaterno", getView().getAppaternTexbox().getText()).with(
+							"amaterno", getView().getApmaternTexbox().getText());				
 					placeManager.revealPlace(request);
 				}
 				else if(getView().getRolListbox().getSelectedIndex()==3){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo);				
+					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo).with(
+							"dni", getView().getDniTexbox().getText()).with(
+							"nombres", getView().getNombresTexbox().getText()).with(
+							"apaterno", getView().getAppaternTexbox().getText()).with(
+							"amaterno", getView().getApmaternTexbox().getText());				
 					placeManager.revealPlace(request);
 				}
 				//HASTA ACA, DEBERIA IR EN EL ACTION ONSUCCESS
