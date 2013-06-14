@@ -119,10 +119,13 @@
 	    						<g:Button width="90px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="116px" text="Crear y asignar otro rol" styleName="layout" ui:field="asignarButton"/>
+	    						<g:Button width="110px" styleName="layout" ui:field="asignarButton" text="Crear y asignar nuevo rol"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
+	    						<g:Button text="Crear y crear nuevo alumno" width="100px" styleName="layout">Crear e ingresar hijo al sistema</g:Button>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button width="90px" text="Cancelar" styleName="layout"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
