@@ -9,7 +9,10 @@ import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.google.inject.Inject;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -20,6 +23,7 @@ public class NuevoRolAlumnoPresenter extends
 		public IntegerBox getDniTexbox();
 		public TextBox getNombresTexbox();
 		public TextBox getApellidosTexbox();
+		public Button getBuscarButton();
 	}
 
 	@ProxyCodeSplit
@@ -32,6 +36,8 @@ public class NuevoRolAlumnoPresenter extends
 		super(eventBus, view, proxy);
 	}
 
+	@Inject BuscarPopupPresenter buscarPopPresenter;
+	
 	@Override
 	protected void revealInParent() {
 		RevealContentEvent.fire(this, LayoutMainPresenter.SLOT_SetMainContent, this);
@@ -59,6 +65,17 @@ public class NuevoRolAlumnoPresenter extends
 		super.onReset();
 		getView().getDniTexbox().setText(dni);
 		getView().getNombresTexbox().setText(nombres);
-		getView().getApellidosTexbox().setText(apellidos);		
+		getView().getApellidosTexbox().setText(apellidos);
+		
+		getView().getBuscarButton().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
+				addToPopupSlot(buscarPopPresenter);
+			}
+		});
+		
 	}
 }
