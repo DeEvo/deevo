@@ -20,13 +20,13 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" cellPadding="6">
+	    			<g:Grid width="100%" cellPadding="6" styleName="layout">
 	    				<g:row>
 	    					<g:customCell>
 	    			<g:Label text="DNI" styleName="labelFormulario"/>
 	    		</g:customCell>
 	    					<g:customCell>
-	    						<g:IntegerBox width="120px" ui:field="dniTexbox" enabled="false"/>
+	    						<g:IntegerBox width="120px" ui:field="dniTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
@@ -34,7 +34,7 @@
 	    						<g:Label text="Nombres" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="nombresTexbox" enabled="false"/>
+	    						<g:TextBox width="200px" ui:field="nombresTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				
@@ -43,34 +43,15 @@
 	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="apellidosTexbox" enabled="false"/>
+	    						<g:TextBox width="200px" ui:field="apellidosTexbox"/>
 	    					</g:customCell>
 	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Es necesario asignarle un padre/tutor:" width="100%"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="DNI de padre registrado" width="151px" styleName="labelFormulario"/>
+	    						<g:Label text="DNI del apoderado" width="100%" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Nuevo Padre en el sistema" width="197px" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button  width="100px" text="Crear" styleName="layout" ui:field="nuevopadreButton"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -143,14 +124,6 @@
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Label/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label styleName="labelFormulario" text="Codigo de Aula"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="120px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row/>

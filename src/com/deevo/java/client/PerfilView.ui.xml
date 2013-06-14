@@ -6,7 +6,7 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:HTMLPanel width="100%" styleName="fondoBienvenida">
+	<g:HTMLPanel width="100%" styleName="fondoBienvenida" height="100%">
 		<g:Grid width="100%" height="100%" styleName="cuadroBorde">
 						<g:row>
 							<g:customCell>
@@ -15,14 +15,11 @@
 							</g:customCell>
 						</g:row>
 						<g:row>
-						
-						</g:row>
-						<g:row>
 							<g:customCell>
-								<g:Grid width="100%" height="400px">
+								<g:Grid width="100%" height="100%">
 									<g:row>
 										<g:customCell>
-											<g:Grid width="152px" height="100%" styleName="fondoperfilfoto">
+											<g:Grid width="100%" height="100%" styleName="fondoperfilfoto">
 												<g:row>
 													<g:customCell>
 														<g:Image width="100px" height="100px"/>
@@ -30,35 +27,35 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button width="125px" text="Cambiar Foto"/>
+														<g:Button width="130px" text="Cambiar Foto" styleName="layout" height="30px"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Editar información" width="125px"/>
+														<g:Button text="Editar información" width="125px" styleName="layout"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Cambiar contraseña" width="136px"/>
+														<g:Button text="Cambiar contraseña" width="136px" styleName="layout"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Detalle de Roles">Detalle de Usuario</g:Button>
+														<g:Button text="Detalle de Roles" styleName="layout">Detalle de Usuario</g:Button>
 													</g:customCell>
 												</g:row>
 												<g:row/>
 											</g:Grid>
 										</g:customCell>
 										<g:customCell>
-											<g:Grid borderWidth="1">
+											<g:Grid borderWidth="1" width="100%" height="100%">
 												<g:row>
 													<g:customCell>
-														<g:Grid width="100%" height="70px">
+														<g:Grid width="100%" height="100%">
 														<g:row>
 															<g:customCell>
-															<g:Label text="Usuario" styleName="labelFormulario" width="138px" />
+															<g:Label text="Usuario" styleName="labelFormulario" width="100%" />
 															</g:customCell>
 															<g:customCell>
 																<g:TextBox width="200px" ui:field="usuarioTexbox" maxLength="40" />
@@ -69,7 +66,7 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-											<g:Grid width="361px" height="100%">
+											<g:Grid width="100%" height="100%">
 											<g:row>
 							<g:customCell>
 								<g:Label text="DNI" styleName="labelFormulario" />
@@ -167,6 +164,11 @@
 										</g:customCell>
 									</g:row>
 								</g:Grid>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:VerticalPanel height="200px" width="100%"/>
 							</g:customCell>
 						</g:row>
 					</g:Grid>

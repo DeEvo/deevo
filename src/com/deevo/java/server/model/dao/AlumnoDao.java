@@ -133,14 +133,14 @@ public class AlumnoDao {
 			  }
 			  
 			  @SuppressWarnings("unchecked")
-			public List<Alumno> retrieveAlumnosxperAppatern(String perAppatern) {
+			public List<Alumno> retrieveAlumnosxperPat(String perPat) {
 				  
 				    EntityManager em = EMF.get().createEntityManager();	
 				    List<Alumno> list = null;
 				   
 				    try {
-				    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perAppatern LIKE '%?1%'";
-			            list= em.createQuery(qery).setParameter(1, perAppatern).getResultList();
+				    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perPat LIKE '%?1%'";
+			            list= em.createQuery(qery).setParameter(1, perPat).getResultList();
 			          //  list = q.getResultList();
 				    }catch(Throwable t){
 				    	t.printStackTrace();
@@ -151,14 +151,14 @@ public class AlumnoDao {
 				  }
 			  
 			  @SuppressWarnings("unchecked")
-				public List<Alumno> retrieveAlumnosxperAppmatern(String perAppmatern) {
+				public List<Alumno> retrieveAlumnosxperMat(String perMat) {
 					  
 					    EntityManager em = EMF.get().createEntityManager();	
 					    List<Alumno> list = null;
 					   
 					    try {
-					    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perAppmatern LIKE '%?1%'";
-				            list= em.createQuery(qery).setParameter(1, perAppmatern).getResultList();
+					    	String qery = "SELECT x FROM Alumno x WHERE x.persona.perMat LIKE '%?1%'";
+				            list= em.createQuery(qery).setParameter(1, perMat).getResultList();
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
