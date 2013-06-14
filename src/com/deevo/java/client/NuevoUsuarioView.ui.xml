@@ -25,6 +25,27 @@
 					<g:Grid width="100%" cellPadding="6" >
 						<g:row>
 							<g:customCell>
+								<g:Label text="Rol a Asignar" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="rolListbox">
+									<g:item value='1'>
+										Alumno
+									</g:item>
+									<g:item value='2'>
+										Padre de Familia
+									</g:item>
+									<g:item value='3'>
+										Profesor
+									</g:item>
+									<g:item value='4'>
+										Psicologo
+									</g:item>
+								</g:ListBox>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
 								<g:Label text="DNI*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
@@ -132,27 +153,6 @@
 							</g:customCell>
 							<g:customCell>
 								<g:TextBox width="200px" ui:field="emailTexbox" maxLength="30" />
-							</g:customCell>
-						</g:row>
-						<g:row>
-							<g:customCell>
-								<g:Label text="Rol a Asignar" styleName="labelFormulario" />
-							</g:customCell>
-							<g:customCell>
-								<g:ListBox width="200px" ui:field="rolListbox">
-									<g:item value='1'>
-										Alumno
-									</g:item>
-									<g:item value='2'>
-										Padre de Familia
-									</g:item>
-									<g:item value='3'>
-										Profesor
-									</g:item>
-									<g:item value='4'>
-										Psicologo
-									</g:item>
-								</g:ListBox>
 							</g:customCell>
 						</g:row>
 					</g:Grid>

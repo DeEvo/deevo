@@ -162,6 +162,9 @@
 	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="10">
 	    				<g:row>
 	    					<g:customCell>
+	    						<g:Button width="150px" text="Buscar Alumno" styleName="layout" ui:field="buscarButton"/>
+	    					</g:customCell>
+	    					<g:customCell>
 	    						<g:Button width="100px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
