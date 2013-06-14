@@ -9,8 +9,12 @@ import com.deevo.java.client.action.NuevoColegio;
 import com.deevo.java.server.actionhandler.NuevoColegioActionHandler;
 import com.deevo.java.client.action.NuevoPrivilegio;
 import com.deevo.java.server.actionhandler.NuevoPrivilegioActionHandler;
-import com.deevo.java.client.action.GetPerosona;
-import com.deevo.java.server.actionhandler.GetPerosonaActionHandler;
+import com.deevo.java.client.action.GetPersona;
+import com.deevo.java.server.actionhandler.GetPersonaActionHandler;
+import com.deevo.java.client.action.GetCursos;
+import com.deevo.java.server.actionhandler.GetCursosActionHandler;
+import com.deevo.java.client.action.NuevoProfesor;
+import com.deevo.java.server.actionhandler.NuevoProfesorActionHandler;
 
 public class ServerModule extends HandlerModule {
 
@@ -25,6 +29,10 @@ public class ServerModule extends HandlerModule {
 
 		bindHandler(NuevoPrivilegio.class, NuevoPrivilegioActionHandler.class);
 
-		bindHandler(GetPerosona.class, GetPerosonaActionHandler.class);
+		bindHandler(GetPersona.class, GetPersonaActionHandler.class);
+
+		bindHandler(GetCursos.class, GetCursosActionHandler.class);
+
+		bindHandler(NuevoProfesor.class, NuevoProfesorActionHandler.class);
 	}
 }

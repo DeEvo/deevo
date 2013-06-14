@@ -1,5 +1,6 @@
 package com.deevo.java.server.actionhandler;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Random;
 
@@ -8,7 +9,7 @@ import javax.persistence.EntityExistsException;
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.NuevaPersona;
 import com.deevo.java.client.action.NuevaPersonaResult;
-import com.deevo.java.server.model.dao.Personadao;
+import com.deevo.java.server.model.dao.PersonaDao;
 import com.deevo.java.server.model.dao.UsuarioDao;
 import com.deevo.java.share.Persona;
 import com.deevo.java.share.Usuario;
@@ -39,11 +40,13 @@ public class NuevaPersonaActionHandler implements
 			persona.setPerEstc(action.getEstc());
 			persona.setPerIng(new Date());
 			persona.setSexo(action.getSexo());
-			Personadao perdao = new Personadao();
+			PersonaDao perdao = new PersonaDao();
 			try{
 			perdao.createPersona(persona);
 			}catch(EntityExistsException a){
 				throw new ActionException("La Persona ya existe "+a.getMessage());
+			}catch(SQLException a){	
+				throw new ActionException("La Persona ya existe ");
 			}catch(Throwable a){
 				throw new ActionException("Solicitar ayuda al administrador");
 			}

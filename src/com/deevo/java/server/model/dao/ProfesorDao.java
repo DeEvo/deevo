@@ -31,7 +31,7 @@ public boolean existeProfesor(Profesor profesor) {
 		
 
 
-		public void createProfesor(Profesor profesor) throws EntityExistsException , Throwable {
+		public Profesor createProfesor(Profesor profesor) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -39,6 +39,8 @@ public boolean existeProfesor(Profesor profesor) {
 			 try {
 				       tx.begin();
 				       em.persist(profesor);
+				       em.flush();
+				       em.refresh(profesor);
 				       tx.commit();
 				     }catch ( EntityExistsException | RollbackException e){
 						 throw new EntityExistsException();
@@ -51,6 +53,7 @@ public boolean existeProfesor(Profesor profesor) {
 				     finally {
 				       em.close();
 				     }
+			 return profesor;
 			  }
 
 	  public Profesor retrieveProfesor(Profesor profesor)  throws Throwable{

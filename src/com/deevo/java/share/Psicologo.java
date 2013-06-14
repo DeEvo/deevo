@@ -10,7 +10,6 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="PSICOLOGO")
 public class Psicologo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -21,9 +20,18 @@ public class Psicologo implements Serializable {
 	@Column(name="psi_des")
 	private String psiDes;
 
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="psicologo")
-	private List<Aula> aulas;
+	//bi-directional many-to-many association to Colegio
+	@ManyToMany
+	@JoinTable(
+		name="PSICOLOGO_COLEGIO"
+		, joinColumns={
+			@JoinColumn(name="psi_cod")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="cod_col")
+			}
+		)
+	private List<Colegio> colegios;
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
@@ -49,26 +57,12 @@ public class Psicologo implements Serializable {
 		this.psiDes = psiDes;
 	}
 
-	public List<Aula> getAulas() {
-		return this.aulas;
+	public List<Colegio> getColegios() {
+		return this.colegios;
 	}
 
-	public void setAulas(List<Aula> aulas) {
-		this.aulas = aulas;
-	}
-
-	public Aula addAula(Aula aula) {
-		getAulas().add(aula);
-		aula.setPsicologo(this);
-
-		return aula;
-	}
-
-	public Aula removeAula(Aula aula) {
-		getAulas().remove(aula);
-		aula.setPsicologo(null);
-
-		return aula;
+	public void setColegios(List<Colegio> colegios) {
+		this.colegios = colegios;
 	}
 
 	public Persona getPersona() {
