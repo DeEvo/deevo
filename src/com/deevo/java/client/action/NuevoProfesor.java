@@ -35,4 +35,10 @@ public class NuevoProfesor extends ActionImpl<NuevoProfesorResult> {
 	public List getCursos() {
 		return Cursos;
 	}
+
+	public String getUsser_admin() {
+		return usser_admin;
+	}
+	
+	
 }

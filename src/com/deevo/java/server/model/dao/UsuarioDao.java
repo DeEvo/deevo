@@ -110,4 +110,6 @@ public class UsuarioDao {
 		    return usuario2;
 		  }
 
+		
 }
+
