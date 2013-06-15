@@ -3,6 +3,7 @@ package com.deevo.java.client;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -19,7 +20,8 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField IntegerBox dniTexbox;
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
-	
+	@UiField Button crearButton;
+	@UiField TextBox contraTexbox;
 	@Inject
 	public NuevoRolProfesorView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
@@ -42,4 +44,14 @@ public class NuevoRolProfesorView extends ViewImpl implements
 		return apellidosTexbox;
 	}
 
+	@Override
+	public Button getCrearButton() {
+		// TODO Auto-generated method stub
+		return crearButton;
+	}
+
+	public TextBox getContraTexbox() {
+		return contraTexbox;
+	}
+	
 }

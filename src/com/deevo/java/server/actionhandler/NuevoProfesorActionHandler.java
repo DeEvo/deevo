@@ -1,6 +1,5 @@
 package com.deevo.java.server.actionhandler;
 
-import javax.persistence.EntityExistsException;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.NuevoProfesor;
@@ -8,6 +7,7 @@ import com.deevo.java.client.action.NuevoProfesorResult;
 import com.deevo.java.server.model.dao.ColegioDao;
 import com.deevo.java.server.model.dao.ColegioProfesorDao;
 import com.deevo.java.server.model.dao.CursoProfesorDao;
+import com.deevo.java.server.model.dao.PersonaDao;
 import com.deevo.java.server.model.dao.ProfesorDao;
 import com.deevo.java.server.model.dao.UsuarioDao;
 import com.deevo.java.share.Colegio;
@@ -37,22 +37,22 @@ public class NuevoProfesorActionHandler implements
 		ProfesorDao profesordao = new ProfesorDao();
 		CursoProfesorDao cursoprofesordao = new CursoProfesorDao();
 		ColegioProfesorDao colegioprofesordao = new ColegioProfesorDao();
-		UsuarioDao usuariodao = new UsuarioDao();
-		ColegioDao colegiodao = new ColegioDao();
+		//UsuarioDao usuariodao = new UsuarioDao();
+		//ColegioDao colegiodao = new ColegioDao();
 		Profesor profesor = new Profesor();
 		Persona persona = new Persona();
 		Privilegio privilegio = new Privilegio();
 		Colegio colegio = new Colegio();
 		Usuario usuario = new Usuario();
+		PersonaDao personadao = new PersonaDao();
 		ColegioProfesor colegioprofesor = new ColegioProfesor();
 		ColegioProfesorPK colegioprofesorpk = new ColegioProfesorPK();
 		
-		
-		
-		persona.setPerDni(action.getPer_dni());
-		profesor.setProDes(action.getProDes());
-		profesor.setPersona(persona);
 		try {
+			persona.setPerDni(action.getPer_dni());
+			persona = personadao.retrievePersona(persona);
+			profesor.setProDes(action.getProDes());
+			profesor.setPersona(persona);
 			profesor = profesordao.createProfesor(profesor);
 			int i=0;
 			while(i< action.getCursos().size()){
@@ -65,7 +65,7 @@ public class NuevoProfesorActionHandler implements
 				i++;
 			}
 			
-			usuario.setUsurCod(action.getUsser_admin());
+			/*usuario.setUsurCod(action.getUsser_admin());
 			usuario = usuariodao.retrieveUsuario(usuario);
 			i=0;
 			while(i< usuario.getPrivilegios().size()){
@@ -75,7 +75,8 @@ public class NuevoProfesorActionHandler implements
 				}
 				i++;
 			}
-			colegioprofesorpk.setCodCol(privilegio.getColegios().get(0).getCodCol());
+			colegioprofesorpk.setCodCol(privilegio.getColegios().get(0).getCodCol());*/
+			colegioprofesorpk.setCodCol(action.getCodCol());
 			colegioprofesorpk.setProCod(profesor.getProCod());
 			colegioprofesor.setId(colegioprofesorpk);
 			colegioprofesor.setEstado((byte)1);

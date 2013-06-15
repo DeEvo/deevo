@@ -54,25 +54,25 @@ public class MenuAdminView extends ViewImpl implements
 	
 	@UiHandler("alumnoRol")
 	void onAlumnoRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with("valor", "false");				
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("padreRol")
 	void onPadreRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with("valor", "true");				
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("profesorRol")
 	void onProfesorRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with("valor", "true");		
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("psicologoRol")
 	void onPsicologoRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo).with("valor", "true");				
 		placeManager.revealPlace(request);
 	}
 
