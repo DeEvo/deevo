@@ -64,6 +64,7 @@ public class NuevoProfesorActionHandler implements
 				cursoprofesordao.createCursoProfesor(cursoprofesor);
 				i++;
 			}
+			
 			usuario.setUsurCod(action.getUsser_admin());
 			usuario = usuariodao.retrieveUsuario(usuario);
 			i=0;

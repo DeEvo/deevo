@@ -32,7 +32,7 @@ public class PersonaDao {
 		    return true;
 				  }
 	
-	public void createPersona(Persona persona) throws EntityExistsException , Throwable {
+	public Persona createPersona(Persona persona) throws EntityExistsException , Throwable {
 		
 		EntityManager em = EMF.get().createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -55,6 +55,7 @@ public class PersonaDao {
 		finally {
 			       em.close();
 		}
+		 return persona;
 		  }
 
 		  public Persona retrievePersona(Persona persona) throws  Throwable{
