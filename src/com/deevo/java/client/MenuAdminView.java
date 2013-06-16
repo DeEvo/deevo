@@ -16,11 +16,13 @@ public class MenuAdminView extends ViewImpl implements
 		MenuAdminPresenter.MyView {
 
 	@UiField Label perfil;
-	@UiField Label alumnoRol;
 	@UiField Label padreRol;
 	@UiField Label profesorRol;
 	@UiField Label psicologoRol;
-	@UiField Label nuevoUsuario;
+	@UiField Label alumnoUsuario;
+	@UiField Label padreUsuario;
+	@UiField Label profesorUsuario;
+	@UiField Label psicologoUsuario;
 	
 	public interface Binder extends UiBinder<Widget, MenuAdminView> {
 	}
@@ -46,33 +48,45 @@ public class MenuAdminView extends ViewImpl implements
 		placeManager.revealPlace(request);
 	}
 	
-	@UiHandler("nuevoUsuario")
-	void onNuevoUsuarioClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario);				
+	@UiHandler("alumnoUsuario")
+	void onAlumnoUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "alumno");				
 		placeManager.revealPlace(request);
 	}
 	
-	@UiHandler("alumnoRol")
-	void onAlumnoRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with("valor", "false");				
+	@UiHandler("padreUsuario")
+	void onPadreUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "padre");			
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("profesorUsuario")
+	void onProfesorUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "profesor");				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("psicologoUsuario")
+	void onPsicologoUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "psicologo");			
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("padreRol")
 	void onPadreRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with("valor", "true");				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre);				
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("profesorRol")
 	void onProfesorRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with("valor", "true");		
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);		
 		placeManager.revealPlace(request);
 	}
 	
 	@UiHandler("psicologoRol")
 	void onPsicologoRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo).with("valor", "true");				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo);				
 		placeManager.revealPlace(request);
 	}
 

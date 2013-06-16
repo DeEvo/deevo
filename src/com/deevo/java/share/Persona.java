@@ -56,6 +56,30 @@ public class Persona implements Serializable {
 	@OneToMany(mappedBy="persona")
 	private List<Psicologo> psicologos;
 
+	//bi-directional many-to-one association to Alumno
+	@OneToMany(mappedBy="persona")
+	private List<Alumno> alumnos;
+
+	//bi-directional many-to-one association to Familia
+	@OneToMany(mappedBy="persona1")
+	private List<Familia> familias1;
+
+	//bi-directional many-to-one association to Familia
+	@OneToMany(mappedBy="persona2")
+	private List<Familia> familias2;
+
+	//bi-directional many-to-one association to PadreFamilia
+	@OneToMany(mappedBy="persona")
+	private List<PadreFamilia> padreFamilias;
+
+	//bi-directional many-to-one association to Profesor
+	@OneToMany(mappedBy="persona")
+	private List<Profesor> profesors;
+
+	//bi-directional many-to-one association to Usuario
+	@OneToMany(mappedBy="persona")
+	private List<Usuario> usuarios;
+
 	public Persona() {
 	}
 
@@ -175,6 +199,138 @@ public class Persona implements Serializable {
 		psicologo.setPersona(null);
 
 		return psicologo;
+	}
+
+	public List<Alumno> getAlumnos() {
+		return this.alumnos;
+	}
+
+	public void setAlumnos(List<Alumno> alumnos) {
+		this.alumnos = alumnos;
+	}
+
+	public Alumno addAlumno(Alumno alumno) {
+		getAlumnos().add(alumno);
+		alumno.setPersona(this);
+
+		return alumno;
+	}
+
+	public Alumno removeAlumno(Alumno alumno) {
+		getAlumnos().remove(alumno);
+		alumno.setPersona(null);
+
+		return alumno;
+	}
+
+	public List<Familia> getFamilias1() {
+		return this.familias1;
+	}
+
+	public void setFamilias1(List<Familia> familias1) {
+		this.familias1 = familias1;
+	}
+
+	public Familia addFamilias1(Familia familias1) {
+		getFamilias1().add(familias1);
+		familias1.setPersona1(this);
+
+		return familias1;
+	}
+
+	public Familia removeFamilias1(Familia familias1) {
+		getFamilias1().remove(familias1);
+		familias1.setPersona1(null);
+
+		return familias1;
+	}
+
+	public List<Familia> getFamilias2() {
+		return this.familias2;
+	}
+
+	public void setFamilias2(List<Familia> familias2) {
+		this.familias2 = familias2;
+	}
+
+	public Familia addFamilias2(Familia familias2) {
+		getFamilias2().add(familias2);
+		familias2.setPersona2(this);
+
+		return familias2;
+	}
+
+	public Familia removeFamilias2(Familia familias2) {
+		getFamilias2().remove(familias2);
+		familias2.setPersona2(null);
+
+		return familias2;
+	}
+
+	public List<PadreFamilia> getPadreFamilias() {
+		return this.padreFamilias;
+	}
+
+	public void setPadreFamilias(List<PadreFamilia> padreFamilias) {
+		this.padreFamilias = padreFamilias;
+	}
+
+	public PadreFamilia addPadreFamilia(PadreFamilia padreFamilia) {
+		getPadreFamilias().add(padreFamilia);
+		padreFamilia.setPersona(this);
+
+		return padreFamilia;
+	}
+
+	public PadreFamilia removePadreFamilia(PadreFamilia padreFamilia) {
+		getPadreFamilias().remove(padreFamilia);
+		padreFamilia.setPersona(null);
+
+		return padreFamilia;
+	}
+
+	public List<Profesor> getProfesors() {
+		return this.profesors;
+	}
+
+	public void setProfesors(List<Profesor> profesors) {
+		this.profesors = profesors;
+	}
+
+	public Profesor addProfesor(Profesor profesor) {
+		getProfesors().add(profesor);
+		profesor.setPersona(this);
+
+		return profesor;
+	}
+
+	public Profesor removeProfesor(Profesor profesor) {
+		getProfesors().remove(profesor);
+		profesor.setPersona(null);
+
+		return profesor;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+	public Usuario addUsuario(Usuario usuario) {
+		getUsuarios().add(usuario);
+		usuario.setPersona(this);
+
+		return usuario;
+	}
+
+	public Usuario removeUsuario(Usuario usuario) {
+		getUsuarios().remove(usuario);
+		usuario.setPersona(null);
+
+		return usuario;
 	}
 
 }

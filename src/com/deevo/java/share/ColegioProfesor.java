@@ -18,6 +18,11 @@ public class ColegioProfesor implements Serializable {
 
 	private byte estado;
 
+	//bi-directional many-to-one association to Profesor
+	@ManyToOne
+	@JoinColumn(name="pro_cod" , insertable=false, updatable=false)
+	private Profesor profesor;
+
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
 	@JoinColumn(name="cod_col", insertable=false, updatable=false)
@@ -40,6 +45,14 @@ public class ColegioProfesor implements Serializable {
 
 	public void setEstado(byte estado) {
 		this.estado = estado;
+	}
+
+	public Profesor getProfesor() {
+		return this.profesor;
+	}
+
+	public void setProfesor(Profesor profesor) {
+		this.profesor = profesor;
 	}
 
 	public Colegio getColegio() {

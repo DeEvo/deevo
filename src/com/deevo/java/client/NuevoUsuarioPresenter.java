@@ -7,6 +7,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.action.NuevaPersona;
 import com.deevo.java.client.action.NuevaPersonaResult;
+import com.deevo.java.client.event.MostrarPopupEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
@@ -54,19 +55,29 @@ public class NuevoUsuarioPresenter extends
 	
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
-		valor= request.getParameter("valor", "true");
-		if(valor == "true"){
+		valor= request.getParameter("valor", "padre");
+		if(valor == "alumno"){
+			direccion = false;	
+		} 
+		if(valor == "padre"){
+			direccion = true;	
+		} 
+		if(valor == "psicologo"){
+			direccion = true;	
+		} 
+		if(valor == "profesor"){
 			direccion = true;
-			
-		}else{
-			direccion = false;
-		}
+		} 
 	}
+	
+	private EventBus eventbus;
+	
 	
 	@Inject
 	public NuevoUsuarioPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
+		this.eventbus = eventBus;
 	}
 	
 	@Inject NuevoUsuarioPopupPresenter nuevoUsuarioPopPresenter;
@@ -80,15 +91,8 @@ public class NuevoUsuarioPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-
-	@Inject DispatchAsync dispatchAsync;
-	
-	@Override
-	protected void onReset() {
-		super.onReset();
 		
-		getView().getIngresarButton().addClickHandler(new ClickHandler() {
+			getView().getIngresarButton().addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
@@ -115,54 +119,33 @@ public class NuevoUsuarioPresenter extends
 		});
 		
 	}
+
+	@Inject DispatchAsync dispatchAsync;
+	
+	@Override
+	protected void onReset() {
+		super.onReset();
+		
+	}
 		
 	private AsyncCallback<NuevaPersonaResult> nuevapersonaCallback = new AsyncCallback<NuevaPersonaResult>() {
 		
 		@Override
 		public void onSuccess(NuevaPersonaResult result) {
 			// TODO Auto-generated method stub
-			//if(direccion){
+			if(direccion){
 			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
 			nuevoUsuarioPopPresenter.getView().getContrasennia().setText(result.getPerPass());
+			MostrarPopupEvent event = new MostrarPopupEvent(valor,
+					getView().getDniTexbox().getText(), 
+					getView().getNombresTexbox().getText(),
+					getView().getAppaternTexbox().getText(),
+					getView().getApmaternTexbox().getText());
+			NuevoUsuarioPresenter.this.eventbus.fireEvent(event);
 			addToPopupSlot(nuevoUsuarioPopPresenter);
-			/*}else{
-
+			}else{
 				Window.alert("Exitos pero no tienes usuario =(!");
-			}*/
-			
-			//MOVER ESTE CODIGO CUANDO SE HA VALIDADO
-			/*if(getView().getRolListbox().getSelectedIndex()==0){
-				PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with(
-						"dni", getView().getDniTexbox().getText()).with(
-						"nombres", getView().getNombresTexbox().getText()).with(
-						"apaterno", getView().getAppaternTexbox().getText()).with(
-						"amaterno", getView().getApmaternTexbox().getText());				
-				placeManager.revealPlace(request);
-			}
-			else if(getView().getRolListbox().getSelectedIndex()==1){
-				PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with(
-						"dni", getView().getDniTexbox().getText()).with(
-						"nombres", getView().getNombresTexbox().getText()).with(
-						"apaterno", getView().getAppaternTexbox().getText()).with(
-						"amaterno", getView().getApmaternTexbox().getText());				
-				placeManager.revealPlace(request);
-			}
-			else if(getView().getRolListbox().getSelectedIndex()==2){
-				PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with(
-						"dni", getView().getDniTexbox().getText()).with(
-						"nombres", getView().getNombresTexbox().getText()).with(
-						"apaterno", getView().getAppaternTexbox().getText()).with(
-						"amaterno", getView().getApmaternTexbox().getText());				
-				placeManager.revealPlace(request);
-			}
-			else if(getView().getRolListbox().getSelectedIndex()==3){
-				PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo).with(
-						"dni", getView().getDniTexbox().getText()).with(
-						"nombres", getView().getNombresTexbox().getText()).with(
-						"apaterno", getView().getAppaternTexbox().getText()).with(
-						"amaterno", getView().getApmaternTexbox().getText());				
-				placeManager.revealPlace(request);
-			}*/
+			}	
 			
 		}
 		

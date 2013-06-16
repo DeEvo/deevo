@@ -2,6 +2,7 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -10,11 +11,10 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="PREGUNTA")
 public class Pregunta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="preg_cod")
 	private int pregCod;
 

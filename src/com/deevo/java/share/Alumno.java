@@ -10,11 +10,10 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="ALUMNO")
 public class Alumno implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="alu_cod")
 	private int aluCod;
 
@@ -23,7 +22,7 @@ public class Alumno implements Serializable {
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="per_dni")
+	@JoinColumn(name="per_dni" )
 	private Persona persona;
 
 	//bi-directional many-to-many association to Aula
@@ -31,10 +30,10 @@ public class Alumno implements Serializable {
 	@JoinTable(
 		name="ALUMNO_AULA"
 		, joinColumns={
-			@JoinColumn(name="alu_cod")
+			@JoinColumn(name="alu_cod" )
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="cod_aula")
+			@JoinColumn(name="cod_aula" )
 			}
 		)
 	private List<Aula> aulas;

@@ -2,6 +2,7 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -13,7 +14,7 @@ import java.util.List;
 public class Psicologo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="psi_cod")
 	private int psiCod;
 
@@ -37,6 +38,10 @@ public class Psicologo implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="per_dni")
 	private Persona persona;
+
+	//bi-directional many-to-one association to Aula
+	@OneToMany(mappedBy="psicologo")
+	private List<Aula> aulas;
 
 	public Psicologo() {
 	}
@@ -71,6 +76,28 @@ public class Psicologo implements Serializable {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public List<Aula> getAulas() {
+		return this.aulas;
+	}
+
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setPsicologo(this);
+
+		return aula;
+	}
+
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setPsicologo(null);
+
+		return aula;
 	}
 
 }

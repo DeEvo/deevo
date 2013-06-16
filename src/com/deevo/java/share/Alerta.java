@@ -14,7 +14,7 @@ import java.util.List;
 public class Alerta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ale_cod")
 	private int aleCod;
 

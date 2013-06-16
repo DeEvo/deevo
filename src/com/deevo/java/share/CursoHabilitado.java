@@ -2,6 +2,7 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class CursoHabilitado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cur_hab_cod")
 	private int curHabCod;
 
@@ -27,8 +28,8 @@ public class CursoHabilitado implements Serializable {
 	//bi-directional many-to-one association to CursoProfesor
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="cod_cur", referencedColumnName="cod_cur"),
-		@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
+		@JoinColumn(name="cod_cur", referencedColumnName="cod_cur" ),
+		@JoinColumn(name="pro_cod", referencedColumnName="pro_cod" )
 		})
 	private CursoProfesor cursoProfesor;
 

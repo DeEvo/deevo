@@ -13,8 +13,8 @@ import javax.persistence.*;
 public class AlertaParque implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name="ale_cod", insertable=false, updatable=false)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ale_cod")
 	private int aleCod;
 
 	@Column(name="id_aler")
@@ -22,20 +22,20 @@ public class AlertaParque implements Serializable {
 
 	//bi-directional one-to-one association to Alerta
 	@OneToOne
-	@JoinColumn(name="ale_cod")
+	@JoinColumn(name="ale_cod", insertable=false, updatable=false )
 	private Alerta alerta;
 
 	//bi-directional many-to-one association to Estado
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod"),
-		@JoinColumn(name="num_estado", referencedColumnName="num_estado")
+		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod" , insertable=false, updatable=false),
+		@JoinColumn(name="num_estado", referencedColumnName="num_estado" , insertable=false, updatable=false)
 		})
 	private Estado estado;
 
 	//bi-directional many-to-one association to Usuario
 	@ManyToOne
-	@JoinColumn(name="usur_cod")
+	@JoinColumn(name="usur_cod", insertable=false, updatable=false)
 	private Usuario usuario;
 
 	public AlertaParque() {

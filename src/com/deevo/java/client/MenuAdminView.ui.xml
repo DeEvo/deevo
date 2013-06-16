@@ -18,9 +18,13 @@
 			<g:stack>
 				<g:header size="36">Usuarios</g:header>
 				<g:Tree>
-					<g:Label text="Nuevo Usuario" ui:field="nuevoUsuario"/>
+					<g:TreeItem text="Nuevo Usuario" state="true">
+						<g:Label text="Alumno" ui:field="alumnoUsuario"/>
+						<g:Label text="Padre de Familia" ui:field="padreUsuario"/>
+						<g:Label text="Profesor" ui:field="profesorUsuario"/>
+						<g:Label text="Psicologo" ui:field="psicologoUsuario"/>
+					</g:TreeItem>
 					<g:TreeItem text="Nuevo Rol" state="true">
-						<g:Label text="Alumno" ui:field="alumnoRol"/>
 						<g:Label text="Padre de Familia" ui:field="padreRol"/>
 						<g:Label text="Profesor" ui:field="profesorRol"/>
 						<g:Label text="Psicologo" ui:field="psicologoRol"/>

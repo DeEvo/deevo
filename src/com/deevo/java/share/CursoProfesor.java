@@ -19,6 +19,11 @@ public class CursoProfesor implements Serializable {
 
 	private byte estado;
 
+	//bi-directional many-to-one association to Profesor
+	@ManyToOne
+	@JoinColumn(name="pro_cod", insertable=false, updatable=false )
+	private Profesor profesor;
+
 	//bi-directional many-to-one association to CursoHabilitado
 	@OneToMany(mappedBy="cursoProfesor")
 	private List<CursoHabilitado> cursoHabilitados;
@@ -33,11 +38,11 @@ public class CursoProfesor implements Serializable {
 	@JoinTable(
 		name="CURSO_PROFESOR_AULA"
 		, joinColumns={
-			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur"),
-			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
+			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur", insertable=false, updatable=false),
+			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod", insertable=false, updatable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="cod_aula")
+			@JoinColumn(name="cod_aula", insertable=false, updatable=false)
 			}
 		)
 	private List<Aula> aulas;
@@ -59,6 +64,14 @@ public class CursoProfesor implements Serializable {
 
 	public void setEstado(byte estado) {
 		this.estado = estado;
+	}
+
+	public Profesor getProfesor() {
+		return this.profesor;
+	}
+
+	public void setProfesor(Profesor profesor) {
+		this.profesor = profesor;
 	}
 
 	public List<CursoHabilitado> getCursoHabilitados() {
