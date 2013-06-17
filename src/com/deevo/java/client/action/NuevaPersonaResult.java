@@ -2,12 +2,16 @@ package com.deevo.java.client.action;
 
 import com.gwtplatform.dispatch.shared.Result;
 import java.lang.String;
+import java.util.List;
+
+import com.deevo.java.share.Persona;
 
 public class NuevaPersonaResult implements Result {
 
 	private String mensaje;
 	private String usurCod;
 	private String perPass;
+
 	
 
 	@SuppressWarnings("unused")
@@ -19,6 +23,7 @@ public class NuevaPersonaResult implements Result {
 		this.mensaje = mensaje;
 		this.usurCod = usurCod;
 		this.perPass = perPass;
+
 	}
 
 	public String getMensaje() {
