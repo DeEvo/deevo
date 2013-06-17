@@ -31,7 +31,7 @@ public boolean existePsicologo(Psicologo psicologo) {
 		
 
 
-		public void createPsicologo(Psicologo psicologo) throws EntityExistsException , Throwable {
+		public Psicologo createPsicologo(Psicologo psicologo) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -39,6 +39,8 @@ public boolean existePsicologo(Psicologo psicologo) {
 			 try {
 				       tx.begin();
 				       em.persist(psicologo);
+				       em.flush();
+				       em.refresh(psicologo);
 				       tx.commit();
 				     }catch ( EntityExistsException | RollbackException e){
 						 throw new EntityExistsException();
@@ -51,6 +53,7 @@ public boolean existePsicologo(Psicologo psicologo) {
 				     finally {
 				       em.close();
 				     }
+			 return psicologo;
 			  }
 
 	  public Psicologo retrievePsicologo(Psicologo psicologo)  throws Throwable{

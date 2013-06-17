@@ -8,6 +8,7 @@ public class NuevoPsicologo extends ActionImpl<NuevoPsicologoResult> {
 
 	private String pro_des;
 	private String per_dni;
+	private String cod_col;
 	private String admin_user;
 
 	@SuppressWarnings("unused")
@@ -15,10 +16,11 @@ public class NuevoPsicologo extends ActionImpl<NuevoPsicologoResult> {
 		// For serialization only
 	}
 
-	public NuevoPsicologo(String pro_des, String per_dni, String admin_user) {
+	public NuevoPsicologo(String pro_des, String per_dni, String admin_user, String cod_col) {
 		this.pro_des = pro_des;
 		this.per_dni = per_dni;
 		this.admin_user = admin_user;
+		this.cod_col =cod_col;
 	}
 
 	public String getPro_des() {
@@ -32,4 +34,9 @@ public class NuevoPsicologo extends ActionImpl<NuevoPsicologoResult> {
 	public String getAdmin_user() {
 		return admin_user;
 	}
+
+	public String getCod_col() {
+		return cod_col;
+	}
+		
 }
