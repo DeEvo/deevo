@@ -9,6 +9,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.cellview.client.CellTable;
 
 public class BuscarPopupView extends PopupViewImpl implements
 		BuscarPopupPresenter.MyView {
@@ -34,7 +35,8 @@ public class BuscarPopupView extends PopupViewImpl implements
 	@UiField Button cancelarButton;
 	@UiField ListBox campoListbox;
 	@UiField TextBox buscarTextbox;
-	@UiField TextBox entidadTextbox;
+	@UiField TextBox ingresarButton;
+	@UiField(provided=true) CellTable<persona> cellTable = new CellTable<persona>();
 	
 	public Button getLimpiarButton() {
 		return limpiarButton;
@@ -55,9 +57,55 @@ public class BuscarPopupView extends PopupViewImpl implements
 	public TextBox getBuscarTextbox() {
 		return buscarTextbox;
 	}
+
+	public TextBox getIngresarButton() {
+		return ingresarButton;
+	}
+
+	public CellTable<persona> getCellTable() {
+		return cellTable;
+	}
 	
-	public TextBox getEntidadTextbox() {
-		return entidadTextbox;
+	
+	public class persona {
+		private String dni;
+	    private String nombre;
+	    private String apaterno;
+	    private String amaterno;
+	    private String usuario;
+		
+	    public persona(String dni, String nombre, String apaterno, String amaterno, String usuario) {
+			super();
+			this.dni = dni;
+			this.nombre = nombre;
+			this.apaterno = apaterno;
+			this.amaterno = amaterno;
+			this.usuario = usuario;
+		}
+
+		public String getDni() {
+			return dni;
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public String getApaterno() {
+			return apaterno;
+		}
+
+		public String getAmaterno() {
+			return amaterno;
+		}
+
+		public String getUsuario() {
+			return usuario;
+		}
+
 	}
 	
 }
+
+
+

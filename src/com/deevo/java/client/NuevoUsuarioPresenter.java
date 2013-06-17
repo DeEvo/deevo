@@ -71,8 +71,7 @@ public class NuevoUsuarioPresenter extends
 	}
 	
 	private EventBus eventbus;
-	
-	
+		
 	@Inject
 	public NuevoUsuarioPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
