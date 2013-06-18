@@ -73,6 +73,16 @@ import com.deevo.java.client.NuevoRolProfesorPresenter;
 import com.deevo.java.client.NuevoRolProfesorView;
 import com.deevo.java.client.BuscarPopupPresenter;
 import com.deevo.java.client.BuscarPopupView;
+import com.deevo.java.client.NuevoCursoPresenter;
+import com.deevo.java.client.NuevoCursoView;
+import com.deevo.java.client.NuevoGradoPresenter;
+import com.deevo.java.client.NuevoGradoView;
+import com.deevo.java.client.NuevaSeccionPresenter;
+import com.deevo.java.client.NuevaSeccionView;
+import com.deevo.java.client.NuevoPeriodoPresenter;
+import com.deevo.java.client.NuevoPeriodoView;
+import com.deevo.java.client.NuevaAulaPresenter;
+import com.deevo.java.client.NuevaAulaView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -207,6 +217,26 @@ public class ClientModule extends AbstractPresenterModule {
 
 		bindPresenterWidget(BuscarPopupPresenter.class,
 				BuscarPopupPresenter.MyView.class, BuscarPopupView.class);
+
+		bindPresenter(NuevoCursoPresenter.class,
+				NuevoCursoPresenter.MyView.class, NuevoCursoView.class,
+				NuevoCursoPresenter.MyProxy.class);
+
+		bindPresenter(NuevoGradoPresenter.class,
+				NuevoGradoPresenter.MyView.class, NuevoGradoView.class,
+				NuevoGradoPresenter.MyProxy.class);
+
+		bindPresenter(NuevaSeccionPresenter.class,
+				NuevaSeccionPresenter.MyView.class, NuevaSeccionView.class,
+				NuevaSeccionPresenter.MyProxy.class);
+
+		bindPresenter(NuevoPeriodoPresenter.class,
+				NuevoPeriodoPresenter.MyView.class, NuevoPeriodoView.class,
+				NuevoPeriodoPresenter.MyProxy.class);
+
+		bindPresenter(NuevaAulaPresenter.class,
+				NuevaAulaPresenter.MyView.class, NuevaAulaView.class,
+				NuevaAulaPresenter.MyProxy.class);
 
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,

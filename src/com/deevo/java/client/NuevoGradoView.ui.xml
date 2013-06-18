@@ -1,0 +1,77 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
+	ui:generateLocales='default'>
+
+	<g:HTMLPanel styleName="fondoBienvenida" width="100%" height="100%">
+		<g:Grid width="100%" styleName="cuadroBorde" height="100%">
+			<g:row>
+				<g:customCell>
+					<g:Label text="Nuevo Grado" styleName="tituloFormulario"
+						horizontalAlignment="ALIGN_CENTER" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label
+						text="Complete el siguiente formulario para ingresar un nuevo grado en el sistema:"
+						width="100%" styleName="labelsubformulario" height="37px" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" cellPadding="6" >
+						<g:row>
+							<g:customCell>
+								<g:Label text="Descripción*" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:IntegerBox width="120px" ui:field="gradoTexbox" maxLength="20" visibleLength="20" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Ciclo*" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="cicloListbox">
+									<g:item value='1'>
+										Inicial
+									</g:item>
+									<g:item value='2'>
+										Primaria
+									</g:item>
+									<g:item value='3'>
+										Secundaria
+									</g:item>
+								</g:ListBox>
+							</g:customCell>
+						</g:row>					
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="100%" styleName="layoutarriba"
+						cellPadding="10">
+						<g:row>
+							<g:customCell>
+								<g:Button width="90px" text="Limpiar" styleName="layout" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Ingresar" styleName="layout"
+									ui:field="ingresarButton" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Cancelar" styleName="layout" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
+	</g:HTMLPanel>
+</ui:UiBinder>
