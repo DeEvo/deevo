@@ -6,7 +6,7 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:PopupPanel width="300" height="200" glassEnabled="true" modal="true" animationEnabled="true">
+	<g:PopupPanel width="300" height="200" glassEnabled="true" modal="true">
 		<g:Grid width="100%" height="100%">
 			<g:row>
 				<g:customCell>
@@ -41,8 +41,11 @@
 				</g:customCell>
 			</g:row>
 			<g:row align="center">
-				<g:customCell align="center">
-					<g:Button text="Imprimir" styleName="btnppimprimir"/>
+				<g:customCell>
+					<g:Button text="Imprimir" styleName="btnppimprimir" ui:field="btnImprimir" width="71px"/>
+				</g:customCell>
+				<g:customCell>
+					<g:Button text="Ok" styleName="btnOk" ui:field="btnOk" width="60px"/>
 				</g:customCell>
 			</g:row>
 		</g:Grid>

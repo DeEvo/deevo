@@ -16,11 +16,13 @@ public class MenuAdminView extends ViewImpl implements
 		MenuAdminPresenter.MyView {
 
 	@UiField Label perfil;
-	@UiField Label alumnoRol;
 	@UiField Label padreRol;
 	@UiField Label profesorRol;
 	@UiField Label psicologoRol;
-	@UiField Label nuevoUsuario;
+	@UiField Label alumnoUsuario;
+	@UiField Label padreUsuario;
+	@UiField Label profesorUsuario;
+	@UiField Label psicologoUsuario;
 	
 	public interface Binder extends UiBinder<Widget, MenuAdminView> {
 	}
@@ -46,15 +48,27 @@ public class MenuAdminView extends ViewImpl implements
 		placeManager.revealPlace(request);
 	}
 	
-	@UiHandler("nuevoUsuario")
-	void onNuevoUsuarioClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario);				
+	@UiHandler("alumnoUsuario")
+	void onAlumnoUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "alumno");				
 		placeManager.revealPlace(request);
 	}
 	
-	@UiHandler("alumnoRol")
-	void onAlumnoRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno);				
+	@UiHandler("padreUsuario")
+	void onPadreUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "padre");			
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("profesorUsuario")
+	void onProfesorUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "profesor");				
+		placeManager.revealPlace(request);
+	}
+	
+	@UiHandler("psicologoUsuario")
+	void onPsicologoUsuarioClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevousuario).with("valor", "psicologo");			
 		placeManager.revealPlace(request);
 	}
 	
@@ -66,7 +80,7 @@ public class MenuAdminView extends ViewImpl implements
 	
 	@UiHandler("profesorRol")
 	void onProfesorRolClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);				
+		PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor);		
 		placeManager.revealPlace(request);
 	}
 	

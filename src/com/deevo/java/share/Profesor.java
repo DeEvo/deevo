@@ -10,16 +10,23 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="PROFESOR")
 public class Profesor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pro_cod")
 	private int proCod;
 
 	@Column(name="pro_des")
 	private String proDes;
+
+	//bi-directional many-to-one association to ColegioProfesor
+	@OneToMany(mappedBy="profesor")
+	private List<ColegioProfesor> colegioProfesors;
+
+	//bi-directional many-to-one association to CursoProfesor
+	@OneToMany(mappedBy="profesor")
+	private List<CursoProfesor> cursoProfesors;
 
 	//bi-directional many-to-one association to Aula
 	@OneToMany(mappedBy="profesor")
@@ -47,6 +54,50 @@ public class Profesor implements Serializable {
 
 	public void setProDes(String proDes) {
 		this.proDes = proDes;
+	}
+
+	public List<ColegioProfesor> getColegioProfesors() {
+		return this.colegioProfesors;
+	}
+
+	public void setColegioProfesors(List<ColegioProfesor> colegioProfesors) {
+		this.colegioProfesors = colegioProfesors;
+	}
+
+	public ColegioProfesor addColegioProfesor(ColegioProfesor colegioProfesor) {
+		getColegioProfesors().add(colegioProfesor);
+		colegioProfesor.setProfesor(this);
+
+		return colegioProfesor;
+	}
+
+	public ColegioProfesor removeColegioProfesor(ColegioProfesor colegioProfesor) {
+		getColegioProfesors().remove(colegioProfesor);
+		colegioProfesor.setProfesor(null);
+
+		return colegioProfesor;
+	}
+
+	public List<CursoProfesor> getCursoProfesors() {
+		return this.cursoProfesors;
+	}
+
+	public void setCursoProfesors(List<CursoProfesor> cursoProfesors) {
+		this.cursoProfesors = cursoProfesors;
+	}
+
+	public CursoProfesor addCursoProfesor(CursoProfesor cursoProfesor) {
+		getCursoProfesors().add(cursoProfesor);
+		cursoProfesor.setProfesor(this);
+
+		return cursoProfesor;
+	}
+
+	public CursoProfesor removeCursoProfesor(CursoProfesor cursoProfesor) {
+		getCursoProfesors().remove(cursoProfesor);
+		cursoProfesor.setProfesor(null);
+
+		return cursoProfesor;
 	}
 
 	public List<Aula> getAulas() {

@@ -1,6 +1,5 @@
 package com.deevo.java.server.actionhandler;
 
-import javax.persistence.EntityExistsException;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 

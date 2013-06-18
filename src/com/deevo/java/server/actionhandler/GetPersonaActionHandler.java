@@ -1,5 +1,6 @@
 package com.deevo.java.server.actionhandler;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
@@ -18,15 +19,11 @@ public class GetPersonaActionHandler implements
 	public GetPersonaActionHandler() {
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public GetPersonaResult execute(GetPersona action, ExecutionContext context)
 			throws ActionException {
 		
-		 List<String> appaterno = null;
-		 List<String> apmaterno = null;
-		 List<String> nombre = null;
-		 List<String> dni = null;
+		 List<Persona> personalist = new ArrayList<Persona>();
 		
 		 if(action.getPer_dni() !=null){
 				PersonaDao perdao = new PersonaDao();
@@ -35,33 +32,26 @@ public class GetPersonaActionHandler implements
 				
 				try {
 					persona = perdao.retrievePersona(persona);
+					personalist.add(persona);	
 				} catch (Throwable e) {
 					e.printStackTrace();
+					throw new ActionException("Solicitar ayuda al administrador");
 				}
-				appaterno.add(persona.getPerPat());
-				apmaterno.add(persona.getPerMat());
-				nombre.add(persona.getPerNom());
-				dni.add(persona.getPerDni());
-				return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+				
+				return new GetPersonaResult( personalist, "EXITO");
 			}
 		 
 		 if(action.getPer_mat() !=null && action.getPer_nom() !=null && action.getPer_pat() !=null){
 			 PersonaDao p = new PersonaDao();
 				try {
 					
-					List<Persona> personalist = p.retrievePersonasxperMatxperPatXperNom(action.getPer_mat(), action.getPer_pat(), action.getPer_nom());
-					int i = 0;
-					while(i<personalist.size()){
-						appaterno.add(personalist.get(i).getPerPat());
-						apmaterno.add(personalist.get(i).getPerMat());
-						nombre.add(personalist.get(i).getPerNom());
-						dni.add(personalist.get(i).getPerDni());					
-						i++;
-					}
+					personalist = p.retrievePersonasxperMatxperPatXperNom(action.getPer_mat(), action.getPer_pat(), action.getPer_nom());
+					
 				} catch (Throwable e) {
 					e.printStackTrace();
+					throw new ActionException("Solicitar ayuda al administrador");
 				}
-				return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+				return new GetPersonaResult( personalist, "EXITO");
 		 }
 
 			if(action.getPer_nom() == null){
@@ -69,54 +59,36 @@ public class GetPersonaActionHandler implements
 					//solo paterno
 					PersonaDao perdao = new PersonaDao();
 					try {
-						List<Persona> personalist = perdao.retrievePersonasxperPat(action.getPer_pat());
-						int i = 0;
-						while(i<personalist.size()){
-							appaterno.add(personalist.get(i).getPerPat());
-							apmaterno.add(personalist.get(i).getPerMat());
-							nombre.add(personalist.get(i).getPerNom());
-							dni.add(personalist.get(i).getPerDni());					
-							i++;
-						}
+					 personalist = perdao.retrievePersonasxperPat(action.getPer_pat());
 					} catch (Throwable e) {
 						e.printStackTrace();
+						throw new ActionException("Solicitar ayuda al administrador");
 					}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+						return new GetPersonaResult( personalist, "EXITO");
 				}else{
 					if(action.getPer_pat() == null){
 						//solo materno
 						PersonaDao perdao = new PersonaDao();
 						try {
-							List<Persona> personalist = perdao.retrievePersonasxperMat(action.getPer_mat());
-							int i = 0;
-							while(i<personalist.size()){
-								appaterno.add(personalist.get(i).getPerPat());
-								apmaterno.add(personalist.get(i).getPerMat());
-								nombre.add(personalist.get(i).getPerNom());
-								dni.add(personalist.get(i).getPerDni());					
-								i++;
-							}
+							personalist = perdao.retrievePersonasxperMat(action.getPer_mat());
+						
 						} catch (Throwable e) {
 							e.printStackTrace();
+							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");				
+						return new GetPersonaResult( personalist, "EXITO");				
 					}else{
 						//paterno y materno
 						PersonaDao perdao = new PersonaDao();
 						try {
-							List<Persona> personalist = perdao.retrievePersonasxperMatxperPat(action.getPer_mat(),action.getPer_pat());
-							int i = 0;
-							while(i<personalist.size()){
-								appaterno.add(personalist.get(i).getPerPat());
-								apmaterno.add(personalist.get(i).getPerMat());
-								nombre.add(personalist.get(i).getPerNom());
-								dni.add(personalist.get(i).getPerDni());					
-								i++;
-							}
+							personalist = perdao.retrievePersonasxperMatxperPat(action.getPer_mat(),action.getPer_pat());
+							
+							
 						} catch (Throwable e) {
 							e.printStackTrace();
+							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+						return new GetPersonaResult( personalist, "EXITO");
 					}
 				}
 			}else{
@@ -125,36 +97,24 @@ public class GetPersonaActionHandler implements
 						//solo nombre
 						PersonaDao perdao = new PersonaDao();
 						try {
-							List<Persona> personalist = perdao.retrievePersonasxperNom(action.getPer_nom());
-							int i = 0;
-							while(i<personalist.size()){
-								appaterno.add(personalist.get(i).getPerPat());
-								apmaterno.add(personalist.get(i).getPerMat());
-								nombre.add(personalist.get(i).getPerNom());
-								dni.add(personalist.get(i).getPerDni());					
-								i++;
-							}
+							personalist = perdao.retrievePersonasxperNom(action.getPer_nom());
+							
 						} catch (Throwable e) {
 							e.printStackTrace();
+							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+						return new GetPersonaResult( personalist, "EXITO");
 					}else{
 						//nombre y paterno	
 						PersonaDao perdao = new PersonaDao();
 						try {
-							List<Persona> personalist = perdao.retrievePersonasxperNomxperPat(action.getPer_nom(), action.getPer_pat());
-							int i = 0;
-							while(i<personalist.size()){
-								appaterno.add(personalist.get(i).getPerPat());
-								apmaterno.add(personalist.get(i).getPerMat());
-								nombre.add(personalist.get(i).getPerNom());
-								dni.add(personalist.get(i).getPerDni());					
-								i++;
-							}
+							personalist = perdao.retrievePersonasxperNomxperPat(action.getPer_nom(), action.getPer_pat());
+							
 						} catch (Throwable e) {
 							e.printStackTrace();
+							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+						return new GetPersonaResult( personalist, "EXITO");
 					}
 					
 					}else{
@@ -162,24 +122,15 @@ public class GetPersonaActionHandler implements
 						
 						PersonaDao perdao = new PersonaDao();
 						try {
-							List<Persona> personalist = perdao.retrievePersonasxperNomxperMat(action.getPer_nom(), action.getPer_mat());
-							int i = 0;
-							while(i<personalist.size()){
-								appaterno.add(personalist.get(i).getPerPat());
-								apmaterno.add(personalist.get(i).getPerMat());
-								nombre.add(personalist.get(i).getPerNom());
-								dni.add(personalist.get(i).getPerDni());					
-								i++;
-							}
+							personalist = perdao.retrievePersonasxperNomxperMat(action.getPer_nom(), action.getPer_mat());
+							
 						} catch (Throwable e) {
 							e.printStackTrace();
+							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( appaterno, apmaterno, nombre, dni, "EXITO");
+						return new GetPersonaResult( personalist, "EXITO");
 						}
 				}
-			
-			
-
 	}
 
 	@Override

@@ -10,11 +10,10 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="CURSO")
 public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cod_cur")
 	private int codCur;
 

@@ -2,6 +2,7 @@ package com.deevo.java.share;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class Privilegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pri_cod")
 	private int priCod;
 
@@ -39,6 +40,14 @@ public class Privilegio implements Serializable {
 			}
 		)
 	private List<Colegio> colegios;
+
+	//bi-directional many-to-many association to Test
+	@ManyToMany(mappedBy="privilegios")
+	private List<Test> tests;
+
+	//bi-directional many-to-many association to Usuario
+	@ManyToMany(mappedBy="privilegios")
+	private List<Usuario> usuarios;
 
 	public Privilegio() {
 	}
@@ -81,6 +90,22 @@ public class Privilegio implements Serializable {
 
 	public void setColegios(List<Colegio> colegios) {
 		this.colegios = colegios;
+	}
+
+	public List<Test> getTests() {
+		return this.tests;
+	}
+
+	public void setTests(List<Test> tests) {
+		this.tests = tests;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 }

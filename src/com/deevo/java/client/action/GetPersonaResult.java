@@ -1,16 +1,15 @@
 package com.deevo.java.client.action;
 
+import com.deevo.java.share.Persona;
 import com.gwtplatform.dispatch.shared.Result;
+
 import java.util.List;
 import java.lang.String;
 
 public class GetPersonaResult implements Result {
 
 
-	private List<String> appaterno;
-	private List<String> apmaterno;
-	private List<String> nombre;
-	private List<String> dni;
+	private List<Persona> persona ;
 	private String mensaje;
 
 	@SuppressWarnings("unused")
@@ -18,18 +17,20 @@ public class GetPersonaResult implements Result {
 		// For serialization only
 	}
 
-	public GetPersonaResult(List<String> appaterno,  List<String> apmaterno , List<String> nombre, 
-			List<String> dni, String mensaje) {
+	public GetPersonaResult(List<Persona> persona , String mensaje) {
 
 		this.mensaje = mensaje;
-		this.appaterno = appaterno;
-		this.apmaterno = apmaterno;
-		this.nombre = nombre;
-		this.dni = dni;
+		this.persona = persona;
 	}
 
 
 	public String getMensaje() {
 		return mensaje;
 	}
+
+	public List<Persona> getPersona() {
+		return persona;
+	}
+	
+	
 }

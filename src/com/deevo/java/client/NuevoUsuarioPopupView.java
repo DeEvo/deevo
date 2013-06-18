@@ -7,6 +7,7 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Button;
 
 public class NuevoUsuarioPopupView extends PopupViewImpl implements
 		NuevoUsuarioPopupPresenter.MyView {
@@ -29,6 +30,8 @@ public class NuevoUsuarioPopupView extends PopupViewImpl implements
 	@UiField Label mensaje;
 	@UiField Label usuario;
 	@UiField Label contrasennia;
+	@UiField Button btnImprimir;
+	@UiField Button btnOk;
 
 	public Label getMensaje() {
 		return mensaje;
@@ -41,5 +44,14 @@ public class NuevoUsuarioPopupView extends PopupViewImpl implements
 	public Label getContrasennia() {
 		return contrasennia;
 	}
+
+	public Button getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public Button getBtnOk() {
+		return btnOk;
+	}
+	
 	
 }

@@ -120,7 +120,7 @@
 	    						<g:CheckBox text="Descripcion" width="95px" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextArea width="331px"/>
+	    						<g:TextArea width="331px" ui:field="txtadescripcion"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>

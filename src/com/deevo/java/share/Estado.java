@@ -14,7 +14,7 @@ import java.util.List;
 public class Estado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
+	@EmbeddedId 
 	private EstadoPK id;
 
 	@Column(name="est_des")
@@ -37,15 +37,15 @@ public class Estado implements Serializable {
 
 	//bi-directional many-to-one association to EstadoTipo
 	@ManyToOne
-	@JoinColumn(name="cod_est_tipo")
+	@JoinColumn(name="cod_est_tipo", insertable=false, updatable=false)
 	private EstadoTipo estadoTipo;
 
 	//bi-directional many-to-one association to Respuesta
 	@ManyToOne
 	@JoinColumns({
 		@JoinColumn(name="alu_cod", referencedColumnName="alu_cod", insertable=false, updatable=false),
-		@JoinColumn(name="preg_cod", referencedColumnName="preg_cod"),
-		@JoinColumn(name="test_cod", referencedColumnName="test_cod")
+		@JoinColumn(name="preg_cod", referencedColumnName="preg_cod", insertable=false, updatable=false),
+		@JoinColumn(name="test_cod", referencedColumnName="test_cod", insertable=false, updatable=false)
 		})
 	private Respuesta respuesta;
 

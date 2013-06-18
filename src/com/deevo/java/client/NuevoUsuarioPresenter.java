@@ -7,6 +7,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.action.NuevaPersona;
 import com.deevo.java.client.action.NuevaPersonaResult;
+import com.deevo.java.client.event.MostrarPopupEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
@@ -41,17 +42,41 @@ public class NuevoUsuarioPresenter extends
 		public TextBox getDirTexbox();
 		public TextBox getEmailTexbox();
 		public ListBox getRolListbox();
+		
 	}
 	
 	@ProxyCodeSplit
 	@NameToken(NameTokens.nuevousuario)
 	public interface MyProxy extends ProxyPlace<NuevoUsuarioPresenter> {
 	}
-
+	
+	public Boolean direccion = null;
+	public String valor = null;
+	
+	public void prepareFromRequest(PlaceRequest request) {
+		super.prepareFromRequest(request);
+		valor= request.getParameter("valor", "padre");
+		if(valor == "alumno"){
+			direccion = false;	
+		} 
+		if(valor == "padre"){
+			direccion = true;	
+		} 
+		if(valor == "psicologo"){
+			direccion = true;	
+		} 
+		if(valor == "profesor"){
+			direccion = true;
+		} 
+	}
+	
+	private EventBus eventbus;
+		
 	@Inject
 	public NuevoUsuarioPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
+		this.eventbus = eventBus;
 	}
 	
 	@Inject NuevoUsuarioPopupPresenter nuevoUsuarioPopPresenter;
@@ -65,51 +90,12 @@ public class NuevoUsuarioPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-
-	@Inject DispatchAsync dispatchAsync;
-	
-	@Override
-	protected void onReset() {
-		super.onReset();
 		
-		getView().getIngresarButton().addClickHandler(new ClickHandler() {
+			getView().getIngresarButton().addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				//MOVER ESTE CODIGO CUANDO SE HA VALIDADO
-				if(getView().getRolListbox().getSelectedIndex()==0){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with(
-							"dni", getView().getDniTexbox().getText()).with(
-							"nombres", getView().getNombresTexbox().getText()).with(
-							"apaterno", getView().getAppaternTexbox().getText()).with(
-							"amaterno", getView().getApmaternTexbox().getText());				
-					placeManager.revealPlace(request);
-				}
-				else if(getView().getRolListbox().getSelectedIndex()==1){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with(
-							"dni", getView().getDniTexbox().getText()).with(
-							"nombres", getView().getNombresTexbox().getText()).with(
-							"apaterno", getView().getAppaternTexbox().getText()).with(
-							"amaterno", getView().getApmaternTexbox().getText());				
-					placeManager.revealPlace(request);
-				}
-				else if(getView().getRolListbox().getSelectedIndex()==2){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with(
-							"dni", getView().getDniTexbox().getText()).with(
-							"nombres", getView().getNombresTexbox().getText()).with(
-							"apaterno", getView().getAppaternTexbox().getText()).with(
-							"amaterno", getView().getApmaternTexbox().getText());				
-					placeManager.revealPlace(request);
-				}
-				else if(getView().getRolListbox().getSelectedIndex()==3){
-					PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpsicologo).with(
-							"dni", getView().getDniTexbox().getText()).with(
-							"nombres", getView().getNombresTexbox().getText()).with(
-							"apaterno", getView().getAppaternTexbox().getText()).with(
-							"amaterno", getView().getApmaternTexbox().getText());				
-					placeManager.revealPlace(request);
-				}
+				
 				//HASTA ACA, DEBERIA IR EN EL ACTION ONSUCCESS
 				
 				NuevaPersona action = new NuevaPersona(
@@ -123,14 +109,21 @@ public class NuevoUsuarioPresenter extends
 					getView().getDirTexbox().getText(),
 					getView().getEmailTexbox().getText(),
 					getView().getEstcivListbox().getItemText(getView().getEstcivListbox().getSelectedIndex()),
-					true,
+					direccion,
 					getView().getSexoListbox().getItemText(getView().getSexoListbox().getSelectedIndex()));
-
 					if(valida()){
 						dispatchAsync.execute(action, nuevapersonaCallback);
 					}
 				}
 		});
+		
+	}
+
+	@Inject DispatchAsync dispatchAsync;
+	
+	@Override
+	protected void onReset() {
+		super.onReset();
 		
 	}
 		
@@ -139,14 +132,19 @@ public class NuevoUsuarioPresenter extends
 		@Override
 		public void onSuccess(NuevaPersonaResult result) {
 			// TODO Auto-generated method stub
-			if(true){
+			if(direccion){
 			nuevoUsuarioPopPresenter.getView().getUsuario().setText(result.getUsurCod());
 			nuevoUsuarioPopPresenter.getView().getContrasennia().setText(result.getPerPass());
+			MostrarPopupEvent event = new MostrarPopupEvent(valor,
+					getView().getDniTexbox().getText(), 
+					getView().getNombresTexbox().getText(),
+					getView().getAppaternTexbox().getText(),
+					getView().getApmaternTexbox().getText());
+			NuevoUsuarioPresenter.this.eventbus.fireEvent(event);
 			addToPopupSlot(nuevoUsuarioPopPresenter);
-			
 			}else{
 				Window.alert("Exitos pero no tienes usuario =(!");
-			}
+			}	
 			
 		}
 		

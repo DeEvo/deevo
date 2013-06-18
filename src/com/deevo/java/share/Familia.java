@@ -9,7 +9,6 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="FAMILIA")
 public class Familia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
