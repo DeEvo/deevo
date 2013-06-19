@@ -32,6 +32,13 @@ import com.deevo.java.client.NuevoRolPsicologoPresenter;
 import com.deevo.java.client.NuevoRolAlumnoPresenter;
 import com.deevo.java.client.NuevoRolPadrePresenter;
 import com.deevo.java.client.NuevoRolProfesorPresenter;
+import com.deevo.java.client.NuevoCursoPresenter;
+import com.deevo.java.client.NuevoGradoPresenter;
+import com.deevo.java.client.NuevaSeccionPresenter;
+import com.deevo.java.client.NuevoPeriodoPresenter;
+import com.deevo.java.client.NuevaAulaPresenter;
+import com.deevo.java.client.AsignarCursoAProfesorPresenter;
+import com.deevo.java.client.HabilitarCursoPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -89,5 +96,19 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<NuevoRolPadrePresenter> getNuevoRolPadrePresenter();
 
 	AsyncProvider<NuevoRolProfesorPresenter> getNuevoRolProfesorPresenter();
+
+	AsyncProvider<NuevoCursoPresenter> getNuevoCursoPresenter();
+
+	AsyncProvider<NuevoGradoPresenter> getNuevoGradoPresenter();
+
+	AsyncProvider<NuevaSeccionPresenter> getNuevaSeccionPresenter();
+
+	AsyncProvider<NuevoPeriodoPresenter> getNuevoPeriodoPresenter();
+
+	AsyncProvider<NuevaAulaPresenter> getNuevaAulaPresenter();
+
+	AsyncProvider<AsignarCursoAProfesorPresenter> getAsignarCursoAProfesorPresenter();
+
+	AsyncProvider<HabilitarCursoPresenter> getHabilitarCursoPresenter();
 
 }

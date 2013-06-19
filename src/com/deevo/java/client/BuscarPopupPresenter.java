@@ -103,8 +103,8 @@ public class BuscarPopupPresenter extends
 			    }else if (getView().getCampoListbox().getSelectedIndex() == 3){
 			    	nombre  = campo;
 			    }
-			    GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
-				dispatchAsync.execute(action, getpersonaCallback);
+			    //GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
+				//dispatchAsync.execute(action, getpersonaCallback);
 			}
 		});
 		
@@ -185,7 +185,7 @@ public class BuscarPopupPresenter extends
 
 	}
 	
-	private AsyncCallback<GetPersonaResult> getpersonaCallback = new AsyncCallback<GetPersonaResult>() {
+	/*private AsyncCallback<GetPersonaResult> getpersonaCallback = new AsyncCallback<GetPersonaResult>() {
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
@@ -210,6 +210,6 @@ public class BuscarPopupPresenter extends
 			
 		}
 		
-	};
+	};*/
 
 }
