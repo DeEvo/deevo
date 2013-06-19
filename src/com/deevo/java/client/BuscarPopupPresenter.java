@@ -1,14 +1,12 @@
 package com.deevo.java.client;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import com.deevo.java.shared.Persona;
-//import com.deevo.java.client.BuscarPopupView.Persona;
+
+//import com.deevo.java.client.BuscarPopupView.P;
 import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
-import com.deevo.java.client.action.NuevaPersonaResult;
 import com.deevo.java.client.event.BuscarSourceEvent;
 import com.deevo.java.client.event.BuscarSourceEvent.BuscarSourceHandler;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
@@ -21,7 +19,6 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ListBox;
@@ -40,7 +37,7 @@ public class BuscarPopupPresenter extends
 		public Button getCancelarButton();
 		public ListBox getCampoListbox();
 		public TextBox getBuscarTextbox();
-		public CellTable<Persona> getCellTable();
+		public CellTable<P> getCellTable();
 	}
 	
 	private String campo;
@@ -94,7 +91,7 @@ public class BuscarPopupPresenter extends
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				campo = getView().getCampoListbox().getItemText(getView().getCampoListbox().getSelectedIndex());
+				campo = getView().getBuscarTextbox().getText();
 			    
 			    if (getView().getCampoListbox().getSelectedIndex() == 0){
 			    	dni = campo;
@@ -110,66 +107,66 @@ public class BuscarPopupPresenter extends
 			}
 		});
 		
-		/*TextColumn<Persona> dnicolumn = new TextColumn<BuscarPopupView.Persona>() {
+		/*TextColumn<P> dnicolumn = new TextColumn<BuscarPopupView.P>() {
 			@Override
-			public String getValue(Persona s) {
+			public String getValue(P s) {
 				return s.getDni();
 			}
 		};
 		
-		TextColumn<Persona> nombrecolumn = new TextColumn<BuscarPopupView.Persona>() {
+		TextColumn<P> nombrecolumn = new TextColumn<BuscarPopupView.P>() {
 			@Override
-			public String getValue(Persona s) {
+			public String getValue(P s) {
 				return s.getNombre();
 			}
 		};
 		
-		TextColumn<Persona> apaternocolumn = new TextColumn<BuscarPopupView.Persona>() {
+		TextColumn<P> apaternocolumn = new TextColumn<BuscarPopupView.P>() {
 			@Override
-			public String getValue(Persona s) {
+			public String getValue(P s) {
 				return s.getApaterno();
 			}
 		};
 		
-		TextColumn<Persona> amaternocolumn = new TextColumn<BuscarPopupView.Persona>() {
+		TextColumn<P> amaternocolumn = new TextColumn<BuscarPopupView.P>() {
 			@Override
-			public String getValue(Persona s) {
+			public String getValue(P s) {
 				return s.getAmaterno();
 			}
 		};
 		
-		TextColumn<Persona> usuarioocolumn = new TextColumn<BuscarPopupView.Persona>() {
+		TextColumn<P> usuarioocolumn = new TextColumn<BuscarPopupView.P>() {
 			@Override
-			public String getValue(Persona s) {
+			public String getValue(P s) {
 				return s.getUsuario();
 			}
 		};*/
 		
-		TextColumn<Persona> dnicolumn = new TextColumn<Persona>() {
+		TextColumn<P> dnicolumn = new TextColumn<P>() {
 			@Override
-			public String getValue(Persona s) {
-				return s.getPerDni();
+			public String getValue(P s) {
+				return s.getDni();
 			}
 		};
 		
-		TextColumn<Persona> nombrecolumn = new TextColumn<Persona>() {
+		TextColumn<P> nombrecolumn = new TextColumn<P>() {
 			@Override
-			public String getValue(Persona s) {
-				return s.getPerNom();
+			public String getValue(P s) {
+				return s.getNombre();
 			}
 		};
 		
-		TextColumn<Persona> apaternocolumn = new TextColumn<Persona>() {
+		TextColumn<P> apaternocolumn = new TextColumn<P>() {
 			@Override
-			public String getValue(Persona s) {
-				return s.getPerPat();
+			public String getValue(P s) {
+				return s.getApaterno();
 			}
 		};
 		
-		TextColumn<Persona> amaternocolumn = new TextColumn<Persona>() {
+		TextColumn<P> amaternocolumn = new TextColumn<P>() {
 			@Override
-			public String getValue(Persona s) {
-				return s.getPerMat();
+			public String getValue(P s) {
+				return s.getAmaterno();
 			}
 		};
 		
@@ -192,17 +189,29 @@ public class BuscarPopupPresenter extends
 		@Override
 		public void onSuccess(GetPersonaResult result) {
 			// TODO Auto-generated method stub
-			Window.alert(String.valueOf(result.getPersona().get(0).getPerPat()));
-			ListDataProvider<Persona> dataProvider = new ListDataProvider<Persona>();
+			
+			ListDataProvider<P> dataProvider = new ListDataProvider<P>();
 			dataProvider.addDataDisplay(getView().getCellTable());
 			
-			List<Persona> list = dataProvider.getList();
-		    for (Persona persona : result.getPersona()) {
-		      list.add(persona);
+			List<P> list = dataProvider.getList();
+			List<P> listap = new ArrayList<P>();
+			int i =0;
+			while(i< result.getDni().size()){
+				P p = new P(result.getDni().get(i),
+						result.getNombre().get(i),
+						result.getApparten().get(i),
+						result.getApmatern().get(i),
+						null);
+				listap.add(p);
+				i++;
+			}
+			
+		    for (P p : listap) {
+		      list.add(p);
 		    }
 			
-			//getView().getCellTable().setRowCount(result.getPersona().size(), true);
-			//getView().getCellTable().setRowData(0, result.getPersona());
+			//getView().getCellTable().setRowCount(result.getP().size(), true);
+			//getView().getCellTable().setRowData(0, result.getP());
 
 		}
 		
@@ -213,5 +222,47 @@ public class BuscarPopupPresenter extends
 		}
 		
 	};
+	
+	public class P {
+		private String dni;
+	    private String nombre;
+	    private String apaterno;
+	    private String amaterno;
+	    private String usuario;
+		
+	    public P(){
+	    	
+	    }
+	    
+	    public P(String dni, String nombre, String apaterno, String amaterno, String usuario) {
+			
+			this.dni = dni;
+			this.nombre = nombre;
+			this.apaterno = apaterno;
+			this.amaterno = amaterno;
+			this.usuario = usuario;
+		}
+
+		public String getDni() {
+			return dni;
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public String getApaterno() {
+			return apaterno;
+		}
+
+		public String getAmaterno() {
+			return amaterno;
+		}
+
+		public String getUsuario() {
+			return usuario;
+		}
+
+	}
 
 }
