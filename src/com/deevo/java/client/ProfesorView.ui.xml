@@ -6,11 +6,11 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.cellview.client">
 
-	<g:HTMLPanel height="100%" width="100%" styleName="fondoBienvenida">
-	    <g:Grid width="100%" height="100%" styleName="cuadroBorde">
-	    <g:row>
+	<g:HTMLPanel styleName="fondoBienvenida" width="100%" height="100%">
+		  <g:Grid width="100%" height="100%" styleName="cuadroBorde">
+	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Nuevo Rol Profesor" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER"/>
+	    			<g:Label text="PROFESOR" styleName="tituloFormulario" height="31px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -59,49 +59,10 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Es necesario asignarle uno o más cursos al profesor:" width="100%"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
+	    			<g:Grid cellPadding="8" height="25px" styleName="layoutarriba" width="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Grid width="100%" styleName="layout">
-	    							<g:row>
-	    								<g:customCell>
-	    									<g:Label text="Curso" width="154px" styleName="labelFormulario"/>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:TextBox width="200px"/>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:Button  width="80px" text="Buscar" styleName="layout" ui:field="buscarButton"/>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:Button styleName="layout" width="80px">Limpiar</g:Button>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:Button styleName="layout">Borrar Todo</g:Button>
-	    								</g:customCell>
-	    							</g:row>
-	    						</g:Grid>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Grid width="100%" styleName="layout">
-	    							<g:row>
-	    								<g:customCell>
-	    									<g:ScrollPanel width="393px" height="90px">
-	    				<p1:CellTable width="100%" height="133px" ui:field="cellTable"/>
-	    			</g:ScrollPanel>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:TextArea height="76px" width="254px"/>
-	    								</g:customCell>
-	    							</g:row>
-	    						</g:Grid>
+	    						<g:Button styleName="layout">Ver Ficha de Usuario</g:Button>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -109,18 +70,26 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
+	    			<g:Label text="Ficha de Rol:" width="100%" styleName="labelsubformulario" height="37px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layout">
+	    			<g:Grid width="100%" cellPadding="6" styleName="layout">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Descripcion" width="" styleName="labelFormulario"/>
+	    						<g:Label text="Descripción" styleName="labelFormulario" width="58px" horizontalAlignment="ALIGN_CENTER"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextArea width="331px" ui:field="txtadescripcion"/>
+	    						<g:IntegerBox width="200px" ui:field="descriTexbox" enabled="false"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Cursos" styleName="labelFormulario" width=""/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextArea width="200px" height="58px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -128,13 +97,64 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="10">
+	    			<g:Grid cellPadding="8" height="25px" styleName="layoutarriba" width="100%">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Button width="90px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
+	    						<g:Button styleName="layout">Modificar</g:Button>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Label text="Seleccione que tipo de información desea mostrar:" width="100%" styleName="labelsubformulario" height="20px"/>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" cellPadding="6" height="80px" styleName="layoutarriba">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox text="Cursos Habilitados"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="180px" text="Crear y asignar otro rol" styleName="layout" ui:field="asignarButton"/>
+	    						<g:CheckBox text="Aulas"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:CheckBox text="Alumnos"/>
+	    					</g:customCell>
+	    				</g:row>
+						
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="87px">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:ScrollPanel width="100%" height="112px">
+	    							<p1:CellTable width="100%" height="100%" ui:field="cellTable"/>
+	    							
+	    						</g:ScrollPanel>
+	    					</g:customCell>
+	    				</g:row>
+	    			</g:Grid>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:Grid width="100%" height="25px" styleName="layoutarriba" cellPadding="8">
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Button width="90px" text="Limpiar" styleName="layout"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button styleName="layout" width="100px">Mostar</g:Button>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:Button width="100px" text="Ingresar" styleName="layout"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>

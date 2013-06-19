@@ -22,7 +22,7 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
 	@UiField Button crearButton;
-	@UiField TextBox contraTexbox;
+	@UiField TextBox usuarioTexbox;
 	@UiField TextArea txtadescripcion;
 	
 	@Inject
@@ -54,7 +54,7 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	}
 
 	public TextBox getContraTexbox() {
-		return contraTexbox;
+		return usuarioTexbox;
 	}
 
 	public TextArea getTxtadescripcion() {
