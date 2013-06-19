@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
-		<entity-name>com.deevo.java.share.Alerta</entity-name>
+		<entity-name>com.deevo.java.shared.Alerta</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -11,7 +11,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.AlertaParque</entity-name>
+		<entity-name>com.deevo.java.shared.AlertaParque</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -22,7 +22,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.AlertaPrivilegio</entity-name>
+		<entity-name>com.deevo.java.shared.AlertaPrivilegio</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -33,7 +33,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Alumno</entity-name>
+		<entity-name>com.deevo.java.shared.Alumno</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>226</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -44,7 +44,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Aula</entity-name>
+		<entity-name>com.deevo.java.shared.Aula</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>228</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -55,7 +55,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Colegio</entity-name>
+		<entity-name>com.deevo.java.shared.Colegio</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>346</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -66,7 +66,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.ColegioPrivilegio</entity-name>
+		<entity-name>com.deevo.java.shared.ColegioPrivilegio</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -77,7 +77,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.ColegioProfesor</entity-name>
+		<entity-name>com.deevo.java.shared.ColegioProfesor</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -88,7 +88,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Curso</entity-name>
+		<entity-name>com.deevo.java.shared.Curso</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -99,7 +99,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.CursoHabilitado</entity-name>
+		<entity-name>com.deevo.java.shared.CursoHabilitado</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -110,7 +110,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.CursoProfesor</entity-name>
+		<entity-name>com.deevo.java.shared.CursoProfesor</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -121,7 +121,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Estado</entity-name>
+		<entity-name>com.deevo.java.shared.Estado</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>246</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -132,7 +132,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.EstadoTipo</entity-name>
+		<entity-name>com.deevo.java.shared.EstadoTipo</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -143,7 +143,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Familia</entity-name>
+		<entity-name>com.deevo.java.shared.Familia</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -154,7 +154,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Grado</entity-name>
+		<entity-name>com.deevo.java.shared.Grado</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -165,7 +165,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.GradoSeccion</entity-name>
+		<entity-name>com.deevo.java.shared.GradoSeccion</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -176,7 +176,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.MetodoCalificacion</entity-name>
+		<entity-name>com.deevo.java.shared.MetodoCalificacion</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -187,7 +187,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.PadreFamilia</entity-name>
+		<entity-name>com.deevo.java.shared.PadreFamilia</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -198,7 +198,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.PeriodoAcademico</entity-name>
+		<entity-name>com.deevo.java.shared.PeriodoAcademico</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -209,7 +209,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Persona</entity-name>
+		<entity-name>com.deevo.java.shared.Persona</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>466</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -220,7 +220,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Pregunta</entity-name>
+		<entity-name>com.deevo.java.shared.Pregunta</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>246</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -231,7 +231,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Privilegio</entity-name>
+		<entity-name>com.deevo.java.shared.Privilegio</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>226</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -242,7 +242,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Profesor</entity-name>
+		<entity-name>com.deevo.java.shared.Profesor</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -253,7 +253,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Psicologo</entity-name>
+		<entity-name>com.deevo.java.shared.Psicologo</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -264,7 +264,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Registro</entity-name>
+		<entity-name>com.deevo.java.shared.Registro</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>128</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -275,7 +275,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Respuesta</entity-name>
+		<entity-name>com.deevo.java.shared.Respuesta</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
@@ -286,7 +286,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Seccion</entity-name>
+		<entity-name>com.deevo.java.shared.Seccion</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -297,7 +297,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Sesion</entity-name>
+		<entity-name>com.deevo.java.shared.Sesion</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>270</entity-X-Coordinate>
@@ -308,7 +308,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Test</entity-name>
+		<entity-name>com.deevo.java.shared.Test</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>266</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
@@ -319,7 +319,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.TestTipo</entity-name>
+		<entity-name>com.deevo.java.shared.TestTipo</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
 		<entity-X-Coordinate>490</entity-X-Coordinate>
@@ -330,7 +330,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.deevo.java.share.Usuario</entity-name>
+		<entity-name>com.deevo.java.shared.Usuario</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>710</entity-X-Coordinate>
