@@ -3,7 +3,7 @@ package com.deevo.java.server.actionhandler;
 import java.util.List;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
-import com.deevo.java.share.Curso;
+import com.deevo.java.shared.Curso;
 import com.deevo.java.client.action.GetCursos;
 import com.deevo.java.client.action.GetCursosResult;
 import com.deevo.java.server.model.dao.CursoDao;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.deevo.java.share.Persona;
+import com.deevo.java.shared.Persona;
 //import com.deevo.java.client.BuscarPopupView.Persona;
 import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
@@ -26,6 +26,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.ListDataProvider;
+
 
 
 public class BuscarPopupPresenter extends

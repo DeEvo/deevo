@@ -1,6 +1,6 @@
 package com.deevo.java.client;
 
-import com.deevo.java.share.Persona;
+import com.deevo.java.shared.Persona;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;

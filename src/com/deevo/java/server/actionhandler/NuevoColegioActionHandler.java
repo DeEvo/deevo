@@ -6,7 +6,7 @@ import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.NuevoColegio;
 import com.deevo.java.client.action.NuevoColegioResult;
 import com.deevo.java.server.model.dao.ColegioDao;
-import com.deevo.java.share.Colegio;
+import com.deevo.java.shared.Colegio;
 import com.google.inject.Inject;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.shared.ActionException;
