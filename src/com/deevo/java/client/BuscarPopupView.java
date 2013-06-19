@@ -1,5 +1,6 @@
 package com.deevo.java.client;
 
+import com.deevo.java.share.Persona;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
@@ -36,7 +37,7 @@ public class BuscarPopupView extends PopupViewImpl implements
 	@UiField ListBox campoListbox;
 	@UiField TextBox buscarTextbox;
 	@UiField TextBox ingresarButton;
-	@UiField(provided=true) CellTable<persona> cellTable = new CellTable<persona>();
+	@UiField(provided=true) CellTable<Persona> cellTable = new CellTable<Persona>();
 	
 	public Button getLimpiarButton() {
 		return limpiarButton;
@@ -62,19 +63,19 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return ingresarButton;
 	}
 
-	public CellTable<persona> getCellTable() {
+	public CellTable<Persona> getCellTable() {
 		return cellTable;
 	}
 	
 	
-	public class persona {
+	/*public class Persona {
 		private String dni;
 	    private String nombre;
 	    private String apaterno;
 	    private String amaterno;
 	    private String usuario;
 		
-	    public persona(String dni, String nombre, String apaterno, String amaterno, String usuario) {
+	    public Persona(String dni, String nombre, String apaterno, String amaterno, String usuario) {
 			super();
 			this.dni = dni;
 			this.nombre = nombre;
@@ -103,7 +104,7 @@ public class BuscarPopupView extends PopupViewImpl implements
 			return usuario;
 		}
 
-	}
+	}*/
 	
 }
 
