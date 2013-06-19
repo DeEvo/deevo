@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
-import com.deevo.java.share.Test;
+import com.deevo.java.shared.Test;
 
 
 public class TestDao {

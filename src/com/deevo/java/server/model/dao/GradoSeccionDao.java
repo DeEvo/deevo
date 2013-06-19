@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
-import com.deevo.java.share.GradoSeccion;
+import com.deevo.java.shared.GradoSeccion;
 
 
 public class GradoSeccionDao {

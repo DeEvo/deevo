@@ -5,7 +5,7 @@ import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 
 import com.deevo.java.client.action.NuevoLogin;
 import com.deevo.java.server.model.dao.UsuarioDao;
-import com.deevo.java.share.Usuario;
+import com.deevo.java.shared.Usuario;
 import com.google.inject.Inject;
 import com.deevo.java.client.action.NuevoLoginResult;
 import com.gwtplatform.dispatch.server.ExecutionContext;

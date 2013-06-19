@@ -4,7 +4,7 @@ import com.gwtplatform.dispatch.shared.Result;
 import java.lang.String;
 import java.util.List;
 
-import com.deevo.java.share.Persona;
+import com.deevo.java.shared.Persona;
 
 public class NuevaPersonaResult implements Result {
 

@@ -7,7 +7,7 @@ import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
 import com.deevo.java.server.model.dao.PersonaDao;
-import com.deevo.java.share.Persona;
+import com.deevo.java.shared.Persona;
 import com.google.inject.Inject;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.shared.ActionException;

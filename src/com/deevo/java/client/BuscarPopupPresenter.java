@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.deevo.java.share.Persona;
+import com.deevo.java.shared.Persona;
 //import com.deevo.java.client.BuscarPopupView.Persona;
 import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
@@ -103,8 +103,8 @@ public class BuscarPopupPresenter extends
 			    }else if (getView().getCampoListbox().getSelectedIndex() == 3){
 			    	nombre  = campo;
 			    }
-			    //GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
-				//dispatchAsync.execute(action, getpersonaCallback);
+			    GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
+				dispatchAsync.execute(action, getpersonaCallback);
 			}
 		});
 		
@@ -185,7 +185,7 @@ public class BuscarPopupPresenter extends
 
 	}
 	
-	/*private AsyncCallback<GetPersonaResult> getpersonaCallback = new AsyncCallback<GetPersonaResult>() {
+	private AsyncCallback<GetPersonaResult> getpersonaCallback = new AsyncCallback<GetPersonaResult>() {
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
@@ -210,6 +210,6 @@ public class BuscarPopupPresenter extends
 			
 		}
 		
-	};*/
+	};
 
 }

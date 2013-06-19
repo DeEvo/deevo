@@ -1,6 +1,6 @@
 package com.deevo.java.client.action;
 
-import com.deevo.java.share.Curso;
+import com.deevo.java.shared.Curso;
 import com.gwtplatform.dispatch.shared.Result;
 import java.util.List;
 
