@@ -1,6 +1,5 @@
 package com.deevo.java.client.action;
 
-import com.deevo.java.shared.Persona;
 import com.gwtplatform.dispatch.shared.Result;
 
 import java.util.List;
@@ -9,7 +8,11 @@ import java.lang.String;
 public class GetPersonaResult implements Result {
 
 
-	private List<Persona> persona ;
+
+	private List<String> dni;
+	private List<String> nombre;
+	private List<String> apparten;
+	private List<String> apmatern;
 	private String mensaje;
 
 	@SuppressWarnings("unused")
@@ -17,10 +20,13 @@ public class GetPersonaResult implements Result {
 		// For serialization only
 	}
 
-	public GetPersonaResult(List<Persona> persona , String mensaje) {
+	public GetPersonaResult( List<String> dni, List<String> nombre,List<String> apparten,List<String> apmatern,  String mensaje) {
 
 		this.mensaje = mensaje;
-		this.persona = persona;
+		this.dni = dni;
+		this.nombre  = nombre;
+		this.apparten = apparten;
+		this.apmatern = apmatern;
 	}
 
 
@@ -28,9 +34,19 @@ public class GetPersonaResult implements Result {
 		return mensaje;
 	}
 
-	public List<Persona> getPersona() {
-		return persona;
+	public List<String> getDni() {
+		return dni;
 	}
-	
-	
+
+	public List<String> getNombre() {
+		return nombre;
+	}
+
+	public List<String> getApparten() {
+		return apparten;
+	}
+
+	public List<String> getApmatern() {
+		return apmatern;
+	}
 }
