@@ -62,6 +62,10 @@ public class NameTokens {
 
 	public static final String habilitarcurso = "habilitarcurso";
 
+	public static final String busquedaporaula = "busquedaporaula";
+
+	public static final String aula = "aula";
+
 	public static String getHome() {
 		return home;
 	}
@@ -151,6 +155,12 @@ public class NameTokens {
 	}
 	public static String getHabilitarcurso() {
 		return habilitarcurso;
+	}
+	public static String getBusquedaporaula() {
+		return busquedaporaula;
+	}
+	public static String getAula() {
+		return aula;
 	}
 
 }

@@ -87,6 +87,10 @@ import com.deevo.java.client.AsignarCursoAProfesorPresenter;
 import com.deevo.java.client.AsignarCursoAProfesorView;
 import com.deevo.java.client.HabilitarCursoPresenter;
 import com.deevo.java.client.HabilitarCursoView;
+import com.deevo.java.client.BusquedaPorAulaPresenter;
+import com.deevo.java.client.BusquedaPorAulaView;
+import com.deevo.java.client.AulaPresenter;
+import com.deevo.java.client.AulaView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -250,6 +254,14 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenter(HabilitarCursoPresenter.class,
 				HabilitarCursoPresenter.MyView.class, HabilitarCursoView.class,
 				HabilitarCursoPresenter.MyProxy.class);
+
+		bindPresenter(BusquedaPorAulaPresenter.class,
+				BusquedaPorAulaPresenter.MyView.class,
+				BusquedaPorAulaView.class,
+				BusquedaPorAulaPresenter.MyProxy.class);
+
+		bindPresenter(AulaPresenter.class, AulaPresenter.MyView.class,
+				AulaView.class, AulaPresenter.MyProxy.class);
 
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,
