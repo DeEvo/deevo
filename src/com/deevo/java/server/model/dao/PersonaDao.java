@@ -62,7 +62,7 @@ public class PersonaDao {
 
 			EntityManager em = EMF.get().createEntityManager();
 
-		    Persona persona2= null;
+		    Persona persona2= new Persona();
 		    try {
 		      persona2 = em.find(Persona.class, persona.getPerDni());
 		    } catch (Throwable t) {
@@ -144,9 +144,8 @@ public class PersonaDao {
 				    List<Persona> list = null;
 				   
 				    try {
-				    	String qery = "SELECT x FROM Persona x WHERE x.persona.perPat LIKE '%?1%' ORDER BY x.persona.perPat";
-			            list= em.createQuery(qery).setParameter(1, perPat).getResultList();
-			          //  list = q.getResultList();
+				    	String qery = "SELECT x FROM Persona x WHERE x.perPat LIKE :code ORDER BY x.perPat";
+			            list= em.createQuery(qery).setParameter("code", "%" +perPat+ "%").getResultList();
 				    }catch(Throwable t){
 				    	t.printStackTrace();
 				    	throw t;
@@ -163,8 +162,8 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try {
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perMat LIKE '%?1%' ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perMat).getResultList();
+					    	String qery = "SELECT x FROM Persona x WHERE x.perMat LIKE :code ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perMat+ "%").getResultList();
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
@@ -182,8 +181,8 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try { 
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perNom LIKE '%?1%' ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perNom).getResultList();
+					    	String qery = "SELECT x FROM Persona x WHERE x.perNom LIKE :code ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perNom+ "%").getResultList();
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
@@ -201,9 +200,9 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try { 
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perNom LIKE '%?1%' AND x.persona.perMat LIKE '%?2%'" +
-					    			" ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perNom).setParameter(2, perMat).getResultList(); 
+					    	String qery = "SELECT x FROM Persona x WHERE x.perNom LIKE :code AND x.perMat LIKE :busca" +
+					    			" ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perNom+ "%").setParameter("busca", "%" +perMat+ "%").getResultList(); 
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
@@ -221,9 +220,9 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try { 
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perNom LIKE '%?1%' AND x.persona.perPat LIKE '%?2%'" +
-					    			" ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perNom).setParameter(2, perPat).getResultList(); 
+					    	String qery = "SELECT x FROM Persona x WHERE x.perNom LIKE :code AND x.perPat LIKE :busca" +
+					    			" ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perNom+ "%").setParameter("busca", "%" +perPat+ "%").getResultList(); 
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
@@ -241,9 +240,9 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try { 
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perMat LIKE '%?1%' AND x.persona.perPat LIKE '%?2%'" +
-					    			" ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perMat).setParameter(2, perPat).getResultList(); 
+					    	String qery = "SELECT x FROM Persona x WHERE x.perMat LIKE :code AND x.perPat LIKE :busca" +
+					    			" ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perMat+ "%").setParameter("busca", "%" +perPat+ "%").getResultList(); 
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
@@ -261,9 +260,9 @@ public class PersonaDao {
 					    List<Persona> list = null;
 					   
 					    try { 
-					    	String qery = "SELECT x FROM Persona x WHERE x.persona.perMat LIKE '%?1%' AND x.persona.perPat LIKE '%?2%'" +
-					    			" AND x.persona.perNom LIKE '%?3%' ORDER BY x.persona.perPat";
-				            list= em.createQuery(qery).setParameter(1, perMat).setParameter(2, perPat).setParameter(3, perNom).getResultList(); 
+					    	String qery = "SELECT x FROM Persona x WHERE x.perMat LIKE :code AND x.perPat LIKE :busca" +
+					    			" AND x.perNom LIKE :final ORDER BY x.perPat";
+				            list= em.createQuery(qery).setParameter("code", "%" +perMat+ "%").setParameter("busca", "%" +perPat+ "%").setParameter("final", "%" +perNom+ "%").getResultList(); 
 				          //  list = q.getResultList();
 					    }catch(Throwable t){
 					    	t.printStackTrace();
