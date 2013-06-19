@@ -25,6 +25,8 @@ public class BuscarPopupView extends PopupViewImpl implements
 		super(eventBus);
 		widget = binder.createAndBindUi(this);
 	}
+	
+	
 
 	@Override
 	public Widget asWidget() {

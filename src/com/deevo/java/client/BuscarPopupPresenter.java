@@ -21,6 +21,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ListBox;
@@ -191,7 +192,7 @@ public class BuscarPopupPresenter extends
 		@Override
 		public void onSuccess(GetPersonaResult result) {
 			// TODO Auto-generated method stub
-			
+			Window.alert(String.valueOf(result.getPersona().get(0).getPerPat()));
 			ListDataProvider<Persona> dataProvider = new ListDataProvider<Persona>();
 			dataProvider.addDataDisplay(getView().getCellTable());
 			
