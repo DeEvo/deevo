@@ -28,7 +28,7 @@ public class GetPersonaActionHandler implements
 		List<String> nombre = new ArrayList<String>();
 			 List<String> apparten = new ArrayList<String>();
 			List<String> apmatern = new ArrayList<String>();
-		 if(action.getPer_dni() !=null){
+		 if(! action.getPer_dni().isEmpty()){
 				PersonaDao perdao = new PersonaDao();
 				Persona persona = new Persona();
 				persona.setPerDni(action.getPer_dni());
@@ -39,8 +39,8 @@ public class GetPersonaActionHandler implements
 					while(i< personalist.size()){
 						dni.add(personalist.get(i).getPerDni());
 						nombre.add(personalist.get(i).getPerNom());
-						apparten.add(personalist.get(i).getPerMat());
-						apmatern.add(personalist.get(i).getPerPat());
+						apparten.add(personalist.get(i).getPerPat());
+						apmatern.add(personalist.get(i).getPerMat());
 						i++;
 					}
 					
@@ -52,7 +52,8 @@ public class GetPersonaActionHandler implements
 				return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
 			}
 		 
-		 if(action.getPer_mat() !=null && action.getPer_nom() !=null && action.getPer_pat() !=null){
+		 if(action.getPer_mat() !="" && action.getPer_nom() !="" && action.getPer_pat() !=""){
+			 // paterno, materno, nombre
 			 PersonaDao p = new PersonaDao();
 				try {
 					
@@ -61,8 +62,8 @@ public class GetPersonaActionHandler implements
 					while(i< personalist.size()){
 						dni.add(personalist.get(i).getPerDni());
 						nombre.add(personalist.get(i).getPerNom());
-						apparten.add(personalist.get(i).getPerMat());
-						apmatern.add(personalist.get(i).getPerPat());
+						apparten.add(personalist.get(i).getPerPat());
+						apmatern.add(personalist.get(i).getPerMat());
 						i++;
 					}
 				} catch (Throwable e) {
@@ -72,8 +73,8 @@ public class GetPersonaActionHandler implements
 				return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
 		 }
 
-			if(action.getPer_nom() == null){
-				if(action.getPer_mat() == null){
+			if(action.getPer_nom() == ""){
+				if(action.getPer_mat() == ""){
 					//solo paterno
 					PersonaDao perdao = new PersonaDao();
 					try {
@@ -82,8 +83,8 @@ public class GetPersonaActionHandler implements
 						while(i< personalist.size()){
 							dni.add(personalist.get(i).getPerDni());
 							nombre.add(personalist.get(i).getPerNom());
-							apparten.add(personalist.get(i).getPerMat());
-							apmatern.add(personalist.get(i).getPerPat());
+							apparten.add(personalist.get(i).getPerPat());
+							apmatern.add(personalist.get(i).getPerMat());
 							i++;
 						}
 					} catch (Throwable e) {
@@ -92,7 +93,7 @@ public class GetPersonaActionHandler implements
 					}
 					return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
 				}else{
-					if(action.getPer_pat() == null){
+					if(action.getPer_pat() == ""){
 						//solo materno
 						PersonaDao perdao = new PersonaDao();
 						try {
@@ -101,8 +102,8 @@ public class GetPersonaActionHandler implements
 							while(i< personalist.size()){
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
-								apparten.add(personalist.get(i).getPerMat());
-								apmatern.add(personalist.get(i).getPerPat());
+								apparten.add(personalist.get(i).getPerPat());
+								apmatern.add(personalist.get(i).getPerMat());
 								i++;
 							}
 						} catch (Throwable e) {
@@ -119,8 +120,8 @@ public class GetPersonaActionHandler implements
 							while(i< personalist.size()){
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
-								apparten.add(personalist.get(i).getPerMat());
-								apmatern.add(personalist.get(i).getPerPat());
+								apparten.add(personalist.get(i).getPerPat());
+								apmatern.add(personalist.get(i).getPerMat());
 								i++;
 							}
 							
@@ -132,8 +133,8 @@ public class GetPersonaActionHandler implements
 					}
 				}
 			}else{
-				if(action.getPer_mat() == null){	
-					if(action.getPer_pat() == null){
+				if(action.getPer_mat() == ""){	
+					if(action.getPer_pat() == ""){
 						//solo nombre
 						PersonaDao perdao = new PersonaDao();
 						try {
@@ -142,8 +143,8 @@ public class GetPersonaActionHandler implements
 							while(i< personalist.size()){
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
-								apparten.add(personalist.get(i).getPerMat());
-								apmatern.add(personalist.get(i).getPerPat());
+								apparten.add(personalist.get(i).getPerPat());
+								apmatern.add(personalist.get(i).getPerMat());
 								i++;
 							}
 						} catch (Throwable e) {
@@ -160,8 +161,8 @@ public class GetPersonaActionHandler implements
 							while(i< personalist.size()){
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
-								apparten.add(personalist.get(i).getPerMat());
-								apmatern.add(personalist.get(i).getPerPat());
+								apparten.add(personalist.get(i).getPerPat());
+								apmatern.add(personalist.get(i).getPerMat());
 								i++;
 							}
 						} catch (Throwable e) {
@@ -181,8 +182,8 @@ public class GetPersonaActionHandler implements
 							while(i< personalist.size()){
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
-								apparten.add(personalist.get(i).getPerMat());
-								apmatern.add(personalist.get(i).getPerPat());
+								apparten.add(personalist.get(i).getPerPat());
+								apmatern.add(personalist.get(i).getPerMat());	
 								i++;
 							}
 						} catch (Throwable e) {

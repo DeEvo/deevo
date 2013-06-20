@@ -21,7 +21,6 @@ import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.ListDataProvider;
 
@@ -31,16 +30,17 @@ public class BuscarPopupPresenter extends
 		PresenterWidget<BuscarPopupPresenter.MyView> {
 
 	public interface MyView extends PopupView {
-		// TODO Put your view methods here
 		public Button getLimpiarButton();
 		public Button getBuscarButton();
 		public Button getCancelarButton();
-		public ListBox getCampoListbox();
 		public TextBox getBuscarTextbox();
 		public CellTable<P> getCellTable();
+		public TextBox getDniTextbox() ;
+		public TextBox getPaterTextbox();
+		public TextBox getMaterTexbox() ;
+		public TextBox getNombreTextbox();
 	}
 	
-	private String campo;
 	private String dni;
     private String nombre;
     private String apaterno;
@@ -91,17 +91,20 @@ public class BuscarPopupPresenter extends
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				campo = getView().getBuscarTextbox().getText();
-			    
-			    if (getView().getCampoListbox().getSelectedIndex() == 0){
-			    	dni = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 1){
-			    	apaterno  = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 2){
-			    	amaterno  = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 3){
-			    	nombre  = campo;
-			    }
+				
+				
+				if(getView().getDniTextbox().getText().isEmpty()){
+					   apaterno = getView().getPaterTextbox().getText();
+					    amaterno = getView().getMaterTexbox().getText();
+					    nombre = getView().getNombreTextbox().getText();
+					    dni = "";
+				}
+			    else{
+			    	dni = getView().getDniTextbox().getText();
+			    	apaterno = "";
+				    amaterno = "";
+				    nombre = "";
+			    } 
 			    GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
 				dispatchAsync.execute(action, getpersonaCallback);
 			}
@@ -188,8 +191,6 @@ public class BuscarPopupPresenter extends
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
-			// TODO Auto-generated method stub
-			
 			ListDataProvider<P> dataProvider = new ListDataProvider<P>();
 			dataProvider.addDataDisplay(getView().getCellTable());
 			
@@ -217,7 +218,7 @@ public class BuscarPopupPresenter extends
 		
 		@Override
 		public void onFailure(Throwable caught) {
-			// TODO Auto-generated method stub
+		
 			
 		}
 		

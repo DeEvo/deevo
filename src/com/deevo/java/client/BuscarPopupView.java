@@ -26,8 +26,6 @@ public class BuscarPopupView extends PopupViewImpl implements
 		widget = binder.createAndBindUi(this);
 	}
 	
-	
-
 	@Override
 	public Widget asWidget() {
 		return widget;
@@ -36,10 +34,12 @@ public class BuscarPopupView extends PopupViewImpl implements
 	@UiField Button limpiarButton;
 	@UiField Button buscarButton;
 	@UiField Button cancelarButton;
-	@UiField ListBox campoListbox;
-	@UiField TextBox buscarTextbox;
 	@UiField Button ingresarButton;
 	@UiField(provided=true) CellTable<P> cellTable = new CellTable<P>();
+	@UiField TextBox NombreTextbox;
+	@UiField TextBox dniTextbox;
+	@UiField TextBox paterTextbox;
+	@UiField TextBox MaterTexbox;
 	
 	public Button getLimpiarButton() {
 		return limpiarButton;
@@ -53,12 +53,8 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return cancelarButton;
 	}
 
-	public ListBox getCampoListbox() {
-		return campoListbox;
-	}
-
 	public TextBox getBuscarTextbox() {
-		return buscarTextbox;
+		return dniTextbox;
 	}
 
 	public Button getIngresarButton() {
@@ -68,9 +64,22 @@ public class BuscarPopupView extends PopupViewImpl implements
 	public CellTable<P> getCellTable() {
 		return cellTable;
 	}
-	
-	
-	
+
+	public TextBox getDniTextbox() {
+		return dniTextbox;
+	}
+
+	public TextBox getPaterTextbox() {
+		return paterTextbox;
+	}
+
+	public TextBox getMaterTexbox() {
+		return MaterTexbox;
+	}
+
+	public TextBox getNombreTextbox() {
+		return NombreTextbox;
+	}
 	
 }
 
