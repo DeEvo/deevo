@@ -6,7 +6,8 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.cellview.client" xmlns:w="urn:import:com.google.gwt.widget.client">
 
-	<g:PopupPanel width="500px" height="400px" glassEnabled="true" modal="true">
+
+	<g:PopupPanel width="500px" height="400px" glassEnabled="true"  animationEnabled="true" modal="true">
 		  <g:Grid width="100%" height="400px" styleName="layout">
 	    	<g:row>
 	    		<g:customCell>
@@ -27,6 +28,7 @@
 				    		</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="150px" ui:field="dniTextbox" maxLength="8"/>
+
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>

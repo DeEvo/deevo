@@ -8,7 +8,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.cellview.client.CellTable;
 
@@ -31,8 +30,8 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return widget;
 	}
 	
-	@UiField Button limpiarButton;
 	@UiField Button buscarButton;
+	@UiField Button limpiarButton;
 	@UiField Button cancelarButton;
 	@UiField Button ingresarButton;
 	@UiField(provided=true) CellTable<P> cellTable = new CellTable<P>();

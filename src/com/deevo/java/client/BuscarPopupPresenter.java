@@ -75,7 +75,7 @@ public class BuscarPopupPresenter extends
 		getView().getCancelarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				getView().getBuscarTextbox().setText("");
+				getView().getLimpiarButton().click();
 				getView().hide();
 			}
 		});
@@ -83,16 +83,17 @@ public class BuscarPopupPresenter extends
 		getView().getLimpiarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				getView().getBuscarTextbox().setText("");
-				
+				getView().getDniTextbox().setText("");
+				getView().getPaterTextbox().setText("");
+				getView().getMaterTexbox().setText("");
+				getView().getNombreTextbox().setText("");
+				getView().getDniTextbox().setFocus(true);
 			}
 		});
 		
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
-				
-				
+			public void onClick(ClickEvent event) {	
 				if(getView().getDniTextbox().getText().isEmpty()){
 					   apaterno = getView().getPaterTextbox().getText();
 					    amaterno = getView().getMaterTexbox().getText();
@@ -105,6 +106,7 @@ public class BuscarPopupPresenter extends
 				    amaterno = "";
 				    nombre = "";
 			    } 
+
 			    GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
 				dispatchAsync.execute(action, getpersonaCallback);
 			}
