@@ -8,7 +8,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.cellview.client.CellTable;
 
@@ -33,11 +32,13 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return widget;
 	}
 	
-	@UiField Button limpiarButton;
 	@UiField Button buscarButton;
+	@UiField Button limpiarButton;
 	@UiField Button cancelarButton;
-	@UiField ListBox campoListbox;
-	@UiField TextBox buscarTextbox;
+	@UiField TextBox dniTextbox;
+	@UiField TextBox apaternoTextbox;
+	@UiField TextBox amaternoTextbox;
+	@UiField TextBox nombreTextbox;
 	@UiField Button ingresarButton;
 	@UiField(provided=true) CellTable<P> cellTable = new CellTable<P>();
 	
@@ -53,24 +54,33 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return cancelarButton;
 	}
 
-	public ListBox getCampoListbox() {
-		return campoListbox;
-	}
-
-	public TextBox getBuscarTextbox() {
-		return buscarTextbox;
-	}
-
 	public Button getIngresarButton() {
 		return ingresarButton;
+	}
+	
+	public TextBox getDniTextbox() {
+		return dniTextbox;
+	}
+
+	public TextBox getApaternoTextbox() {
+		return apaternoTextbox;
+	}
+
+	public TextBox getAmaternoTextbox() {
+		return amaternoTextbox;
+	}
+
+	public TextBox getNombreTextbox() {
+		return nombreTextbox;
 	}
 
 	public CellTable<P> getCellTable() {
 		return cellTable;
 	}
-	
-	
-	
+
+	public Widget getWidget() {
+		return widget;
+	}
 	
 }
 

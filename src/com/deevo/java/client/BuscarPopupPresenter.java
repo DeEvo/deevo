@@ -21,7 +21,6 @@ import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.ListDataProvider;
 
@@ -35,12 +34,13 @@ public class BuscarPopupPresenter extends
 		public Button getLimpiarButton();
 		public Button getBuscarButton();
 		public Button getCancelarButton();
-		public ListBox getCampoListbox();
-		public TextBox getBuscarTextbox();
+		public TextBox getDniTextbox();
+		public TextBox getApaternoTextbox();
+		public TextBox getAmaternoTextbox();
+		public TextBox getNombreTextbox();
 		public CellTable<P> getCellTable();
 	}
 	
-	private String campo;
 	private String dni;
     private String nombre;
     private String apaterno;
@@ -75,7 +75,7 @@ public class BuscarPopupPresenter extends
 		getView().getCancelarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				getView().getBuscarTextbox().setText("");
+				getView().getLimpiarButton().click();
 				getView().hide();
 			}
 		});
@@ -83,25 +83,22 @@ public class BuscarPopupPresenter extends
 		getView().getLimpiarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				getView().getBuscarTextbox().setText("");
-				
+				getView().getDniTextbox().setText("");
+				getView().getApaternoTextbox().setText("");
+				getView().getAmaternoTextbox().setText("");
+				getView().getNombreTextbox().setText("");
+				getView().getDniTextbox().setFocus(true);
 			}
 		});
 		
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				campo = getView().getBuscarTextbox().getText();
+				dni = getView().getDniTextbox().getText();
+				apaterno = getView().getApaternoTextbox().getText();
+				amaterno = getView().getAmaternoTextbox().getText();
+				nombre = getView().getNombreTextbox().getText();
 			    
-			    if (getView().getCampoListbox().getSelectedIndex() == 0){
-			    	dni = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 1){
-			    	apaterno  = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 2){
-			    	amaterno  = campo;
-			    }else if (getView().getCampoListbox().getSelectedIndex() == 3){
-			    	nombre  = campo;
-			    }
 			    GetPersona action= new GetPersona(nombre, apaterno, amaterno, dni);
 				dispatchAsync.execute(action, getpersonaCallback);
 			}
