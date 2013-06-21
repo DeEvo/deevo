@@ -276,5 +276,12 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,
 				NuevoUsuarioPopupView.class);
+		
+		bindPresenter(CursoPresenter.class, CursoPresenter.MyView.class,
+				CursoView.class, CursoPresenter.MyProxy.class);
+		
+		bindPresenter(ProfesorPresenter.class, ProfesorPresenter.MyView.class,
+				ProfesorView.class, ProfesorPresenter.MyProxy.class);
+
 	}
 }

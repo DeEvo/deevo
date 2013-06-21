@@ -8,7 +8,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.cellview.client.CellTable;
 
@@ -26,20 +25,20 @@ public class BuscarPopupView extends PopupViewImpl implements
 		widget = binder.createAndBindUi(this);
 	}
 	
-	
-
 	@Override
 	public Widget asWidget() {
 		return widget;
 	}
 	
-	@UiField Button limpiarButton;
 	@UiField Button buscarButton;
+	@UiField Button limpiarButton;
 	@UiField Button cancelarButton;
-	@UiField ListBox campoListbox;
-	@UiField TextBox buscarTextbox;
 	@UiField Button ingresarButton;
 	@UiField(provided=true) CellTable<P> cellTable = new CellTable<P>();
+	@UiField TextBox NombreTextbox;
+	@UiField TextBox dniTextbox;
+	@UiField TextBox paterTextbox;
+	@UiField TextBox MaterTexbox;
 	
 	public Button getLimpiarButton() {
 		return limpiarButton;
@@ -53,12 +52,8 @@ public class BuscarPopupView extends PopupViewImpl implements
 		return cancelarButton;
 	}
 
-	public ListBox getCampoListbox() {
-		return campoListbox;
-	}
-
 	public TextBox getBuscarTextbox() {
-		return buscarTextbox;
+		return dniTextbox;
 	}
 
 	public Button getIngresarButton() {
@@ -68,9 +63,22 @@ public class BuscarPopupView extends PopupViewImpl implements
 	public CellTable<P> getCellTable() {
 		return cellTable;
 	}
-	
-	
-	
+
+	public TextBox getDniTextbox() {
+		return dniTextbox;
+	}
+
+	public TextBox getPaterTextbox() {
+		return paterTextbox;
+	}
+
+	public TextBox getMaterTexbox() {
+		return MaterTexbox;
+	}
+
+	public TextBox getNombreTextbox() {
+		return NombreTextbox;
+	}
 	
 }
 
