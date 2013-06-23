@@ -7,15 +7,15 @@ import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class CursoView extends ViewImpl implements CursoPresenter.MyView {
+public class VerProfesorView extends ViewImpl implements VerProfesorPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, CursoView> {
+	public interface Binder extends UiBinder<Widget, VerProfesorView> {
 	}
 
 	@Inject
-	public CursoView(final Binder binder) {
+	public VerProfesorView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 

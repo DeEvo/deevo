@@ -13,7 +13,7 @@ import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutMainPresenter;
 import com.deevo.java.client.NuevoUsuarioPresenter;
 import com.deevo.java.client.BusquedaAlumnoPresenter;
-import com.deevo.java.client.PerfilPresenter;
+import com.deevo.java.client.VerPerfilPresenter;
 import com.deevo.java.client.EPsicomotrizPresenter;
 import com.deevo.java.client.EFisicoPresenter;
 import com.deevo.java.client.EAcademicoPresenter;
@@ -40,9 +40,9 @@ import com.deevo.java.client.NuevaAulaPresenter;
 import com.deevo.java.client.AsignarCursoAProfesorPresenter;
 import com.deevo.java.client.HabilitarCursoPresenter;
 import com.deevo.java.client.BusquedaPorAulaPresenter;
-import com.deevo.java.client.AulaPresenter;
-import com.deevo.java.client.CursoPresenter;
-import com.deevo.java.client.ProfesorPresenter;
+import com.deevo.java.client.VerAulaPresenter;
+import com.deevo.java.client.VerCursoPresenter;
+import com.deevo.java.client.VerProfesorPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -63,7 +63,7 @@ public interface ClientGinjector extends Ginjector {
 
 	AsyncProvider<BusquedaAlumnoPresenter> getBusquedaAlumnoPresenter();
 
-	AsyncProvider<PerfilPresenter> getPerfilPresenter();
+	AsyncProvider<VerPerfilPresenter> getVerPerfilPresenter();
 
 	AsyncProvider<EPsicomotrizPresenter> getEPsicomotrizPresenter();
 
@@ -117,10 +117,10 @@ public interface ClientGinjector extends Ginjector {
 
 	AsyncProvider<BusquedaPorAulaPresenter> getBusquedaPorAulaPresenter();
 
-	AsyncProvider<AulaPresenter> getAulaPresenter();
+	AsyncProvider<VerAulaPresenter> getVerAulaPresenter();
 
-	AsyncProvider<CursoPresenter> getCursoPresenter();
+	AsyncProvider<VerCursoPresenter> getVerCursoPresenter();
 
-	AsyncProvider<ProfesorPresenter> getProfesorPresenter();
+	AsyncProvider<VerProfesorPresenter> getVerProfesorPresenter();
 
 }

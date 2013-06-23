@@ -10,7 +10,7 @@ public class NameTokens {
 
 	public static final String busquedaalumno = "busquedaalumno";
 
-	public static final String perfil = "perfil";
+	public static final String verperfil = "verperfil";
 
 	public static final String estadopsicomotriz = "estadopsicomotriz";
 
@@ -28,13 +28,13 @@ public class NameTokens {
 
 	public static final String evaluacioninicial = "evaluacioninicial";
 
-	public static final String banco = "banco";
+	public static final String bancopreguntas = "bancopreguntas";
 
 	public static final String pruebaspsico = "pruebaspsico";
 
 	public static final String uploadrespuestas = "uploadrespuestas";
 
-	public static final String newalerta = "newalerta";
+	public static final String nuevaalerta = "nuevaalerta";
 
 	public static final String bandejaalerta = "bandejaalerta";
 
@@ -64,11 +64,11 @@ public class NameTokens {
 
 	public static final String busquedaporaula = "busquedaporaula";
 
-	public static final String aula = "aula";
+	public static final String veraula = "veraula";
 
-	public static final String curso = "curso";
+	public static final String vercurso = "vercurso";
 
-	public static final String profesor = "profesor";
+	public static final String verprofesor = "verprofesor";
 
 	public static String getHome() {
 		return home;
@@ -82,8 +82,8 @@ public class NameTokens {
 	public static String getBusquedaalumno() {
 		return busquedaalumno;
 	}
-	public static String getPerfil() {
-		return perfil;
+	public static String getVerperfil() {
+		return verperfil;
 	}
 	public static String getEstadopsicomotriz() {
 		return estadopsicomotriz;
@@ -109,8 +109,8 @@ public class NameTokens {
 	public static String getEvaluacioninicial() {
 		return evaluacioninicial;
 	}
-	public static String getBanco() {
-		return banco;
+	public static String getBancopreguntas() {
+		return bancopreguntas;
 	}
 	public static String getPruebaspsico() {
 		return pruebaspsico;
@@ -118,8 +118,8 @@ public class NameTokens {
 	public static String getUploadrespuestas() {
 		return uploadrespuestas;
 	}
-	public static String getNewalerta() {
-		return newalerta;
+	public static String getNuevaalerta() {
+		return nuevaalerta;
 	}
 	public static String getBandejaalerta() {
 		return bandejaalerta;
@@ -163,14 +163,14 @@ public class NameTokens {
 	public static String getBusquedaporaula() {
 		return busquedaporaula;
 	}
-	public static String getAula() {
-		return aula;
+	public static String getVeraula() {
+		return veraula;
 	}
-	public static String getCurso() {
-		return curso;
+	public static String getVercurso() {
+		return vercurso;
 	}
-	public static String getProfesor() {
-		return profesor;
+	public static String getVerprofesor() {
+		return verprofesor;
 	}
 
 }

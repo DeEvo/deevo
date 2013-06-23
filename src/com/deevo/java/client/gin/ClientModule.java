@@ -29,8 +29,8 @@ import com.deevo.java.client.MenuPsicologoPresenter;
 import com.deevo.java.client.MenuPsicologoView;
 import com.deevo.java.client.BusquedaAlumnoPresenter;
 import com.deevo.java.client.BusquedaAlumnoView;
-import com.deevo.java.client.PerfilPresenter;
-import com.deevo.java.client.PerfilView;
+import com.deevo.java.client.VerPerfilPresenter;
+import com.deevo.java.client.VerPerfilView;
 import com.deevo.java.client.EPsicomotrizPresenter;
 import com.deevo.java.client.EPsicomotrizView;
 import com.deevo.java.client.EFisicoPresenter;
@@ -89,12 +89,12 @@ import com.deevo.java.client.HabilitarCursoPresenter;
 import com.deevo.java.client.HabilitarCursoView;
 import com.deevo.java.client.BusquedaPorAulaPresenter;
 import com.deevo.java.client.BusquedaPorAulaView;
-import com.deevo.java.client.AulaPresenter;
-import com.deevo.java.client.AulaView;
-import com.deevo.java.client.CursoPresenter;
-import com.deevo.java.client.CursoView;
-import com.deevo.java.client.ProfesorPresenter;
-import com.deevo.java.client.ProfesorView;
+import com.deevo.java.client.VerAulaPresenter;
+import com.deevo.java.client.VerAulaView;
+import com.deevo.java.client.VerCursoPresenter;
+import com.deevo.java.client.VerCursoView;
+import com.deevo.java.client.VerProfesorPresenter;
+import com.deevo.java.client.VerProfesorView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -145,8 +145,8 @@ public class ClientModule extends AbstractPresenterModule {
 				BusquedaAlumnoPresenter.MyView.class, BusquedaAlumnoView.class,
 				BusquedaAlumnoPresenter.MyProxy.class);
 
-		bindPresenter(PerfilPresenter.class, PerfilPresenter.MyView.class,
-				PerfilView.class, PerfilPresenter.MyProxy.class);
+		bindPresenter(VerPerfilPresenter.class, VerPerfilPresenter.MyView.class,
+				VerPerfilView.class, VerPerfilPresenter.MyProxy.class);
 
 		bindPresenter(EPsicomotrizPresenter.class,
 				EPsicomotrizPresenter.MyView.class, EPsicomotrizView.class,
@@ -264,24 +264,18 @@ public class ClientModule extends AbstractPresenterModule {
 				BusquedaPorAulaView.class,
 				BusquedaPorAulaPresenter.MyProxy.class);
 
-		bindPresenter(AulaPresenter.class, AulaPresenter.MyView.class,
-				AulaView.class, AulaPresenter.MyProxy.class);
+		bindPresenter(VerAulaPresenter.class, VerAulaPresenter.MyView.class,
+				VerAulaView.class, VerAulaPresenter.MyProxy.class);
 
-		bindPresenter(CursoPresenter.class, CursoPresenter.MyView.class,
-				CursoView.class, CursoPresenter.MyProxy.class);
+		bindPresenter(VerCursoPresenter.class, VerCursoPresenter.MyView.class,
+				VerCursoView.class, VerCursoPresenter.MyProxy.class);
 
-		bindPresenter(ProfesorPresenter.class, ProfesorPresenter.MyView.class,
-				ProfesorView.class, ProfesorPresenter.MyProxy.class);
+		bindPresenter(VerProfesorPresenter.class, VerProfesorPresenter.MyView.class,
+				VerProfesorView.class, VerProfesorPresenter.MyProxy.class);
 
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,
 				NuevoUsuarioPopupView.class);
-		
-		bindPresenter(CursoPresenter.class, CursoPresenter.MyView.class,
-				CursoView.class, CursoPresenter.MyProxy.class);
-		
-		bindPresenter(ProfesorPresenter.class, ProfesorPresenter.MyView.class,
-				ProfesorView.class, ProfesorPresenter.MyProxy.class);
 
 	}
 }

@@ -5,15 +5,15 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
-public class PerfilView extends ViewImpl implements PerfilPresenter.MyView {
+public class VerPerfilView extends ViewImpl implements VerPerfilPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, PerfilView> {
+	public interface Binder extends UiBinder<Widget, VerPerfilView> {
 	}
 
 	@Inject
-	public PerfilView(final Binder binder) {
+	public VerPerfilView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 
