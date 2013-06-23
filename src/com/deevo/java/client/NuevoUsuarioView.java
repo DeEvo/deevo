@@ -37,7 +37,6 @@ public class NuevoUsuarioView extends ViewImpl implements
 	@UiField TextBox dirTexbox;
 	@UiField TextBox emailTexbox;
 	@UiField Label labelvalida;
-	@UiField ListBox rolListbox;
 	
 	@Inject
 	public NuevoUsuarioView(final Binder binder) {
@@ -101,9 +100,6 @@ public class NuevoUsuarioView extends ViewImpl implements
 		return sexoListbox;
 	}
 	
-	public ListBox getRolListbox() {
-		return rolListbox;
-	}
 
 	// VALIDACION DE TIPO DE DATOS
 	//NUEMRICOS
@@ -166,6 +162,12 @@ public class NuevoUsuarioView extends ViewImpl implements
 	    if (!((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || c == 45 || c == 32)) {
 	    	((TextBox)event.getSource()).cancelKey();
 	    }
+	}
+
+	@Override
+	public ListBox getRolListbox() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -6,7 +6,7 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default'>
 
-	<g:PopupPanel width="300" height="200" glassEnabled="true" modal="true" animationEnabled="true">
+	<g:PopupPanel width="300" height="200" glassEnabled="true" modal="true">
 		<g:Grid width="100%" height="100%">
 			<g:row>
 				<g:customCell>

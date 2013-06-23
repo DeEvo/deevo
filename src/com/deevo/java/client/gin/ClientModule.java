@@ -29,8 +29,8 @@ import com.deevo.java.client.MenuPsicologoPresenter;
 import com.deevo.java.client.MenuPsicologoView;
 import com.deevo.java.client.BusquedaAlumnoPresenter;
 import com.deevo.java.client.BusquedaAlumnoView;
-import com.deevo.java.client.PerfilPresenter;
-import com.deevo.java.client.PerfilView;
+import com.deevo.java.client.VerPerfilPresenter;
+import com.deevo.java.client.VerPerfilView;
 import com.deevo.java.client.EPsicomotrizPresenter;
 import com.deevo.java.client.EPsicomotrizView;
 import com.deevo.java.client.EFisicoPresenter;
@@ -73,6 +73,28 @@ import com.deevo.java.client.NuevoRolProfesorPresenter;
 import com.deevo.java.client.NuevoRolProfesorView;
 import com.deevo.java.client.BuscarPopupPresenter;
 import com.deevo.java.client.BuscarPopupView;
+import com.deevo.java.client.NuevoCursoPresenter;
+import com.deevo.java.client.NuevoCursoView;
+import com.deevo.java.client.NuevoGradoPresenter;
+import com.deevo.java.client.NuevoGradoView;
+import com.deevo.java.client.NuevaSeccionPresenter;
+import com.deevo.java.client.NuevaSeccionView;
+import com.deevo.java.client.NuevoPeriodoPresenter;
+import com.deevo.java.client.NuevoPeriodoView;
+import com.deevo.java.client.NuevaAulaPresenter;
+import com.deevo.java.client.NuevaAulaView;
+import com.deevo.java.client.AsignarCursoAProfesorPresenter;
+import com.deevo.java.client.AsignarCursoAProfesorView;
+import com.deevo.java.client.HabilitarCursoPresenter;
+import com.deevo.java.client.HabilitarCursoView;
+import com.deevo.java.client.BusquedaPorAulaPresenter;
+import com.deevo.java.client.BusquedaPorAulaView;
+import com.deevo.java.client.VerAulaPresenter;
+import com.deevo.java.client.VerAulaView;
+import com.deevo.java.client.VerCursoPresenter;
+import com.deevo.java.client.VerCursoView;
+import com.deevo.java.client.VerProfesorPresenter;
+import com.deevo.java.client.VerProfesorView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -123,8 +145,8 @@ public class ClientModule extends AbstractPresenterModule {
 				BusquedaAlumnoPresenter.MyView.class, BusquedaAlumnoView.class,
 				BusquedaAlumnoPresenter.MyProxy.class);
 
-		bindPresenter(PerfilPresenter.class, PerfilPresenter.MyView.class,
-				PerfilView.class, PerfilPresenter.MyProxy.class);
+		bindPresenter(VerPerfilPresenter.class, VerPerfilPresenter.MyView.class,
+				VerPerfilView.class, VerPerfilPresenter.MyProxy.class);
 
 		bindPresenter(EPsicomotrizPresenter.class,
 				EPsicomotrizPresenter.MyView.class, EPsicomotrizView.class,
@@ -208,8 +230,52 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(BuscarPopupPresenter.class,
 				BuscarPopupPresenter.MyView.class, BuscarPopupView.class);
 
+		bindPresenter(NuevoCursoPresenter.class,
+				NuevoCursoPresenter.MyView.class, NuevoCursoView.class,
+				NuevoCursoPresenter.MyProxy.class);
+
+		bindPresenter(NuevoGradoPresenter.class,
+				NuevoGradoPresenter.MyView.class, NuevoGradoView.class,
+				NuevoGradoPresenter.MyProxy.class);
+
+		bindPresenter(NuevaSeccionPresenter.class,
+				NuevaSeccionPresenter.MyView.class, NuevaSeccionView.class,
+				NuevaSeccionPresenter.MyProxy.class);
+
+		bindPresenter(NuevoPeriodoPresenter.class,
+				NuevoPeriodoPresenter.MyView.class, NuevoPeriodoView.class,
+				NuevoPeriodoPresenter.MyProxy.class);
+
+		bindPresenter(NuevaAulaPresenter.class,
+				NuevaAulaPresenter.MyView.class, NuevaAulaView.class,
+				NuevaAulaPresenter.MyProxy.class);
+
+		bindPresenter(AsignarCursoAProfesorPresenter.class,
+				AsignarCursoAProfesorPresenter.MyView.class,
+				AsignarCursoAProfesorView.class,
+				AsignarCursoAProfesorPresenter.MyProxy.class);
+
+		bindPresenter(HabilitarCursoPresenter.class,
+				HabilitarCursoPresenter.MyView.class, HabilitarCursoView.class,
+				HabilitarCursoPresenter.MyProxy.class);
+
+		bindPresenter(BusquedaPorAulaPresenter.class,
+				BusquedaPorAulaPresenter.MyView.class,
+				BusquedaPorAulaView.class,
+				BusquedaPorAulaPresenter.MyProxy.class);
+
+		bindPresenter(VerAulaPresenter.class, VerAulaPresenter.MyView.class,
+				VerAulaView.class, VerAulaPresenter.MyProxy.class);
+
+		bindPresenter(VerCursoPresenter.class, VerCursoPresenter.MyView.class,
+				VerCursoView.class, VerCursoPresenter.MyProxy.class);
+
+		bindPresenter(VerProfesorPresenter.class, VerProfesorPresenter.MyView.class,
+				VerProfesorView.class, VerProfesorPresenter.MyProxy.class);
+
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,
 				NuevoUsuarioPopupView.class);
+
 	}
 }

@@ -13,7 +13,7 @@ import com.deevo.java.client.LayoutPresenter;
 import com.deevo.java.client.LayoutMainPresenter;
 import com.deevo.java.client.NuevoUsuarioPresenter;
 import com.deevo.java.client.BusquedaAlumnoPresenter;
-import com.deevo.java.client.PerfilPresenter;
+import com.deevo.java.client.VerPerfilPresenter;
 import com.deevo.java.client.EPsicomotrizPresenter;
 import com.deevo.java.client.EFisicoPresenter;
 import com.deevo.java.client.EAcademicoPresenter;
@@ -32,6 +32,17 @@ import com.deevo.java.client.NuevoRolPsicologoPresenter;
 import com.deevo.java.client.NuevoRolAlumnoPresenter;
 import com.deevo.java.client.NuevoRolPadrePresenter;
 import com.deevo.java.client.NuevoRolProfesorPresenter;
+import com.deevo.java.client.NuevoCursoPresenter;
+import com.deevo.java.client.NuevoGradoPresenter;
+import com.deevo.java.client.NuevaSeccionPresenter;
+import com.deevo.java.client.NuevoPeriodoPresenter;
+import com.deevo.java.client.NuevaAulaPresenter;
+import com.deevo.java.client.AsignarCursoAProfesorPresenter;
+import com.deevo.java.client.HabilitarCursoPresenter;
+import com.deevo.java.client.BusquedaPorAulaPresenter;
+import com.deevo.java.client.VerAulaPresenter;
+import com.deevo.java.client.VerCursoPresenter;
+import com.deevo.java.client.VerProfesorPresenter;
 
 @GinModules({ DispatchAsyncModule.class, ClientModule.class })
 public interface ClientGinjector extends Ginjector {
@@ -52,7 +63,7 @@ public interface ClientGinjector extends Ginjector {
 
 	AsyncProvider<BusquedaAlumnoPresenter> getBusquedaAlumnoPresenter();
 
-	AsyncProvider<PerfilPresenter> getPerfilPresenter();
+	AsyncProvider<VerPerfilPresenter> getVerPerfilPresenter();
 
 	AsyncProvider<EPsicomotrizPresenter> getEPsicomotrizPresenter();
 
@@ -89,5 +100,27 @@ public interface ClientGinjector extends Ginjector {
 	AsyncProvider<NuevoRolPadrePresenter> getNuevoRolPadrePresenter();
 
 	AsyncProvider<NuevoRolProfesorPresenter> getNuevoRolProfesorPresenter();
+
+	AsyncProvider<NuevoCursoPresenter> getNuevoCursoPresenter();
+
+	AsyncProvider<NuevoGradoPresenter> getNuevoGradoPresenter();
+
+	AsyncProvider<NuevaSeccionPresenter> getNuevaSeccionPresenter();
+
+	AsyncProvider<NuevoPeriodoPresenter> getNuevoPeriodoPresenter();
+
+	AsyncProvider<NuevaAulaPresenter> getNuevaAulaPresenter();
+
+	AsyncProvider<AsignarCursoAProfesorPresenter> getAsignarCursoAProfesorPresenter();
+
+	AsyncProvider<HabilitarCursoPresenter> getHabilitarCursoPresenter();
+
+	AsyncProvider<BusquedaPorAulaPresenter> getBusquedaPorAulaPresenter();
+
+	AsyncProvider<VerAulaPresenter> getVerAulaPresenter();
+
+	AsyncProvider<VerCursoPresenter> getVerCursoPresenter();
+
+	AsyncProvider<VerProfesorPresenter> getVerProfesorPresenter();
 
 }

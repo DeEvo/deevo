@@ -8,6 +8,7 @@ import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
+import com.google.gwt.user.client.ui.TextArea;
 
 public class NuevoRolProfesorView extends ViewImpl implements
 		NuevoRolProfesorPresenter.MyView {
@@ -21,7 +22,9 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
 	@UiField Button crearButton;
-	@UiField TextBox contraTexbox;
+	@UiField TextBox usuarioTexbox;
+	@UiField TextArea txtadescripcion;
+	
 	@Inject
 	public NuevoRolProfesorView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
@@ -51,7 +54,13 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	}
 
 	public TextBox getContraTexbox() {
-		return contraTexbox;
+		return usuarioTexbox;
 	}
+
+	public TextArea getTxtadescripcion() {
+		return txtadescripcion;
+	}
+	
+	
 	
 }

@@ -23,6 +23,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 
 public class NuevoRolProfesorPresenter extends
@@ -34,6 +35,7 @@ public class NuevoRolProfesorPresenter extends
 		public TextBox getApellidosTexbox();
 		public Button getCrearButton();
 		public TextBox getContraTexbox();
+		public TextArea getTxtadescripcion();
 	}
 
 	@ProxyCodeSplit
@@ -82,14 +84,13 @@ public class NuevoRolProfesorPresenter extends
 		
 		@Override
 		public void onClick(ClickEvent event) {
-			getView().getDniTexbox().setText(String.valueOf(78561237));
-			getView().getNombresTexbox().setText("asd"); 
-			getView().getApellidosTexbox().setText("asd"+" "+ "asd");
 			List<String> list = new ArrayList<String>();
 			list.add("2");
-			NuevoProfesor nuevoprofesor = new NuevoProfesor(getView().getDniTexbox().getText(),
-					"DESCRIPCION",list,
-					getView().getContraTexbox().getText(),
+			NuevoProfesor nuevoprofesor = new NuevoProfesor(
+					getView().getDniTexbox().getText(),
+					getView().getTxtadescripcion().getText(),
+					list,
+					"",
 					1);
 			async.execute(nuevoprofesor, getAsyncCallback);
 		}

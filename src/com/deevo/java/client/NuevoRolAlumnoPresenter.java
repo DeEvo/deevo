@@ -4,6 +4,8 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
+import com.deevo.java.client.event.BuscarSourceEvent;
+import com.deevo.java.client.event.MostrarPopupEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
@@ -31,9 +33,12 @@ public class NuevoRolAlumnoPresenter extends
 	public interface MyProxy extends ProxyPlace<NuevoRolAlumnoPresenter> {
 	}
 
+	private EventBus eventbus;
+	
 	@Inject
 	public NuevoRolAlumnoPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
 		super(eventBus, view, proxy);
+		this.eventbus = eventBus;
 	}
 
 	@Inject BuscarPopupPresenter buscarPopPresenter;
@@ -72,7 +77,9 @@ public class NuevoRolAlumnoPresenter extends
 			@Override
 			public void onClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
+				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolalumno");
+				NuevoRolAlumnoPresenter.this.eventbus.fireEvent(eventbuscar);
+				//buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
 				addToPopupSlot(buscarPopPresenter);
 			}
 		});

@@ -6,7 +6,7 @@ import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
 import com.deevo.java.client.action.NuevoPrivilegio;
 import com.deevo.java.client.action.NuevoPrivilegioResult;
 import com.deevo.java.server.model.dao.PrivilegioDao;
-import com.deevo.java.share.Privilegio;
+import com.deevo.java.shared.Privilegio;
 import com.google.inject.Inject;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.shared.ActionException;

@@ -19,6 +19,11 @@ public class GetPersona extends ActionImpl<GetPersonaResult> {
 		this.per_dni = per_dni;
 	}  
 
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	@SuppressWarnings("unused")
 	private GetPersona() {
 		// For serialization only

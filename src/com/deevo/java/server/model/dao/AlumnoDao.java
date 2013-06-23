@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
-import com.deevo.java.share.Alumno;
-import com.deevo.java.share.GradoSeccionPK;
+import com.deevo.java.shared.Alumno;
+import com.deevo.java.shared.GradoSeccionPK;
 
 
 public class AlumnoDao {
@@ -32,7 +32,7 @@ public class AlumnoDao {
 				
 		
 		
-		public void createAlumno(Alumno alumno) throws EntityExistsException , Throwable {
+		public Alumno createAlumno(Alumno alumno) throws EntityExistsException , Throwable {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			EntityTransaction tx = em.getTransaction();
@@ -40,6 +40,8 @@ public class AlumnoDao {
 			 try {
 				       tx.begin();
 				       em.persist(alumno);
+				       em.flush();
+				       em.refresh(alumno);
 				       tx.commit();
 				     }catch ( EntityExistsException | RollbackException e){
 						 throw new EntityExistsException();
@@ -52,6 +54,7 @@ public class AlumnoDao {
 				     finally {
 				       em.close();
 				     }
+			 return alumno;
 			  }
 		
 			  public Alumno retrieveAlumno(Alumno alumno)  throws Throwable{
