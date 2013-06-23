@@ -31,7 +31,7 @@
 	    				</g:row>
 	    				<g:row>
 							<g:customCell>
-								<g:Label text="Ciclo*" styleName="labelFormulario" />
+								<g:Label text="Nivel*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="200px" ui:field="cicloListbox">

@@ -6,6 +6,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.DataGrid;
+import com.google.gwt.user.cellview.client.CellTable;
 
 public class BusquedaGrupoView extends ViewImpl implements
 		BusquedaGrupoPresenter.MyView {
@@ -24,5 +25,5 @@ public class BusquedaGrupoView extends ViewImpl implements
 	public Widget asWidget() {
 		return widget;
 	}
-	@UiField(provided=true) DataGrid<Object> dataGrid = new DataGrid<Object>();
+	@UiField(provided=true) CellTable<Object> cellTable = new CellTable<Object>();
 }

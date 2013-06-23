@@ -10,12 +10,12 @@
 		  <g:Grid width="100%" height="400px" styleName="layout">
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Buscar Grupo" styleName="tituloFormulario" height="31px"/>
+	    			<g:Label text="Busqueda Avanzada" styleName="tituloFormulario" height="31px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Busqueda de alumnos por grupos:" width="100%" styleName="labelsubformulario" height="20px"/>
+	    			<g:Label text="Busqueda de alumnos por filtros:" width="100%" styleName="labelsubformulario" height="20px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -23,7 +23,7 @@
 	    			<g:Grid width="100%" cellPadding="6" height="80px">
 	    				<g:row>
 	    					<g:customCell>
-	    			<g:Label text="Datos" styleName="labelFormulario"/>
+	    			<g:CheckBox text="Apellido Paterno" styleName="labelFormulario"/>
 	    		</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="150px"/>
@@ -31,13 +31,89 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Buscar por" styleName="labelFormulario"/>
+	    						<g:CheckBox styleName="labelFormulario" text="Apellido Materno"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:ListBox width="150px" selectedIndex="1"/>
+	    						<g:IntegerBox width="150px"/>
 	    					</g:customCell>
 	    				</g:row>
-	    				<g:row/>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox styleName="labelFormulario" text="Nombre"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:IntegerBox width="150px"/>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:CheckBox styleName="labelFormulario" text="Genero"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:ListBox width="120px">
+									<g:item value='1'>
+										Masculino
+									</g:item>
+									<g:item value='2'>
+										Femenino
+									</g:item>
+								</g:ListBox>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+							<g:customCell>
+								<g:CheckBox text="Nivel" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="cicloListbox">
+									<g:item value='1'>
+										Inicial
+									</g:item>
+									<g:item value='2'>
+										Primaria
+									</g:item>
+									<g:item value='3'>
+										Secundaria
+									</g:item>
+								</g:ListBox>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:CheckBox text="Grado" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="graListbox">
+									<g:item value='1'>
+										--------
+									</g:item>
+									<g:item value='2'>
+										--------
+									</g:item>
+									<g:item value='3'>
+										-------
+									</g:item>
+								</g:ListBox>
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:CheckBox text="Sección" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="200px" ui:field="secListbox">
+									<g:item value='1'>
+										---------
+									</g:item>
+									<g:item value='2'>
+										--------
+									</g:item>
+									<g:item value='3'>
+										--------
+									</g:item>
+								</g:ListBox>
+							</g:customCell>
+						</g:row>	
 	    			</g:Grid>
 	    		</g:customCell>
 	    	</g:row>
@@ -60,7 +136,14 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<p1:DataGrid width="100%" height="200px" ui:field="dataGrid"/>
+	    			<g:TextArea width="100%" text="ACA VA CUANTAS PERSONAS BOTO LA BUSQUEDA"/>
+	    		</g:customCell>
+	    	</g:row>
+	    	<g:row>
+	    		<g:customCell>
+	    			<g:ScrollPanel width="100%">
+	    				<p1:CellTable ui:field="cellTable" width="100%" height="100%"/>
+	    			</g:ScrollPanel>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row/>
