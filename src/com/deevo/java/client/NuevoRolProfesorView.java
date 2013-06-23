@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.cellview.client.CellTable;
 
 public class NuevoRolProfesorView extends ViewImpl implements
 		NuevoRolProfesorPresenter.MyView {
@@ -24,6 +25,10 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField Button crearButton;
 	@UiField TextBox usuarioTexbox;
 	@UiField TextArea txtadescripcion;
+	@UiField(provided=true) CellTable<Object> cellTable = new CellTable<Object>();
+	@UiField(provided=true) CellTable<Object> cellTable_1 = new CellTable<Object>();
+
+
 	
 	@Inject
 	public NuevoRolProfesorView(final Binder binder) {
@@ -53,6 +58,14 @@ public class NuevoRolProfesorView extends ViewImpl implements
 		return crearButton;
 	}
 
+	public CellTable<Object> getCellTable() {
+		return cellTable;
+	}
+	
+	public CellTable<Object> getCellTable_1() {
+		return cellTable_1;
+	}
+	
 	public TextBox getContraTexbox() {
 		return usuarioTexbox;
 	}

@@ -7,10 +7,10 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel height="100%" width="100%" styleName="fondoBienvenida">
-	<g:Grid width="100%" height="100%" styleName="cuadroBorde">
+	<g:Grid width="100%" height="" cellPadding="6">
 	    <g:row>
 	    		<g:customCell>
-	    			<g:Label text="Nuevo Rol Padre de Familia" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER"/>
+	    			<g:Label text="Nuevo Rol Padre de Familia" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER" height="30px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -23,7 +23,7 @@
 	    			<g:Grid width="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    			<g:Label text="DNI" styleName="labelFormulario"/>
+	    			<g:Label text="DNI" styleName="labelFormulario" width="198"/>
 	    		</g:customCell>
 	    					<g:customCell>
 	    						<g:IntegerBox width="120px" ui:field="dniTexbox" enabled="false"/>
@@ -31,7 +31,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Nombres" styleName="labelFormulario"/>
+	    						<g:Label text="Nombres" styleName="labelFormulario" width="198"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="nombresTexbox" enabled="false"/>
@@ -39,7 +39,7 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
+	    						<g:Label text="Apellidos" styleName="labelFormulario" width="198"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="apellidosTexbox" enabled="false"/>
@@ -48,7 +48,7 @@
 	    				
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label styleName="labelFormulario" width="" text="Usuario"/>
+	    						<g:Label styleName="labelFormulario" width="198" text="ID Usuario"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextBox width="200px" ui:field="usuarioTexbox" enabled="false"/>
@@ -59,18 +59,18 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label height="37px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
+	    			<g:Label height="20px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
+	    			<g:Grid width="100%" height="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
 	    						<g:CheckBox text="Num. de hijos a registrar" width="151px" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:IntegerBox width="200px"/>
+	    						<g:IntegerBox width="200px" direction="LTR"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
@@ -91,7 +91,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%">
+	    			<g:Grid width="100%" height="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
 	    						<g:CheckBox name="new name" text="Padre/Madre" styleName="labelFormulario"/>
@@ -111,18 +111,19 @@
 	    			</g:Grid>
 	    		</g:customCell>
 	    	</g:row>
+	    	<g:row/>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="10">
+	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Button width="90px" text="Crear y salir" styleName="layout" ui:field="crearButton"/>
+	    						<g:Button width="111px" text="Buscar Usuario" styleName="layout" ui:field="buscarButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="110px" styleName="layout" ui:field="asignarButton" text="Crear y asignar nuevo rol"/>
+	    						<g:Button width="110px" styleName="layout" text="Aceptar" ui:field="crearButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button text="Crear y crear nuevo alumno" width="100px" styleName="layout">Crear e ingresar hijo al sistema</g:Button>
+	    						<g:Button text="Aceptar / Nuevo Alumno" width="165px" styleName="layout">Crear e ingresar hijo al sistema</g:Button>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Button width="90px" text="Cancelar" styleName="layout"/>
