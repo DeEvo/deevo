@@ -165,5 +165,10 @@
 	background-color: #009999;
 	table-layout: auto;
 }
+.labelunselect {
+}
+.labelselect {
+	background-color: peachpuff;
+}
 /* Add css rules here for your application. */
 
