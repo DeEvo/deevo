@@ -5,6 +5,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -21,7 +22,9 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
 	@UiField Button buscarButton;
-		
+	@UiField TextBox MinediTextBox;
+	@UiField ListBox seccionListbox;
+	@UiField ListBox gradoListbox;
 	@Inject
 	public NuevoRolAlumnoView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
@@ -48,4 +51,15 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 		return buscarButton;
 	}
 
+	public TextBox getMinediTextBox() {
+		return MinediTextBox;
+	}
+
+	public ListBox getSeccionListbox() {
+		return seccionListbox;
+	}
+
+	public ListBox getGradoListbox() {
+		return gradoListbox;
+	}
 }

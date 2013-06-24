@@ -70,7 +70,7 @@
 	    						<g:CheckBox text="Codigo de MINEDU" width="150px" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px"/>
+	    						<g:TextBox width="200px" ui:field="MinediTextBox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>

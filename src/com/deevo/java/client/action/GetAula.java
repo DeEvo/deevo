@@ -13,6 +13,12 @@ public class GetAula extends ActionImpl<GetAulaResult> {
 		// For serialization only
 	}
 
+	
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	public GetAula(String cod_col) {
 		this.cod_col = cod_col;
 	}
