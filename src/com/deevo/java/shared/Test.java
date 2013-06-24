@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -11,10 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="TEST")
 public class Test implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="test_cod")
 	private int testCod;
 
@@ -32,16 +33,6 @@ public class Test implements Serializable {
 	@OneToMany(mappedBy="test")
 	private List<Respuesta> respuestas;
 
-	//bi-directional many-to-one association to MetodoCalificacion
-	@ManyToOne
-	@JoinColumn(name="met_cod")
-	private MetodoCalificacion metodoCalificacion;
-
-	//bi-directional many-to-one association to TestTipo
-	@ManyToOne
-	@JoinColumn(name="test_tipo_cod")
-	private TestTipo testTipo;
-
 	//bi-directional many-to-many association to CursoHabilitado
 	@ManyToMany
 	@JoinTable(
@@ -55,6 +46,11 @@ public class Test implements Serializable {
 		)
 	private List<CursoHabilitado> cursoHabilitados;
 
+	//bi-directional many-to-one association to MetodoCalificacion
+	@ManyToOne
+	@JoinColumn(name="met_cod")
+	private MetodoCalificacion metodoCalificacion;
+
 	//bi-directional many-to-many association to Privilegio
 	@ManyToMany
 	@JoinTable(
@@ -67,6 +63,11 @@ public class Test implements Serializable {
 			}
 		)
 	private List<Privilegio> privilegios;
+
+	//bi-directional many-to-one association to TestTipo
+	@ManyToOne
+	@JoinColumn(name="test_tipo_cod")
+	private TestTipo testTipo;
 
 	public Test() {
 	}
@@ -139,22 +140,6 @@ public class Test implements Serializable {
 		return respuesta;
 	}
 
-	public MetodoCalificacion getMetodoCalificacion() {
-		return this.metodoCalificacion;
-	}
-
-	public void setMetodoCalificacion(MetodoCalificacion metodoCalificacion) {
-		this.metodoCalificacion = metodoCalificacion;
-	}
-
-	public TestTipo getTestTipo() {
-		return this.testTipo;
-	}
-
-	public void setTestTipo(TestTipo testTipo) {
-		this.testTipo = testTipo;
-	}
-
 	public List<CursoHabilitado> getCursoHabilitados() {
 		return this.cursoHabilitados;
 	}
@@ -163,12 +148,28 @@ public class Test implements Serializable {
 		this.cursoHabilitados = cursoHabilitados;
 	}
 
+	public MetodoCalificacion getMetodoCalificacion() {
+		return this.metodoCalificacion;
+	}
+
+	public void setMetodoCalificacion(MetodoCalificacion metodoCalificacion) {
+		this.metodoCalificacion = metodoCalificacion;
+	}
+
 	public List<Privilegio> getPrivilegios() {
 		return this.privilegios;
 	}
 
 	public void setPrivilegios(List<Privilegio> privilegios) {
 		this.privilegios = privilegios;
+	}
+
+	public TestTipo getTestTipo() {
+		return this.testTipo;
+	}
+
+	public void setTestTipo(TestTipo testTipo) {
+		this.testTipo = testTipo;
 	}
 
 }

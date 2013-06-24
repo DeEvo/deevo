@@ -12,7 +12,7 @@ public class EstadoPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="num_estado") @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="num_estado")
 	private int numEstado;
 
 	@Column(name="alu_cod")

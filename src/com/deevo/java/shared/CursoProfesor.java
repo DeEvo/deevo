@@ -19,33 +19,33 @@ public class CursoProfesor implements Serializable {
 
 	private byte estado;
 
-	//bi-directional many-to-one association to Profesor
-	@ManyToOne
-	@JoinColumn(name="pro_cod", insertable=false, updatable=false )
-	private Profesor profesor;
-
 	//bi-directional many-to-one association to CursoHabilitado
 	@OneToMany(mappedBy="cursoProfesor")
 	private List<CursoHabilitado> cursoHabilitados;
-
-	//bi-directional many-to-one association to Curso
-	@ManyToOne
-	@JoinColumn(name="cod_cur", insertable=false, updatable=false)
-	private Curso curso;
 
 	//bi-directional many-to-many association to Aula
 	@ManyToMany
 	@JoinTable(
 		name="CURSO_PROFESOR_AULA"
 		, joinColumns={
-			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur", insertable=false, updatable=false),
-			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod", insertable=false, updatable=false)
+			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur"),
+			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="cod_aula", insertable=false, updatable=false)
+			@JoinColumn(name="cod_aula")
 			}
 		)
 	private List<Aula> aulas;
+
+	//bi-directional many-to-one association to Curso
+	@ManyToOne
+	@JoinColumn(name="cod_cur")
+	private Curso curso;
+
+	//bi-directional many-to-one association to Profesor
+	@ManyToOne
+	@JoinColumn(name="pro_cod")
+	private Profesor profesor;
 
 	public CursoProfesor() {
 	}
@@ -64,14 +64,6 @@ public class CursoProfesor implements Serializable {
 
 	public void setEstado(byte estado) {
 		this.estado = estado;
-	}
-
-	public Profesor getProfesor() {
-		return this.profesor;
-	}
-
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
 	}
 
 	public List<CursoHabilitado> getCursoHabilitados() {
@@ -96,6 +88,14 @@ public class CursoProfesor implements Serializable {
 		return cursoHabilitado;
 	}
 
+	public List<Aula> getAulas() {
+		return this.aulas;
+	}
+
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+
 	public Curso getCurso() {
 		return this.curso;
 	}
@@ -104,12 +104,12 @@ public class CursoProfesor implements Serializable {
 		this.curso = curso;
 	}
 
-	public List<Aula> getAulas() {
-		return this.aulas;
+	public Profesor getProfesor() {
+		return this.profesor;
 	}
 
-	public void setAulas(List<Aula> aulas) {
-		this.aulas = aulas;
+	public void setProfesor(Profesor profesor) {
+		this.profesor = profesor;
 	}
 
 }

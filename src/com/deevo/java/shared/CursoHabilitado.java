@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -15,23 +14,26 @@ import java.util.List;
 public class CursoHabilitado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cur_hab_cod")
 	private int curHabCod;
-
-	@Column(name="cod_grado")
-	private int codGrado;
-
-	@Column(name="cod_seccion")
-	private int codSeccion;
 
 	//bi-directional many-to-one association to CursoProfesor
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="cod_cur", referencedColumnName="cod_cur" ),
-		@JoinColumn(name="pro_cod", referencedColumnName="pro_cod" )
+		@JoinColumn(name="cod_cur", referencedColumnName="cod_cur"),
+		@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
 		})
 	private CursoProfesor cursoProfesor;
+
+	//bi-directional many-to-one association to GradoSeccion
+	@ManyToOne
+	@JoinColumns({
+		@JoinColumn(name="cod_grado", referencedColumnName="cod_grado"),
+		@JoinColumn(name="cod_seccion", referencedColumnName="cod_seccion")
+		})
+	private GradoSeccion gradoSeccion;
 
 	//bi-directional many-to-many association to Test
 	@ManyToMany(mappedBy="cursoHabilitados")
@@ -48,28 +50,20 @@ public class CursoHabilitado implements Serializable {
 		this.curHabCod = curHabCod;
 	}
 
-	public int getCodGrado() {
-		return this.codGrado;
-	}
-
-	public void setCodGrado(int codGrado) {
-		this.codGrado = codGrado;
-	}
-
-	public int getCodSeccion() {
-		return this.codSeccion;
-	}
-
-	public void setCodSeccion(int codSeccion) {
-		this.codSeccion = codSeccion;
-	}
-
 	public CursoProfesor getCursoProfesor() {
 		return this.cursoProfesor;
 	}
 
 	public void setCursoProfesor(CursoProfesor cursoProfesor) {
 		this.cursoProfesor = cursoProfesor;
+	}
+
+	public GradoSeccion getGradoSeccion() {
+		return this.gradoSeccion;
+	}
+
+	public void setGradoSeccion(GradoSeccion gradoSeccion) {
+		this.gradoSeccion = gradoSeccion;
 	}
 
 	public List<Test> getTests() {

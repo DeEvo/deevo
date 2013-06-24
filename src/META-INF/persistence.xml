@@ -3,29 +3,30 @@
 	<persistence-unit name="deevo" transaction-type="RESOURCE_LOCAL">
 
 		<mapping-file>META-INF/orm.xml</mapping-file>
+		<class>com.deevo.java.shared.AlertaPrivilegioPK</class>
+		<class>com.deevo.java.shared.ColegioPrivilegioPK</class>
+		<class>com.deevo.java.shared.ColegioProfesorPK</class>
+		<class>com.deevo.java.shared.CursoProfesorPK</class>
+		<class>com.deevo.java.shared.EstadoPK</class>
+		<class>com.deevo.java.shared.FamiliaPK</class>
+		<class>com.deevo.java.shared.GradoSeccionPK</class>
+		<class>com.deevo.java.shared.RespuestaPK</class>
+		<class>com.deevo.java.shared.UsuarioPrivilegioPK</class>
 		<class>com.deevo.java.shared.Alerta</class>
 		<class>com.deevo.java.shared.AlertaParque</class>
 		<class>com.deevo.java.shared.AlertaPrivilegio</class>
-		<class>com.deevo.java.shared.AlertaPrivilegioPK</class>
 		<class>com.deevo.java.shared.Alumno</class>
 		<class>com.deevo.java.shared.Aula</class>
 		<class>com.deevo.java.shared.Colegio</class>
-		<class>com.deevo.java.shared.ColegioPrivilegio</class>
-		<class>com.deevo.java.shared.ColegioPrivilegioPK</class>
 		<class>com.deevo.java.shared.ColegioProfesor</class>
-		<class>com.deevo.java.shared.ColegioProfesorPK</class>
 		<class>com.deevo.java.shared.Curso</class>
 		<class>com.deevo.java.shared.CursoHabilitado</class>
 		<class>com.deevo.java.shared.CursoProfesor</class>
-		<class>com.deevo.java.shared.CursoProfesorPK</class>
 		<class>com.deevo.java.shared.Estado</class>
-		<class>com.deevo.java.shared.EstadoPK</class>
 		<class>com.deevo.java.shared.EstadoTipo</class>
 		<class>com.deevo.java.shared.Familia</class>
-		<class>com.deevo.java.shared.FamiliaPK</class>
 		<class>com.deevo.java.shared.Grado</class>
 		<class>com.deevo.java.shared.GradoSeccion</class>
-		<class>com.deevo.java.shared.GradoSeccionPK</class>
 		<class>com.deevo.java.shared.MetodoCalificacion</class>
 		<class>com.deevo.java.shared.PadreFamilia</class>
 		<class>com.deevo.java.shared.PeriodoAcademico</class>
@@ -36,12 +37,12 @@
 		<class>com.deevo.java.shared.Psicologo</class>
 		<class>com.deevo.java.shared.Registro</class>
 		<class>com.deevo.java.shared.Respuesta</class>
-		<class>com.deevo.java.shared.RespuestaPK</class>
 		<class>com.deevo.java.shared.Seccion</class>
 		<class>com.deevo.java.shared.Sesion</class>
 		<class>com.deevo.java.shared.Test</class>
 		<class>com.deevo.java.shared.TestTipo</class>
 		<class>com.deevo.java.shared.Usuario</class>
+		<class>com.deevo.java.shared.UsuarioPrivilegio</class>
 
 
 		<properties>

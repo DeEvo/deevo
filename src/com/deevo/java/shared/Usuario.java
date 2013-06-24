@@ -10,10 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="USUARIO")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="usur_cod")
 	private String usurCod;
 
@@ -33,18 +35,9 @@ public class Usuario implements Serializable {
 	@JoinColumn(name="per_dni")
 	private Persona persona;
 
-	//bi-directional many-to-many association to Privilegio
-	@ManyToMany
-	@JoinTable(
-		name="USUARIO_PRIVILEGIO"
-		, joinColumns={
-			@JoinColumn(name="usur_cod")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="pri_cod")
-			}
-		)
-	private List<Privilegio> privilegios;
+	//bi-directional many-to-one association to UsuarioPrivilegio
+	@OneToMany(mappedBy="usuario")
+	private List<UsuarioPrivilegio> usuarioPrivilegios;
 
 	public Usuario() {
 	}
@@ -117,12 +110,26 @@ public class Usuario implements Serializable {
 		this.persona = persona;
 	}
 
-	public List<Privilegio> getPrivilegios() {
-		return this.privilegios;
+	public List<UsuarioPrivilegio> getUsuarioPrivilegios() {
+		return this.usuarioPrivilegios;
 	}
 
-	public void setPrivilegios(List<Privilegio> privilegios) {
-		this.privilegios = privilegios;
+	public void setUsuarioPrivilegios(List<UsuarioPrivilegio> usuarioPrivilegios) {
+		this.usuarioPrivilegios = usuarioPrivilegios;
+	}
+
+	public UsuarioPrivilegio addUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().add(usuarioPrivilegio);
+		usuarioPrivilegio.setUsuario(this);
+
+		return usuarioPrivilegio;
+	}
+
+	public UsuarioPrivilegio removeUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().remove(usuarioPrivilegio);
+		usuarioPrivilegio.setUsuario(null);
+
+		return usuarioPrivilegio;
 	}
 
 }

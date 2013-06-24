@@ -9,12 +9,13 @@ import java.util.List;
  * The persistent class for the AULA database table.
  * 
  */
-
 @Entity
+@Table(name="AULA")
 public class Aula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cod_aula")
 	private int codAula;
 
@@ -24,14 +25,14 @@ public class Aula implements Serializable {
 
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
-	@JoinColumn(name="cod_col" )
+	@JoinColumn(name="cod_col")
 	private Colegio colegio;
 
 	//bi-directional many-to-one association to GradoSeccion
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="cod_grado", referencedColumnName="cod_grado" ),
-		@JoinColumn(name="cod_seccion", referencedColumnName="cod_seccion" )
+		@JoinColumn(name="cod_grado", referencedColumnName="cod_grado"),
+		@JoinColumn(name="cod_seccion", referencedColumnName="cod_seccion")
 		})
 	private GradoSeccion gradoSeccion;
 

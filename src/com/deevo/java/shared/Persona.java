@@ -11,10 +11,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PERSONA")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="per_dni")
 	private String perDni;
 
@@ -52,10 +54,6 @@ public class Persona implements Serializable {
 
 	private String sexo;
 
-	//bi-directional many-to-one association to Psicologo
-	@OneToMany(mappedBy="persona")
-	private List<Psicologo> psicologos;
-
 	//bi-directional many-to-one association to Alumno
 	@OneToMany(mappedBy="persona")
 	private List<Alumno> alumnos;
@@ -75,6 +73,10 @@ public class Persona implements Serializable {
 	//bi-directional many-to-one association to Profesor
 	@OneToMany(mappedBy="persona")
 	private List<Profesor> profesors;
+
+	//bi-directional many-to-one association to Psicologo
+	@OneToMany(mappedBy="persona")
+	private List<Psicologo> psicologos;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="persona")
@@ -177,28 +179,6 @@ public class Persona implements Serializable {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}
-
-	public List<Psicologo> getPsicologos() {
-		return this.psicologos;
-	}
-
-	public void setPsicologos(List<Psicologo> psicologos) {
-		this.psicologos = psicologos;
-	}
-
-	public Psicologo addPsicologo(Psicologo psicologo) {
-		getPsicologos().add(psicologo);
-		psicologo.setPersona(this);
-
-		return psicologo;
-	}
-
-	public Psicologo removePsicologo(Psicologo psicologo) {
-		getPsicologos().remove(psicologo);
-		psicologo.setPersona(null);
-
-		return psicologo;
 	}
 
 	public List<Alumno> getAlumnos() {
@@ -309,6 +289,28 @@ public class Persona implements Serializable {
 		profesor.setPersona(null);
 
 		return profesor;
+	}
+
+	public List<Psicologo> getPsicologos() {
+		return this.psicologos;
+	}
+
+	public void setPsicologos(List<Psicologo> psicologos) {
+		this.psicologos = psicologos;
+	}
+
+	public Psicologo addPsicologo(Psicologo psicologo) {
+		getPsicologos().add(psicologo);
+		psicologo.setPersona(this);
+
+		return psicologo;
+	}
+
+	public Psicologo removePsicologo(Psicologo psicologo) {
+		getPsicologos().remove(psicologo);
+		psicologo.setPersona(null);
+
+		return psicologo;
 	}
 
 	public List<Usuario> getUsuarios() {

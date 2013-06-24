@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="RESPUESTA")
 public class Respuesta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -24,17 +25,17 @@ public class Respuesta implements Serializable {
 
 	//bi-directional many-to-one association to Alumno
 	@ManyToOne
-	@JoinColumn(name="alu_cod", insertable=false, updatable=false)
+	@JoinColumn(name="alu_cod")
 	private Alumno alumno;
 
 	//bi-directional many-to-one association to Pregunta
 	@ManyToOne
-	@JoinColumn(name="preg_cod", insertable=false, updatable=false)
+	@JoinColumn(name="preg_cod")
 	private Pregunta pregunta;
 
 	//bi-directional many-to-one association to Test
 	@ManyToOne
-	@JoinColumn(name="test_cod", insertable=false, updatable=false)
+	@JoinColumn(name="test_cod")
 	private Test test;
 
 	public Respuesta() {

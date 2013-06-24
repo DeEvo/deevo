@@ -19,7 +19,7 @@ public boolean existeAlertaParque(AlertaParque alertaparque) {
 		EntityManager em = EMF.get().createEntityManager();
 		AlertaParque alertaparque2= null;
 	    try {
-	      alertaparque2 = em.find(AlertaParque.class, alertaparque.getAleCod());
+	      alertaparque2 = em.find(AlertaParque.class, alertaparque.getIdAler());
 	    }
 	    finally {
 	      em.close();
@@ -59,7 +59,7 @@ public boolean existeAlertaParque(AlertaParque alertaparque) {
 
 			    AlertaParque alertaparque2= null;
 			    try {
-			      alertaparque2 = em.find(AlertaParque.class, alertaparque.getAleCod());
+			      alertaparque2 = em.find(AlertaParque.class, alertaparque.getIdAler());
 			    }catch (Throwable t) {
 				       throw t;
 				     }
