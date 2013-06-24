@@ -36,8 +36,8 @@
 				<g:header size="36">Buscar</g:header>
 					<g:Tree>
 						<g:Label text="Alumno" ui:field="alumnoBuscar"/>
-						<g:Label text="Grupo" ui:field="grupoBuscar"/>
 						<g:Label text="Aula" ui:field="aulaBuscar"/>
+						<g:Label text="Avanzado" ui:field="avanzadoBuscar"/>
 					</g:Tree>
 			</g:stack>
 			<g:stack>

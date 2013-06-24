@@ -18,7 +18,7 @@ public class NameTokens {
 
 	public static final String estadoacademico = "estadoacademico";
 
-	public static final String busquedagrupo = "busquedagrupo";
+	public static final String busquedaavanzada = "busquedaavanzada";
 
 	public static final String estadogrupo = "estadogrupo";
 
@@ -94,8 +94,8 @@ public class NameTokens {
 	public static String getEstadoacademico() {
 		return estadoacademico;
 	}
-	public static String getBusquedagrupo() {
-		return busquedagrupo;
+	public static String getBusquedaavanzada() {
+		return busquedaavanzada;
 	}
 	public static String getEstadogrupo() {
 		return estadogrupo;

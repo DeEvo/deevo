@@ -10,20 +10,20 @@ import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
 
-public class BusquedaGrupoPresenter
+public class BusquedaAvanzadaPresenter
 		extends
-		Presenter<BusquedaGrupoPresenter.MyView, BusquedaGrupoPresenter.MyProxy> {
+		Presenter<BusquedaAvanzadaPresenter.MyView, BusquedaAvanzadaPresenter.MyProxy> {
 
 	public interface MyView extends View {
 	}
 
 	@ProxyCodeSplit
-	@NameToken(NameTokens.busquedagrupo)
-	public interface MyProxy extends ProxyPlace<BusquedaGrupoPresenter> {
+	@NameToken(NameTokens.busquedaavanzada)
+	public interface MyProxy extends ProxyPlace<BusquedaAvanzadaPresenter> {
 	}
 
 	@Inject
-	public BusquedaGrupoPresenter(final EventBus eventBus, final MyView view,
+	public BusquedaAvanzadaPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
 	}

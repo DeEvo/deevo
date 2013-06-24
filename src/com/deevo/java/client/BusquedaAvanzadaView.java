@@ -8,16 +8,16 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class BusquedaGrupoView extends ViewImpl implements
-		BusquedaGrupoPresenter.MyView {
+public class BusquedaAvanzadaView extends ViewImpl implements
+		BusquedaAvanzadaPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, BusquedaGrupoView> {
+	public interface Binder extends UiBinder<Widget, BusquedaAvanzadaView> {
 	}
 
 	@Inject
-	public BusquedaGrupoView(final Binder binder) {
+	public BusquedaAvanzadaView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
 	}
 

@@ -37,8 +37,8 @@ import com.deevo.java.client.EFisicoPresenter;
 import com.deevo.java.client.EFisicoView;
 import com.deevo.java.client.EAcademicoPresenter;
 import com.deevo.java.client.EAcademicoView;
-import com.deevo.java.client.BusquedaGrupoPresenter;
-import com.deevo.java.client.BusquedaGrupoView;
+import com.deevo.java.client.BusquedaAvanzadaPresenter;
+import com.deevo.java.client.BusquedaAvanzadaView;
 import com.deevo.java.client.EstadoGrupoPresenter;
 import com.deevo.java.client.EstadoGrupoView;
 import com.deevo.java.client.EstadisticasPresenter;
@@ -129,14 +129,12 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(MenuAdminPresenter.class,
 				MenuAdminPresenter.MyView.class, MenuAdminView.class);
 	
-
 		bindPresenterWidget(SesionPresenter.class,
 				SesionPresenter.MyView.class, SesionView.class);
 
 		bindPresenter(NuevoUsuarioPresenter.class,
 				NuevoUsuarioPresenter.MyView.class, NuevoUsuarioView.class,
 				NuevoUsuarioPresenter.MyProxy.class);
-
 
 		bindPresenterWidget(MenuPsicologoPresenter.class,
 				MenuPsicologoPresenter.MyView.class, MenuPsicologoView.class);
@@ -159,9 +157,9 @@ public class ClientModule extends AbstractPresenterModule {
 				EAcademicoPresenter.MyView.class, EAcademicoView.class,
 				EAcademicoPresenter.MyProxy.class);
 
-		bindPresenter(BusquedaGrupoPresenter.class,
-				BusquedaGrupoPresenter.MyView.class, BusquedaGrupoView.class,
-				BusquedaGrupoPresenter.MyProxy.class);
+		bindPresenter(BusquedaAvanzadaPresenter.class,
+				BusquedaAvanzadaPresenter.MyView.class, BusquedaAvanzadaView.class,
+				BusquedaAvanzadaPresenter.MyProxy.class);
 
 		bindPresenter(EstadoGrupoPresenter.class,
 				EstadoGrupoPresenter.MyView.class, EstadoGrupoView.class,

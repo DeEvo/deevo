@@ -25,7 +25,7 @@ public class MenuAdminView extends ViewImpl implements
 	@UiField Label psicologoUsuario;
 	@UiField Label alumnoRol;
 	@UiField Label alumnoBuscar;
-	@UiField Label grupoBuscar;
+	@UiField Label avanzadoBuscar;
 	@UiField Label aulaBuscar;
 	@UiField Label aulaAcad;
 	@UiField Label cursoAcad;
@@ -147,11 +147,11 @@ public class MenuAdminView extends ViewImpl implements
 		select(alumnoBuscar);
 	}
 
-	@UiHandler("grupoBuscar")
-	void onGrupoBuscarClick(ClickEvent event) {
-		PlaceRequest request = new PlaceRequest(NameTokens.busquedagrupo);				
+	@UiHandler("avanzadoBuscar")
+	void onAvanzadoBuscarClick(ClickEvent event) {
+		PlaceRequest request = new PlaceRequest(NameTokens.busquedaavanzada);				
 		placeManager.revealPlace(request);
-		select(grupoBuscar);
+		select(avanzadoBuscar);
 	}
 	
 	@UiHandler("aulaBuscar")
@@ -337,7 +337,7 @@ public class MenuAdminView extends ViewImpl implements
 		psicologoUsuario.setStyleName("labelunselect");
 		alumnoRol.setStyleName("labelunselect");
 		alumnoBuscar.setStyleName("labelunselect");
-		grupoBuscar.setStyleName("labelunselect");
+		avanzadoBuscar.setStyleName("labelunselect");
 		aulaBuscar.setStyleName("labelunselect");
 		aulaAcad.setStyleName("labelunselect");
 		cursoAcad.setStyleName("labelunselect");

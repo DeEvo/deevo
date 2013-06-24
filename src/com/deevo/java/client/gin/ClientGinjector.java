@@ -17,7 +17,7 @@ import com.deevo.java.client.VerPerfilPresenter;
 import com.deevo.java.client.EPsicomotrizPresenter;
 import com.deevo.java.client.EFisicoPresenter;
 import com.deevo.java.client.EAcademicoPresenter;
-import com.deevo.java.client.BusquedaGrupoPresenter;
+import com.deevo.java.client.BusquedaAvanzadaPresenter;
 import com.deevo.java.client.EstadoGrupoPresenter;
 import com.deevo.java.client.EstadisticasPresenter;
 import com.deevo.java.client.EstadoAulaPresenter;
@@ -71,7 +71,7 @@ public interface ClientGinjector extends Ginjector {
 
 	AsyncProvider<EAcademicoPresenter> getEAcademicoPresenter();
 
-	AsyncProvider<BusquedaGrupoPresenter> getBusquedaGrupoPresenter();
+	AsyncProvider<BusquedaAvanzadaPresenter> getBusquedaAvanzadaPresenter();
 
 	AsyncProvider<EstadoGrupoPresenter> getEstadoGrupoPresenter();
 

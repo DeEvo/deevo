@@ -5,7 +5,6 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.event.BuscarSourceEvent;
-import com.deevo.java.client.event.MostrarPopupEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;

@@ -9,20 +9,24 @@ import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
 import com.deevo.java.client.event.BuscarSourceEvent;
 import com.deevo.java.client.event.BuscarSourceEvent.BuscarSourceHandler;
+import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.google.inject.Inject;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.ListDataProvider;
+import com.google.gwt.view.client.SingleSelectionModel;
 
 
 
@@ -32,6 +36,7 @@ public class BuscarPopupPresenter extends
 	public interface MyView extends PopupView {
 		public Button getLimpiarButton();
 		public Button getBuscarButton();
+		public Button getIngresarButton();
 		public Button getCancelarButton();
 		public TextBox getBuscarTextbox();
 		public CellTable<P> getCellTable();
@@ -45,6 +50,10 @@ public class BuscarPopupPresenter extends
     private String nombre;
     private String apaterno;
     private String amaterno;
+    private ListDataProvider<P> dataProvider = new ListDataProvider<P>();
+	
+	private SingleSelectionModel<P> selection = new SingleSelectionModel<P>();
+	
          
 	@Inject
 	public BuscarPopupPresenter(final EventBus eventBus, final MyView view) {
@@ -95,10 +104,10 @@ public class BuscarPopupPresenter extends
 			@Override
 			public void onClick(ClickEvent event) {	
 				if(getView().getDniTextbox().getText().isEmpty()){
-					   apaterno = getView().getPaterTextbox().getText();
-					    amaterno = getView().getMaterTexbox().getText();
-					    nombre = getView().getNombreTextbox().getText();
-					    dni = "";
+					apaterno = getView().getPaterTextbox().getText();
+				    amaterno = getView().getMaterTexbox().getText();
+				    nombre = getView().getNombreTextbox().getText();
+				    dni = "";
 				}
 			    else{
 			    	dni = getView().getDniTextbox().getText();
@@ -112,40 +121,34 @@ public class BuscarPopupPresenter extends
 			}
 		});
 		
-		/*TextColumn<P> dnicolumn = new TextColumn<BuscarPopupView.P>() {
+		getView().getIngresarButton().addClickHandler(new ClickHandler() {
+			
 			@Override
-			public String getValue(P s) {
-				return s.getDni();
+			public void onClick(ClickEvent event) {
+
+				try{
+					P selected = selection.getSelectedObject();
+		            dni = selected.getDni();
+		            apaterno = selected.getApaterno();
+		            amaterno = selected.getAmaterno();
+		            nombre = selected.getNombre();
+		            
+		            if (origen == "nuevorolalumno"){
+		            	PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with(
+									"dni", dni).with(
+									"nombres", nombre).with(
+									"apaterno", apaterno).with(
+									"amaterno", amaterno);				
+						placeManager.revealPlace(request);
+						getView().getCancelarButton().click();
+		            }
+		           
+		            
+				}catch (Exception a){
+					Window.alert ("Seleccion un registro de la tabla, si esta vacia busque con otro termino");
+				} 
 			}
-		};
-		
-		TextColumn<P> nombrecolumn = new TextColumn<BuscarPopupView.P>() {
-			@Override
-			public String getValue(P s) {
-				return s.getNombre();
-			}
-		};
-		
-		TextColumn<P> apaternocolumn = new TextColumn<BuscarPopupView.P>() {
-			@Override
-			public String getValue(P s) {
-				return s.getApaterno();
-			}
-		};
-		
-		TextColumn<P> amaternocolumn = new TextColumn<BuscarPopupView.P>() {
-			@Override
-			public String getValue(P s) {
-				return s.getAmaterno();
-			}
-		};
-		
-		TextColumn<P> usuarioocolumn = new TextColumn<BuscarPopupView.P>() {
-			@Override
-			public String getValue(P s) {
-				return s.getUsuario();
-			}
-		};*/
+		});
 		
 		TextColumn<P> dnicolumn = new TextColumn<P>() {
 			@Override
@@ -193,7 +196,15 @@ public class BuscarPopupPresenter extends
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
-			ListDataProvider<P> dataProvider = new ListDataProvider<P>();
+			/*ListDataProvider<P> dataProvider = new ListDataProvider<P>();
+			
+			SingleSelectionModel<P> selection = new SingleSelectionModel<P>();
+			getView().getCellTable().setSelectionModel(selection);
+			
+			dataProvider.addDataDisplay(getView().getCellTable());*/
+			
+			getView().getCellTable().setSelectionModel(selection);
+			
 			dataProvider.addDataDisplay(getView().getCellTable());
 			
 			List<P> list = dataProvider.getList();
@@ -212,10 +223,7 @@ public class BuscarPopupPresenter extends
 		    for (P p : listap) {
 		      list.add(p);
 		    }
-			
-			//getView().getCellTable().setRowCount(result.getP().size(), true);
-			//getView().getCellTable().setRowData(0, result.getP());
-
+		    
 		}
 		
 		@Override
