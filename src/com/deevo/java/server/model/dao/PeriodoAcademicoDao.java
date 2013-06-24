@@ -119,8 +119,9 @@ public boolean existePeriodoAcademico(PeriodoAcademico periodoacademico) {
 
 			    List<PeriodoAcademico> list= null;
 			    try {
-			    	String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > :fecha AND x.perFin < :fecha";
-		            list= em.createQuery(qery).setParameter("fecha", hoy).getResultList();
+			    	//String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > :fecha AND x.perFin < :fecha";
+			    	String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > CURRENT_DATE AND x.perFin < CURRENT_DATE";
+		            list= em.createQuery(qery).getResultList();
 			    }catch (Throwable t) {
 				       throw t;
 				     }
