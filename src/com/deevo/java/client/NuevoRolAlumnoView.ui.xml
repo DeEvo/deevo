@@ -1,95 +1,105 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-	xmlns:g='urn:import:com.google.gwt.user.client.ui'
-	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.datepicker.client">
 
 	<g:HTMLPanel height="100%" width="100%" styleName="fondoBienvenida">
-	    <g:Grid width="100%" height="" cellPadding="6" >
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label text="Nuevo Rol Alumno" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER" height="30px"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="20px"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" cellPadding="6" styleName="layout">
-	    				<g:row>
-	    					<g:customCell>
-	    			<g:Label text="DNI" styleName="labelFormulario"/>
-	    		</g:customCell>
-	    					<g:customCell>
-	    						<g:IntegerBox width="120px" ui:field="dniTexbox" enabled="false"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Nombres" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="nombresTexbox" enabled="false"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Apellidos" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="apellidosTexbox" enabled="false"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="DNI apoderado" width="194" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px" enabled="false"/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" cellPadding="6" styleName="layout">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox text="Codigo de MINEDU" width="150px" styleName="labelFormulario"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="200px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layout" cellPadding="6">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox name="new name" text="Asignar Aula" styleName="labelFormulario" width="150px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Nivel" styleName="labelFormulario" width="194"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="nivelListbox">
+		<g:Grid width="100%" height="" cellPadding="6">
+			<g:row>
+				<g:customCell>
+					<g:Label text="Nuevo Rol Alumno" styleName="tituloFormulario"
+						horizontalAlignment="ALIGN_CENTER" height="30px" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label text="Ficha de Usuario:" width="100%"
+						styleName="labelsubformulario" height="20px" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" cellPadding="6" styleName="layout">
+						<g:row>
+							<g:customCell>
+								<g:Label text="DNI" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:IntegerBox width="120px" ui:field="dniTexbox"
+									enabled="false" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Nombres" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="nombresTexbox"
+									enabled="false" />
+							</g:customCell>
+						</g:row>
+
+						<g:row>
+							<g:customCell>
+								<g:Label text="Apellidos" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" ui:field="apellidosTexbox"
+									enabled="false" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="DNI apoderado" width="194" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" enabled="false" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label height="20px" styleName="labelsubformulario"
+						text="Puede completar los siguientes campos ahora o realizarlo luego:"
+						width="100%" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="100%" cellPadding="6"
+						styleName="layout">
+						<g:row>
+							<g:customCell>
+								<g:CheckBox text="Codigo de MINEDU" width="150px"
+									styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="200px" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="100%" styleName="layout"
+						cellPadding="6">
+						<g:row>
+							<g:customCell>
+								<g:CheckBox name="new name" text="Asignar Aula"
+									styleName="labelFormulario" width="150px" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Nivel" styleName="labelFormulario" width="194" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="120px" ui:field="nivelListbox">
 									<g:item value='1'>
 										Inicial
 									</g:item>
@@ -97,56 +107,60 @@
 										Primaria
 									</g:item>
 								</g:ListBox>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Grado" styleName="labelFormulario" width="194"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="gradoListbox">
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Grado" styleName="labelFormulario" width="194" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="120px" ui:field="gradoListbox">
 									<g:item value='1'>
 										--------
 									</g:item>
 								</g:ListBox>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Sección" styleName="labelFormulario" width="194"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px" ui:field="seccionListbox">
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Sección" styleName="labelFormulario"
+									width="194" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="120px" ui:field="seccionListbox">
 									<g:item value='1'>
 										--------
 									</g:item>
 								</g:ListBox>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Label/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row/>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="6">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Button width="120px" text="Buscar Alumno" styleName="layout" ui:field="buscarButton"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button width="100px" text="Aceptar" styleName="layout" ui:field="crearButton"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    </g:Grid>
+							</g:customCell>
+							<g:customCell>
+								<g:Label />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row />
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="100%" styleName="layoutarriba"
+						cellPadding="6">
+						<g:row>
+							<g:customCell>
+								<g:Button width="120px" text="Buscar Alumno" styleName="layout"
+									ui:field="buscarButton" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Aceptar" styleName="layout"
+									ui:field="crearButton" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Cancelar" styleName="layout" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+		</g:Grid>
 	</g:HTMLPanel>
 </ui:UiBinder>

@@ -9,6 +9,7 @@ import java.util.List;
  * The persistent class for the AULA database table.
  * 
  */
+
 @Entity
 public class Aula implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -1,56 +1,57 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-	xmlns:g='urn:import:com.google.gwt.user.client.ui'
-	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.cellview.client">
 
 	<g:HTMLPanel styleName="layout" height="400px" width="100%">
-		  <g:Grid width="100%" height="400px" styleName="layout">
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label text="Busqueda Avanzada" styleName="tituloFormulario" height="31px"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Label text="Busqueda de alumnos por filtros:" width="100%" styleName="labelsubformulario" height="20px"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" cellPadding="6" height="80px">
-	    				<g:row>
-	    					<g:customCell>
-	    			<g:CheckBox text="Apellido Paterno" styleName="labelFormulario"/>
-	    		</g:customCell>
-	    					<g:customCell>
-	    						<g:IntegerBox width="150px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox styleName="labelFormulario" text="Apellido Materno"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:IntegerBox width="150px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox styleName="labelFormulario" text="Nombre"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:IntegerBox width="150px"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:CheckBox styleName="labelFormulario" text="Genero"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:ListBox width="120px">
+		<g:Grid width="100%" height="400px" styleName="layout">
+			<g:row>
+				<g:customCell>
+					<g:Label text="Busqueda Avanzada" styleName="tituloFormulario"
+						height="31px" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Label text="Busqueda de alumnos por filtros:" width="100%"
+						styleName="labelsubformulario" height="20px" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" cellPadding="6" height="80px">
+						<g:row>
+							<g:customCell>
+								<g:CheckBox text="Apellido Paterno" styleName="labelFormulario" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="150px" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:CheckBox styleName="labelFormulario" text="Apellido Materno" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="150px" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:CheckBox styleName="labelFormulario" text="Nombre" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox width="150px" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:CheckBox styleName="labelFormulario" text="Genero" />
+							</g:customCell>
+							<g:customCell>
+								<g:ListBox width="120px">
 									<g:item value='1'>
 										Masculino
 									</g:item>
@@ -58,9 +59,9 @@
 										Femenino
 									</g:item>
 								</g:ListBox>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
+							</g:customCell>
+						</g:row>
+						<g:row>
 							<g:customCell>
 								<g:CheckBox text="Nivel" styleName="labelFormulario" />
 							</g:customCell>
@@ -113,40 +114,43 @@
 									</g:item>
 								</g:ListBox>
 							</g:customCell>
-						</g:row>	
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:Grid width="100%" height="25px" styleName="layoutarriba" cellPadding="8">
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Button width="90px" text="Limpiar" styleName="layout"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button width="100px" text="Ingresar" styleName="layout"/>
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
-	    					</g:customCell>
-	    				</g:row>
-	    			</g:Grid>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:TextArea width="100%" text="ACA VA CUANTAS PERSONAS BOTO LA BUSQUEDA"/>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row>
-	    		<g:customCell>
-	    			<g:ScrollPanel width="100%">
-	    				<p1:CellTable ui:field="cellTable" width="100%" height="100%"/>
-	    			</g:ScrollPanel>
-	    		</g:customCell>
-	    	</g:row>
-	    	<g:row/>
-	    </g:Grid>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:Grid width="100%" height="25px" styleName="layoutarriba"
+						cellPadding="8">
+						<g:row>
+							<g:customCell>
+								<g:Button width="90px" text="Limpiar" styleName="layout" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Ingresar" styleName="layout" />
+							</g:customCell>
+							<g:customCell>
+								<g:Button width="100px" text="Cancelar" styleName="layout" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:TextArea width="100%"
+						text="ACA VA CUANTAS PERSONAS BOTO LA BUSQUEDA" />
+				</g:customCell>
+			</g:row>
+			<g:row>
+				<g:customCell>
+					<g:ScrollPanel width="100%">
+						<p1:CellTable ui:field="cellTable" width="100%"
+							height="100%" />
+					</g:ScrollPanel>
+				</g:customCell>
+			</g:row>
+			<g:row />
+		</g:Grid>
 	</g:HTMLPanel>
 </ui:UiBinder>
