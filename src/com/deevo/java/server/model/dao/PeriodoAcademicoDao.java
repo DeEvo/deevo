@@ -1,5 +1,6 @@
 package com.deevo.java.server.model.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityExistsException;
@@ -110,5 +111,23 @@ public boolean existePeriodoAcademico(PeriodoAcademico periodoacademico) {
 		    }
 		    return periodoacademico2;
 		  }
+		  
+		  @SuppressWarnings("unchecked")
+		public List<PeriodoAcademico> retrievePeriodoAcademicoActual(Date hoy)  throws Throwable{
+
+				EntityManager em = EMF.get().createEntityManager();
+
+			    List<PeriodoAcademico> list= null;
+			    try {
+			    	String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > :fecha AND x.perFin < :fecha";
+		            list= em.createQuery(qery).setParameter("fecha", hoy).getResultList();
+			    }catch (Throwable t) {
+				       throw t;
+				     }
+			    finally {
+			      em.close();
+			    }
+			    return list;
+			  }   
 
 }

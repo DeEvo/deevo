@@ -9,6 +9,9 @@ import javax.persistence.RollbackException;
 
 import com.deevo.java.server.EMF;
 import com.deevo.java.shared.Aula;
+import com.deevo.java.shared.Colegio;
+import com.deevo.java.shared.GradoSeccion;
+import com.deevo.java.shared.PeriodoAcademico;
 
 
 
@@ -30,8 +33,7 @@ public class AulaDao {
 	    return true;
 		}
 		
-
-
+	
 public void createAula(Aula aula) throws EntityExistsException , Throwable {
 	
 	EntityManager em = EMF.get().createEntityManager();
@@ -70,16 +72,15 @@ public void createAula(Aula aula) throws EntityExistsException , Throwable {
 	    return aula2;
 	  }   
 	  
-	  
 	  @SuppressWarnings("unchecked")
-	public List<Aula> retrieveAulas() throws Throwable{
+	  public List<Aula> retrieveAulas() throws Throwable{
 		  
 	    EntityManager em = EMF.get().createEntityManager();	
 	    List<Aula> list = null;
 	   
 	    try {
-	    	String qery = "SELECT x FROM Aula x ";
-            list= em.createQuery(qery).getResultList();
+	    	String qery = "SELECT x FROM Aula x";
+	          list= em.createQuery(qery).getResultList();
           //  list = q.getResultList();
 	    }catch(Throwable t){
 	    	t.printStackTrace();
@@ -111,12 +112,10 @@ public void createAula(Aula aula) throws EntityExistsException , Throwable {
 	    return aula2;
 	  }
 	  
-	  
 	  public void deleteAula(Aula aula)  throws Throwable  {
 		  
 	  EntityManager em = EMF.get().createEntityManager();
 	  EntityTransaction tx = em.getTransaction();
-	    
 	    try {
 	      tx.begin();
 	      em.remove(em.merge(aula));
@@ -132,4 +131,20 @@ public void createAula(Aula aula) throws EntityExistsException , Throwable {
 	    }
 	  }
 
+	  public List<Aula> retrieveAulaxCOLxPER(Colegio cole,  PeriodoAcademico peri)  throws Throwable{
+
+			EntityManager em = EMF.get().createEntityManager();
+
+		    List<Aula> aula= null;
+		    try {
+		    	String qery = "SELECT x FROM Aula x WHERE x.colegio = :col AND x.periodoAcademico = :per";
+		    	aula= em.createQuery(qery).setParameter("col", cole).setParameter("per", peri ).getResultList(); 
+		    }catch (Throwable t) {
+			       throw t;
+			}
+		    finally {
+		      em.close();
+		    }
+		    return aula;
+		  }   		  
 }

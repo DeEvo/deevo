@@ -21,6 +21,8 @@ import com.deevo.java.client.action.NuevoAlumno;
 import com.deevo.java.server.actionhandler.NuevoAlumnoActionHandler;
 import com.deevo.java.client.action.NuevoPadre;
 import com.deevo.java.server.actionhandler.NuevoPadreActionHandler;
+import com.deevo.java.client.action.GetAula;
+import com.deevo.java.server.actionhandler.GetAulaActionHandler;
 
 public class ServerModule extends HandlerModule {
 
@@ -46,5 +48,7 @@ public class ServerModule extends HandlerModule {
 		bindHandler(NuevoAlumno.class, NuevoAlumnoActionHandler.class);
 
 		bindHandler(NuevoPadre.class, NuevoPadreActionHandler.class);
+
+		bindHandler(GetAula.class, GetAulaActionHandler.class);
 	}
 }

@@ -11,7 +11,8 @@ public class NuevoAlumno extends ActionImpl<NuevoAlumnoResult> {
 	private String dni_madre;
 	private String codMinedu;
 	private String admin_user;
-
+	private String cod_aula;
+	
 	@SuppressWarnings("unused")
 	private NuevoAlumno() {
 		// For serialization only
@@ -43,5 +44,9 @@ public class NuevoAlumno extends ActionImpl<NuevoAlumnoResult> {
 
 	public String getDni_madre() {
 		return dni_madre;
+	}
+
+	public String getCod_aula() {
+		return cod_aula;
 	}
 }
