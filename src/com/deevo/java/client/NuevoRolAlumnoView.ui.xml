@@ -96,28 +96,10 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:Label text="Nivel" styleName="labelFormulario" width="194" />
-							</g:customCell>
-							<g:customCell>
-								<g:ListBox width="120px" ui:field="nivelListbox">
-									<g:item value='1'>
-										Inicial
-									</g:item>
-									<g:item value='2'>
-										Primaria
-									</g:item>
-								</g:ListBox>
-							</g:customCell>
-						</g:row>
-						<g:row>
-							<g:customCell>
 								<g:Label text="Grado" styleName="labelFormulario" width="194" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="120px" ui:field="gradoListbox">
-									<g:item value='1'>
-										--------
-									</g:item>
 								</g:ListBox>
 							</g:customCell>
 						</g:row>
@@ -128,9 +110,6 @@
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="120px" ui:field="seccionListbox">
-									<g:item value='1'>
-										--------
-									</g:item>
 								</g:ListBox>
 							</g:customCell>
 							<g:customCell>
