@@ -7,6 +7,7 @@ import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
+import javax.persistence.TemporalType;
 
 import com.deevo.java.server.EMF;
 import com.deevo.java.shared.PeriodoAcademico;
@@ -119,9 +120,9 @@ public boolean existePeriodoAcademico(PeriodoAcademico periodoacademico) {
 
 			    List<PeriodoAcademico> list= null;
 			    try {
-			    	//String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > :fecha AND x.perFin < :fecha";
-			    	String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > CURRENT_DATE AND x.perFin < CURRENT_DATE";
-		            list= em.createQuery(qery).getResultList();
+			    	String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio < :fecha AND x.perFin > :fecha";
+			    	//String qery = "SELECT x FROM PeriodoAcademico x WHERE x.perInicio > CURRENT_DATE AND x.perFin < CURRENT_DATE";
+		            list= em.createQuery(qery).setParameter("fecha", hoy, TemporalType.TIMESTAMP ).getResultList();
 			    }catch (Throwable t) {
 				       throw t;
 				     }

@@ -1,5 +1,7 @@
 package com.deevo.java.client;
 
+import java.util.List;
+
 import com.gwtplatform.dispatch.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -114,13 +116,13 @@ public class NuevoRolAlumnoPresenter extends
 
 		@Override
 		public void onSuccess(GetAulaResult result) {
-			int i =0;
-			while(i< result.getCod_aula().size()){
+			int i;
+			for(i=0;i< result.getCod_aula().size();i++){
 				getView().getGradoListbox().addItem(result.getGrado_descrip().get(i));
-				getView().getSeccionListbox().addItem(result.getSeccion_desc().get(i));
-				i++;
 			}
-			
+			for(i=0;i<result.getCod_seccion().size();i++){
+				getView().getSeccionListbox().addItem(result.getSeccion_desc().get(i));
+			}
 		}
 	
 	
