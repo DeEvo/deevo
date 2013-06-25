@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -15,7 +14,8 @@ import java.util.List;
 public class Privilegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="pri_cod")
 	private int priCod;
 
@@ -28,26 +28,13 @@ public class Privilegio implements Serializable {
 	@Column(name="pri_nom")
 	private String priNom;
 
-	//bi-directional many-to-many association to Colegio
-	@ManyToMany
-	@JoinTable(
-		name="COLEGIO_PRIVILEGIO"
-		, joinColumns={
-			@JoinColumn(name="pri_cod")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="cod_col")
-			}
-		)
-	private List<Colegio> colegios;
-
 	//bi-directional many-to-many association to Test
 	@ManyToMany(mappedBy="privilegios")
 	private List<Test> tests;
 
-	//bi-directional many-to-many association to Usuario
-	@ManyToMany(mappedBy="privilegios")
-	private List<Usuario> usuarios;
+	//bi-directional many-to-one association to UsuarioPrivilegio
+	@OneToMany(mappedBy="privilegio")
+	private List<UsuarioPrivilegio> usuarioPrivilegios;
 
 	public Privilegio() {
 	}
@@ -84,14 +71,6 @@ public class Privilegio implements Serializable {
 		this.priNom = priNom;
 	}
 
-	public List<Colegio> getColegios() {
-		return this.colegios;
-	}
-
-	public void setColegios(List<Colegio> colegios) {
-		this.colegios = colegios;
-	}
-
 	public List<Test> getTests() {
 		return this.tests;
 	}
@@ -100,12 +79,26 @@ public class Privilegio implements Serializable {
 		this.tests = tests;
 	}
 
-	public List<Usuario> getUsuarios() {
-		return this.usuarios;
+	public List<UsuarioPrivilegio> getUsuarioPrivilegios() {
+		return this.usuarioPrivilegios;
 	}
 
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
+	public void setUsuarioPrivilegios(List<UsuarioPrivilegio> usuarioPrivilegios) {
+		this.usuarioPrivilegios = usuarioPrivilegios;
+	}
+
+	public UsuarioPrivilegio addUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().add(usuarioPrivilegio);
+		usuarioPrivilegio.setPrivilegio(this);
+
+		return usuarioPrivilegio;
+	}
+
+	public UsuarioPrivilegio removeUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().remove(usuarioPrivilegio);
+		usuarioPrivilegio.setPrivilegio(null);
+
+		return usuarioPrivilegio;
 	}
 
 }

@@ -9,6 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name="FAMILIA")
 public class Familia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -20,12 +21,12 @@ public class Familia implements Serializable {
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="per_a", insertable=false, updatable=false)
+	@JoinColumn(name="per_a")
 	private Persona persona1;
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="per_b", insertable=false, updatable=false)
+	@JoinColumn(name="per_b")
 	private Persona persona2;
 
 	public Familia() {

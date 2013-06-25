@@ -14,7 +14,8 @@ import java.util.List;
 public class Alerta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ale_cod")
 	private int aleCod;
 
@@ -27,9 +28,9 @@ public class Alerta implements Serializable {
 	@Column(name="ale_tip")
 	private String aleTip;
 
-	//bi-directional one-to-one association to AlertaParque
-	@OneToOne(mappedBy="alerta")
-	private AlertaParque alertaParque;
+	//bi-directional many-to-one association to AlertaParque
+	@OneToMany(mappedBy="alerta")
+	private List<AlertaParque> alertaParques;
 
 	//bi-directional many-to-one association to AlertaPrivilegio
 	@OneToMany(mappedBy="alerta")
@@ -70,12 +71,26 @@ public class Alerta implements Serializable {
 		this.aleTip = aleTip;
 	}
 
-	public AlertaParque getAlertaParque() {
-		return this.alertaParque;
+	public List<AlertaParque> getAlertaParques() {
+		return this.alertaParques;
 	}
 
-	public void setAlertaParque(AlertaParque alertaParque) {
-		this.alertaParque = alertaParque;
+	public void setAlertaParques(List<AlertaParque> alertaParques) {
+		this.alertaParques = alertaParques;
+	}
+
+	public AlertaParque addAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().add(alertaParque);
+		alertaParque.setAlerta(this);
+
+		return alertaParque;
+	}
+
+	public AlertaParque removeAlertaParque(AlertaParque alertaParque) {
+		getAlertaParques().remove(alertaParque);
+		alertaParque.setAlerta(null);
+
+		return alertaParque;
 	}
 
 	public List<AlertaPrivilegio> getAlertaPrivilegios() {

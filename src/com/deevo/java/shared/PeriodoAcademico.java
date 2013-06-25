@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +15,8 @@ import java.util.List;
 public class PeriodoAcademico implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cod_per")
 	private int codPer;
 

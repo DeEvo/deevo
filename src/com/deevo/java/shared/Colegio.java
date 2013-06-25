@@ -10,10 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="COLEGIO")
 public class Colegio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cod_col")
 	private int codCol;
 
@@ -35,18 +37,6 @@ public class Colegio implements Serializable {
 	@Column(name="col_ugel")
 	private String colUgel;
 
-	//bi-directional many-to-one association to ColegioPrivilegio
-	@OneToMany(mappedBy="colegio")
-	private List<ColegioPrivilegio> colegioPrivilegios;
-
-	//bi-directional many-to-many association to Privilegio
-	@ManyToMany(mappedBy="colegios")
-	private List<Privilegio> privilegios;
-
-	//bi-directional many-to-many association to Psicologo
-	@ManyToMany(mappedBy="colegios")
-	private List<Psicologo> psicologos;
-
 	//bi-directional many-to-one association to Aula
 	@OneToMany(mappedBy="colegio")
 	private List<Aula> aulas;
@@ -55,9 +45,17 @@ public class Colegio implements Serializable {
 	@OneToMany(mappedBy="colegio")
 	private List<ColegioProfesor> colegioProfesors;
 
+	//bi-directional many-to-many association to Psicologo
+	@ManyToMany(mappedBy="colegios")
+	private List<Psicologo> psicologos;
+
 	//bi-directional many-to-one association to Sesion
 	@OneToMany(mappedBy="colegio")
 	private List<Sesion> sesions;
+
+	//bi-directional many-to-one association to UsuarioPrivilegio
+	@OneToMany(mappedBy="colegio")
+	private List<UsuarioPrivilegio> usuarioPrivilegios;
 
 	public Colegio() {
 	}
@@ -118,44 +116,6 @@ public class Colegio implements Serializable {
 		this.colUgel = colUgel;
 	}
 
-	public List<ColegioPrivilegio> getColegioPrivilegios() {
-		return this.colegioPrivilegios;
-	}
-
-	public void setColegioPrivilegios(List<ColegioPrivilegio> colegioPrivilegios) {
-		this.colegioPrivilegios = colegioPrivilegios;
-	}
-
-	public ColegioPrivilegio addColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
-		getColegioPrivilegios().add(colegioPrivilegio);
-		colegioPrivilegio.setColegio(this);
-
-		return colegioPrivilegio;
-	}
-
-	public ColegioPrivilegio removeColegioPrivilegio(ColegioPrivilegio colegioPrivilegio) {
-		getColegioPrivilegios().remove(colegioPrivilegio);
-		colegioPrivilegio.setColegio(null);
-
-		return colegioPrivilegio;
-	}
-
-	public List<Privilegio> getPrivilegios() {
-		return this.privilegios;
-	}
-
-	public void setPrivilegios(List<Privilegio> privilegios) {
-		this.privilegios = privilegios;
-	}
-
-	public List<Psicologo> getPsicologos() {
-		return this.psicologos;
-	}
-
-	public void setPsicologos(List<Psicologo> psicologos) {
-		this.psicologos = psicologos;
-	}
-
 	public List<Aula> getAulas() {
 		return this.aulas;
 	}
@@ -200,6 +160,14 @@ public class Colegio implements Serializable {
 		return colegioProfesor;
 	}
 
+	public List<Psicologo> getPsicologos() {
+		return this.psicologos;
+	}
+
+	public void setPsicologos(List<Psicologo> psicologos) {
+		this.psicologos = psicologos;
+	}
+
 	public List<Sesion> getSesions() {
 		return this.sesions;
 	}
@@ -220,6 +188,28 @@ public class Colegio implements Serializable {
 		sesion.setColegio(null);
 
 		return sesion;
+	}
+
+	public List<UsuarioPrivilegio> getUsuarioPrivilegios() {
+		return this.usuarioPrivilegios;
+	}
+
+	public void setUsuarioPrivilegios(List<UsuarioPrivilegio> usuarioPrivilegios) {
+		this.usuarioPrivilegios = usuarioPrivilegios;
+	}
+
+	public UsuarioPrivilegio addUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().add(usuarioPrivilegio);
+		usuarioPrivilegio.setColegio(this);
+
+		return usuarioPrivilegio;
+	}
+
+	public UsuarioPrivilegio removeUsuarioPrivilegio(UsuarioPrivilegio usuarioPrivilegio) {
+		getUsuarioPrivilegios().remove(usuarioPrivilegio);
+		usuarioPrivilegio.setColegio(null);
+
+		return usuarioPrivilegio;
 	}
 
 }

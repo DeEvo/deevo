@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -11,15 +10,21 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PSICOLOGO")
 public class Psicologo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="psi_cod")
 	private int psiCod;
 
 	@Column(name="psi_des")
 	private String psiDes;
+
+	//bi-directional many-to-one association to Aula
+	@OneToMany(mappedBy="psicologo")
+	private List<Aula> aulas;
 
 	//bi-directional many-to-many association to Colegio
 	@ManyToMany
@@ -39,10 +44,6 @@ public class Psicologo implements Serializable {
 	@JoinColumn(name="per_dni")
 	private Persona persona;
 
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="psicologo")
-	private List<Aula> aulas;
-
 	public Psicologo() {
 	}
 
@@ -60,22 +61,6 @@ public class Psicologo implements Serializable {
 
 	public void setPsiDes(String psiDes) {
 		this.psiDes = psiDes;
-	}
-
-	public List<Colegio> getColegios() {
-		return this.colegios;
-	}
-
-	public void setColegios(List<Colegio> colegios) {
-		this.colegios = colegios;
-	}
-
-	public Persona getPersona() {
-		return this.persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
 	}
 
 	public List<Aula> getAulas() {
@@ -98,6 +83,22 @@ public class Psicologo implements Serializable {
 		aula.setPsicologo(null);
 
 		return aula;
+	}
+
+	public List<Colegio> getColegios() {
+		return this.colegios;
+	}
+
+	public void setColegios(List<Colegio> colegios) {
+		this.colegios = colegios;
+	}
+
+	public Persona getPersona() {
+		return this.persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
 }

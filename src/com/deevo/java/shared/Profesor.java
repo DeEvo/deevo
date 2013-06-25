@@ -10,15 +10,21 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="PROFESOR")
 public class Profesor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="pro_cod")
 	private int proCod;
 
 	@Column(name="pro_des")
 	private String proDes;
+
+	//bi-directional many-to-one association to Aula
+	@OneToMany(mappedBy="profesor")
+	private List<Aula> aulas;
 
 	//bi-directional many-to-one association to ColegioProfesor
 	@OneToMany(mappedBy="profesor")
@@ -27,10 +33,6 @@ public class Profesor implements Serializable {
 	//bi-directional many-to-one association to CursoProfesor
 	@OneToMany(mappedBy="profesor")
 	private List<CursoProfesor> cursoProfesors;
-
-	//bi-directional many-to-one association to Aula
-	@OneToMany(mappedBy="profesor")
-	private List<Aula> aulas;
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
@@ -54,6 +56,28 @@ public class Profesor implements Serializable {
 
 	public void setProDes(String proDes) {
 		this.proDes = proDes;
+	}
+
+	public List<Aula> getAulas() {
+		return this.aulas;
+	}
+
+	public void setAulas(List<Aula> aulas) {
+		this.aulas = aulas;
+	}
+
+	public Aula addAula(Aula aula) {
+		getAulas().add(aula);
+		aula.setProfesor(this);
+
+		return aula;
+	}
+
+	public Aula removeAula(Aula aula) {
+		getAulas().remove(aula);
+		aula.setProfesor(null);
+
+		return aula;
 	}
 
 	public List<ColegioProfesor> getColegioProfesors() {
@@ -98,28 +122,6 @@ public class Profesor implements Serializable {
 		cursoProfesor.setProfesor(null);
 
 		return cursoProfesor;
-	}
-
-	public List<Aula> getAulas() {
-		return this.aulas;
-	}
-
-	public void setAulas(List<Aula> aulas) {
-		this.aulas = aulas;
-	}
-
-	public Aula addAula(Aula aula) {
-		getAulas().add(aula);
-		aula.setProfesor(this);
-
-		return aula;
-	}
-
-	public Aula removeAula(Aula aula) {
-		getAulas().remove(aula);
-		aula.setProfesor(null);
-
-		return aula;
 	}
 
 	public Persona getPersona() {

@@ -13,7 +13,8 @@ import javax.persistence.*;
 public class PadreFamilia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="pad_cod")
 	private int padCod;
 

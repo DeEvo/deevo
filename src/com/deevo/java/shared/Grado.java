@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -11,10 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="GRADO")
 public class Grado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cod_grado")
 	private int codGrado;
 
@@ -22,6 +23,8 @@ public class Grado implements Serializable {
 
 	@Column(name="desc_grado")
 	private String descGrado;
+
+	private String nivel;
 
 	//bi-directional many-to-many association to Seccion
 	@ManyToMany
@@ -61,6 +64,14 @@ public class Grado implements Serializable {
 
 	public void setDescGrado(String descGrado) {
 		this.descGrado = descGrado;
+	}
+
+	public String getNivel() {
+		return this.nivel;
+	}
+
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
 	}
 
 	public List<Seccion> getSeccions() {

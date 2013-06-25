@@ -2,7 +2,6 @@ package com.deevo.java.shared;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -11,10 +10,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="SECCION")
 public class Seccion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cod_seccion")
 	private int codSeccion;
 
