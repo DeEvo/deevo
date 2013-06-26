@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>com.deevo.java.client.NuevoRolPadrePresenter (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">NuevoRolPadrePresenter.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> com.deevo.java.client;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.Presenter;
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.View;
+<FONT ID="LN">5   </FONT><A NAME="5"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.annotations.NameToken;
+<FONT ID="LN">7   </FONT><A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="../../../../com/deevo/java/client/place/NameTokens.java.html">com.deevo.java.client.place.NameTokens</A>;
+<FONT ID="LN">8   </FONT><A NAME="8"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.proxy.PlaceRequest;
+<FONT ID="LN">9   </FONT><A NAME="9"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.proxy.ProxyPlace;
+<FONT ID="LN">10  </FONT><A NAME="10"></A><FONT ID="Import">import</FONT> com.gwtplatform.mvp.client.proxy.RevealContentEvent;
+<FONT ID="LN">11  </FONT><A NAME="11"></A><FONT ID="Import">import</FONT> com.google.inject.Inject;
+<FONT ID="LN">12  </FONT><A NAME="12"></A><FONT ID="Import">import</FONT> com.google.gwt.event.shared.EventBus;
+<FONT ID="LN">13  </FONT><A NAME="13"></A><FONT ID="Import">import</FONT> com.google.gwt.user.client.ui.IntegerBox;
+<FONT ID="LN">14  </FONT><A NAME="14"></A><FONT ID="Import">import</FONT> com.google.gwt.user.client.ui.TextBox;
+<FONT ID="LN">15  </FONT><A NAME="15"></A>
+<FONT ID="LN">16  </FONT><A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> NuevoRolPadrePresenter <FONT ID="Extends">extends</FONT>
+<FONT ID="LN">17  </FONT><A NAME="17"></A>        Presenter&lt;<A HREF="../../../../com/deevo/java/client/NuevoRolPadrePresenter.java.html">NuevoRolPadrePresenter.MyView</A>, <A HREF="../../../../com/deevo/java/client/NuevoRolPadrePresenter.java.html">NuevoRolPadrePresenter.MyProxy</A>&gt; {
+<FONT ID="LN">18  </FONT><A NAME="18"></A>
+<FONT ID="LN">19  </FONT><A NAME="19"></A>    <FONT ID="Public">public</FONT> <FONT ID="Interface">interface</FONT> MyView <FONT ID="Extends">extends</FONT> View {
+<FONT ID="LN">20  </FONT><A NAME="20"></A>        <FONT ID="Public">public</FONT> IntegerBox getDniTexbox();
+<FONT ID="LN">21  </FONT><A NAME="21"></A>        <FONT ID="Public">public</FONT> TextBox getNombresTexbox();
+<FONT ID="LN">22  </FONT><A NAME="22"></A>        <FONT ID="Public">public</FONT> TextBox getApellidosTexbox();
+<FONT ID="LN">23  </FONT><A NAME="23"></A>    }
+<FONT ID="LN">24  </FONT><A NAME="24"></A>
+<FONT ID="LN">25  </FONT><A NAME="25"></A>    @ProxyCodeSplit
+<FONT ID="LN">26  </FONT><A NAME="26"></A>    @NameToken(NameTokens.nuevorolpadre)
+<FONT ID="LN">27  </FONT><A NAME="27"></A>    <FONT ID="Public">public</FONT> <FONT ID="Interface">interface</FONT> MyProxy <FONT ID="Extends">extends</FONT> ProxyPlace&lt;<A HREF="../../../../com/deevo/java/client/NuevoRolPadrePresenter.java.html">NuevoRolPadrePresenter</A>&gt; {
+<FONT ID="LN">28  </FONT><A NAME="28"></A>    }
+<FONT ID="LN">29  </FONT><A NAME="29"></A>
+<FONT ID="LN">30  </FONT><A NAME="30"></A>    @Inject
+<FONT ID="LN">31  </FONT><A NAME="31"></A>    <FONT ID="Public">public</FONT> NuevoRolPadrePresenter(<FONT ID="Final">final</FONT> EventBus eventBus, <FONT ID="Final">final</FONT> MyView view, <FONT ID="Final">final</FONT> MyProxy proxy) {
+<FONT ID="LN">32  </FONT><A NAME="32"></A>        <FONT ID="Super">super</FONT>(eventBus, view, proxy);
+<FONT ID="LN">33  </FONT><A NAME="33"></A>    }
+<FONT ID="LN">34  </FONT><A NAME="34"></A>
+<FONT ID="LN">35  </FONT><A NAME="35"></A>    @Override
+<FONT ID="LN">36  </FONT><A NAME="36"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> revealInParent() {
+<FONT ID="LN">37  </FONT><A NAME="37"></A>        RevealContentEvent.fire(<FONT ID="This">this</FONT>, LayoutMainPresenter.SLOT_SetMainContent, <FONT ID="This">this</FONT>);
+<FONT ID="LN">38  </FONT><A NAME="38"></A>    }
+<FONT ID="LN">39  </FONT><A NAME="39"></A>
+<FONT ID="LN">40  </FONT><A NAME="40"></A>    <FONT ID="Private">private</FONT> String dni =<FONT ID="StringLiteral">""</FONT>;
+<FONT ID="LN">41  </FONT><A NAME="41"></A>    <FONT ID="Private">private</FONT> String nombres =<FONT ID="StringLiteral">""</FONT>;
+<FONT ID="LN">42  </FONT><A NAME="42"></A>    <FONT ID="Private">private</FONT> String apellidos =<FONT ID="StringLiteral">""</FONT>;
+<FONT ID="LN">43  </FONT><A NAME="43"></A>    
+<FONT ID="LN">44  </FONT><A NAME="44"></A>    @Override
+<FONT ID="LN">45  </FONT><A NAME="45"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> prepareFromRequest(PlaceRequest request) {
+<FONT ID="LN">46  </FONT><A NAME="46"></A>        <FONT ID="Super">super</FONT>.prepareFromRequest(request);
+<FONT ID="LN">47  </FONT><A NAME="47"></A>        dni= request.getParameter(<FONT ID="StringLiteral">"dni"</FONT>, <FONT ID="StringLiteral">""</FONT>);
+<FONT ID="LN">48  </FONT><A NAME="48"></A>        nombres= request.getParameter(<FONT ID="StringLiteral">"nombres"</FONT>, <FONT ID="StringLiteral">""</FONT>);
+<FONT ID="LN">49  </FONT><A NAME="49"></A>        apellidos= request.getParameter(<FONT ID="StringLiteral">"apaterno"</FONT>, <FONT ID="StringLiteral">""</FONT>) +<FONT ID="StringLiteral">" "</FONT>+ request.getParameter(<FONT ID="StringLiteral">"amaterno"</FONT>, <FONT ID="StringLiteral">""</FONT>);
+<FONT ID="LN">50  </FONT><A NAME="50"></A>    }
+<FONT ID="LN">51  </FONT><A NAME="51"></A>    
+<FONT ID="LN">52  </FONT><A NAME="52"></A>    @Override
+<FONT ID="LN">53  </FONT><A NAME="53"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> onBind() {
+<FONT ID="LN">54  </FONT><A NAME="54"></A>        <FONT ID="Super">super</FONT>.onBind();
+<FONT ID="LN">55  </FONT><A NAME="55"></A>    }
+<FONT ID="LN">56  </FONT><A NAME="56"></A>    
+<FONT ID="LN">57  </FONT><A NAME="57"></A>    @Override
+<FONT ID="LN">58  </FONT><A NAME="58"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> onReset() {
+<FONT ID="LN">59  </FONT><A NAME="59"></A>        <FONT ID="Super">super</FONT>.onReset();
+<FONT ID="LN">60  </FONT><A NAME="60"></A>        getView().getDniTexbox().setText(dni);
+<FONT ID="LN">61  </FONT><A NAME="61"></A>        getView().getNombresTexbox().setText(nombres);
+<FONT ID="LN">62  </FONT><A NAME="62"></A>        getView().getApellidosTexbox().setText(apellidos);      
+<FONT ID="LN">63  </FONT><A NAME="63"></A>    }
+<FONT ID="LN">64  </FONT><A NAME="64"></A>}
+<FONT ID="LN">65  </FONT><A NAME="65"></A></pre>
+</BODY>
+</HTML>

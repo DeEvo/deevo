@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>com.deevo.java.server.actionhandler.NuevoAlumnoActionHandler (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">NuevoAlumnoActionHandler.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> com.deevo.java.server.actionhandler;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">com.deevo.java.client.action.NuevoAlumno</A>;
+<FONT ID="LN">5   </FONT><A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumnoResult.java.html">com.deevo.java.client.action.NuevoAlumnoResult</A>;
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="Import">import</FONT> com.deevo.java.server.model.dao.AlumnoDao;
+<FONT ID="LN">7   </FONT><A NAME="7"></A><FONT ID="Import">import</FONT> com.deevo.java.server.model.dao.AulaDao;
+<FONT ID="LN">8   </FONT><A NAME="8"></A><FONT ID="Import">import</FONT> com.deevo.java.server.model.dao.ColegioDao;
+<FONT ID="LN">9   </FONT><A NAME="9"></A><FONT ID="Import">import</FONT> com.deevo.java.server.model.dao.FamiliaDao;
+<FONT ID="LN">10  </FONT><A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/model/dao/PersonaDao.java.html">com.deevo.java.server.model.dao.PersonaDao</A>;
+<FONT ID="LN">11  </FONT><A NAME="11"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/Alumno.java.html">com.deevo.java.shared.Alumno</A>;
+<FONT ID="LN">12  </FONT><A NAME="12"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/Aula.java.html">com.deevo.java.shared.Aula</A>;
+<FONT ID="LN">13  </FONT><A NAME="13"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/Colegio.java.html">com.deevo.java.shared.Colegio</A>;
+<FONT ID="LN">14  </FONT><A NAME="14"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/Familia.java.html">com.deevo.java.shared.Familia</A>;
+<FONT ID="LN">15  </FONT><A NAME="15"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/FamiliaPK.java.html">com.deevo.java.shared.FamiliaPK</A>;
+<FONT ID="LN">16  </FONT><A NAME="16"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/shared/Persona.java.html">com.deevo.java.shared.Persona</A>;
+<FONT ID="LN">17  </FONT><A NAME="17"></A><FONT ID="Import">import</FONT> com.google.inject.Inject;
+<FONT ID="LN">18  </FONT><A NAME="18"></A><FONT ID="Import">import</FONT> com.gwtplatform.dispatch.server.ExecutionContext;
+<FONT ID="LN">19  </FONT><A NAME="19"></A><FONT ID="Import">import</FONT> com.gwtplatform.dispatch.shared.ActionException;
+<FONT ID="LN">20  </FONT><A NAME="20"></A>
+<FONT ID="LN">21  </FONT><A NAME="21"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> NuevoAlumnoActionHandler <FONT ID="Implements">implements</FONT>
+<FONT ID="LN">22  </FONT><A NAME="22"></A>        ActionHandler&lt;<A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A>, <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumnoResult.java.html">NuevoAlumnoResult</A>&gt; {
+<FONT ID="LN">23  </FONT><A NAME="23"></A>
+<FONT ID="LN">24  </FONT><A NAME="24"></A>    @Inject
+<FONT ID="LN">25  </FONT><A NAME="25"></A>    <FONT ID="Public">public</FONT> NuevoAlumnoActionHandler() {
+<FONT ID="LN">26  </FONT><A NAME="26"></A>    }
+<FONT ID="LN">27  </FONT><A NAME="27"></A>
+<FONT ID="LN">28  </FONT><A NAME="28"></A>    @Override
+<FONT ID="LN">29  </FONT><A NAME="29"></A>    <FONT ID="Public">public</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumnoResult.java.html">NuevoAlumnoResult</A> execute(<A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A> action, ExecutionContext context)
+<FONT ID="LN">30  </FONT><A NAME="30"></A>            <FONT ID="Throws">throws</FONT> ActionException {
+<FONT ID="LN">31  </FONT><A NAME="31"></A>        <A HREF="../../../../../com/deevo/java/server/model/dao/PersonaDao.java.html">PersonaDao</A> personadao = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/server/model/dao/PersonaDao.java.html">PersonaDao</A>();
+<FONT ID="LN">32  </FONT><A NAME="32"></A>        <A HREF="../../../../../com/deevo/java/shared/Persona.java.html">Persona</A> persona = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/shared/Persona.java.html">Persona</A>();
+<FONT ID="LN">33  </FONT><A NAME="33"></A>        AlumnoDao alumnodao = <FONT ID="New">new</FONT> AlumnoDao();
+<FONT ID="LN">34  </FONT><A NAME="34"></A>        <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">Alumno</A> alumno = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">Alumno</A>();
+<FONT ID="LN">35  </FONT><A NAME="35"></A>        FamiliaDao familiadao = <FONT ID="New">new</FONT> FamiliaDao();
+<FONT ID="LN">36  </FONT><A NAME="36"></A>        <A HREF="../../../../../com/deevo/java/shared/Familia.java.html">Familia</A> familia = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/shared/Familia.java.html">Familia</A>();
+<FONT ID="LN">37  </FONT><A NAME="37"></A>        <A HREF="../../../../../com/deevo/java/shared/FamiliaPK.java.html">FamiliaPK</A> familiapk = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/shared/FamiliaPK.java.html">FamiliaPK</A>();
+<FONT ID="LN">38  </FONT><A NAME="38"></A>        AulaDao auladao = <FONT ID="New">new</FONT> AulaDao();
+<FONT ID="LN">39  </FONT><A NAME="39"></A>        <A HREF="../../../../../com/deevo/java/shared/Aula.java.html">Aula</A> aula= <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/shared/Aula.java.html">Aula</A>();
+<FONT ID="LN">40  </FONT><A NAME="40"></A>        ColegioDao colegiodao = <FONT ID="New">new</FONT> ColegioDao();
+<FONT ID="LN">41  </FONT><A NAME="41"></A>        <A HREF="../../../../../com/deevo/java/shared/Colegio.java.html">Colegio</A> colegio = <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/shared/Colegio.java.html">Colegio</A>();
+<FONT ID="LN">42  </FONT><A NAME="42"></A>        <FONT ID="Try">try</FONT> {
+<FONT ID="LN">43  </FONT><A NAME="43"></A>            persona.setPerDir(action.getDni());
+<FONT ID="LN">44  </FONT><A NAME="44"></A>            persona = personadao.retrievePersona(persona);
+<FONT ID="LN">45  </FONT><A NAME="45"></A>            alumno.setPersona(persona);
+<FONT ID="LN">46  </FONT><A NAME="46"></A>            alumno.setCodMinedu(action.getCodMinedu());
+<FONT ID="LN">47  </FONT><A NAME="47"></A>            <FONT ID="SingleLineComment">//registro de aula
+<FONT ID="LN">48  </FONT><A NAME="48"></A></FONT>            aula.setCodAula(Integer.parseInt(action.getCod_aula()));
+<FONT ID="LN">49  </FONT><A NAME="49"></A>            aula = auladao.retrieveAula(aula);
+<FONT ID="LN">50  </FONT><A NAME="50"></A>            alumno.getAulas().add(aula);
+<FONT ID="LN">51  </FONT><A NAME="51"></A>            <FONT ID="SingleLineComment">//creacion del alumno
+<FONT ID="LN">52  </FONT><A NAME="52"></A></FONT>            alumno = alumnodao.createAlumno(alumno);
+<FONT ID="LN">53  </FONT><A NAME="53"></A>            <FONT ID="SingleLineComment">//registro de padres
+<FONT ID="LN">54  </FONT><A NAME="54"></A></FONT>            <FONT ID="If">if</FONT>(action.getDni_madre() != <FONT ID="Null">null</FONT>){
+<FONT ID="LN">55  </FONT><A NAME="55"></A>                familiapk.setPerA(action.getDni_padre());
+<FONT ID="LN">56  </FONT><A NAME="56"></A>                familiapk.setPerB(persona.getPerDni());
+<FONT ID="LN">57  </FONT><A NAME="57"></A>                familia.setId(familiapk);
+<FONT ID="LN">58  </FONT><A NAME="58"></A>                familia.setFamDes(<FONT ID="StringLiteral">"Padre"</FONT>);
+<FONT ID="LN">59  </FONT><A NAME="59"></A>                familiadao.createFamilia(familia);
+<FONT ID="LN">60  </FONT><A NAME="60"></A>            }
+<FONT ID="LN">61  </FONT><A NAME="61"></A>            <FONT ID="If">if</FONT>(action.getDni_padre() != <FONT ID="Null">null</FONT>){
+<FONT ID="LN">62  </FONT><A NAME="62"></A>                familiapk.setPerA(action.getDni_madre());
+<FONT ID="LN">63  </FONT><A NAME="63"></A>                familiapk.setPerB(persona.getPerDni());
+<FONT ID="LN">64  </FONT><A NAME="64"></A>                familia.setId(familiapk);
+<FONT ID="LN">65  </FONT><A NAME="65"></A>                familia.setFamDes(<FONT ID="StringLiteral">"Madre"</FONT>);
+<FONT ID="LN">66  </FONT><A NAME="66"></A>                familiadao.createFamilia(familia);
+<FONT ID="LN">67  </FONT><A NAME="67"></A>            }
+<FONT ID="LN">68  </FONT><A NAME="68"></A>            
+<FONT ID="LN">69  </FONT><A NAME="69"></A>        } <FONT ID="Catch">catch</FONT> (Throwable e) {
+<FONT ID="LN">70  </FONT><A NAME="70"></A>            <FONT ID="SingleLineComment">// TODO Auto-generated catch block
+<FONT ID="LN">71  </FONT><A NAME="71"></A></FONT>            e.printStackTrace();
+<FONT ID="LN">72  </FONT><A NAME="72"></A>            <FONT ID="Throw">throw</FONT> <FONT ID="New">new</FONT> ActionException(<FONT ID="StringLiteral">"Solicitar ayuda al administrador"</FONT>);
+<FONT ID="LN">73  </FONT><A NAME="73"></A>        }
+<FONT ID="LN">74  </FONT><A NAME="74"></A>        <FONT ID="Return">return</FONT> <FONT ID="New">new</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumnoResult.java.html">NuevoAlumnoResult</A>(<FONT ID="StringLiteral">"EXITO"</FONT>);
+<FONT ID="LN">75  </FONT><A NAME="75"></A>    }
+<FONT ID="LN">76  </FONT><A NAME="76"></A>
+<FONT ID="LN">77  </FONT><A NAME="77"></A>    @Override
+<FONT ID="LN">78  </FONT><A NAME="78"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> undo(<A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A> action, <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumnoResult.java.html">NuevoAlumnoResult</A> result,
+<FONT ID="LN">79  </FONT><A NAME="79"></A>            ExecutionContext context) <FONT ID="Throws">throws</FONT> ActionException {
+<FONT ID="LN">80  </FONT><A NAME="80"></A>    }
+<FONT ID="LN">81  </FONT><A NAME="81"></A>
+<FONT ID="LN">82  </FONT><A NAME="82"></A>    @Override
+<FONT ID="LN">83  </FONT><A NAME="83"></A>    <FONT ID="Public">public</FONT> Class&lt;<A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A>&gt; getActionType() {
+<FONT ID="LN">84  </FONT><A NAME="84"></A>        <FONT ID="Return">return</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A>.<FONT ID="Class">class</FONT>;
+<FONT ID="LN">85  </FONT><A NAME="85"></A>    }
+<FONT ID="LN">86  </FONT><A NAME="86"></A>}
+<FONT ID="LN">87  </FONT><A NAME="87"></A></pre>
+</BODY>
+</HTML>

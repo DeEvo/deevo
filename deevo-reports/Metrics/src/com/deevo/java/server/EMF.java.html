@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>com.deevo.java.server.EMF (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">EMF.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> com.deevo.java.server;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> javax.persistence.EntityManagerFactory;
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> javax.persistence.Persistence;
+<FONT ID="LN">5   </FONT><A NAME="5"></A>
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="Public">public</FONT> <FONT ID="Final">final</FONT> <FONT ID="Class">class</FONT> EMF {
+<FONT ID="LN">7   </FONT><A NAME="7"></A>    <FONT ID="Private">private</FONT> <FONT ID="Static">static</FONT> EntityManagerFactory emfInstance = <FONT ID="Null">null</FONT>;
+<FONT ID="LN">8   </FONT><A NAME="8"></A>        
+<FONT ID="LN">9   </FONT><A NAME="9"></A>
+<FONT ID="LN">10  </FONT><A NAME="10"></A>    <FONT ID="Private">private</FONT> EMF() {}
+<FONT ID="LN">11  </FONT><A NAME="11"></A>
+<FONT ID="LN">12  </FONT><A NAME="12"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> EntityManagerFactory get() {
+<FONT ID="LN">13  </FONT><A NAME="13"></A>        <FONT ID="If">if</FONT> (emfInstance == <FONT ID="Null">null</FONT> || ! emfInstance.isOpen()) {
+<FONT ID="LN">14  </FONT><A NAME="14"></A>                emfInstance = Persistence.createEntityManagerFactory(<FONT ID="StringLiteral">"deevo"</FONT>);
+<FONT ID="LN">15  </FONT><A NAME="15"></A>        }
+<FONT ID="LN">16  </FONT><A NAME="16"></A>        <FONT ID="Return">return</FONT> emfInstance;
+<FONT ID="LN">17  </FONT><A NAME="17"></A>    }
+<FONT ID="LN">18  </FONT><A NAME="18"></A>}
+<FONT ID="LN">19  </FONT><A NAME="19"></A></pre>
+</BODY>
+</HTML>
