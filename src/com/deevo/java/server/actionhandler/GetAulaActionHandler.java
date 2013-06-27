@@ -77,7 +77,7 @@ public class GetAulaActionHandler implements
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new GetAulaResult(cod_seccion, seccion_desc, cod_grado, grado_descrip, cod_aula,grado_descrip_filtro);
+		return new GetAulaResult( seccion_desc, grado_descrip, cod_aula,grado_descrip_filtro);
 	}
 
 	@Override
