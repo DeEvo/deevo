@@ -7,11 +7,8 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.deevo.java.client.action.NuevoPadre;
 import com.deevo.java.client.action.NuevoPadreResult;
-<<<<<<< master
-=======
 import com.deevo.java.client.action.NuevoProfesor;
 import com.deevo.java.client.action.NuevoProfesorResult;
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 import com.deevo.java.client.event.BuscarSourceEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
@@ -36,34 +33,20 @@ public class NuevoRolPadrePresenter	extends
 		public TextBox getApellidosTexbox();
 		public Button getBuscarButton();
 		public Button getCrearButton();
-<<<<<<< master
 		public Button getCrearehijoButton();
 		public Button getCancelarButoon();
-=======
-		public Button getCrearasinarButton();
-		public Button getCancelarButton();
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	}
 
 	@ProxyCodeSplit
 	@NameToken(NameTokens.nuevorolpadre)
 	public interface MyProxy extends ProxyPlace<NuevoRolPadrePresenter> {
 	}
-<<<<<<< master
-	
-=======
-
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	@Inject BuscarPopupPresenter buscarPopPresenter;
 	private EventBus eventbus;
 	@Inject
 	public NuevoRolPadrePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
 		super(eventBus, view, proxy);
-<<<<<<< master
-		this.eventbus=  eventBus;
-=======
 		this.eventbus = eventBus;
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	}
 
 	@Override
@@ -74,12 +57,9 @@ public class NuevoRolPadrePresenter	extends
 	private String dni ="";
 	private String nombres ="";
 	private String apellidos ="";
-<<<<<<< master
 	private Boolean padre_bio;
-=======
 	
 	@Inject DispatchAsync dispatchAsync;
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
@@ -88,9 +68,7 @@ public class NuevoRolPadrePresenter	extends
 		nombres= request.getParameter("nombres", "");
 		apellidos= request.getParameter("apaterno", "") +" "+ request.getParameter("amaterno", "");
 	}
-	
-	@Inject DispatchAsync async;
-	
+		
 	@Override
 	protected void onBind() {
 		super.onBind();
@@ -112,7 +90,7 @@ public class NuevoRolPadrePresenter	extends
 				// TODO Auto-generated method stub
 				NuevoPadre nuevopadre = new NuevoPadre(
 						getView().getDniTexbox().getText(),
-						"");
+						"", padre_bio);
 				dispatchAsync.execute(nuevopadre, getnuevopadreAsyncCallback);
 			}
 		});
@@ -133,36 +111,8 @@ public class NuevoRolPadrePresenter	extends
 				addToPopupSlot(buscarPopPresenter);	
 			}
 		});
-		
-		getView().getCrearButton().addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				padre_bio = true;
-				NuevoPadre nuevopadre = new NuevoPadre(
-						getView().getDniTexbox().getText(),
-						"",
-						padre_bio);
-				async.execute(nuevopadre, getAsyncCallback);
-			}
-		});
 	}
-	
-<<<<<<< master
-	private AsyncCallback<NuevoPadreResult> getAsyncCallback = new AsyncCallback<NuevoPadreResult>() {
 
-		@Override
-		public void onFailure(Throwable caught) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onSuccess(NuevoPadreResult result) {
-			Window.alert(result.getMensaje());
-		}
-		
-		
-=======
 	protected void onHide(){
 		super.onHide();
 		getView().getDniTexbox().setText("");
@@ -183,6 +133,5 @@ public class NuevoRolPadrePresenter	extends
 			Window.alert(result.getMensaje());
 			
 		}
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	};
 }

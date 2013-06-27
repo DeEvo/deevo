@@ -21,14 +21,8 @@ public class NuevoRolPadreView extends ViewImpl implements
 	@UiField TextBox apellidosTexbox;
 	@UiField Button buscarButton;
 	@UiField Button crearButton;
-<<<<<<< master
 	@UiField Button crearehijoButton;
-	@UiField Button cancelarButoon;
-=======
-	@UiField Button crearasinarButton;
-	@UiField Button  cancelarButton;
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
-	
+	@UiField Button cancelarButton;
 
 	@Inject
 	public NuevoRolPadreView(final Binder binder) {
@@ -64,20 +58,11 @@ public class NuevoRolPadreView extends ViewImpl implements
 		return crearButton;
 	}
 
-<<<<<<< master
 	public Button getCrearehijoButton() {
 		return crearehijoButton;
 	}
 
 	public Button getCancelarButoon() {
-		return cancelarButoon;
-=======
-	public Button getCrearasinarButton() {
-		return crearasinarButton;
-	}
-
-	public Button getCancelarButton() {
 		return cancelarButton;
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	}
 }

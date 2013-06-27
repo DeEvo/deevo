@@ -123,18 +123,10 @@
 	    						<g:Button width="110px" styleName="layout" text="Aceptar" ui:field="crearButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-<<<<<<< master
 	    						<g:Button ui:field="crearehijoButton" text="Aceptar / Nuevo Alumno" width="165px" styleName="layout">Crear e ingresar hijo al sistema</g:Button>
-=======
-	    						<g:Button ui:field="crearasinarButton" text="Aceptar / Nuevo Alumno" width="165px" styleName="layout">Crear e ingresar hijo al sistema</g:Button>
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	    					</g:customCell>
 	    					<g:customCell>
-<<<<<<< master
-	    						<g:Button ui:field="cancelarButoon" width="90px" text="Cancelar" styleName="layout"/>
-=======
 	    						<g:Button ui:field="cancelarButton" width="90px" text="Cancelar" styleName="layout"/>
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
