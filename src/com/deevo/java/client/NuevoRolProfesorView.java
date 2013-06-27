@@ -115,6 +115,6 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@Override
 	public Widget asWidget() {
 		// TODO Auto-generated method stub
-		return null;
+		return widget;
 	}
 }
