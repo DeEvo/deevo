@@ -155,6 +155,7 @@ public class NuevoRolAlumnoPresenter extends
 		@Override
 		public void onSuccess(GetAulaResult result) {
 			int i;
+			getView().getGradoListbox().clear();
 			for(i=0;i< result.getGrado_descrip_filtro().size();i++){
 				getView().getGradoListbox().addItem(result.getGrado_descrip_filtro().get(i));
 			}

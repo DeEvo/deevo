@@ -70,16 +70,16 @@
 	    						<g:Grid width="100%" styleName="layout">
 	    							<g:row>
 	    								<g:customCell>
-	    									<g:Label text="Curso" width="154px" styleName="labelFormulario"/>
+	    									<g:CheckBox text="Curso" width="154px" styleName="labelFormulario" ui:field="buscarcursoCheckbox"/>
 	    								</g:customCell>
 	    								<g:customCell>
-	    									<g:TextBox width="200px"/>
+	    									<g:TextBox width="200px" ui:field="cursoTextbox"/>
 	    								</g:customCell>
 	    								<g:customCell>
 	    									<g:Button  width="80px" text="Buscar" styleName="layout" ui:field="buscarcursoButton"/>
 	    								</g:customCell>
 	    								<g:customCell>
-	    									<g:Button styleName="layout" width="106px" text="Limpiar Tabla"></g:Button>
+	    									<g:Button styleName="layout" width="106px" text="Limpiar Tabla" ui:field="limpiartablaButton"></g:Button>
 	    								</g:customCell>
 	    							</g:row>
 	    						</g:Grid>
@@ -95,15 +95,14 @@
 	    									</g:ScrollPanel>
 	    								</g:customCell>
 	    								<g:customCell>
-	    									<g:Button text="&lt;-"/>
+	    									<g:Button text="&lt;-" ui:field="quitarcursoBoton"/>
 	    								</g:customCell>
 	    								<g:customCell>
-	    									<g:Button text="-&gt;"/>
+	    									<g:Button text="-&gt;" ui:field="asignarcursoBoton"/>
 	    								</g:customCell>
 	    								<g:customCell>
 	    									<g:ScrollPanel height="90px" width="300px">
 	    										<p1:CellTable width="100%" height="100%" ui:field="cellTable_1"/>
-	    										
 	    									</g:ScrollPanel>
 	    								</g:customCell>
 	    							</g:row>
@@ -123,7 +122,7 @@
 	    			<g:Grid width="100%" height="100%" styleName="layout">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Descripcion" width="" styleName="labelFormulario"/>
+	    						<g:CheckBox text="Descripcion" width="" styleName="labelFormulario" ui:field="descripcionCheckbox"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:TextArea width="400px" ui:field="txtadescripcion" height="30px"/>
@@ -144,7 +143,7 @@
 	    						<g:Button width="100px" styleName="layout" text="Aceptar" ui:field="crearButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
+	    						<g:Button width="100px" text="Cancelar" styleName="layout" ui:field="cancelarButton"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>

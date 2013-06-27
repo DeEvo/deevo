@@ -151,8 +151,15 @@ public class BuscarPopupPresenter extends
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }
-		            
-		            
+		            if (origen == "nuevorolprofesor"){
+		            	PlaceRequest request = new PlaceRequest(NameTokens.nuevorolprofesor).with(
+									"dni", dni).with(
+									"nombres", nombre).with(
+									"apaterno", apaterno).with(
+									"amaterno", amaterno);				
+						placeManager.revealPlace(request);
+						getView().getCancelarButton().click();
+		            }
 				}catch (Exception a){
 					Window.alert ("Seleccion un registro de la tabla, si esta vacia busque con otro termino");
 				} 
