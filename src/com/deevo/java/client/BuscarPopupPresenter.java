@@ -218,16 +218,9 @@ public class BuscarPopupPresenter extends
 		getView().getCellTable().addColumn(apaternocolumn, "A.Paterno");
 		getView().getCellTable().addColumn(amaternocolumn, "A.Materno");
 		//getView().getCellTable().addColumn(usuarioocolumn, "Usuario");
-<<<<<<< master
 		//agragando selecciones
 		getView().getCellTable().setSelectionModel(selection);
 		dataProvider.addDataDisplay(getView().getCellTable());
-		
-=======
-		//asiganado seleccion
-		getView().getCellTable().setSelectionModel(selection);	
-		dataProvider.addDataDisplay(getView().getCellTable());
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	}
 
 	@Override
@@ -242,11 +235,6 @@ public class BuscarPopupPresenter extends
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
-<<<<<<< master
-				
-=======
-			
->>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 			List<P> list = dataProvider.getList();
 			list.clear();
 			List<P> listap = new ArrayList<P>();
