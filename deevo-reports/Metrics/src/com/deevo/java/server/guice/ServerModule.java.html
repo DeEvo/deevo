@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>com.deevo.java.server.guice.ServerModule (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">ServerModule.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> com.deevo.java.server.guice;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> com.gwtplatform.dispatch.server.guice.HandlerModule;
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevaPersona.java.html">com.deevo.java.client.action.NuevaPersona</A>;
+<FONT ID="LN">5   </FONT><A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoLogin.java.html">com.deevo.java.client.action.NuevoLogin</A>;
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoLoginActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoLoginActionHandler</A>;
+<FONT ID="LN">7   </FONT><A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevaPersonaActionHandler.java.html">com.deevo.java.server.actionhandler.NuevaPersonaActionHandler</A>;
+<FONT ID="LN">8   </FONT><A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoColegio.java.html">com.deevo.java.client.action.NuevoColegio</A>;
+<FONT ID="LN">9   </FONT><A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoColegioActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoColegioActionHandler</A>;
+<FONT ID="LN">10  </FONT><A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoPrivilegio.java.html">com.deevo.java.client.action.NuevoPrivilegio</A>;
+<FONT ID="LN">11  </FONT><A NAME="11"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPrivilegioActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoPrivilegioActionHandler</A>;
+<FONT ID="LN">12  </FONT><A NAME="12"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/GetPersona.java.html">com.deevo.java.client.action.GetPersona</A>;
+<FONT ID="LN">13  </FONT><A NAME="13"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/GetPersonaActionHandler.java.html">com.deevo.java.server.actionhandler.GetPersonaActionHandler</A>;
+<FONT ID="LN">14  </FONT><A NAME="14"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/GetCursos.java.html">com.deevo.java.client.action.GetCursos</A>;
+<FONT ID="LN">15  </FONT><A NAME="15"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/GetCursosActionHandler.java.html">com.deevo.java.server.actionhandler.GetCursosActionHandler</A>;
+<FONT ID="LN">16  </FONT><A NAME="16"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoProfesor.java.html">com.deevo.java.client.action.NuevoProfesor</A>;
+<FONT ID="LN">17  </FONT><A NAME="17"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoProfesorActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoProfesorActionHandler</A>;
+<FONT ID="LN">18  </FONT><A NAME="18"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoPsicologo.java.html">com.deevo.java.client.action.NuevoPsicologo</A>;
+<FONT ID="LN">19  </FONT><A NAME="19"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPsicologoActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoPsicologoActionHandler</A>;
+<FONT ID="LN">20  </FONT><A NAME="20"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">com.deevo.java.client.action.NuevoAlumno</A>;
+<FONT ID="LN">21  </FONT><A NAME="21"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoAlumnoActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoAlumnoActionHandler</A>;
+<FONT ID="LN">22  </FONT><A NAME="22"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/NuevoPadre.java.html">com.deevo.java.client.action.NuevoPadre</A>;
+<FONT ID="LN">23  </FONT><A NAME="23"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPadreActionHandler.java.html">com.deevo.java.server.actionhandler.NuevoPadreActionHandler</A>;
+<FONT ID="LN">24  </FONT><A NAME="24"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/client/action/GetAula.java.html">com.deevo.java.client.action.GetAula</A>;
+<FONT ID="LN">25  </FONT><A NAME="25"></A><FONT ID="Import">import</FONT> <A HREF="../../../../../com/deevo/java/server/actionhandler/GetAulaActionHandler.java.html">com.deevo.java.server.actionhandler.GetAulaActionHandler</A>;
+<FONT ID="LN">26  </FONT><A NAME="26"></A>
+<FONT ID="LN">27  </FONT><A NAME="27"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> ServerModule <FONT ID="Extends">extends</FONT> HandlerModule {
+<FONT ID="LN">28  </FONT><A NAME="28"></A>
+<FONT ID="LN">29  </FONT><A NAME="29"></A>    @Override
+<FONT ID="LN">30  </FONT><A NAME="30"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> configureHandlers() {
+<FONT ID="LN">31  </FONT><A NAME="31"></A>
+<FONT ID="LN">32  </FONT><A NAME="32"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevaPersona.java.html">NuevaPersona</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevaPersonaActionHandler.java.html">NuevaPersonaActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">33  </FONT><A NAME="33"></A>
+<FONT ID="LN">34  </FONT><A NAME="34"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoLogin.java.html">NuevoLogin</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoLoginActionHandler.java.html">NuevoLoginActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">35  </FONT><A NAME="35"></A>
+<FONT ID="LN">36  </FONT><A NAME="36"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoColegio.java.html">NuevoColegio</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoColegioActionHandler.java.html">NuevoColegioActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">37  </FONT><A NAME="37"></A>
+<FONT ID="LN">38  </FONT><A NAME="38"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoPrivilegio.java.html">NuevoPrivilegio</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPrivilegioActionHandler.java.html">NuevoPrivilegioActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">39  </FONT><A NAME="39"></A>
+<FONT ID="LN">40  </FONT><A NAME="40"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/GetPersona.java.html">GetPersona</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/GetPersonaActionHandler.java.html">GetPersonaActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">41  </FONT><A NAME="41"></A>
+<FONT ID="LN">42  </FONT><A NAME="42"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/GetCursos.java.html">GetCursos</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/GetCursosActionHandler.java.html">GetCursosActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">43  </FONT><A NAME="43"></A>
+<FONT ID="LN">44  </FONT><A NAME="44"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoProfesor.java.html">NuevoProfesor</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoProfesorActionHandler.java.html">NuevoProfesorActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">45  </FONT><A NAME="45"></A>
+<FONT ID="LN">46  </FONT><A NAME="46"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoPsicologo.java.html">NuevoPsicologo</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPsicologoActionHandler.java.html">NuevoPsicologoActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">47  </FONT><A NAME="47"></A>
+<FONT ID="LN">48  </FONT><A NAME="48"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoAlumno.java.html">NuevoAlumno</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoAlumnoActionHandler.java.html">NuevoAlumnoActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">49  </FONT><A NAME="49"></A>
+<FONT ID="LN">50  </FONT><A NAME="50"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/NuevoPadre.java.html">NuevoPadre</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/NuevoPadreActionHandler.java.html">NuevoPadreActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">51  </FONT><A NAME="51"></A>
+<FONT ID="LN">52  </FONT><A NAME="52"></A>        bindHandler(<A HREF="../../../../../com/deevo/java/client/action/GetAula.java.html">GetAula</A>.<FONT ID="Class">class</FONT>, <A HREF="../../../../../com/deevo/java/server/actionhandler/GetAulaActionHandler.java.html">GetAulaActionHandler</A>.<FONT ID="Class">class</FONT>);
+<FONT ID="LN">53  </FONT><A NAME="53"></A>    }
+<FONT ID="LN">54  </FONT><A NAME="54"></A>}
+<FONT ID="LN">55  </FONT><A NAME="55"></A></pre>
+</BODY>
+</HTML>
