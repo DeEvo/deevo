@@ -5,12 +5,12 @@
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.cellview.client">
 
-	<g:HTMLPanel styleName="layout" height="400px" width="100%">
-		<g:Grid width="100%" height="400px" styleName="layout">
+	<g:HTMLPanel styleName="fondoBienvenida" height="100%" width="100%">
+		<g:Grid width="100%" height="" styleName="layout">
 			<g:row>
 				<g:customCell>
 					<g:Label text="Busqueda Avanzada" styleName="tituloFormulario"
-						height="31px" />
+						height="31px" horizontalAlignment="ALIGN_CENTER" />
 				</g:customCell>
 			</g:row>
 			<g:row>
@@ -24,7 +24,7 @@
 					<g:Grid width="100%" cellPadding="6" height="80px">
 						<g:row>
 							<g:customCell>
-								<g:CheckBox text="Apellido Paterno" styleName="labelFormulario" />
+								<g:Label text="Apellido Paterno" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<g:TextBox width="150px" />
@@ -32,7 +32,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox styleName="labelFormulario" text="Apellido Materno" />
+								<g:Label styleName="labelFormulario" text="Apellido Materno" />
 							</g:customCell>
 							<g:customCell>
 								<g:TextBox width="150px" />
@@ -40,7 +40,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox styleName="labelFormulario" text="Nombre" />
+								<g:Label styleName="labelFormulario" text="Nombre" />
 							</g:customCell>
 							<g:customCell>
 								<g:TextBox width="150px" />
@@ -48,7 +48,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox styleName="labelFormulario" text="Genero" />
+								<g:Label styleName="labelFormulario" text="Genero" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="120px">
@@ -63,7 +63,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox text="Nivel" styleName="labelFormulario" />
+								<g:Label text="Nivel" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="200px" ui:field="cicloListbox">
@@ -81,7 +81,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox text="Grado" styleName="labelFormulario" />
+								<g:Label text="Grado" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="200px" ui:field="graListbox">
@@ -99,7 +99,7 @@
 						</g:row>
 						<g:row>
 							<g:customCell>
-								<g:CheckBox text="Sección" styleName="labelFormulario" />
+								<g:Label text="Sección" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
 								<g:ListBox width="200px" ui:field="secListbox">
@@ -139,7 +139,7 @@
 			<g:row>
 				<g:customCell>
 					<g:TextArea width="100%"
-						text="ACA VA CUANTAS PERSONAS BOTO LA BUSQUEDA" />
+						text="Personas encontradas en Busqueda:" />
 				</g:customCell>
 			</g:row>
 			<g:row>

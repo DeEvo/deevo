@@ -27,22 +27,22 @@
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button width="130px" text="Cambiar Foto" styleName="layout" height="30px"/>
+														<g:Button width="150px" text="Cambiar Foto" styleName="layout" height="40px"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Editar información" width="125px" styleName="layout"/>
+														<g:Button text="Editar información" width="150px" styleName="layout" height="40px"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Cambiar contraseña" width="136px" styleName="layout"/>
+														<g:Button text="Cambiar contraseña" width="150px" styleName="layout" height="40px"/>
 													</g:customCell>
 												</g:row>
 												<g:row>
 													<g:customCell>
-														<g:Button text="Detalle de Roles" styleName="layout">Detalle de Usuario</g:Button>
+														<g:Button text="Detalle de Roles" styleName="layout" width="150px" height="40px">Detalle de Usuario</g:Button>
 													</g:customCell>
 												</g:row>
 												<g:row/>

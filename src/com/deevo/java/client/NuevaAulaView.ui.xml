@@ -26,10 +26,10 @@
 					<g:Grid width="100%" cellPadding="6" >
 						<g:row>
 							<g:customCell>
-								<g:Label text="Colegio(Autocompletado)" styleName="labelFormulario" />
+								<g:Label text="Colegio" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:TextBox width="200px" ui:field="colegioTexbox" maxLength="80" />
+								<g:TextBox width="200px" ui:field="colegioTexbox" maxLength="80" enabled="false" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -37,7 +37,7 @@
 								<g:Label text="Periodo*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:ListBox width="200px" ui:field="periListbox">
+								<g:ListBox width="150px" ui:field="periListbox">
 									<g:item value='1'>
 										2013
 									</g:item>
@@ -52,7 +52,7 @@
 								<g:Label text="Ciclo*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:ListBox width="200px" ui:field="cicloListbox">
+								<g:ListBox width="150px" ui:field="cicloListbox">
 									<g:item value='1'>
 										Inicial
 									</g:item>
@@ -70,7 +70,7 @@
 								<g:Label text="Grado*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:ListBox width="200px" ui:field="graListbox">
+								<g:ListBox width="150px" ui:field="graListbox">
 									<g:item value='1'>
 										--------
 									</g:item>
@@ -88,7 +88,7 @@
 								<g:Label text="Sección*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:ListBox width="200px" ui:field="secListbox">
+								<g:ListBox width="150px" ui:field="secListbox">
 									<g:item value='1'>
 										---------
 									</g:item>
