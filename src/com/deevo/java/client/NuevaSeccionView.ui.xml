@@ -7,7 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel styleName="fondoBienvenida" width="100%" height="100%">
-		<g:Grid width="100%" styleName="cuadroBorde" height="100%">
+		<g:Grid width="100%" styleName="layout" height="">
 			<g:row>
 				<g:customCell>
 					<g:Label text="Nueva Sección" styleName="tituloFormulario"
@@ -38,6 +38,7 @@
 					</g:Grid>
 				</g:customCell>
 			</g:row>
+			<g:row/>
 			<g:row>
 				<g:customCell>
 					<g:Grid width="100%" height="100%" styleName="layoutarriba"

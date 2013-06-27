@@ -7,7 +7,7 @@
 	ui:generateLocales='default'>
 
 	<g:HTMLPanel styleName="fondoBienvenida" width="100%" height="100%">
-		<g:Grid width="100%" styleName="cuadroBorde" height="100%">
+		<g:Grid width="100%" styleName="layout" height="">
 			<g:row>
 				<g:customCell>
 					<g:Label text="Nuevo Curso" styleName="tituloFormulario"
@@ -29,7 +29,7 @@
 								<g:Label text="Nombre*" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:IntegerBox width="150px" ui:field="nomTexbox" maxLength="30" visibleLength="30" />
+								<g:IntegerBox width="200px" ui:field="nomTexbox" maxLength="30" visibleLength="30" />
 							</g:customCell>
 						</g:row>
 						<g:row>
@@ -64,7 +64,7 @@
 								<g:Label text="Descripción" styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>
-								<g:IntegerBox width="150px" ui:field="descrTexbox" maxLength="80" visibleLength="80" />
+								<g:IntegerBox width="200px" ui:field="descrTexbox" maxLength="80" visibleLength="80" />
 							</g:customCell>
 						</g:row>
 											
