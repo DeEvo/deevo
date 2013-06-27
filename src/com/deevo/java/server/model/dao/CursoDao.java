@@ -111,4 +111,22 @@ public boolean existeCurso(Curso curso) {
 		    return curso2;
 		  }
 
+		  @SuppressWarnings("unchecked")
+			public List<Curso> retrieveCursosxNombre(String curNom) throws Throwable{
+				  
+			    EntityManager em = EMF.get().createEntityManager();	
+			    List<Curso> list = null;
+			   
+			    try {
+			    	String qery = "SELECT x FROM Curso x WHERE x.curNom LIKE :nom ORDER BY x.curNom";
+		            list= em.createQuery(qery).setParameter("nom", "%" +curNom+ "%").getResultList();
+		          //  list = q.getResultList();
+			    }catch(Throwable t){
+			    	t.printStackTrace();
+			        throw t;
+		        } finally {
+		            em.close();
+		        }
+		        return list;
+			  }
 }

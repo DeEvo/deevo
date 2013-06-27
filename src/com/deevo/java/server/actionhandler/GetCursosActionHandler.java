@@ -1,5 +1,6 @@
 package com.deevo.java.server.actionhandler;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwtplatform.dispatch.server.actionhandler.ActionHandler;
@@ -21,16 +22,28 @@ public class GetCursosActionHandler implements
 	@Override
 	public GetCursosResult execute(GetCursos action, ExecutionContext context)
 			throws ActionException {
-		
 		CursoDao cursodao = new CursoDao();
-		List<Curso> cursos = null;
+		List<Curso> cursos = new ArrayList<Curso>();
+		List<String> codCur = new ArrayList<String>();
+		List<String> curDes = new ArrayList<String>();
+		List<String> curNom = new ArrayList<String>();
+		List<String> curTip = new ArrayList<String>();
+		
 		try {
-			 cursos = cursodao.retrieveCursos();
+			 cursos = cursodao.retrieveCursosxNombre(action.getCur_nom());
+			 int i =0;
+			 while(i< cursos.size()){
+				 codCur.add(String.valueOf(cursos.get(i).getCodCur()));
+				 curDes.add(cursos.get(i).getCurDes());
+				 curNom.add(cursos.get(i).getCurNom());
+				 curTip.add(cursos.get(i).getCurTip());
+				 i++;
+			 }
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new GetCursosResult(cursos);
+		return new GetCursosResult(codCur, curDes, curNom, curTip);
 	}
 
 	@Override

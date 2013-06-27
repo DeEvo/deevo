@@ -1,5 +1,6 @@
 package com.deevo.java.client;
 
+import com.deevo.java.client.NuevoRolProfesorPresenter.C;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -29,13 +30,14 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField TextBox usuarioTexbox;
 	@UiField TextBox  cursoTextbox;
 	@UiField TextArea txtadescripcion;
-	@UiField(provided=true) CellTable<Object> cellTable = new CellTable<Object>();
-	@UiField(provided=true) CellTable<Object> cellTable_1 = new CellTable<Object>();
+	@UiField(provided=true) CellTable<C> cellTable = new CellTable<C>();
+	@UiField(provided=true) CellTable<C> cellTable_1 = new CellTable<C>();
 	@UiField Button quitarcursoBoton;
 	@UiField Button asignarcursoBoton;
 	@UiField CheckBox buscarcursoCheckbox;
 	@UiField CheckBox descripcionCheckbox;
 	@UiField Button limpiartablaButton;
+	@UiField Button buscarcursoButton;
 	
 	@Inject
 	public NuevoRolProfesorView(final Binder binder) {
@@ -58,14 +60,6 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	public Button getCrearButton() {
 		// TODO Auto-generated method stub
 		return crearButton;
-	}
-
-	public CellTable<Object> getCellTable() {
-		return cellTable;
-	}
-	
-	public CellTable<Object> getCellTable_1() {
-		return cellTable_1;
 	}
 	
 	public TextBox getContraTexbox() {
@@ -116,5 +110,21 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	public Widget asWidget() {
 		// TODO Auto-generated method stub
 		return widget;
+	}
+
+	public Widget getWidget() {
+		return widget;
+	}
+
+	public CellTable<C> getCellTable() {
+		return cellTable;
+	}
+
+	public CellTable<C> getCellTable_1() {
+		return cellTable_1;
+	}
+
+	public Button getBuscarcursoButton() {
+		return buscarcursoButton;
 	}
 }
