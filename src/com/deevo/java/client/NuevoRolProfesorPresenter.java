@@ -97,20 +97,7 @@ public class NuevoRolProfesorPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-	
-	@Inject DispatchAsync async;
-	
-	@Override
-	protected void onReset() {
-		super.onReset();
-		getView().getDniTexbox().setText(dni);
-		getView().getNombresTexbox().setText(nombres);
-		getView().getApellidosTexbox().setText(apellidos); 
-		
-		//Columnas
-		
-		
+
 		TextColumn<C> cod_curcolumn = new TextColumn<C>() {
 			@Override
 			public String getValue(C s) {
@@ -187,7 +174,7 @@ public class NuevoRolProfesorPresenter extends
 		getView().getCellTable_1().setSelectionModel(selection_1);
 		dataProvider_1.addDataDisplay(getView().getCellTable_1());
 		
-	  //nombres de tabla
+	  //nombres de ta bla
 	  getView().getCellTable().setTitle("Cursos Buscados");
 	  getView().getCellTable_1().setTitle("Cursos Asigandos");
 	  // busquead de cursos
@@ -205,8 +192,11 @@ public class NuevoRolProfesorPresenter extends
 		@Override
 		public void onClick(ClickEvent event) {
 			List<C> list = dataProvider_1.getList();
-			list.add(selection.getSelectedObject());
-			cod_cur.add(selection.getSelectedObject().getCod_cur());	
+			if(!list.contains(selection.getSelectedObject())){
+				list.add(selection.getSelectedObject());
+				cod_cur.add(selection.getSelectedObject().getCod_cur());	
+			}
+			
 		}
 	}); 
 	 //quitar cursos de la lista
@@ -219,8 +209,31 @@ public class NuevoRolProfesorPresenter extends
 			cod_cur.remove(selection_1.getSelectedObject().getCod_cur());
 		}
 	});
-	  
 	}
+	
+	@Inject DispatchAsync async;
+	
+	@Override
+	protected void onReset() {
+		super.onReset();
+		getView().getDniTexbox().setText(dni);
+		getView().getNombresTexbox().setText(nombres);
+		getView().getApellidosTexbox().setText(apellidos); 
+	}
+	 protected void onHide(){
+		 super.onHide();
+		 getView().getDniTexbox().setText("");
+		 getView().getNombresTexbox().setText("");
+		 getView().getApellidosTexbox().setText("");
+		 getView().getCursoTextbox().setText("");
+		 getView().getBuscarcursoCheckbox().setValue(false);
+		 getView().getTxtadescripcion().setText("");
+		 List<C> list = dataProvider.getList();
+		 List<C> list1 = dataProvider_1.getList();
+		 list.clear();
+		 list1.clear();
+	 }
+	
 	
 	private AsyncCallback<NuevoProfesorResult> getAsyncCallback = new AsyncCallback<NuevoProfesorResult>() {
 

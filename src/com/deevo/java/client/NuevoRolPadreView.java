@@ -3,7 +3,7 @@ package com.deevo.java.client;
 import com.gwtplatform.mvp.client.ViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -16,10 +16,20 @@ public class NuevoRolPadreView extends ViewImpl implements
 	public interface Binder extends UiBinder<Widget, NuevoRolPadreView> {
 	}
 
-	@UiField IntegerBox dniTexbox;
+	@UiField TextBox dniTexbox;
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
+	@UiField Button buscarButton;
+	@UiField Button crearButton;
+<<<<<<< master
+	@UiField Button crearehijoButton;
+	@UiField Button cancelarButoon;
+=======
+	@UiField Button crearasinarButton;
+	@UiField Button  cancelarButton;
+>>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	
+
 	@Inject
 	public NuevoRolPadreView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
@@ -30,7 +40,7 @@ public class NuevoRolPadreView extends ViewImpl implements
 		return widget;
 	}
 	
-	public IntegerBox getDniTexbox() {
+	public TextBox getDniTexbox() {
 		return dniTexbox;
 	}
 
@@ -42,4 +52,32 @@ public class NuevoRolPadreView extends ViewImpl implements
 		return apellidosTexbox;
 	}
 
+	public Widget getWidget() {
+		return widget;
+	}
+
+	public Button getBuscarButton() {
+		return buscarButton;
+	}
+
+	public Button getCrearButton() {
+		return crearButton;
+	}
+
+<<<<<<< master
+	public Button getCrearehijoButton() {
+		return crearehijoButton;
+	}
+
+	public Button getCancelarButoon() {
+		return cancelarButoon;
+=======
+	public Button getCrearasinarButton() {
+		return crearasinarButton;
+	}
+
+	public Button getCancelarButton() {
+		return cancelarButton;
+>>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
+	}
 }

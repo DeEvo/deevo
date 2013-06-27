@@ -27,9 +27,15 @@ public class NuevoPadreActionHandler implements
 		PadreFamiliaDao padrefamiliadao = new PadreFamiliaDao();
 
 		try {
-			persona.setPerDir(action.getDni());
+			persona.setPerDni(action.getDni());
 			persona = personadao.retrievePersona(persona);
 			padrefamilia.setPersona(persona);
+			if(action.getPadre_bio()){
+				padrefamilia.setPadBio((byte)1);
+			}else{
+				padrefamilia.setPadBio((byte)0);
+			}
+			padrefamilia.setPadCant(0);
 			padrefamiliadao.createPadreFamilia(padrefamilia);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block

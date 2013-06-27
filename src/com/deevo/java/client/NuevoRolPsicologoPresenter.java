@@ -91,15 +91,7 @@ public class NuevoRolPsicologoPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-	
-	@Override
-	protected void onReset() {
-		super.onReset();
-		getView().getDniTexbox().setText(dni);
-		getView().getNombresTexbox().setText(nombres);
-		getView().getApellidosTexbox().setText(apellidos);	
-		
+
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
@@ -144,9 +136,7 @@ public class NuevoRolPsicologoPresenter extends
 			}
 		});
 		
-		//llemnado lso combobox
-		GetAula action= new GetAula("1");
-		dispatchAsync.execute(action, getaulaCallback);
+
 		//filtrando secciones por grado
 		getView().getGradoListbox().addClickHandler(new ClickHandler() {
 			@Override
@@ -161,7 +151,29 @@ public class NuevoRolPsicologoPresenter extends
 				}
 			}
 		});
+	}
+	
+	@Override
+	protected void onReset() {
+		super.onReset();
+		getView().getDniTexbox().setText(dni);
+		getView().getNombresTexbox().setText(nombres);
+		getView().getApellidosTexbox().setText(apellidos);	
+		//llemnado lso combobox
+		GetAula action= new GetAula("1");
+		dispatchAsync.execute(action, getaulaCallback);
 				
+	}
+	
+	protected void onHide(){
+		super.onHide();
+		getView().getDniTexbox().setText("");
+		getView().getNombresTexbox().setText("");
+		getView().getApellidosTexbox().setText("");	
+		getView().getAulaCheckbox().setValue(false);
+		getView().getDescripcionTextarea().setText("");
+		getView().getGradoListbox().clear();
+		getView().getSeccionListbox().clear();
 	}
 	
 	private AsyncCallback<NuevoPsicologoResult> nuevopsicologoCallback = new AsyncCallback<NuevoPsicologoResult>(){
@@ -183,7 +195,6 @@ public class NuevoRolPsicologoPresenter extends
 		@Override
 		public void onFailure(Throwable caught) {
 			// TODO Auto-generated method stub
-			
 		}
 
 		@Override

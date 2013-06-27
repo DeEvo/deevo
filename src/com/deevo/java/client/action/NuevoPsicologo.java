@@ -1,6 +1,6 @@
 package com.deevo.java.client.action;
 
-import com.google.gwt.user.client.ui.IntegerBox;
+
 import com.gwtplatform.dispatch.shared.ActionImpl;
 import com.deevo.java.client.action.NuevoPsicologoResult;
 import java.lang.String;

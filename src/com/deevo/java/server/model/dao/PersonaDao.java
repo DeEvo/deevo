@@ -17,7 +17,7 @@ public class PersonaDao {
 
 	
 	
-	public boolean existeAula(Persona persona) {
+	public boolean existePersona(Persona persona) {
 			
 			EntityManager em = EMF.get().createEntityManager();
 			Persona persona2= null;

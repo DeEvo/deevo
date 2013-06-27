@@ -159,7 +159,26 @@ public class BuscarPopupPresenter extends
 									"amaterno", amaterno);				
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
+		            }   
+		            if (origen == "nuevorolpadre"){
+		            	PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with(
+									"dni", dni).with(
+									"nombres", nombre).with(
+									"apaterno", apaterno).with(
+									"amaterno", amaterno);				
+						placeManager.revealPlace(request);
+						getView().getCancelarButton().click();
 		            }
+		            if (origen == "nuevorolpadre"){
+		            	PlaceRequest request = new PlaceRequest(NameTokens.nuevorolpadre).with(
+									"dni", dni).with(
+									"nombres", nombre).with(
+									"apaterno", apaterno).with(
+									"amaterno", amaterno);				
+						placeManager.revealPlace(request);
+						getView().getCancelarButton().click();
+		            }
+		            
 				}catch (Exception a){
 					Window.alert ("Seleccion un registro de la tabla, si esta vacia busque con otro termino");
 				} 
@@ -199,31 +218,37 @@ public class BuscarPopupPresenter extends
 		getView().getCellTable().addColumn(apaternocolumn, "A.Paterno");
 		getView().getCellTable().addColumn(amaternocolumn, "A.Materno");
 		//getView().getCellTable().addColumn(usuarioocolumn, "Usuario");
+<<<<<<< master
+		//agragando selecciones
+		getView().getCellTable().setSelectionModel(selection);
+		dataProvider.addDataDisplay(getView().getCellTable());
 		
+=======
+		//asiganado seleccion
+		getView().getCellTable().setSelectionModel(selection);	
+		dataProvider.addDataDisplay(getView().getCellTable());
+>>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 	}
 
 	@Override
 	protected void onReset() {
 		super.onReset();
-
+		List<P> list = dataProvider.getList();
+		list.clear();
+		getView().getLimpiarButton().click();
 	}
 	
 	private AsyncCallback<GetPersonaResult> getpersonaCallback = new AsyncCallback<GetPersonaResult>() {
 		
 		@Override
 		public void onSuccess(GetPersonaResult result) {
-			/*ListDataProvider<P> dataProvider = new ListDataProvider<P>();
+<<<<<<< master
+				
+=======
 			
-			SingleSelectionModel<P> selection = new SingleSelectionModel<P>();
-			getView().getCellTable().setSelectionModel(selection);
-			
-			dataProvider.addDataDisplay(getView().getCellTable());*/
-			
-			getView().getCellTable().setSelectionModel(selection);
-			
-			dataProvider.addDataDisplay(getView().getCellTable());
-			
+>>>>>>> f3fb4ab ya esta arreglado el Git Local Ivan
 			List<P> list = dataProvider.getList();
+			list.clear();
 			List<P> listap = new ArrayList<P>();
 			int i =0;
 			while(i< result.getDni().size()){

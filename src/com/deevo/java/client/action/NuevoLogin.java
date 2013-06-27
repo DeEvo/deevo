@@ -13,7 +13,12 @@ public class NuevoLogin extends ActionImpl<NuevoLoginResult> {
 	public NuevoLogin() {
 		// For serialization only
 	}
-
+	
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	public NuevoLogin(String user, String pass) {
 		this.user = user;
 		this.pass = pass;

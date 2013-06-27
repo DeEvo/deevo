@@ -68,7 +68,7 @@ public class NuevoRolAlumnoPresenter extends
 	//Listas
 	private List<String> seccion_desc = null;
 	private List<String> grado_descrip = null;
-	private List<String> cod_aula = null;
+	private List<String> cod_aula = null; 
 	private List<String> grado_descrip_filtro = null; 
 	//Aula
 	private String aula = null; 
@@ -84,22 +84,7 @@ public class NuevoRolAlumnoPresenter extends
 	@Override
 	protected void onBind() {
 		super.onBind();
-	}
-	
-	@Inject DispatchAsync dispatchAsync;
-	
-	@Override
-	protected void onReset() {
-		super.onReset();
-		getView().getDniTexbox().setText(dni);
-		getView().getNombresTexbox().setText(nombres);
-		getView().getApellidosTexbox().setText(apellidos);
-		
-		//llemnado lso combobox
-		GetAula action= new GetAula("1");
-		dispatchAsync.execute(action, getaulaCallback);
 
-		
 		getView().getBuscarButton().addClickHandler(new ClickHandler() {
 			
 			@Override
@@ -141,7 +126,28 @@ public class NuevoRolAlumnoPresenter extends
 				}
 			}
 		});
+	}
+	
+	@Inject DispatchAsync dispatchAsync;
+	
+	@Override
+	protected void onReset() {
+		super.onReset();
+		getView().getDniTexbox().setText(dni);
+		getView().getNombresTexbox().setText(nombres);
+		getView().getApellidosTexbox().setText(apellidos);
 		
+		GetAula action= new GetAula("1");
+		dispatchAsync.execute(action, getaulaCallback);	
+	}
+	
+	protected void onHide(){
+		super.onHide();
+		getView().getDniTexbox().setText("");
+		getView().getNombresTexbox().setText("");
+		getView().getApellidosTexbox().setText("");
+		getView().getGradoListbox().clear();
+		getView().getSeccionListbox().clear();
 	}
 	
 	private AsyncCallback<GetAulaResult> getaulaCallback = new AsyncCallback<GetAulaResult>() {

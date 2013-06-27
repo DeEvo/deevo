@@ -14,7 +14,12 @@ public class NuevoPrivilegio extends ActionImpl<NuevoPrivilegioResult> {
 	private NuevoPrivilegio() {
 		// For serialization only
 	}
-
+	
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	public NuevoPrivilegio(String pri_nom, String pri_fun, String pri_des) {
 		this.pri_nom = pri_nom;
 		this.pri_fun = pri_fun;

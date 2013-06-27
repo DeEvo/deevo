@@ -18,7 +18,12 @@ public class NuevoColegio extends ActionImpl<NuevoColegioResult> {
 	private NuevoColegio() {
 		// For serialization only
 	}
-
+	
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	public NuevoColegio(String col_nom, String col_dir, Integer col_telf,
 			String col_ugel, String col_sector, String col_distri) {
 		this.col_nom = col_nom;

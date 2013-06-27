@@ -17,7 +17,7 @@ public class NuevoProfesor extends ActionImpl<NuevoProfesorResult> {
 	private NuevoProfesor() {
 		// For serialization only
 	}
-	
+
 	@Override
 	public boolean isSecured() {
 		// TODO Auto-generated method stub
@@ -40,7 +40,7 @@ public class NuevoProfesor extends ActionImpl<NuevoProfesorResult> {
 		return proDes;
 	}
 
-	public List getCursos() {
+	public List<String> getCursos() {
 		return Cursos;
 	}
 

@@ -18,6 +18,11 @@ public class NuevoAlumno extends ActionImpl<NuevoAlumnoResult> {
 		// For serialization only
 	}
 
+	@Override
+	public boolean isSecured() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	public NuevoAlumno(String dni, String dni_padre, String dni_madre,String codMinedu, String admin_user) {
 		this.dni = dni;
 		this.codMinedu = codMinedu;
