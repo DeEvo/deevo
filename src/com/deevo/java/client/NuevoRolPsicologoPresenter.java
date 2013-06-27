@@ -72,9 +72,7 @@ public class NuevoRolPsicologoPresenter extends
 	private String nombres ="";
 	private String apellidos ="";
 	//lsitas necesarias
-	private List<String> cod_seccion = null;
 	private List<String> seccion_desc = null;
-	private List<String> cod_grado = null;
 	private List<String> grado_descrip = null;
 	private List<String> cod_aula = null;
 	private List<String> grado_descrip_filtro = null; 
@@ -195,9 +193,7 @@ public class NuevoRolPsicologoPresenter extends
 			for(i=0;i< result.getGrado_descrip_filtro().size();i++){
 				getView().getGradoListbox().addItem(result.getGrado_descrip_filtro().get(i));
 			}
-			cod_seccion = result.getCod_seccion();
 			seccion_desc = result.getSeccion_desc();
-			cod_grado = result.getCod_grado();
 			grado_descrip = result.getGrado_descrip();
 			cod_aula = result.getCod_aula();
 			grado_descrip_filtro = result.getGrado_descrip_filtro();
