@@ -10,13 +10,11 @@ import com.deevo.java.client.action.GetAulaResult;
 import com.deevo.java.server.model.dao.AulaDao;
 import com.deevo.java.server.model.dao.ColegioDao;
 import com.deevo.java.server.model.dao.GradoDao;
-import com.deevo.java.server.model.dao.GradoSeccionDao;
 import com.deevo.java.server.model.dao.PeriodoAcademicoDao;
 import com.deevo.java.server.model.dao.SeccionDao;
 import com.deevo.java.shared.Aula;
 import com.deevo.java.shared.Colegio;
 import com.deevo.java.shared.Grado;
-import com.deevo.java.shared.GradoSeccion;
 import com.deevo.java.shared.PeriodoAcademico;
 import com.deevo.java.shared.Seccion;
 import com.google.inject.Inject;
@@ -49,6 +47,8 @@ public class GetAulaActionHandler implements
 		List<String> cod_grado = new ArrayList<String>();
 		List<String> grado_descrip = new ArrayList<String>();
 		List<String> cod_aula = new ArrayList<String>();
+		List<String> grado_descrip_filtro = new ArrayList<String>();
+		List<String> seccion_desc_filtro = new ArrayList<String>();
 		try {
 			colegio.setCodCol(Integer.parseInt(action.getCod_col()));
 			colegio = colegiodao.retrieveColegio(colegio);
@@ -67,12 +67,17 @@ public class GetAulaActionHandler implements
 				cod_aula.add(String.valueOf(aulalist.get(i).getCodAula()));
 				i++;
 			}
-			
+			// filtro de grados
+			i=0;
+			while(i< grado_descrip.size()){
+				if(!grado_descrip_filtro.contains(grado_descrip.get(i))) grado_descrip_filtro.add(grado_descrip.get(i));
+				i++;
+			}
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new GetAulaResult(cod_seccion, seccion_desc, cod_grado, grado_descrip, cod_aula);
+		return new GetAulaResult(cod_seccion, seccion_desc, cod_grado, grado_descrip, cod_aula,grado_descrip_filtro);
 	}
 
 	@Override

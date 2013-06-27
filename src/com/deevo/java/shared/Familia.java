@@ -21,12 +21,12 @@ public class Familia implements Serializable {
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="per_a")
+	@JoinColumn(name="per_a", insertable=false, updatable=false)
 	private Persona persona1;
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="per_b")
+	@JoinColumn(name="per_b" , insertable=false, updatable=false)
 	private Persona persona2;
 
 	public Familia() {

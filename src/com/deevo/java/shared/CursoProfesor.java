@@ -28,23 +28,23 @@ public class CursoProfesor implements Serializable {
 	@JoinTable(
 		name="CURSO_PROFESOR_AULA"
 		, joinColumns={
-			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur"),
-			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod")
+			@JoinColumn(name="cod_cur", referencedColumnName="cod_cur", insertable=false, updatable=false),
+			@JoinColumn(name="pro_cod", referencedColumnName="pro_cod", insertable=false, updatable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="cod_aula")
+			@JoinColumn(name="cod_aula", insertable=false, updatable=false)
 			}
 		)
 	private List<Aula> aulas;
 
 	//bi-directional many-to-one association to Curso
 	@ManyToOne
-	@JoinColumn(name="cod_cur")
+	@JoinColumn(name="cod_cur", insertable=false, updatable=false)
 	private Curso curso;
 
 	//bi-directional many-to-one association to Profesor
 	@ManyToOne
-	@JoinColumn(name="pro_cod")
+	@JoinColumn(name="pro_cod", insertable=false, updatable=false)
 	private Profesor profesor;
 
 	public CursoProfesor() {

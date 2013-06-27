@@ -18,17 +18,17 @@ public class UsuarioPrivilegio implements Serializable {
 
 	//bi-directional many-to-one association to Colegio
 	@ManyToOne
-	@JoinColumn(name="cod_col")
+	@JoinColumn(name="cod_col", insertable=false, updatable=false)
 	private Colegio colegio;
 
 	//bi-directional many-to-one association to Privilegio
 	@ManyToOne
-	@JoinColumn(name="pri_cod")
+	@JoinColumn(name="pri_cod", insertable=false, updatable=false)
 	private Privilegio privilegio;
 
 	//bi-directional many-to-one association to Usuario
 	@ManyToOne
-	@JoinColumn(name="usur_cod")
+	@JoinColumn(name="usur_cod", insertable=false, updatable=false)
 	private Usuario usuario;
 
 	public UsuarioPrivilegio() {

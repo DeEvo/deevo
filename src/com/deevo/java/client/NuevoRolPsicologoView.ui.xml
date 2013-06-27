@@ -67,7 +67,10 @@
 	    			<g:Grid width="100%" height="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox text="Descripción" width="200px" styleName="labelFormulario"/>
+	    						<g:Label text="Descripción" width="200px" styleName="labelFormulario"/>
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextArea  ui:field="descripcionTextarea"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
@@ -78,7 +81,8 @@
 	    			<g:Grid width="100%" height="100%" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:CheckBox name="new name" text="Asignar Aula" styleName="labelFormulario" width="200px"/>
+	    						<g:CheckBox name="new name" text="Asignar Aula" styleName="labelFormulario" width="200px"
+	    						ui:field="aulaCheckbox"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
@@ -132,13 +136,13 @@
 	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="6">
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Button width="120px" text="Buscar Usuario" styleName="layout" ui:field="crearButton"/>
+	    						<g:Button width="120px" text="Buscar Usuario" styleName="layout" ui:field="buscarButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
 	    						<g:Button width="100px" text="Aceptar" styleName="layout" ui:field="asignarButton"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:Button width="100px" text="Cancelar" styleName="layout"/>
+	    						<g:Button width="100px" text="Cancelar" styleName="layout" ui:field="cancelarButton"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>

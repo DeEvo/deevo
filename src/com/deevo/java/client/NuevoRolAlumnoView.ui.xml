@@ -134,7 +134,8 @@
 									ui:field="crearButton" />
 							</g:customCell>
 							<g:customCell>
-								<g:Button width="100px" text="Cancelar" styleName="layout" />
+								<g:Button width="100px" text="Cancelar" styleName="layout" 
+								ui:field="cancelarButton" />
 							</g:customCell>
 						</g:row>
 					</g:Grid>

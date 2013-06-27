@@ -15,7 +15,7 @@ public class Psicologo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="psi_cod")
 	private int psiCod;
 
@@ -92,7 +92,13 @@ public class Psicologo implements Serializable {
 	public void setColegios(List<Colegio> colegios) {
 		this.colegios = colegios;
 	}
+	
+	public Colegio addColegio(Colegio colegio) {
+		this.colegios.add(colegio);
+		return colegio;
+	}
 
+	
 	public Persona getPersona() {
 		return this.persona;
 	}

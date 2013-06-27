@@ -131,5 +131,4 @@ public boolean existePeriodoAcademico(PeriodoAcademico periodoacademico) {
 			    }
 			    return list;
 			  }   
-
 }

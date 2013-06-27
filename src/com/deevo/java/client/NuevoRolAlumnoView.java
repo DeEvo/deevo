@@ -25,6 +25,9 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 	@UiField TextBox MinediTextBox;
 	@UiField ListBox seccionListbox;
 	@UiField ListBox gradoListbox;
+	@UiField Button  crearButton;
+	@UiField Button  cancelarButton;	
+	
 	@Inject
 	public NuevoRolAlumnoView(final Binder binder) {
 		widget = binder.createAndBindUi(this);
@@ -61,5 +64,13 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 
 	public ListBox getGradoListbox() {
 		return gradoListbox;
+	}
+
+	public Button getCrearButton() {
+		return crearButton;
+	}
+
+	public Button getCancelarButton() {
+		return cancelarButton;
 	}
 }

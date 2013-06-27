@@ -1,17 +1,35 @@
 package com.deevo.java.client;
 
+import java.util.List;
+
+import com.gwtplatform.dispatch.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.NameToken;
+import com.deevo.java.client.action.NuevaPersonaResult;
+import com.deevo.java.client.event.BuscarSourceEvent;
 import com.deevo.java.client.place.NameTokens;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.google.inject.Inject;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.IntegerBox;
+import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
+import com.deevo.java.client.action.GetAula;
+import com.deevo.java.client.action.GetAulaResult;
+import com.deevo.java.client.action.NuevaPersona;
+import com.deevo.java.client.action.NuevoPsicologo;
+import com.deevo.java.client.action.NuevoPsicologoResult;
 
 public class NuevoRolPsicologoPresenter extends
 		Presenter<NuevoRolPsicologoPresenter.MyView, NuevoRolPsicologoPresenter.MyProxy> {
@@ -20,6 +38,13 @@ public class NuevoRolPsicologoPresenter extends
 		public IntegerBox getDniTexbox();
 		public TextBox getNombresTexbox();
 		public TextBox getApellidosTexbox();
+		public CheckBox getAulaCheckbox();
+		public TextArea getDescripcionTextarea();
+		public Button getBuscarButton();
+		public Button getAsignarButton();
+		public Button getCancelarButton();
+		public ListBox getGradoListbox();
+		public ListBox getSeccionListbox();
 	}
 
 	@ProxyCodeSplit
@@ -27,10 +52,15 @@ public class NuevoRolPsicologoPresenter extends
 	public interface MyProxy extends ProxyPlace<NuevoRolPsicologoPresenter> {
 	}
 
+	@Inject DispatchAsync dispatchAsync;
+	
+	@Inject BuscarPopupPresenter buscarPopPresenter;
+	private EventBus eventbus;
 	@Inject
 	public NuevoRolPsicologoPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy) {
 		super(eventBus, view, proxy);
+		this.eventbus = eventBus;
 	}
 
 	@Override
@@ -41,7 +71,17 @@ public class NuevoRolPsicologoPresenter extends
 	private String dni ="";
 	private String nombres ="";
 	private String apellidos ="";
+	//lsitas necesarias
+	private List<String> cod_seccion = null;
+	private List<String> seccion_desc = null;
+	private List<String> cod_grado = null;
+	private List<String> grado_descrip = null;
+	private List<String> cod_aula = null;
+	private List<String> grado_descrip_filtro = null; 
+	//Aula
+	private String aula = null; 
 	
+
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
@@ -60,6 +100,107 @@ public class NuevoRolPsicologoPresenter extends
 		super.onReset();
 		getView().getDniTexbox().setText(dni);
 		getView().getNombresTexbox().setText(nombres);
-		getView().getApellidosTexbox().setText(apellidos);		
+		getView().getApellidosTexbox().setText(apellidos);	
+		
+		getView().getBuscarButton().addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpsicologo");
+				NuevoRolPsicologoPresenter.this.eventbus.fireEvent(eventbuscar);
+				//buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
+				addToPopupSlot(buscarPopPresenter);
+			}
+		});
+		
+		getView().getAsignarButton().addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				String des = null;
+				des = "";
+				if(!getView().getDescripcionTextarea().getText().isEmpty()){
+					des = getView().getDescripcionTextarea().getText();
+				}
+				//obtener el aula
+				int i =0;
+				while(i< grado_descrip.size()){
+					if(grado_descrip.get(i).equals(getView().getGradoListbox().getValue(getView().getGradoListbox().getSelectedIndex()))){
+						if(seccion_desc.get(i).equals(getView().getSeccionListbox().getValue(getView().getSeccionListbox().getSelectedIndex()))){
+							aula = cod_aula.get(i);
+						}
+					}	
+					i++;
+				}
+				//ver si se asigna aula
+				Boolean f = false;
+				if(getView().getAulaCheckbox().isAttached()) f= true;
+				
+				//ejecucion con la bs
+				NuevoPsicologo action = new NuevoPsicologo( 
+						des,
+						getView().getDniTexbox().getText(),
+						"ivcuervogu",
+						"1",
+						aula,
+						f);
+				dispatchAsync.execute(action, nuevopsicologoCallback);
+			}
+		});
+		
+		//llemnado lso combobox
+		GetAula action= new GetAula("1");
+		dispatchAsync.execute(action, getaulaCallback);
+		//filtrando secciones por grado
+		getView().getGradoListbox().addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				int i=0;
+				getView().getSeccionListbox().clear();
+				while(i< grado_descrip.size()){
+					if(grado_descrip.get(i).equals(getView().getGradoListbox().getValue(getView().getGradoListbox().getSelectedIndex()))){
+						getView().getSeccionListbox().addItem(seccion_desc.get(i));
+					}
+					i++;
+				}
+			}
+		});
+				
 	}
+	
+	private AsyncCallback<NuevoPsicologoResult> nuevopsicologoCallback = new AsyncCallback<NuevoPsicologoResult>(){
+
+		@Override
+		public void onFailure(Throwable caught) {
+			Window.alert("falla");
+		}
+
+		@Override
+		public void onSuccess(NuevoPsicologoResult result) {
+			Window.alert(result.getMensaje());
+		}
+		
+	};
+	
+	private AsyncCallback<GetAulaResult> getaulaCallback = new AsyncCallback<GetAulaResult>() {
+
+		@Override
+		public void onFailure(Throwable caught) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onSuccess(GetAulaResult result) {
+			getView().getGradoListbox().clear();
+			int i;
+			for(i=0;i< result.getGrado_descrip_filtro().size();i++){
+				getView().getGradoListbox().addItem(result.getGrado_descrip_filtro().get(i));
+			}
+			cod_seccion = result.getCod_seccion();
+			seccion_desc = result.getSeccion_desc();
+			cod_grado = result.getCod_grado();
+			grado_descrip = result.getGrado_descrip();
+			cod_aula = result.getCod_aula();
+			grado_descrip_filtro = result.getGrado_descrip_filtro();
+		}
+	};
 }

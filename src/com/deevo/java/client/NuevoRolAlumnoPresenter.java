@@ -20,6 +20,7 @@ import com.google.inject.Inject;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.IntegerBox;
@@ -37,8 +38,10 @@ public class NuevoRolAlumnoPresenter extends
 		public TextBox getMinediTextBox();
 		public ListBox getSeccionListbox();
 		public ListBox getGradoListbox();
+		public Button getCrearButton();
+		public Button getCancelarButton() ;	
 	}
-
+	
 	@ProxyCodeSplit
 	@NameToken(NameTokens.nuevorolalumno)
 	public interface MyProxy extends ProxyPlace<NuevoRolAlumnoPresenter> {
@@ -62,6 +65,15 @@ public class NuevoRolAlumnoPresenter extends
 	private String dni ="";
 	private String nombres ="";
 	private String apellidos ="";
+	//Listas
+	private List<String> cod_seccion = null;
+	private List<String> seccion_desc = null;
+	private List<String> cod_grado = null;
+	private List<String> grado_descrip = null;
+	private List<String> cod_aula = null;
+	private List<String> grado_descrip_filtro = null; 
+	//Aula
+	private String aula = null; 
 	
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
@@ -94,15 +106,43 @@ public class NuevoRolAlumnoPresenter extends
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				// TODO Auto-generated method stub
 				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolalumno");
 				NuevoRolAlumnoPresenter.this.eventbus.fireEvent(eventbuscar);
 				//buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
 				addToPopupSlot(buscarPopPresenter);
 			}
 		});
+		//Filtra el la seccion por cada grado
+		getView().getGradoListbox().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				int i=0;
+				getView().getSeccionListbox().clear();
+				while(i< grado_descrip.size()){
+					if(grado_descrip.get(i).equals(getView().getGradoListbox().getValue(getView().getGradoListbox().getSelectedIndex()))){
+						getView().getSeccionListbox().addItem(seccion_desc.get(i));
+					}
+					i++;
+				}
+			}
+		});
 		
-		
+		getView().getCrearButton().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				int i =0;
+				while(i< grado_descrip.size()){
+					if(grado_descrip.get(i).equals(getView().getGradoListbox().getValue(getView().getGradoListbox().getSelectedIndex()))){
+						if(seccion_desc.get(i).equals(getView().getSeccionListbox().getValue(getView().getSeccionListbox().getSelectedIndex()))){
+							aula = cod_aula.get(i);
+						}
+					}	
+					i++;
+				}
+			}
+		});
 		
 	}
 	
@@ -117,15 +157,15 @@ public class NuevoRolAlumnoPresenter extends
 		@Override
 		public void onSuccess(GetAulaResult result) {
 			int i;
-			for(i=0;i< result.getCod_aula().size();i++){
-				getView().getGradoListbox().addItem(result.getGrado_descrip().get(i));
+			for(i=0;i< result.getGrado_descrip_filtro().size();i++){
+				getView().getGradoListbox().addItem(result.getGrado_descrip_filtro().get(i));
 			}
-			for(i=0;i<result.getCod_seccion().size();i++){
-				getView().getSeccionListbox().addItem(result.getSeccion_desc().get(i));
-			}
+			cod_seccion = result.getCod_seccion();
+			seccion_desc = result.getSeccion_desc();
+			cod_grado = result.getCod_grado();
+			grado_descrip = result.getGrado_descrip();
+			cod_aula = result.getCod_aula();
+			grado_descrip_filtro = result.getGrado_descrip_filtro();
 		}
-	
-	
-	
 	};
 }

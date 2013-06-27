@@ -10,7 +10,6 @@ import javax.persistence.RollbackException;
 import com.deevo.java.server.EMF;
 import com.deevo.java.shared.Aula;
 import com.deevo.java.shared.Colegio;
-import com.deevo.java.shared.GradoSeccion;
 import com.deevo.java.shared.PeriodoAcademico;
 
 
@@ -131,7 +130,8 @@ public void createAula(Aula aula) throws EntityExistsException , Throwable {
 	    }
 	  }
 
-	  public List<Aula> retrieveAulaxCOLxPER(Colegio cole,  PeriodoAcademico peri)  throws Throwable{
+	  @SuppressWarnings("unchecked")
+	public List<Aula> retrieveAulaxCOLxPER(Colegio cole,  PeriodoAcademico peri)  throws Throwable{
 
 			EntityManager em = EMF.get().createEntityManager();
 
@@ -146,5 +146,5 @@ public void createAula(Aula aula) throws EntityExistsException , Throwable {
 		      em.close();
 		    }
 		    return aula;
-		  }   		  
+		  }   	 
 }
