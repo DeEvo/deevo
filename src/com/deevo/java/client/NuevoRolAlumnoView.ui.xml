@@ -74,7 +74,7 @@
 						styleName="layout">
 						<g:row>
 							<g:customCell>
-								<g:CheckBox text="Codigo de MINEDU" width="150px"
+								<g:Label text="Codigo de MINEDU" width="150px"
 									styleName="labelFormulario" />
 							</g:customCell>
 							<g:customCell>

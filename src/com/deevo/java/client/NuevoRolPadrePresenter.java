@@ -21,7 +21,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 
 public class NuevoRolPadrePresenter	extends
@@ -87,11 +86,26 @@ public class NuevoRolPadrePresenter	extends
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				// TODO Auto-generated method stub
 				NuevoPadre nuevopadre = new NuevoPadre(
 						getView().getDniTexbox().getText(),
 						"", padre_bio);
 				dispatchAsync.execute(nuevopadre, getnuevopadreAsyncCallback);
+			}
+		});
+		// crear y asiganar hijos
+		getView().getCrearehijoButton().addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				
+			}
+		});
+		
+		getView().getBuscarButton().addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpadre");
+				NuevoRolPadrePresenter.this.eventbus.fireEvent(eventbuscar);
+				addToPopupSlot(buscarPopPresenter);	
 			}
 		});
 	}
@@ -103,14 +117,7 @@ public class NuevoRolPadrePresenter	extends
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos);	
 		
-		getView().getBuscarButton().addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpadre");
-				NuevoRolPadrePresenter.this.eventbus.fireEvent(eventbuscar);
-				addToPopupSlot(buscarPopPresenter);	
-			}
-		});
+		
 	}
 
 	protected void onHide(){
@@ -124,7 +131,6 @@ public class NuevoRolPadrePresenter	extends
 
 		@Override
 		public void onFailure(Throwable caught) {
-			// TODO Auto-generated method stub
 			
 		}
 

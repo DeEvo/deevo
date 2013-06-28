@@ -35,7 +35,6 @@ public class NuevoRolProfesorView extends ViewImpl implements
 	@UiField Button quitarcursoBoton;
 	@UiField Button asignarcursoBoton;
 	@UiField CheckBox buscarcursoCheckbox;
-	@UiField CheckBox descripcionCheckbox;
 	@UiField Button limpiartablaButton;
 	@UiField Button buscarcursoButton;
 	
@@ -84,10 +83,6 @@ public class NuevoRolProfesorView extends ViewImpl implements
 
 	public CheckBox getBuscarcursoCheckbox() {
 		return buscarcursoCheckbox;
-	}
-
-	public CheckBox getDescripcionCheckbox() {
-		return descripcionCheckbox;
 	}
 
 	public Button getBuscarButton() {

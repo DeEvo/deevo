@@ -1,5 +1,6 @@
 package com.deevo.java.client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.gwtplatform.dispatch.shared.DispatchAsync;
@@ -66,10 +67,10 @@ public class NuevoRolAlumnoPresenter extends
 	private String nombres ="";
 	private String apellidos ="";
 	//Listas
-	private List<String> seccion_desc = null;
-	private List<String> grado_descrip = null;
-	private List<String> cod_aula = null; 
-	private List<String> grado_descrip_filtro = null; 
+	private List<String> seccion_desc = new ArrayList<String>();
+	private List<String> grado_descrip = new ArrayList<String>();
+	private List<String> cod_aula = new ArrayList<String>();
+	private List<String> grado_descrip_filtro = new ArrayList<String>();
 	//Aula
 	private String aula = null; 
 	
@@ -91,7 +92,6 @@ public class NuevoRolAlumnoPresenter extends
 			public void onClick(ClickEvent event) {
 				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolalumno");
 				NuevoRolAlumnoPresenter.this.eventbus.fireEvent(eventbuscar);
-				//buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
 				addToPopupSlot(buscarPopPresenter);
 			}
 		});
@@ -112,7 +112,6 @@ public class NuevoRolAlumnoPresenter extends
 		});
 		
 		getView().getCrearButton().addClickHandler(new ClickHandler() {
-			
 			@Override
 			public void onClick(ClickEvent event) {
 				int i =0;

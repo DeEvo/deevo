@@ -48,10 +48,9 @@ public class NuevoRolProfesorPresenter extends
 		public Button getQuitarcursoBoton();
 		public Button getAsignarcursoBoton();
 		public CheckBox getBuscarcursoCheckbox();
-		public CheckBox getDescripcionCheckbox();
 		public Button getBuscarButton();
 		public Button getCancelarButton();
-		public TextBox getCursoTextbox() ;
+		public TextBox getCursoTextbox();
 		public Button getLimpiartablaButton();
 		public Button getBuscarcursoButton();
 	}
@@ -181,7 +180,6 @@ public class NuevoRolProfesorPresenter extends
 	getView().getBuscarcursoButton().addClickHandler(new ClickHandler() {
 		@Override
 		public void onClick(ClickEvent event) {
-			
 			String cur = getView().getCursoTextbox().getText();
 			GetCursos action= new GetCursos(cur);
 			dispatchAsync.execute(action, getcursosAsyncCallback);
@@ -192,11 +190,16 @@ public class NuevoRolProfesorPresenter extends
 		@Override
 		public void onClick(ClickEvent event) {
 			List<C> list = dataProvider_1.getList();
-			if(!list.contains(selection.getSelectedObject())){
-				list.add(selection.getSelectedObject());
-				cod_cur.add(selection.getSelectedObject().getCod_cur());	
-			}
-			
+			C c = selection.getSelectedObject();
+			if( c!= null){
+				if(!list.contains(selection.getSelectedObject())){
+					list.add(selection.getSelectedObject());
+					cod_cur.add(selection.getSelectedObject().getCod_cur());
+					selection.clear();
+				}else{
+					selection_1.setSelected(selection.getSelectedObject(), true);
+				}
+			}	
 		}
 	}); 
 	 //quitar cursos de la lista
@@ -205,8 +208,22 @@ public class NuevoRolProfesorPresenter extends
 		@Override
 		public void onClick(ClickEvent event) {
 			List<C> list = dataProvider_1.getList();
-			list.remove(selection_1.getSelectedObject());
-			cod_cur.remove(selection_1.getSelectedObject().getCod_cur());
+				C c = selection_1.getSelectedObject();
+				if(c != null){
+					list.remove(selection_1.getSelectedObject());
+					cod_cur.remove(selection_1.getSelectedObject().getCod_cur());
+				}		
+		}
+	});
+	 
+	 getView().getLimpiartablaButton().addClickHandler(new ClickHandler() {
+		
+		@Override
+		public void onClick(ClickEvent event) {
+			List<C> list = dataProvider.getList();
+			if(list != null){
+				list.clear();
+			}
 		}
 	});
 	}
@@ -220,6 +237,8 @@ public class NuevoRolProfesorPresenter extends
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos); 
 	}
+	
+	
 	 protected void onHide(){
 		 super.onHide();
 		 getView().getDniTexbox().setText("");
