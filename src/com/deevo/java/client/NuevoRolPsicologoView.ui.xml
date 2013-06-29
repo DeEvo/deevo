@@ -51,7 +51,7 @@
 	    						<g:Label styleName="labelFormulario" width="198" text="ID Usuario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="200px" ui:field="contraTexbox" enabled="false"/>
+	    						<g:TextBox width="200px" ui:field="usuarioTexbox" enabled="false"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>

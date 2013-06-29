@@ -19,6 +19,7 @@ public class NuevoRolPadreView extends ViewImpl implements
 	@UiField TextBox dniTexbox;
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
+	@UiField TextBox usuarioTexbox;
 	@UiField Button buscarButton;
 	@UiField Button crearButton;
 	@UiField Button crearehijoButton;
@@ -65,4 +66,12 @@ public class NuevoRolPadreView extends ViewImpl implements
 	public Button getCancelarButoon() {
 		return cancelarButton;
 	}
+
+	public TextBox getUsuarioTexbox() {
+		return usuarioTexbox;
+	}
+
+	public Button getCancelarButton() {
+		return cancelarButton;
+	}	
 }

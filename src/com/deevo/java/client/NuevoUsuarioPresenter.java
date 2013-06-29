@@ -139,7 +139,8 @@ public class NuevoUsuarioPresenter extends
 					getView().getDniTexbox().getText(), 
 					getView().getNombresTexbox().getText(),
 					getView().getAppaternTexbox().getText(),
-					getView().getApmaternTexbox().getText());
+					getView().getApmaternTexbox().getText(),
+					result.getUsurCod());
 			NuevoUsuarioPresenter.this.eventbus.fireEvent(event);
 			addToPopupSlot(nuevoUsuarioPopPresenter);
 			}else{

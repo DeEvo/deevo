@@ -40,6 +40,7 @@ public class NuevoUsuarioPopupPresenter extends
 	public static String nombres = null;
 	public static String apaterno = null;
 	public static String amaterno = null;
+	public static String cod_user = null;
 	
 	
 	private MostrarPopupHandler MostrarPopupHandlerd = new MostrarPopupHandler(){
@@ -51,8 +52,8 @@ public class NuevoUsuarioPopupPresenter extends
 			nombres = event.getNombres();
 			apaterno = event.getApaterno();
 			amaterno = event.getAmaterno();
-		}
-		
+			cod_user = event.getCod_user();
+		}		
 	};
 	
 	
@@ -74,7 +75,7 @@ public class NuevoUsuarioPopupPresenter extends
 										"dni", dni).with(
 										"nombres", nombres).with(
 										"apaterno", apaterno).with(
-										"amaterno", amaterno);				
+										"amaterno", amaterno);			
 								placeManager.revealPlace(request);
 							}
 							else if(valor == "padre"){
@@ -82,7 +83,8 @@ public class NuevoUsuarioPopupPresenter extends
 										"dni", dni).with(
 										"nombres", nombres).with(
 										"apaterno", apaterno).with(
-										"amaterno", amaterno);				
+										"amaterno", amaterno).with(
+												"cod_user", cod_user);				
 								placeManager.revealPlace(request);
 							}
 							else if(valor == "psicologo"){
@@ -90,7 +92,8 @@ public class NuevoUsuarioPopupPresenter extends
 										"dni", dni).with(
 										"nombres", nombres).with(
 										"apaterno", apaterno).with(
-										"amaterno", amaterno);					
+										"amaterno", amaterno).with(
+												"cod_user", cod_user);					
 								placeManager.revealPlace(request);
 							}
 							else if(valor == "profesor"){
@@ -98,7 +101,8 @@ public class NuevoUsuarioPopupPresenter extends
 										"dni", dni).with(
 										"nombres", nombres).with(
 										"apaterno", apaterno).with(
-										"amaterno", amaterno);					
+										"amaterno", amaterno).with(
+												"cod_user", cod_user);					
 								placeManager.revealPlace(request);
 							}
 							

@@ -136,6 +136,7 @@ public class NuevoRolAlumnoPresenter extends
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos);
 		
+		
 		GetAula action= new GetAula("1");
 		dispatchAsync.execute(action, getaulaCallback);	
 	}

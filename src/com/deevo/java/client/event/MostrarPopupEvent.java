@@ -14,18 +14,20 @@ public class MostrarPopupEvent extends
 	private String nombres;
 	private String apaterno;
 	private String amaterno;
+	private String cod_user;
 
 	public interface MostrarPopupHandler extends EventHandler {
 		void onMostrarPopup(MostrarPopupEvent event);
 	}
 
 	public MostrarPopupEvent(String valor, String dni, String nombres,
-			String apaterno, String amaterno) {
+			String apaterno, String amaterno, String cod_user) {
 		this.valor = valor;
 		this.dni = dni;
 		this.nombres = nombres;
 		this.apaterno = apaterno;
 		this.amaterno = amaterno;
+		this.cod_user = cod_user;
 	}
 
 	public String getValor() {
@@ -47,6 +49,14 @@ public class MostrarPopupEvent extends
 	public String getAmaterno() {
 		return amaterno;
 	}
+	
+	public static Type<MostrarPopupHandler> getTYPE() {
+		return TYPE;
+	}
+
+	public String getCod_user() {
+		return cod_user;
+	}
 
 	@Override
 	protected void dispatch(MostrarPopupHandler handler) {
@@ -63,8 +73,8 @@ public class MostrarPopupEvent extends
 	}
 
 	public static void fire(HasHandlers source, String valor, String dni,
-			String nombres, String apaterno, String amaterno) {
+			String nombres, String apaterno, String amaterno, String cod_user) {
 		source.fireEvent(new MostrarPopupEvent(valor, dni, nombres, apaterno,
-				amaterno));
+				amaterno,cod_user));
 	}
 }

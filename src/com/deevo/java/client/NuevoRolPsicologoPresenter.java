@@ -39,6 +39,7 @@ public class NuevoRolPsicologoPresenter extends
 		public IntegerBox getDniTexbox();
 		public TextBox getNombresTexbox();
 		public TextBox getApellidosTexbox();
+		public TextBox getUsuarioTexbox(); 
 		public CheckBox getAulaCheckbox();
 		public TextArea getDescripcionTextarea();
 		public Button getBuscarButton();
@@ -72,6 +73,7 @@ public class NuevoRolPsicologoPresenter extends
 	private String dni ="";
 	private String nombres ="";
 	private String apellidos ="";
+	private String cod_user; 
 	//lsitas necesarias
 	private List<String> seccion_desc = new ArrayList<String>();
 	private List<String> grado_descrip = new ArrayList<String>();
@@ -87,6 +89,7 @@ public class NuevoRolPsicologoPresenter extends
 		dni= request.getParameter("dni", "");
 		nombres= request.getParameter("nombres", "");
 		apellidos= request.getParameter("apaterno", "") +" "+ request.getParameter("amaterno", "");
+		cod_user = request.getParameter("cod_user", "");
 	}
 	
 	@Override
@@ -160,6 +163,7 @@ public class NuevoRolPsicologoPresenter extends
 		getView().getDniTexbox().setText(dni);
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos);	
+		getView().getUsuarioTexbox().setText(cod_user);
 		//llemnado lso combobox
 		GetAula action= new GetAula("1");
 		dispatchAsync.execute(action, getaulaCallback);
@@ -171,6 +175,7 @@ public class NuevoRolPsicologoPresenter extends
 		getView().getDniTexbox().setText("");
 		getView().getNombresTexbox().setText("");
 		getView().getApellidosTexbox().setText("");	
+		getView().getUsuarioTexbox().setText("");
 		getView().getAulaCheckbox().setValue(false);
 		getView().getDescripcionTextarea().setText("");
 		getView().getGradoListbox().clear();

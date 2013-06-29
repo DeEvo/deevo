@@ -34,6 +34,8 @@ public class NuevoRolPadrePresenter	extends
 		public Button getCrearButton();
 		public Button getCrearehijoButton();
 		public Button getCancelarButoon();
+		public TextBox getUsuarioTexbox();
+		public Button getCancelarButton();
 	}
 
 	@ProxyCodeSplit
@@ -56,6 +58,7 @@ public class NuevoRolPadrePresenter	extends
 	private String dni ="";
 	private String nombres ="";
 	private String apellidos ="";
+	private String cod_user ="";
 	private Boolean padre_bio;
 	
 	@Inject DispatchAsync dispatchAsync;
@@ -66,6 +69,7 @@ public class NuevoRolPadrePresenter	extends
 		dni= request.getParameter("dni", "");
 		nombres= request.getParameter("nombres", "");
 		apellidos= request.getParameter("apaterno", "") +" "+ request.getParameter("amaterno", "");
+		cod_user = request.getParameter("cod_user", "");
 	}
 		
 	@Override
@@ -116,7 +120,7 @@ public class NuevoRolPadrePresenter	extends
 		getView().getDniTexbox().setText(dni);
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos);	
-		
+		getView().getUsuarioTexbox().setText(cod_user);
 		
 	}
 
@@ -125,6 +129,7 @@ public class NuevoRolPadrePresenter	extends
 		getView().getDniTexbox().setText("");
 		getView().getNombresTexbox().setText("");
 		getView().getApellidosTexbox().setText("");
+		getView().getUsuarioTexbox().setText("");
 	}
 	
 	private AsyncCallback<NuevoPadreResult> getnuevopadreAsyncCallback = new AsyncCallback<NuevoPadreResult>() {

@@ -77,6 +77,7 @@ public class NuevoRolProfesorPresenter extends
 	private String nombres ="";
 	private List<String> cod_cur = new ArrayList<String>();
 	private String apellidos ="";
+	private String cod_user = "";
 	
 	private ListDataProvider<C> dataProvider = new ListDataProvider<C>();
 	private SingleSelectionModel<C> selection = new SingleSelectionModel<C>();
@@ -91,18 +92,19 @@ public class NuevoRolProfesorPresenter extends
 		dni= request.getParameter("dni", "");
 		nombres= request.getParameter("nombres", "");
 		apellidos= request.getParameter("apaterno", "") +" "+ request.getParameter("amaterno", "");
+		cod_user = request.getParameter("cod_user", "");
 	}
 	
 	@Override
 	protected void onBind() {
 		super.onBind();
 
-		TextColumn<C> cod_curcolumn = new TextColumn<C>() {
+		/*TextColumn<C> cod_curcolumn = new TextColumn<C>() {
 			@Override
 			public String getValue(C s) {
 				return s.getCod_cur();
 			}
-		};
+		};*/
 		TextColumn<C> cur_tipcolumn = new TextColumn<C>() {
 			@Override
 			public String getValue(C s) {
@@ -125,12 +127,12 @@ public class NuevoRolProfesorPresenter extends
 		};
 		
 		//Agregando COlumnas
-		getView().getCellTable().addColumn(cod_curcolumn, "Cod_Curso");
+		//getView().getCellTable().addColumn(cod_curcolumn, "Cod_Curso");
 		getView().getCellTable().addColumn(cur_nomcolumn, "Nombre");
 		getView().getCellTable().addColumn(cur_tipcolumn, "Tipo");
 		getView().getCellTable().addColumn(cur_descolumn, "Desc");
 		
-		getView().getCellTable_1().addColumn(cod_curcolumn, "Cod_Curso");
+		//getView().getCellTable_1().addColumn(cod_curcolumn, "Cod_Curso");
 		getView().getCellTable_1().addColumn(cur_nomcolumn, "Nombre");
 		getView().getCellTable_1().addColumn(cur_tipcolumn, "Tipo");
 		getView().getCellTable_1().addColumn(cur_descolumn, "Desc");
@@ -195,6 +197,7 @@ public class NuevoRolProfesorPresenter extends
 				if(!list.contains(selection.getSelectedObject())){
 					list.add(selection.getSelectedObject());
 					cod_cur.add(selection.getSelectedObject().getCod_cur());
+					selection_1.setSelected(selection.getSelectedObject(), true);
 					selection.clear();
 				}else{
 					selection_1.setSelected(selection.getSelectedObject(), true);
@@ -236,6 +239,7 @@ public class NuevoRolProfesorPresenter extends
 		getView().getDniTexbox().setText(dni);
 		getView().getNombresTexbox().setText(nombres);
 		getView().getApellidosTexbox().setText(apellidos); 
+		getView().getUsuarioTexbox().setText(cod_user);
 	}
 	
 	
@@ -244,6 +248,7 @@ public class NuevoRolProfesorPresenter extends
 		 getView().getDniTexbox().setText("");
 		 getView().getNombresTexbox().setText("");
 		 getView().getApellidosTexbox().setText("");
+		 getView().getUsuarioTexbox().setText("");
 		 getView().getCursoTextbox().setText("");
 		 getView().getBuscarcursoCheckbox().setValue(false);
 		 getView().getTxtadescripcion().setText("");

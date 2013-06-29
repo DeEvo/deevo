@@ -23,6 +23,7 @@ public class NuevoRolPsicologoView extends ViewImpl implements
 	@UiField IntegerBox dniTexbox;
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
+	@UiField TextBox usuarioTexbox;
 	@UiField TextArea descripcionTextarea;
 	@UiField Button buscarButton;
 	@UiField Button asignarButton;
@@ -81,4 +82,13 @@ public class NuevoRolPsicologoView extends ViewImpl implements
 	public ListBox getSeccionListbox() {
 		return seccionListbox;
 	}
+
+	public Widget getWidget() {
+		return widget;
+	}
+
+	public TextBox getUsuarioTexbox() {
+		return usuarioTexbox;
+	}
+	
 }
