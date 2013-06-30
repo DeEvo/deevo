@@ -22,11 +22,11 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 	@UiField TextBox nombresTexbox;
 	@UiField TextBox apellidosTexbox;
 	@UiField Button buscarButton;
-	@UiField TextBox MinediTextBox;
+	@UiField TextBox mineduTextBox;
 	@UiField ListBox seccionListbox;
 	@UiField ListBox gradoListbox;
-	@UiField Button  crearButton;
-	@UiField Button  cancelarButton;	
+	@UiField Button crearButton;
+	@UiField Button cancelarButton;	
 	
 	@Inject
 	public NuevoRolAlumnoView(final Binder binder) {
@@ -55,7 +55,7 @@ public class NuevoRolAlumnoView extends ViewImpl implements
 	}
 
 	public TextBox getMinediTextBox() {
-		return MinediTextBox;
+		return mineduTextBox;
 	}
 
 	public ListBox getSeccionListbox() {

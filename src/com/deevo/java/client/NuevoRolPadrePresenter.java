@@ -103,15 +103,7 @@ public class NuevoRolPadrePresenter	extends
 				
 			}
 		});
-		
-		getView().getBuscarButton().addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpadre");
-				NuevoRolPadrePresenter.this.eventbus.fireEvent(eventbuscar);
-				addToPopupSlot(buscarPopPresenter);	
-			}
-		});
+
 	}
 	
 	@Override
