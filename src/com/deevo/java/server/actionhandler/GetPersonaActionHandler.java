@@ -8,6 +8,7 @@ import com.deevo.java.client.action.GetPersona;
 import com.deevo.java.client.action.GetPersonaResult;
 import com.deevo.java.server.model.dao.PersonaDao;
 import com.deevo.java.shared.Persona;
+import com.deevo.java.shared.Usuario;
 import com.google.inject.Inject;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.shared.ActionException;
@@ -28,6 +29,8 @@ public class GetPersonaActionHandler implements
 		List<String> nombre = new ArrayList<String>();
 			 List<String> apparten = new ArrayList<String>();
 			List<String> apmatern = new ArrayList<String>();
+			List<String>  cod_user = new ArrayList<String>();
+			List<Usuario>  user_list = new ArrayList<Usuario>();
 		 if(! action.getPer_dni().isEmpty()){
 				PersonaDao perdao = new PersonaDao();
 				Persona persona = new Persona();
@@ -41,6 +44,12 @@ public class GetPersonaActionHandler implements
 						nombre.add(personalist.get(i).getPerNom());
 						apparten.add(personalist.get(i).getPerPat());
 						apmatern.add(personalist.get(i).getPerMat());
+						user_list = personalist.get(i).getUsuarios();
+						if(user_list != null){
+							cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+						}else{
+							cod_user.add("");
+						}
 						i++;
 					}
 					
@@ -49,7 +58,7 @@ public class GetPersonaActionHandler implements
 					throw new ActionException("Solicitar ayuda al administrador");
 				}
 				
-				return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+				return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 			}
 		 
 		 if(action.getPer_mat() !="" && action.getPer_nom() !="" && action.getPer_pat() !=""){
@@ -64,13 +73,18 @@ public class GetPersonaActionHandler implements
 						nombre.add(personalist.get(i).getPerNom());
 						apparten.add(personalist.get(i).getPerPat());
 						apmatern.add(personalist.get(i).getPerMat());
+						if(user_list != null){
+							cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+						}else{
+							cod_user.add("");
+						}
 						i++;
 					}
 				} catch (Throwable e) {
 					e.printStackTrace();
 					throw new ActionException("Solicitar ayuda al administrador");
 				}
-				return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+				return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 		 }
 
 			if(action.getPer_nom() == ""){
@@ -85,13 +99,18 @@ public class GetPersonaActionHandler implements
 							nombre.add(personalist.get(i).getPerNom());
 							apparten.add(personalist.get(i).getPerPat());
 							apmatern.add(personalist.get(i).getPerMat());
+							if(user_list != null){
+								cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+							}else{
+								cod_user.add("");
+							}
 							i++;
 						}
 					} catch (Throwable e) {
 						e.printStackTrace();
 						throw new ActionException("Solicitar ayuda al administrador");
 					}
-					return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+					return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 				}else{
 					if(action.getPer_pat() == ""){
 						//solo materno
@@ -104,13 +123,18 @@ public class GetPersonaActionHandler implements
 								nombre.add(personalist.get(i).getPerNom());
 								apparten.add(personalist.get(i).getPerPat());
 								apmatern.add(personalist.get(i).getPerMat());
+								if(user_list != null){
+									cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+								}else{
+									cod_user.add("");
+								}
 								i++;
 							}
 						} catch (Throwable e) {
 							e.printStackTrace();
 							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");			
+						return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");		
 					}else{
 						//paterno y materno
 						PersonaDao perdao = new PersonaDao();
@@ -122,6 +146,11 @@ public class GetPersonaActionHandler implements
 								nombre.add(personalist.get(i).getPerNom());
 								apparten.add(personalist.get(i).getPerPat());
 								apmatern.add(personalist.get(i).getPerMat());
+								if(user_list != null){
+									cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+								}else{
+									cod_user.add("");
+								}
 								i++;
 							}
 							
@@ -129,7 +158,7 @@ public class GetPersonaActionHandler implements
 							e.printStackTrace();
 							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+						return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 					}
 				}
 			}else{
@@ -145,13 +174,18 @@ public class GetPersonaActionHandler implements
 								nombre.add(personalist.get(i).getPerNom());
 								apparten.add(personalist.get(i).getPerPat());
 								apmatern.add(personalist.get(i).getPerMat());
+								if(user_list != null){
+									cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+								}else{
+									cod_user.add("");
+								}
 								i++;
 							}
 						} catch (Throwable e) {
 							e.printStackTrace();
-							throw new ActionException("Solicitar ayuda al administrador");
+							new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO"); new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+						return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 					}else{
 						//nombre y paterno	
 						PersonaDao perdao = new PersonaDao();
@@ -163,13 +197,18 @@ public class GetPersonaActionHandler implements
 								nombre.add(personalist.get(i).getPerNom());
 								apparten.add(personalist.get(i).getPerPat());
 								apmatern.add(personalist.get(i).getPerMat());
+								if(user_list != null){
+									cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+								}else{
+									cod_user.add("");
+								}
 								i++;
 							}
 						} catch (Throwable e) {
 							e.printStackTrace();
 							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+						return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 					}
 					
 					}else{
@@ -183,14 +222,19 @@ public class GetPersonaActionHandler implements
 								dni.add(personalist.get(i).getPerDni());
 								nombre.add(personalist.get(i).getPerNom());
 								apparten.add(personalist.get(i).getPerPat());
-								apmatern.add(personalist.get(i).getPerMat());	
+								apmatern.add(personalist.get(i).getPerMat());
+								if(user_list != null){
+									cod_user.add( personalist.get(i).getUsuarios().get(0).getUsurCod());
+								}else{
+									cod_user.add("");
+								}
 								i++;
 							}
 						} catch (Throwable e) {
 							e.printStackTrace();
 							throw new ActionException("Solicitar ayuda al administrador");
 						}
-						return new GetPersonaResult( dni,nombre,apparten,apmatern, "EXITO");
+						return new GetPersonaResult( dni,nombre,apparten,apmatern, cod_user,"EXITO");
 						}
 				}
 	}

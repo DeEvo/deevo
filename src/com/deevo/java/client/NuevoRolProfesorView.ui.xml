@@ -10,12 +10,12 @@
 	    <g:Grid width="100%" height="" cellPadding="6" >
 	    <g:row>
 	    		<g:customCell>
-	    			<g:Label text="Nuevo Rol Profesor" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER"/>
+	    			<g:Label text="Nuevo Rol Profesor" styleName="tituloFormulario" horizontalAlignment="ALIGN_CENTER" height="15px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="20px"/>
+	    			<g:Label text="Ficha de Usuario:" width="100%" styleName="labelsubformulario" height="15px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -59,7 +59,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Es necesario asignarle uno o más cursos al profesor:" width="100%"/>
+	    			<g:Label height="15px" styleName="labelsubformulario" text="Es necesario asignarle uno o más cursos al profesor:" width="100%"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -87,6 +87,20 @@
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
+	    						<g:Grid width="100%" height="100%" cellPadding="6">
+	    							<g:row>
+	    								<g:customCell>
+	    									<g:Label text="Cursos Buscados"  styleName="labelFormulario" width="230px" height="15px"/>
+	    								</g:customCell>
+	    								<g:customCell>
+	    									<g:Label text="Cursos Asigandos"  styleName="labelFormulario" width="126px" height="15px"/>
+	    								</g:customCell>
+	    							</g:row>
+	    						</g:Grid>
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
 	    						<g:Grid width="100%" styleName="layout">
 	    							<g:row>
 	    								<g:customCell>
@@ -95,14 +109,22 @@
 	    									</g:ScrollPanel>
 	    								</g:customCell>
 	    								<g:customCell>
-	    									<g:Button text="&lt;-" ui:field="quitarcursoBoton"/>
-	    								</g:customCell>
-	    								<g:customCell>
-	    									<g:Button text="-&gt;" ui:field="asignarcursoBoton"/>
+	    									<g:Grid width="100%" styleName="layout">
+	    										<g:row>
+	    											<g:customCell>
+	    												<g:Button text="&lt;-" ui:field="quitarcursoBoton"/>
+	    											</g:customCell>
+	    										</g:row>
+	    										<g:row>
+	    											<g:customCell>
+	    												<g:Button text="-&gt;" ui:field="asignarcursoBoton"/>
+	    											</g:customCell>
+	    										</g:row>
+	    									</g:Grid>
 	    								</g:customCell>
 	    								<g:customCell>
 	    									<g:ScrollPanel height="90px" width="300px">
-	    										<p1:CellTable width="100%" height="100%" ui:field="cellTable_1"/>
+	    										<p1:CellTable width="100%" height="92px" ui:field="cellTable_1"/>
 	    									</g:ScrollPanel>
 	    								</g:customCell>
 	    							</g:row>
@@ -114,7 +136,7 @@
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label height="20px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
+	    			<g:Label height="15px" styleName="labelsubformulario" text="Puede completar los siguientes campos ahora o realizarlo luego:" width="100%"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -125,13 +147,12 @@
 	    						<g:Label text="Descripcion" width="" styleName="labelFormulario" ui:field="descripcionLabel"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextArea width="400px" ui:field="txtadescripcion" height="30px"/>
+	    						<g:TextArea width="400px" ui:field="txtadescripcion" height="45px"/>
 	    					</g:customCell>
 	    				</g:row>
 	    			</g:Grid>
 	    		</g:customCell>
 	    	</g:row>
-	    	<g:row/>
 	    	<g:row>
 	    		<g:customCell>
 	    			<g:Grid width="100%" height="100%" styleName="layoutarriba" cellPadding="6">
