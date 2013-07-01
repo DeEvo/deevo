@@ -201,6 +201,7 @@ public class NuevoRolProfesorPresenter extends
 					selection.clear();
 				}else{
 					selection_1.setSelected(selection.getSelectedObject(), true);
+					selection.clear();
 				}
 			}	
 		}
@@ -223,10 +224,10 @@ public class NuevoRolProfesorPresenter extends
 		
 		@Override
 		public void onClick(ClickEvent event) {
-			List<C> list = dataProvider.getList();
-			if(list != null){
-				list.clear();
-			}
+			 List<C> list = dataProvider.getList();
+			 List<C> list1 = dataProvider_1.getList();
+			 list.clear();
+			 list1.clear();
 		}
 	});
 	}

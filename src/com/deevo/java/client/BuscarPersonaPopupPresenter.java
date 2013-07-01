@@ -38,7 +38,6 @@ public class BuscarPersonaPopupPresenter extends
 		public Button getBuscarButton();
 		public Button getIngresarButton();
 		public Button getCancelarButton();
-		public TextBox getBuscarTextbox();
 		public CellTable<P> getCellTable();
 		public TextBox getDniTextbox() ;
 		public TextBox getPaterTextbox();
@@ -50,6 +49,7 @@ public class BuscarPersonaPopupPresenter extends
     private String nombre;
     private String apaterno;
     private String amaterno;
+    private String cod_user;
     private ListDataProvider<P> dataProvider = new ListDataProvider<P>();
 	
 	private SingleSelectionModel<P> selection = new SingleSelectionModel<P>();
@@ -133,7 +133,7 @@ public class BuscarPersonaPopupPresenter extends
 		            apaterno = selected.getApaterno();
 		            amaterno = selected.getAmaterno();
 		            nombre = selected.getNombre();
-		            
+		            cod_user = selected.getUsuario();
 		            if (origen == "nuevorolalumno"){
 		            	PlaceRequest request = new PlaceRequest(NameTokens.nuevorolalumno).with(
 									"dni", dni).with(
@@ -149,7 +149,7 @@ public class BuscarPersonaPopupPresenter extends
 									"nombres", nombre).with(
 									"apaterno", apaterno).with(
 									"amaterno", amaterno).with(
-									"cod_user", amaterno);				
+									"cod_user", cod_user);		
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }
@@ -158,7 +158,8 @@ public class BuscarPersonaPopupPresenter extends
 									"dni", dni).with(
 									"nombres", nombre).with(
 									"apaterno", apaterno).with(
-									"amaterno", amaterno);				
+									"amaterno", amaterno).with(
+									"cod_user", cod_user);				
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }   
@@ -167,7 +168,8 @@ public class BuscarPersonaPopupPresenter extends
 									"dni", dni).with(
 									"nombres", nombre).with(
 									"apaterno", apaterno).with(
-									"amaterno", amaterno);				
+									"amaterno", amaterno).with(
+									"cod_user", cod_user);				
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }
@@ -238,7 +240,7 @@ public class BuscarPersonaPopupPresenter extends
 						result.getNombre().get(i),
 						result.getApparten().get(i),
 						result.getApmatern().get(i),
-						null);
+						result.getCod_user().get(i));
 				listap.add(p);
 				i++;
 			}

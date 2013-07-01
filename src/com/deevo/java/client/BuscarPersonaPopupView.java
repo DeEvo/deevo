@@ -52,10 +52,6 @@ public class BuscarPersonaPopupView extends PopupViewImpl implements
 		return cancelarButton;
 	}
 
-	public TextBox getBuscarTextbox() {
-		return dniTextbox;
-	}
-
 	public Button getIngresarButton() {
 		return ingresarButton;
 	}
