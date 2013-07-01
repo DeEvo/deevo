@@ -42,7 +42,7 @@ public class NuevoRolPadrePresenter	extends
 	@NameToken(NameTokens.nuevorolpadre)
 	public interface MyProxy extends ProxyPlace<NuevoRolPadrePresenter> {
 	}
-	@Inject BuscarPopupPresenter buscarPopPresenter;
+	@Inject BuscarPersonaPopupPresenter buscarpersonaPopPresenter;
 	private EventBus eventbus;
 	@Inject
 	public NuevoRolPadrePresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
@@ -82,7 +82,7 @@ public class NuevoRolPadrePresenter	extends
 			public void onClick(ClickEvent event) {
 				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpadre");
 				NuevoRolPadrePresenter.this.eventbus.fireEvent(eventbuscar);
-				addToPopupSlot(buscarPopPresenter);
+				addToPopupSlot(buscarpersonaPopPresenter);
 			}
 		});
 		

@@ -71,8 +71,8 @@ import com.deevo.java.client.NuevoRolPadrePresenter;
 import com.deevo.java.client.NuevoRolPadreView;
 import com.deevo.java.client.NuevoRolProfesorPresenter;
 import com.deevo.java.client.NuevoRolProfesorView;
-import com.deevo.java.client.BuscarPopupPresenter;
-import com.deevo.java.client.BuscarPopupView;
+import com.deevo.java.client.BuscarPersonaPopupPresenter;
+import com.deevo.java.client.BuscarPersonaPopupView;
 import com.deevo.java.client.NuevoCursoPresenter;
 import com.deevo.java.client.NuevoCursoView;
 import com.deevo.java.client.NuevoGradoPresenter;
@@ -225,8 +225,8 @@ public class ClientModule extends AbstractPresenterModule {
 				NuevoRolProfesorView.class,
 				NuevoRolProfesorPresenter.MyProxy.class);
 
-		bindPresenterWidget(BuscarPopupPresenter.class,
-				BuscarPopupPresenter.MyView.class, BuscarPopupView.class);
+		bindPresenterWidget(BuscarPersonaPopupPresenter.class,
+				BuscarPersonaPopupPresenter.MyView.class, BuscarPersonaPopupView.class);
 
 		bindPresenter(NuevoCursoPresenter.class,
 				NuevoCursoPresenter.MyView.class, NuevoCursoView.class,

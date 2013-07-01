@@ -56,7 +56,7 @@ public class NuevoRolAlumnoPresenter extends
 		this.eventbus = eventBus;
 	}
 
-	@Inject BuscarPopupPresenter buscarPopPresenter;
+	@Inject BuscarPersonaPopupPresenter buscarpersonaPopPresenter;
 	
 	@Override
 	protected void revealInParent() {
@@ -92,7 +92,7 @@ public class NuevoRolAlumnoPresenter extends
 			public void onClick(ClickEvent event) {
 				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolalumno");
 				NuevoRolAlumnoPresenter.this.eventbus.fireEvent(eventbuscar);
-				addToPopupSlot(buscarPopPresenter);
+				addToPopupSlot(buscarpersonaPopPresenter);
 			}
 		});
 		//Filtra el la seccion por cada grado

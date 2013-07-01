@@ -30,8 +30,8 @@ import com.google.gwt.view.client.SingleSelectionModel;
 
 
 
-public class BuscarPopupPresenter extends
-		PresenterWidget<BuscarPopupPresenter.MyView> {
+public class BuscarPersonaPopupPresenter extends
+		PresenterWidget<BuscarPersonaPopupPresenter.MyView> {
 
 	public interface MyView extends PopupView {
 		public Button getLimpiarButton();
@@ -56,7 +56,7 @@ public class BuscarPopupPresenter extends
 	
          
 	@Inject
-	public BuscarPopupPresenter(final EventBus eventBus, final MyView view) {
+	public BuscarPersonaPopupPresenter(final EventBus eventBus, final MyView view) {
 		super(eventBus, view);
 	}
 	
@@ -108,6 +108,7 @@ public class BuscarPopupPresenter extends
 				    amaterno = getView().getMaterTexbox().getText();
 				    nombre = getView().getNombreTextbox().getText();
 				    dni = "";
+				    
 				}
 			    else{
 			    	dni = getView().getDniTextbox().getText();
@@ -147,7 +148,8 @@ public class BuscarPopupPresenter extends
 									"dni", dni).with(
 									"nombres", nombre).with(
 									"apaterno", apaterno).with(
-									"amaterno", amaterno);				
+									"amaterno", amaterno).with(
+									"cod_user", amaterno);				
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }

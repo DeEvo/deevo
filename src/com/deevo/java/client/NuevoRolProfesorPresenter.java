@@ -60,7 +60,7 @@ public class NuevoRolProfesorPresenter extends
 	public interface MyProxy extends ProxyPlace<NuevoRolProfesorPresenter> {
 	}
 
-	@Inject BuscarPopupPresenter buscarPopPresenter;
+	@Inject BuscarPersonaPopupPresenter buscarpersonaPopPresenter;
 	private EventBus eventbus;
 	@Inject
 	public NuevoRolProfesorPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy) {
@@ -165,7 +165,7 @@ public class NuevoRolProfesorPresenter extends
 		public void onClick(ClickEvent event) {
 			BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolprofesor");
 			NuevoRolProfesorPresenter.this.eventbus.fireEvent(eventbuscar);
-			addToPopupSlot(buscarPopPresenter);
+			addToPopupSlot(buscarpersonaPopPresenter);
 		}
 	});
 	  

@@ -1,6 +1,6 @@
 package com.deevo.java.client;
 
-import com.deevo.java.client.BuscarPopupPresenter.P;
+import com.deevo.java.client.BuscarPersonaPopupPresenter.P;
 import com.gwtplatform.mvp.client.PopupViewImpl;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
@@ -11,16 +11,16 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class BuscarPopupView extends PopupViewImpl implements
-		BuscarPopupPresenter.MyView {
+public class BuscarPersonaPopupView extends PopupViewImpl implements
+		BuscarPersonaPopupPresenter.MyView {
 
 	private final Widget widget;
 
-	public interface Binder extends UiBinder<Widget, BuscarPopupView> {
+	public interface Binder extends UiBinder<Widget, BuscarPersonaPopupView> {
 	}
 
 	@Inject
-	public BuscarPopupView(final EventBus eventBus, final Binder binder) {
+	public BuscarPersonaPopupView(final EventBus eventBus, final Binder binder) {
 		super(eventBus);
 		widget = binder.createAndBindUi(this);
 	}

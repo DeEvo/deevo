@@ -56,7 +56,7 @@ public class NuevoRolPsicologoPresenter extends
 
 	@Inject DispatchAsync dispatchAsync;
 	
-	@Inject BuscarPopupPresenter buscarPopPresenter;
+	@Inject BuscarPersonaPopupPresenter buscarpersonaPopPresenter;
 	private EventBus eventbus;
 	@Inject
 	public NuevoRolPsicologoPresenter(final EventBus eventBus, final MyView view,
@@ -102,7 +102,7 @@ public class NuevoRolPsicologoPresenter extends
 				BuscarSourceEvent eventbuscar = new BuscarSourceEvent("nuevorolpsicologo");
 				NuevoRolPsicologoPresenter.this.eventbus.fireEvent(eventbuscar);
 				//buscarPopPresenter.getView().getEntidadTextbox().setText("Persona");
-				addToPopupSlot(buscarPopPresenter);
+				addToPopupSlot(buscarpersonaPopPresenter);
 			}
 		});
 		
