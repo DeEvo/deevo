@@ -7,16 +7,16 @@
 	ui:generateLocales='default' xmlns:p1="urn:import:com.google.gwt.user.cellview.client" xmlns:w="urn:import:com.google.gwt.widget.client">
 
 
-	<g:PopupPanel width="500px" height="400px" glassEnabled="true" modal="true" animationEnabled="true">
+	<g:PopupPanel width="500px" height="400px" glassEnabled="true" modal="true">
 		  <g:Grid width="100%" height="400px" styleName="layout">
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Buscar Persona" styleName="tituloFormulario" height="31px"/>
+	    			<g:Label text="Buscar Aula" styleName="tituloFormulario" height="31px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
 	    		<g:customCell>
-	    			<g:Label text="Busqueda de Persona" width="100%" styleName="labelsubformulario" height="20px"/>
+	    			<g:Label text="Busqueda de Aula" width="100%" styleName="labelsubformulario" height="20px"/>
 	    		</g:customCell>
 	    	</g:row>
 	    	<g:row>
@@ -24,35 +24,35 @@
 	    			<g:Grid width="100%" cellPadding="6" height="80px">
 	    				<g:row>
 	    					<g:customCell>
-				    			<g:Label text="DNI" styleName="labelFormulario"/>
+				    			<g:Label text="Periodo" styleName="labelFormulario"/>
 				    		</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="150px" ui:field="dniTextbox" maxLength="8"/>
+	    						<g:TextBox width="150px" ui:field="periodoTextbox" maxLength="8"/>
 
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Nombres" styleName="labelFormulario"/>
+	    						<g:Label text="Ciclo" styleName="labelFormulario"/>
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox ui:field="NombreTextbox" maxLength="40"/>
-	    					</g:customCell>
-	    				</g:row>
-	    				<g:row>
-	    					<g:customCell>
-	    						<g:Label text="Apellido Paterno" styleName="labelFormulario" />
-	    					</g:customCell>
-	    					<g:customCell>
-	    						<g:TextBox width="150px" height="28" maxLength="40" ui:field="paterTextbox" />
+	    						<g:TextBox ui:field="cicloTextbox" maxLength="40"/>
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>
 	    					<g:customCell>
-	    						<g:Label text="Apellido Materno" styleName="labelFormulario" />
+	    						<g:Label text="Grado" styleName="labelFormulario" />
 	    					</g:customCell>
 	    					<g:customCell>
-	    						<g:TextBox width="150px" height="28" maxLength="40" ui:field="MaterTexbox" />
+	    						<g:TextBox width="150px" height="28" maxLength="40" ui:field="gradoTextbox" />
+	    					</g:customCell>
+	    				</g:row>
+	    				<g:row>
+	    					<g:customCell>
+	    						<g:Label text="Seccion" styleName="labelFormulario" />
+	    					</g:customCell>
+	    					<g:customCell>
+	    						<g:TextBox width="150px" height="28" maxLength="40" ui:field="seccionTexbox" />
 	    					</g:customCell>
 	    				</g:row>
 	    				<g:row>

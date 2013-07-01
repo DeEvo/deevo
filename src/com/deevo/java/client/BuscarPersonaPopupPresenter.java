@@ -38,7 +38,6 @@ public class BuscarPersonaPopupPresenter extends
 		public Button getBuscarButton();
 		public Button getIngresarButton();
 		public Button getCancelarButton();
-		public TextBox getBuscarTextbox();
 		public CellTable<P> getCellTable();
 		public TextBox getDniTextbox() ;
 		public TextBox getPaterTextbox();
@@ -170,7 +169,7 @@ public class BuscarPersonaPopupPresenter extends
 									"nombres", nombre).with(
 									"apaterno", apaterno).with(
 									"amaterno", amaterno).with(
-											"cod_user", cod_user);				
+											"cod_user", cod_user);					
 						placeManager.revealPlace(request);
 						getView().getCancelarButton().click();
 		            }

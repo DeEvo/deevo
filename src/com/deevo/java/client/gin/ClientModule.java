@@ -95,6 +95,8 @@ import com.deevo.java.client.VerCursoPresenter;
 import com.deevo.java.client.VerCursoView;
 import com.deevo.java.client.VerProfesorPresenter;
 import com.deevo.java.client.VerProfesorView;
+import com.deevo.java.client.BuscarAulaPopupPresenter;
+import com.deevo.java.client.BuscarAulaPopupView;
 
 public class ClientModule extends AbstractPresenterModule {
 
@@ -274,6 +276,10 @@ public class ClientModule extends AbstractPresenterModule {
 		bindPresenterWidget(NuevoUsuarioPopupPresenter.class,
 				NuevoUsuarioPopupPresenter.MyView.class,
 				NuevoUsuarioPopupView.class);
+
+		bindPresenterWidget(BuscarAulaPopupPresenter.class,
+				BuscarAulaPopupPresenter.MyView.class,
+				BuscarAulaPopupView.class);
 
 	}
 }
